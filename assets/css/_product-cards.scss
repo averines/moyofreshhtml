@@ -1,0 +1,129 @@
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card {
+    // border: 1px solid;
+    max-width: 300px;
+    border-radius: $br-xl;
+
+    // &:hover {
+    //     box-shadow: 0 7px 10px 10px rgba(29, 24, 24, 0.15);
+    //     outline: 10px solid #fff;
+    // }
+
+    &__head {
+        width: 100%;
+        height: 270px;
+        background-color: $bg-l;
+        border-radius: $br-lg;
+    }
+
+    &__body {
+        display: grid;
+        row-gap: 5px;
+        padding: 16px 0;
+    }
+
+    &__header {
+        text-decoration: none;
+        color: $text-l;
+        font-size: 14px;
+        transition: $t;
+
+        max-height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-break: break-word;
+
+        &:hover {
+            color: $main;
+
+            .product-card__brand {
+                color: $main;
+            }
+        }
+    }
+
+    &__brand {
+        text-transform: uppercase;
+        color: $text;
+        transition: $t;
+
+        &::after {
+            content: " /";
+            color: $text-ll;
+        }
+    }
+}
+
+.card-price {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.5em;
+    align-items: first baseline;
+    line-height: 1.3;
+
+    &__title {
+        font-size: 14px;
+        // flex-grow: 1;
+    }
+
+    &__actual {
+        font-weight: 500;
+        font-size: 17px;
+    }
+
+    &__old {
+        color: $text-l;
+        font-size: 14px;
+        text-decoration: line-through;
+    }
+
+    &--sm {
+        .card-price__title {
+            font-size: 13px;
+        }
+
+        .card-price__actual {
+            font-size: 14px;
+        }
+
+        .card-price__old {
+            font-size: 13px;
+        }
+    }
+}
+
+
+.badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 8px 9px;
+}
+
+.badge {
+    background-color: $main;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: $br-sm;
+    padding: 5px 7px;
+    line-height: 1;
+
+
+    &--bottom {
+        margin-top: auto;
+    }
+
+    &--sm {
+        font-size: 11px;
+        letter-spacing: $ls-sm;
+    }
+}

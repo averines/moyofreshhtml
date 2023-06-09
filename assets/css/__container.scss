@@ -1,0 +1,46 @@
+.container {
+    max-width: 1560px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $bp-lg) {
+        padding: 0 20px;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+        padding: 0 30px;
+    }
+
+    &--sm {
+        max-width: 700px;
+    }
+
+    &--md {
+        max-width: 800px;
+    }
+
+    &--xl {
+        max-width: 1900px;
+    }
+
+    &--full {
+        max-width: none;
+    }
+
+    &--bg {
+        background-color: $bg-l;
+    }
+
+    &--center {
+        margin: 0 auto;
+    }
+}
+
+
+.box {
+    max-width: 820px;
+
+    &--sm {
+        max-width: 700px;
+    }
+}

@@ -1,0 +1,39 @@
+.btn {
+    border: none;
+    padding: 0.72em 1.5em;
+    line-height: 1.4;
+    border-radius: $br-md;
+    color: #fff;
+    background-color: $main;
+    border: 2px solid $main;
+    transition: $t;
+    font-weight: 500;
+
+    &:hover {
+        background-color: $main-d;
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &--outline {
+        background-color: #fff;
+        color: $main;
+        border-color: lighten($main, 22);
+
+        &:hover {
+            background-color: lighten($main-ll, 4.5);
+        }
+    }
+
+    &--secondary {
+        background-color: $main-ll;
+        border-color: $main-ll;
+        color: $main;
+
+        &:hover {
+            background-color: darken($main-ll, 2);
+        }
+    }
+}

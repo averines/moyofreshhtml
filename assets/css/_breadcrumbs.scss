@@ -1,0 +1,45 @@
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+    margin: 33px 0;
+    padding: 0;
+    column-gap: 10px;
+    row-gap: 5px;
+    flex-wrap: wrap;
+
+    > li {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+            transform: rotate(-90deg);
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+
+        > a {
+            text-decoration: none;
+            color: $text;
+            transition: $t;
+
+            &:hover {
+                color: $main-l;
+            }
+        }
+
+        > span {
+            color: $text-l;
+        }
+    }
+}

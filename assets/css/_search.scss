@@ -1,0 +1,48 @@
+.search {
+    width: 100%;
+    background: linear-gradient(90deg, #f5f6f9 80%, #ebedf1 100%);
+    border-radius: $br-sm;
+    overflow: hidden;
+    order: 3;
+
+    @media screen and (min-width: $bp-md) {
+        order: 2;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: transparent;
+        border: none !important;
+        padding: 2px 20px 0 20px !important;
+        line-height: 2;
+        height: 40px;
+        font-size: 15px;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 14px;
+        }
+
+        &::placeholder {
+            color: $text-ll;
+        }
+    }
+
+    &__btn {
+        display: block;
+        width: 60px;
+        height: 42px;
+        border: none;
+        background: url(../img/icons/search.svg) no-repeat center;
+        transition: $t;
+
+        &:hover {
+            background-color: $main-d;
+        }
+    }
+}

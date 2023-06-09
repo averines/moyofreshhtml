@@ -1,0 +1,17 @@
+.icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+
+    &--vk {
+        background: url(../img/icons/social-vk.svg) no-repeat center/100%;
+    }
+}
+
+.icon-pro {
+    display: inline-block;
+    width: 4em;
+    height: 1em;
+    background: url(../img/icons/pro.svg) no-repeat center/100%;
+    transform: translateY(2px);
+}
