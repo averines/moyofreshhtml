@@ -7,6 +7,7 @@
     padding: 7px 15px;
     border-top: 1px solid $line;
     position: fixed;
+    z-index: 99;
     background-color: #fff;
     left: 0;
     right: 0;
@@ -115,9 +116,12 @@
             display: block;
         }
 
+        @media screen and (min-width: $bp-xsm) {
+            font-size: 12px;
+        }
+
         @media screen and (min-width: $bp-sm) {
             display: block;
-            font-size: 12px;
         }
 
         @media screen and (min-width: $bp-md) {
@@ -125,6 +129,12 @@
         }
 
         @media screen and (min-width: $bp-lg) {
+            font-size: 13px;
+            display: block;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            font-size: 13.7px;
             display: block;
         }
     }
@@ -165,11 +175,11 @@
     }
 
     &--sm {
-        width: 240px;
+        width: 260px;
     }
 
     &--md {
-        width: 275px;
+        width: 290px;
     }
 
     &--lg {

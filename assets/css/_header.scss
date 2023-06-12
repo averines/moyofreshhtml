@@ -80,7 +80,7 @@
         }
 
         > a {
-            font-size: 13px;
+            font-size: 14px;
             color: $text-l;
             text-decoration: none;
             transition: $t;
@@ -95,7 +95,7 @@
     }
 
     &__title {
-        font-size: 13px;
+        font-size: 14px;
         color: $text-l;
         display: flex;
         align-items: center;
@@ -117,7 +117,6 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
-    // transform: translateY(-5px);
 }
 
 .header-contacts {
@@ -135,7 +134,7 @@
     &__title {
         color: $text;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 14px;
         transition: $t;
         display: flex;
         align-items: center;
@@ -170,7 +169,7 @@
         flex-direction: column;
         transition: $t;
         border: 1px solid $line;
-        z-index: 99;
+        z-index: 100;
         box-shadow: $bs-sm;
         background-color: #fff;
         padding: 33px 30px;
@@ -214,7 +213,7 @@
 }
 
 .header-worktime {
-    font-size: 13px;
+    font-size: 14px;
     color: $text-l;
     padding-bottom: 5px;
 }

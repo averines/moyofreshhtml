@@ -1,6 +1,7 @@
 @import "_vars";
 @import "_basic";
 @import "_container";
+@import "_animations";
 
 @import "header";
 @import "footer";
@@ -13,9 +14,10 @@
 @import "search";
 @import "user-nav";
 @import "warning";
-@import "dropdown-products";
 
 @import "product-cards";
+@import "dropdown-products";
+
 
 
 @import "_display";

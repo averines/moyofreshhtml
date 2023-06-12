@@ -1,4 +1,38 @@
 .dropdown-products {
-    border: 1px solid red;
     max-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .product-card {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+
+        &__head {
+            width: 65px;
+            flex-shrink: 0;
+            border-radius: $br-sm;
+        }
+
+        &__badges {
+            position: relative;
+            height: auto;
+            padding: 0;
+            flex-direction: row;
+            column-gap: 3px;
+
+            .badge {
+                margin-top: 0;
+                font-size: 10px;
+                padding: 6px 6px 3px 6px;
+            }
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            row-gap: 7px;
+            padding: 0;
+        }
+    }
 }
