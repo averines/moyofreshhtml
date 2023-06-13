@@ -36,7 +36,7 @@
         <div class="header-top">
             <div class="container">
                 <div class="header-top__inner">
-                    <nav role="navigation">
+                    <nav>
                         <ul class="top-menu">
                             <li>
                                 <span class="top-menu__title">О магазине</span>
@@ -84,7 +84,11 @@
             <div class="container">
                 <div class="header-main__inner">
                     <a class="logo" href="/">Optmoyo.ru – интернет-магазин женской, мужской и детской одежды.</a>
+
                     <button class="catalog-btn"><span>Каталог</span></button>
+
+
+
                     <div class="search">
                         <div class="search__wrapper">
                             <input class="search__input" type="text" placeholder="Поиск товаров...">
@@ -107,7 +111,6 @@
                                 <div class="text-sm mb-2">Войдите или зарегистрируйтесь, чтобы совершать покупки и&nbsp;отслеживать заказы</div>
                                 <button class="btn btn--full">Войти</button>
                                 <button class="btn btn--full btn--outline mt-1">Зарегистрироваться</button>
-                                <!-- <button class="btn btn--full btn--secondary mt-1">Регистрация</button> -->
                             </div>
                         </div>
                         <div class="user-nav">
@@ -118,6 +121,7 @@
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
+                                <div class="user-btn__dot"></div>
                                 <div class="user-btn__title">Уведомления</div>
                             </a>
                             <div class="user-nav-dropdown user-nav-dropdown--lg">
@@ -132,6 +136,7 @@
                                         <path d="M7.375 3V6.375M10.75 6.375V3M14.125 3V6.375M7.375 9.75H14.125M7.375 13.125H10.75M6 18.1875H15.5C16.6046 18.1875 17.5 17.2921 17.5 16.1875V6.6875C17.5 5.58293 16.6046 4.6875 15.5 4.6875H6C4.89543 4.6875 4 5.58293 4 6.6875V16.1875C4 17.2921 4.89543 18.1875 6 18.1875Z" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
+                                <div class="user-btn__counter">2</div>
                                 <div class="user-btn__title">Заказы</div>
                             </a>
                             <div class="user-dropdown"></div>
@@ -143,9 +148,65 @@
                                         <path d="M15.5833 3.66699C12.65 3.66699 11 6.11174 11 7.33366C11 6.11174 9.35 3.66699 6.41667 3.66699C3.48333 3.66699 2.75 6.11174 2.75 7.33366C2.75 13.7503 11 18.3337 11 18.3337C11 18.3337 19.25 13.7503 19.25 7.33366C19.25 6.11174 18.5167 3.66699 15.5833 3.66699Z" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
+                                <div class="user-btn__counter">23</div>
                                 <div class="user-btn__title">Избранное</div>
                             </a>
-                            <div class="user-dropdown"></div>
+                            <div class="user-nav-dropdown user-nav-dropdown--xl user-nav-dropdown--right px-1">
+                                <div class="product-cards dropdown-products">
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn--full btn--outline mt-2 z-xl p-relative" href="#">Открыть избранное</a>
+                            </div>
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="#">
@@ -156,18 +217,20 @@
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
-                                <div class="user-btn__title">Корзина</div>
+                                <div class="user-btn__counter">7</div>
+                                <div class="user-btn__title is-active">2&nbsp;940₽</div>
                             </a>
-                            <div class="user-nav-dropdown user-nav-dropdown--lg user-nav-dropdown--right">
+                            <div class="user-nav-dropdown user-nav-dropdown--xl user-nav-dropdown--right px-1">
                                 <div class="product-cards dropdown-products">
-                                    <article class="product-card">
+                                    <div class="product-card">
                                         <div class="product-card__head">
-                                            <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
-                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника"></a>
                                         </div>
                                         <div class="product-card__body">
                                             <div class="product-card__badges badges">
                                                 <div class="badge">ХИТ</div>
+                                                <div class="badge badge--new">NEW</div>
                                                 <div class="badge badge--bottom badge--sale">-11%</div>
                                             </div>
                                             <div class="product-card__prices">
@@ -175,14 +238,154 @@
                                                     <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
                                                     <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
                                                 </div>
+                                                <div class="card-price card-price--sm">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                    <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
+                                                    <div class="card-price__title">Опт</div>
+                                                </div>
                                             </div>
-                                            <a class="product-card__header" href="#">
+                                            <a class="product-card__body-link" href="#" title="VILATTE Туника 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__badges badges">
+                                                <div class="badge badge--bottom badge--action">-11% до 28.08</div>
+                                            </div>
+                                            <div class="product-card__prices">
+                                                <div class="card-price card-price--action">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                    <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
+                                                    <div class="card-price__warning">Осталось 5 дней</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
                                                 <span class="product-card__brand">Vilatte</span>
                                                 <span class="product-card__title">Туника 6696П</span>
                                             </a>
                                         </div>
-                                    </article>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-card__head">
+                                            <img class="product-card__pic" src="./i/products/55x83/854203.jpg" srcset="./i/products/55x83/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="60" height="90">
+                                            <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                        </div>
+                                        <div class="product-card__body">
+                                            <div class="product-card__prices">
+                                                <div class="card-price">
+                                                    <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <a class="product-card__body-link" href="#">
+                                                <span class="product-card__brand">Vilatte</span>
+                                                <span class="product-card__title">Туника 6696П</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <a class="btn btn--full btn--outline mt-1 z-xl p-relative" href="#">Открыть корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-nav">
+                <div class="container">
+                    <div class="catalog-nav__inner">
+                        <nav class="catalog-nav__header">
+                            <ul class="catalog-nav__titles">
+                                <li><a href="#"><span class="icon icon--woman"></span>Женщинам</a></li>
+                                <li><a href="#"><span class="icon icon--woman"></span>Девочкам-подросткам</a></li>
+                                <li><a href="#"><span class="icon icon--woman"></span>Девочкам до&nbsp;3-х&nbsp;лет</a></li>
+                                <li><a href="#"><span class="icon icon--man"></span>Мужчинам</a></li>
+                                <li><a href="#"><span class="icon icon--man"></span>Мальчикам-подросткам</a></li>
+                                <li><a href="#"><span class="icon icon--man"></span>Мальчикам до&nbsp;3-x&nbsp;лет</a></li>
+                                <li><a href="#"><span class="icon icon--woman"></span>Домашний текстиль</a></li>
+                                <li><a href="#"><span class="icon icon--woman"></span>Игрушки</a></li>
+                                <li><a href="#" class="catalog-nav__title--special"><span class="icon icon--woman"></span>Акции</a></li>
+                            </ul>
+                        </nav>
+                        <div class="catalog-nav__body">
+                            <div class="catalog-tab">
+                                <div class="catalog-tab__title">Женская одежда</div>
+                                <div class="catalog-tab__content">
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Платья</a>
+                                        <a href="#">Повседневные</a>
+                                        <a href="#">Офисные</a>
+                                        <a href="#">Трикотажные</a>
+                                        <a href="#">Коктейльные</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Верха</a>
+                                        <a href="#">Повседневные</a>
+                                        <a href="#">Офисные</a>
+                                        <a href="#">Трикотажные</a>
+                                        <a href="#">Коктейльные</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Верха</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -234,12 +437,31 @@
                 <article class="product-card">
                     <div class="product-card__head">
                         <button class="product-card__fav is-active" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
+                        <img class="product-card__pic" src="./i/products/380x570/854203.jpg" srcset="./i/products/380x570/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="380" height="570">
+                        <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__prices">
+                            <div class="card-price">
+                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
+                            </div>
                         </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        <a class="product-card__body-link" href="#">
+                            <h2 class="product-card__header">
+                                <span class="product-card__brand">Vilatte</span>
+                                <span class="product-card__title">Туника 6696П</span>
+                            </h2>
+                        </a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__head">
+                        <button class="product-card__fav" aria-label="В избранное"></button>
+                        <div class="product-card__badges badges">
+                            <div class="badge badge--new">NEW</div>
+                        </div>
+                        <img class="product-card__pic" src="./i/products/380x570/854203.jpg" srcset="./i/products/380x570/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="380" height="570">
+                        <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
                     </div>
                     <div class="product-card__body">
                         <div class="product-card__prices">
@@ -253,9 +475,11 @@
                                 <div class="card-price__title">Опт</div>
                             </div>
                         </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
+                        <a class="product-card__body-link" href="#">
+                            <h2 class="product-card__header">
+                                <span class="product-card__brand">Vilatte</span>
+                                <span class="product-card__title">Туника 6696П</span>
+                            </h2>
                         </a>
                     </div>
                 </article>
@@ -266,8 +490,8 @@
                             <div class="badge">ХИТ</div>
                             <div class="badge badge--bottom badge--sale">-11%</div>
                         </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        <img class="product-card__pic" src="./i/products/380x570/854203.jpg" srcset="./i/products/380x570/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="380" height="570">
+                        <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
                     </div>
                     <div class="product-card__body">
                         <div class="product-card__prices">
@@ -275,15 +499,12 @@
                                 <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
                                 <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
                             </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                        <div class="card-price__title">Опт</div>
-                                                                    </div> -->
                         </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
+                        <a class="product-card__body-link" href="#">
+                            <h2 class="product-card__header">
+                                <span class="product-card__brand">Vilatte</span>
+                                <span class="product-card__title">Туника 6696П</span>
+                            </h2>
                         </a>
                     </div>
                 </article>
@@ -292,621 +513,64 @@
                         <button class="product-card__fav" aria-label="В избранное"></button>
                         <div class="product-card__badges badges">
                             <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
+                            <div class="badge badge--bottom badge--action">-11% до 28.08</div>
                         </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        <img class="product-card__pic" src="./i/products/380x570/854203.jpg" srcset="./i/products/380x570/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="380" height="570">
+                        <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
                     </div>
                     <div class="product-card__body">
                         <div class="product-card__prices">
-                            <div class="card-price">
+                            <div class="card-price card-price--action">
                                 <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
                                 <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
+                                <div class="card-price__warning">Осталось 3 дня</div>
                             </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                        <div class="card-price__title">Опт</div>
-                                                                                    </div> -->
                         </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
+                        <a class="product-card__body-link" href="#">
+                            <h2 class="product-card__header">
+                                <span class="product-card__brand">Vilatte</span>
+                                <span class="product-card__title">Туника 6696П</span>
+                            </h2>
                         </a>
                     </div>
                 </article>
                 <article class="product-card">
                     <div class="product-card__head">
                         <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        <img class="product-card__pic" src="./i/products/380x570/854203.jpg" srcset="./i/products/380x570/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="380" height="570">
+                        <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
                     </div>
                     <div class="product-card__body">
                         <div class="product-card__prices">
                             <div class="card-price">
                                 <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
                             </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                        <div class="card-price__title">Опт</div>
-                                                                    </div> -->
                         </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
+                        <a class="product-card__body-link" href="#">
+                            <h2 class="product-card__header">
+                                <span class="product-card__brand">Vilatte</span>
+                                <span class="product-card__title">Туника 6696П</span>
+                            </h2>
                         </a>
                     </div>
                 </article>
                 <article class="product-card">
                     <div class="product-card__head">
                         <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        <img class="product-card__pic" src="./i/products/380x570/854203.jpg" srcset="./i/products/380x570/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="380" height="570">
+                        <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
                     </div>
                     <div class="product-card__body">
                         <div class="product-card__prices">
                             <div class="card-price">
                                 <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                        <div class="card-price__title">Опт</div>
-                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                        <div class="card-price__title">Опт</div>
-                                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav is-active" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                        <div class="card-price__title">Опт</div>
-                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                        <div class="card-price__title">Опт</div>
-                                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                                        <div class="card-price__title">Опт</div>
-                                                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                        <div class="card-price__title">Опт</div>
-                                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                                        <div class="card-price__title">Опт</div>
-                                                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                                                        <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                                                        <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                                                        <div class="card-price__title">Опт</div>
-                                                                                                                                    </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="product-cards my-4">
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav is-active" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <div class="card-price card-price--sm">
-                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                <div class="card-price__title">Опт</div>
                             </div>
                         </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                <div class="card-price__title">Опт</div>
-                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                <div class="card-price__title">Опт</div>
-                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                <div class="card-price__title">Опт</div>
-                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                <div class="card-price__title">Опт</div>
-                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                <div class="card-price__title">Опт</div>
-                                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav is-active" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                <div class="card-price__title">Опт</div>
-                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                <div class="card-price__title">Опт</div>
-                                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                                <div class="card-price__title">Опт</div>
-                                                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                <div class="card-price__title">Опт</div>
-                                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                                <div class="card-price__title">Опт</div>
-                                                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
-                        </a>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-card__head">
-                        <button class="product-card__fav" aria-label="В избранное"></button>
-                        <div class="product-card__badges badges">
-                            <div class="badge">ХИТ</div>
-                            <div class="badge badge--bottom badge--sale">-11%</div>
-                        </div>
-                        <img class="product-card__pic" src="./i/products/600x900/854203.jpg" srcset="./i/products/600x900/854203.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="600" height="900">
-                        <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
-                    </div>
-                    <div class="product-card__body">
-                        <div class="product-card__prices">
-                            <div class="card-price">
-                                <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
-                                <div class="card-price__old">2&thinsp;950&thinsp;₽</div>
-                            </div>
-                            <!-- <div class="card-price card-price--sm">
-                                                                                                                                <div class="card-price__actual">2&thinsp;320&thinsp;₽</div>
-                                                                                                                                <div class="card-price__old">2&thinsp;850&thinsp;₽</div>
-                                                                                                                                <div class="card-price__title">Опт</div>
-                                                                                                                            </div> -->
-                        </div>
-                        <a class="product-card__header" href="#">
-                            <span class="product-card__brand">Vilatte</span>
-                            <span class="product-card__title">Туника 6696П</span>
+                        <a class="product-card__body-link" href="#">
+                            <h2 class="product-card__header">
+                                <span class="product-card__brand">Vilatte</span>
+                                <span class="product-card__title">Туника 6696П</span>
+                            </h2>
                         </a>
                     </div>
                 </article>
@@ -1238,7 +902,7 @@
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom__copyrights">© 2015—2023 <span class="text-nowrap">Интернет-магазин OptMoyo.ru</span></div>
-                <img class="footer-bottom__pay" src="./assets/img/pay.svg" alt="Принимаем оплату МИР, Visa, Master Card" loading="lazy" width="140" height="17.07">
+                <img class="footer-bottom__pay" src="./assets/img/pay.svg" alt="Принимаем оплату МИР, Visa, Master Card" loading="lazy" width="140" height="17">
                 <a class="footer-bottom__link" href="#">Политика обработки данных</a>
             </div>
         </div>

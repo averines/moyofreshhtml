@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 
 window.addEventListener('click', (e) => {
     if (e.target.classList.contains("accordion__title")) {
@@ -12,4 +13,10 @@ window.addEventListener('click', (e) => {
             e.target.classList.remove("is-active");
         }
     }
+
+    if (e.target.classList.contains("catalog-btn")) {
+        e.target.classList.toggle("is-active");
+        body.classList.toggle("is-dropdown-open");
+    }
+
 })

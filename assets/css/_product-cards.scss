@@ -4,6 +4,10 @@
     column-gap: 10px;
     row-gap: 30px;
 
+    // @media screen and (min-width: $bp-xsm) {
+    //     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    // }
+
     @media screen and (min-width: $bp-xsm) {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -41,7 +45,7 @@
         position: relative;
     }
 
-    &__link {
+    &__head-link {
         position: absolute;
         top: 0;
         left: 0;
@@ -112,11 +116,17 @@
         padding: 16px 0;
     }
 
-    &__header {
+    &__body-link {
         text-decoration: none;
+    }
+
+    &__header {
         color: $text-l;
         font-size: 14px;
         transition: $t;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
 
         max-height: 40px;
         overflow: hidden;
@@ -170,6 +180,11 @@
         text-decoration: line-through;
     }
 
+    &__warning {
+        color: $special-1;
+        font-size: 13px;
+    }
+
     &--sm {
         .card-price__title {
             font-size: 13px;
@@ -183,42 +198,10 @@
             font-size: 13px;
         }
     }
-}
-
-.badges {
-    position: absolute;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-    padding: 8px 9px;
-    row-gap: 3px;
-}
-
-.badge {
-    background-color: $main;
-    color: #fff;
-    font-size: 11.5px;
-    font-weight: 500;
-    border-radius: $br-sm;
-    padding: 6px 7px 4px 7px;
-    line-height: 1.1;
-    background-color: $text;
-    letter-spacing: $ls-sm;
-
-    &--bottom {
-        margin-top: auto;
-        + .badge--bottom {
-            margin-top: 0;
-        }
-    }
 
     &--action {
-        background-color: $special-2;
-    }
-
-    &--sale {
-        background-color: $main;
+        .card-price__actual {
+            color: $special-1;
+        }
     }
 }

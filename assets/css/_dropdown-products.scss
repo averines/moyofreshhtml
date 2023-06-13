@@ -1,17 +1,71 @@
 .dropdown-products {
-    max-height: 500px;
+    max-height: 370px;
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 23px;
+    overflow-y: scroll;
+    padding-right: 15px;
+
+    @media screen and (min-height: 800px) {
+        max-height: 570px;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 130px;
+        background: linear-gradient(transparent 0%, #fff 40%);
+        transition: $t;
+        z-index: 1;
+        border-radius: $br-md;
+    }
+
+    &:hover {
+        &::after {
+            height: 100px;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $line;
+        border-radius: $br-sm;
+        border: 2px solid #fff;
+        transition: $t;
+
+        &:hover {
+            background-color: $line-d;
+        }
+    }
 
     .product-card {
         display: flex;
         flex-direction: row;
-        column-gap: 20px;
+        column-gap: 15px;
 
         &__head {
-            width: 65px;
+            width: 55px;
             flex-shrink: 0;
-            border-radius: $br-sm;
+            transition: $t;
+            border-radius: $br-xsm;
+            background: none;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        &__pic {
+            border-radius: $br-xsm;
         }
 
         &__badges {
@@ -20,8 +74,10 @@
             padding: 0;
             flex-direction: row;
             column-gap: 3px;
+            padding-bottom: 5px;
 
             .badge {
+                border-radius: $br-xsm;
                 margin-top: 0;
                 font-size: 10px;
                 padding: 6px 6px 3px 6px;
@@ -31,8 +87,60 @@
         &__body {
             display: flex;
             flex-direction: column;
-            row-gap: 7px;
+            row-gap: 4px;
             padding: 0;
+        }
+
+        &__body-link {
+            text-decoration: none;
+            color: $text-l;
+            font-size: 13.5px;
+            transition: $t;
+
+            max-height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+
+            &:hover {
+                color: $main;
+
+                .product-card__brand {
+                    color: $main;
+                }
+            }
+        }
+
+        .card-price {
+            &__actual {
+                font-size: 15.5px;
+                line-height: 1;
+            }
+
+            &__old {
+                font-size: 13px;
+            }
+
+            &__warning {
+                font-size: 13px;
+            }
+
+            &--sm {
+                .card-price__title {
+                    font-size: 12px;
+                }
+
+                .card-price__actual {
+                    font-size: 13px;
+                }
+
+                .card-price__old {
+                    font-size: 12px;
+                }
+            }
         }
     }
 }

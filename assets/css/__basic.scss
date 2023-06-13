@@ -304,3 +304,17 @@ ol {
 		bottom: 0;
 	}
 }
+
+.z-xl {
+	z-index: 99;
+}
+
+.p-relative {
+	position: relative;
+}
+
+.is-dropdown-open {
+	overflow: hidden;
+	max-height: 100vh;
+	padding-right: 17px;
+}

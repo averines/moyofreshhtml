@@ -1,0 +1,45 @@
+.badges {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 8px 9px;
+    row-gap: 3px;
+}
+
+.badge {
+    background-color: $main;
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 500;
+    border-radius: $br-sm;
+    padding: 6px 7px 4px 7px;
+    line-height: 1.1;
+    background-color: $text;
+    letter-spacing: $ls-sm;
+    white-space: nowrap;
+    user-select: none;
+
+    &--bottom {
+        margin-top: auto;
+
+        + .badge--bottom {
+            margin-top: 0;
+        }
+    }
+
+    &--new {
+        background: $g-good;
+        text-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+    }
+
+    &--sale {
+        background-color: $main;
+    }
+
+    &--action {
+        background: $g-main;
+    }
+}

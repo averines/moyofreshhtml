@@ -108,9 +108,75 @@
         }
     }
 
+    &__counter {
+        position: absolute;
+        top: -7px;
+        left: calc(50% + 12px);
+        background-color: $main-l;
+        color: #fff;
+        padding: 0.27em 0.6em;
+        font-size: 10px;
+        font-weight: 500;
+        border-radius: 0.75em;
+        line-height: 1;
+
+        @media screen and (min-width: $bp-sm) {
+            top: -8px;
+            left: calc(50% + 5px);
+        }
+
+        @media screen and (min-width: $bp-md) {
+            top: -2px;
+            left: calc(50% + 3px);
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            top: -2px;
+            left: calc(50% + 12px);
+        }
+
+        &.user-btn__counter--dark {
+            background-color: $text;
+        }
+
+        &.user-btn__counter--light {
+            color: $main;
+            background-color: $main-ll;
+        }
+    }
+
+    &__dot {
+        position: absolute;
+        top: -4px;
+        left: calc(50% + 12px);
+        background-color: $main-l;
+        font-weight: 500;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        animation: blinkopacity 1.75s ease-in-out infinite;
+
+        @media screen and (min-width: $bp-sm) {
+            top: -5px;
+        }
+
+        @media screen and (min-width: $bp-md) {
+            top: 3px;
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            top: 1px;
+        }
+    }
+
     &__title {
         display: none;
         font-size: 10px;
+
+        &.is-active {
+            font-size: 13px;
+            font-weight: 500;
+        }
 
         @media screen and (min-width: $bp-xxxsm) {
             display: block;
@@ -186,9 +252,22 @@
         width: 350px;
     }
 
+    &--xl {
+        width: 400px;
+    }
+
     &--right {
         left: auto;
         transform: translateY(10px);
         right: 0;
+
+        &::before {
+            left: auto;
+            right: 10px;
+
+            @media screen and (min-width: $bp-xl) {
+                right: 25px;
+            }
+        }
     }
 }

@@ -9,6 +9,9 @@
     transition: $t;
     font-weight: 500;
     font-size: 14.5px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 
     &:hover {
         background-color: $main-d;

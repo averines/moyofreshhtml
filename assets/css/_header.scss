@@ -220,6 +220,8 @@
 
 // главный==========================
 .header-main {
+    position: relative;
+
     &__inner {
         display: flex;
         flex-wrap: wrap;
@@ -314,6 +316,16 @@
         filter: brightness(10);
         opacity: 0.5;
         margin-left: auto;
+    }
+
+    &.is-active {
+        &::before {
+            background: url(../img/icons/close-w.svg) no-repeat center/130%;
+        }
+    }
+
+    > span {
+        pointer-events: none;
     }
 }
 
