@@ -28,10 +28,10 @@ $text-l: #8e90a7; //старый, посветлее
 $text-ll: #a1a3bd;
 
 $line: #f2f2f9;
-$line-d: #dedee6;
+$line-d: #a8b3d1;
 
 $bg-l: rgb(246, 246, 249);
-$bg-d: rgb(240, 240, 243);
+$bg-d: rgb(233, 234, 240);
 
 $overlay: rgba(43, 46, 56, 0.85);
 
@@ -45,7 +45,8 @@ $cub2: cubic-bezier(0.71, -0.4, 0.09, 0.99);
 $bp-xxxsm: 320px;
 $bp-xxsm: 400px;
 $bp-xsm: 575px;
-$bp-sm: 750px;
+// на 750 заканчиваетя мобильная версия
+$bp-sm: 750px; 
 $bp-md: 900px;
 $bp-lg: 1100px;
 $bp-xl: 1300px;

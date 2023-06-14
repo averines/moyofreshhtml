@@ -1,28 +1,60 @@
 .catalog-nav {
     position: absolute;
-    // border: 3px solid red;
     background-color: #fff;
-    top: 80px;
+    top: 70px;
     left: 0;
     right: 0;
     z-index: 2;
-    height: calc(100vh - 110px);
+    height: calc(100vh - 70px);
+    display: none;
+
+    @media screen and (min-width: $bp-md) {
+        top: 70px;
+        height: calc(100vh - 110px);
+    }
+
+    @media screen and (min-width: $bp-lg) {
+        top: 80px;
+        height: calc(100vh - 120px);
+    }
+
+    &.is-active {
+        display: block;
+    }
 
     > .container {
         height: 100%;
+        // border: 2px solid blue;
     }
 
     &__inner {
-        display: grid;
-        grid-template-columns: 1.1fr 4fr;
-        height: 100%;
-        margin: 0 -14px;
+        height: calc(100% - 70px);
+
+        @media screen and (min-width: $bp-sm) {
+            display: grid;
+            grid-template-columns: minmax(300px, 1.1fr) 4fr;
+            height: 100%;
+            padding-bottom: 30px;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            margin: 0 -14px;
+            padding-bottom: 50px;
+        }
     }
 
     &__header {
+        // border: 1px solid blueviolet;
         overflow-y: scroll;
-        padding-right: 15px;
-        padding-top: 15px;
+        padding-right: 5px;
+        height: 100%;
+        margin-right: -15px;
+
+        @media screen and (min-width: $bp-sm) {
+            margin-right: 0;
+            padding-top: 15px;
+            padding-right: 15px;
+        }
 
         &::-webkit-scrollbar {
             width: 10px;
@@ -43,8 +75,13 @@
     }
 
     &__body {
+        display: none;
         overflow-y: scroll;
-        border-left: 1px solid $line-d;
+
+        @media screen and (min-width: $bp-sm) {
+            display: block;
+            border-left: 1px solid $line;
+        }
 
         &::-webkit-scrollbar {
             width: 10px;
@@ -65,87 +102,213 @@
     }
 
     &__titles {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+        row-gap: 20px;
+        column-gap: 10px;
 
-        > li {
-            > a {
-                display: flex;
-                column-gap: 12px;
-                align-items: center;
-                padding: 14px 12px 14px 16px;
-                text-decoration: none;
-                color: $text;
-                border-radius: $br-lg;
-                font-size: 14px;
-                line-height: 1.2;
+        @media screen and (min-width: $bp-xxsm) {
+            column-gap: 15px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
 
-                &:hover {
-                    background-color: $bg-l;
-                }
+        @media screen and (min-width: $bp-sm) {
+            row-gap: 5px;
+            grid-template-columns: 1fr;
+        }
+    }
 
-                &.catalog-nav__title--special {
-                    color: $special-1;
-                }
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: $bg-l;
 
-                > .icon {
-                    width: 20px;
-                    height: 20px;
-                    transform: translateY(-1px);
-                    flex-shrink: 0;
-                }
+        row-gap: 10px;
+        column-gap: 14px;
+        align-items: center;
+        padding: 40px 20px;
+        text-decoration: none;
+        color: $text;
+        border-radius: $br-xl;
+        font-size: 13px;
+        line-height: 1.2;
+        transition: background-color 0.2s ease-in-out;
 
-                &::after {
-                    content: "";
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
-                    margin-left: auto;
-                    transform: rotate(-90deg);
-                    opacity: 0.5;
-                }
+        @media screen and (min-width: $bp-xsm) {
+            padding: 50px 40px;
+        }
+
+        @media screen and (min-width: $bp-sm) {
+            font-size: 15px;
+            border-radius: $br-lg;
+            flex-direction: row;
+            background: none;
+            padding: 14px 12px 14px 16px;
+            transition: none;
+        }
+
+        &:hover {
+            // background: linear-gradient(45deg, lighten($main-l, 15), lighten($special-3, 20));
+            background-color: $bg-d;
+
+            @media screen and (min-width: $bp-sm) {
+                background-color: $bg-l;
+            }
+        }
+
+        &.is-active {
+            @media screen and (min-width: $bp-sm) {
+                background-color: $bg-l;
+            }
+        }
+
+        &--special {
+            color: $special-1;
+        }
+
+        > .icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+
+            @media screen and (min-width: $bp-sm) {
+                width: 18px;
+                height: 18px;
+                transform: translateY(-1px);
+            }
+        }
+
+        @media screen and (min-width: $bp-sm) {
+            &::after {
+                content: "";
+                display: block;
+                width: 18px;
+                height: 18px;
+                background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+                margin-left: auto;
+                transform: rotate(-90deg);
+                opacity: 0.75;
             }
         }
     }
 }
 
 .catalog-tab {
-    padding: 20px 50px 40px 50px;
+    padding: 20px 0 0 40px;
+    display: none;
+    max-width: 1000px;
+
+    @media screen and (min-width: $bp-xl) {
+        padding-left: 50px;
+    }
+
+    &.is-active {
+        display: block;
+    }
 
     &__title {
-        font-size: 26px;
+        font-size: 20px;
         font-weight: 500;
         margin-bottom: 30px;
+        line-height: 1.1;
+
+        @media screen and (min-width: $bp-md) {
+            font-size: 24px;
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 28px;
+        }
     }
 
     &__content {
-        display: flex;
-        column-gap: 160px;
-        row-gap: 40px;
+        column-count: auto;
+        column-width: 170px;
+        column-gap: 20px;
+        column-fill: balance;
+
+        @media screen and (min-width: $bp-lg) {
+            column-width: 200px;
+        }
     }
 
     &__menu {
         display: grid;
-        row-gap: 10px;
+        width: 100%;
+        row-gap: 7px;
+        margin-bottom: 40px;
+        break-inside: avoid-column;
+        page-break-inside: avoid;
 
         > a {
             text-decoration: none;
             color: $text;
             line-height: 1.3;
-            font-size: 15.5px;
-            color: $text-l;
+            font-size: 13.5px;
+            color: $text;
 
             &:first-child {
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 14.5px;
                 color: $text;
             }
 
             &:hover {
                 color: $main;
             }
+
+            &:nth-child(n + 8) {
+                display: none;
+            }
+        }
+    }
+
+    &__menu--show-all {
+        > a {
+            &:nth-child(n + 8) {
+                display: inline;
+            }
+        }
+
+        .catalog-tab__more {
+            &::before {
+                content: "Скрыть ";
+            }
+            &::after {
+                transform: scale(-1);
+            }
+        }
+    }
+
+    &__more {
+        border: none;
+        font-size: 13px;
+        text-align: left;
+        color: $text-ll;
+        background: none;
+        padding: 5px 0;
+        display: flex;
+        column-gap: 5px;
+        align-items: center;
+        transition: $t;
+
+        &:hover {
+            color: $main-l;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+            transition: $t;
+        }
+
+        &::before {
+            content: "Показать еще ";
         }
     }
 }
