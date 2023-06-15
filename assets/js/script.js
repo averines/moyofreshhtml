@@ -33,9 +33,6 @@ window.addEventListener('click', (e) => {
             catalogNav.classList.add("is-active");
         }
     }
-
-
-
 })
 
 // подсчёт пунктов в выпадающем меню каталога и кнопка показать/скрыть для длинных меню
@@ -43,10 +40,10 @@ const catalogTabMenus = document.querySelectorAll(".catalog-tab__menu");
 if (catalogTabMenus) {
     catalogTabMenus.forEach(catalogTabMenu => {
         let items = catalogTabMenu.querySelectorAll("a");
-        if (items.length > 7) {
+        if (items.length > 6) {
             let button = document.createElement("button");
             button.classList.add("catalog-tab__more");
-            button.innerText = `${items.length - 7}`;
+            button.innerText = `${items.length - 6}`;
             catalogTabMenu.append(button);
 
             button.addEventListener("click", () => {

@@ -84,11 +84,7 @@
             <div class="container">
                 <div class="header-main__inner">
                     <a class="logo" href="/">Optmoyo.ru – интернет-магазин женской, мужской и детской одежды.</a>
-
                     <button class="catalog-btn"><span>Каталог</span></button>
-
-
-
                     <div class="search">
                         <div class="search__wrapper">
                             <input class="search__input" type="text" placeholder="Поиск товаров...">
@@ -108,6 +104,7 @@
                                 <div class="user-btn__title">Войти</div>
                             </a>
                             <div class="user-nav-dropdown user-nav-dropdown--md">
+                                <div class="text-bold text-sm mb-1">Личный кабинет</div>
                                 <div class="text-sm mb-2">Войдите или зарегистрируйтесь, чтобы совершать покупки и&nbsp;отслеживать заказы</div>
                                 <button class="btn btn--full">Войти</button>
                                 <button class="btn btn--full btn--outline mt-1">Зарегистрироваться</button>
@@ -151,7 +148,7 @@
                                 <div class="user-btn__counter">23</div>
                                 <div class="user-btn__title">Избранное</div>
                             </a>
-                            <div class="user-nav-dropdown user-nav-dropdown--xl user-nav-dropdown--right px-1">
+                            <div class="user-nav-dropdown user-nav-dropdown--xl user-nav-dropdown--right user-nav-dropdown--full">
                                 <div class="product-cards dropdown-products">
                                     <div class="product-card">
                                         <div class="product-card__head">
@@ -205,7 +202,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="btn btn--full btn--outline mt-2 z-xl p-relative" href="#">Открыть избранное</a>
+                                <a class="user-nav-dropdown__btn" href="#">Открыть избранное</a>
                             </div>
                         </div>
                         <div class="user-nav">
@@ -220,7 +217,7 @@
                                 <div class="user-btn__counter">7</div>
                                 <div class="user-btn__title is-active">2&nbsp;940₽</div>
                             </a>
-                            <div class="user-nav-dropdown user-nav-dropdown--xl user-nav-dropdown--right px-1">
+                            <div class="user-nav-dropdown user-nav-dropdown--xl user-nav-dropdown--right user-nav-dropdown--full">
                                 <div class="product-cards dropdown-products">
                                     <div class="product-card">
                                         <div class="product-card__head">
@@ -244,9 +241,9 @@
                                                     <div class="card-price__title">Опт</div>
                                                 </div>
                                             </div>
-                                            <a class="product-card__body-link" href="#" title="VILATTE Туника 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П">
+                                            <a class="product-card__body-link" href="#">
                                                 <span class="product-card__brand">Vilatte</span>
-                                                <span class="product-card__title">Туника 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П 6696П</span>
+                                                <span class="product-card__title">Туника 6696П </span>
                                             </a>
                                         </div>
                                     </div>
@@ -278,14 +275,18 @@
                                             <a class="product-card__link" href="#" aria-label="Vilatte Туника 6696П"></a>
                                         </div>
                                         <div class="product-card__body">
+                                            <div class="product-card__badges badges">
+                                                <div class="badge badge--new">NEW</div>
+                                            </div>
                                             <div class="product-card__prices">
                                                 <div class="card-price">
                                                     <div class="card-price__actual">2&thinsp;450&thinsp;₽</div>
                                                 </div>
                                             </div>
-                                            <a class="product-card__body-link" href="#">
+                                            <!-- если название длиннее 60 символов, то добавляем атрибут title -->
+                                            <a class="product-card__body-link" href="#" title="Женские носки-невидимки с открытым носом и удивительной текстурой нежности и вечерней прохлады">
                                                 <span class="product-card__brand">Vilatte</span>
-                                                <span class="product-card__title">Туника 6696П</span>
+                                                <span class="product-card__title">Женские носки-невидимки с открытым носом и удивительной текстурой нежности и вечерней прохлады</span>
                                             </a>
                                         </div>
                                     </div>
@@ -341,27 +342,54 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="btn btn--full btn--outline mt-1 z-xl p-relative" href="#">Открыть корзину</a>
+                                <a class="user-nav-dropdown__btn" href="#">Открыть корзину</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- выпадающее меню со всеми категориями и подкатегориями -->
+            <!-- выпадающее меню каталога со всеми категориями и подкатегориями -->
             <div class="catalog-nav">
                 <div class="container">
                     <div class="catalog-nav__inner">
                         <div class="catalog-nav__header">
                             <nav class="catalog-nav__titles">
-                                <a class="catalog-nav__title is-active" href="#" data-tab-target="1"><span class="icon icon--woman"></span>Женщинам</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="2"><span class="icon icon--baby-girl"></span>Девочкам-подросткам</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="3"><span class="icon icon--baby-girl"></span>Девочкам до&nbsp;3&#8209;х&nbsp;лет</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="4"><span class="icon icon--man"></span>Мужчинам</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="5"><span class="icon icon--baby-girl"></span>Мальчикам-подросткам</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="6"><span class="icon icon--baby-girl"></span>Мальчикам до&nbsp;3&#8209;x&nbsp;лет</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="7"><span class="icon icon--ball"></span>Домашний текстиль</a>
-                                <a class="catalog-nav__title" href="#" data-tab-target="8"><span class="icon icon--duck"></span>Игрушки</a>
-                                <a class="catalog-nav__title catalog-nav__title--special" href="#" data-tab-target="9"><span class="icon icon--fire"></span>Акции</a>
+                                <a class="catalog-nav__title catalog-nav__title--female is-active" href="#" data-tab-target="1">
+                                    <img src="./assets/img/categories/woman.png" alt="Женщинам" loading="lazy">
+                                    <span>Женщинам</span>
+                                </a>
+                                <a class="catalog-nav__title catalog-nav__title--female" href="#" data-tab-target="2">
+                                    <img src="./assets/img/categories/woman.png" alt="Девочкам" loading="lazy">
+                                    <span>Девочкам</span>
+                                </a>
+                                <a class="catalog-nav__title catalog-nav__title--female" href="#" data-tab-target="3">
+                                    <img src="./assets/img/categories/woman.png" alt="Девочкам до 3-х лет" loading="lazy">
+                                    <span>Девочкам до&nbsp;3&#8209;х&nbsp;лет</span>
+                                </a>
+                                <a class="catalog-nav__title catalog-nav__title--male" href="#" data-tab-target="4">
+                                    <img src="./assets/img/categories/man.png" alt="Мужчинам" loading="lazy">
+                                    <span>Мужчинам</span>
+                                </a>
+                                <a class="catalog-nav__title catalog-nav__title--male" href="#" data-tab-target="5">
+                                    <img src="./assets/img/categories/man.png" alt="Мальчикам" loading="lazy">
+                                    <span>Мальчикам</span>
+                                </a>
+                                <a class="catalog-nav__title catalog-nav__title--male" href="#" data-tab-target="6">
+                                    <img src="./assets/img/categories/man.png" alt="Мальчикам до 3-х лет" loading="lazy">
+                                    <span>Мальчикам до&nbsp;3&#8209;x&nbsp;лет</span>
+                                </a>
+                                <a class="catalog-nav__title" href="#" data-tab-target="7">
+                                    <img src="./assets/img/categories/woman.png" alt="Домашний текстиль">
+                                    <span>Домашний текстиль</span>
+                                </a>
+                                <a class="catalog-nav__title" href="#" data-tab-target="8">
+                                    <img src="./assets/img/categories/toy.png" alt="Игрушки" loading="lazy">
+                                    <span>Игрушки</span>
+                                </a>
+                                <a class="catalog-nav__title catalog-nav__title--special" href="#" data-tab-target="9">
+                                    <img src="./assets/img/categories/woman.png" alt="Акции" loading="lazy">
+                                    <span>Акции</span>
+                                </a>
                             </nav>
                         </div>
                         <div class="catalog-nav__body">
@@ -554,39 +582,106 @@
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
                                         <a href="#">Платья</a>
+                                        <a href="#">Повседневные</a>
+                                        <a href="#">Нарядные</a>
+                                        <a href="#">Трикотажные</a>
+                                        <a href="#">Летние</a>
+                                        <a href="#">Школа</a>
+                                        <a href="#">Сарафаны</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Блузки</a>
+                                        <a href="#">Блузы</a>
+                                        <a href="#">Топы</a>
+                                        <a href="#">Водолазки</a>
+                                        <a href="#">Рубашки</a>
+                                        <a href="#">Кофточки</a>
+                                        <a href="#">Толстовки</a>
+                                        <a href="#">Худи</a>
+                                        <a href="#">Футболки</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Туники</a>
+                                        <a href="#"> Жилеты</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Трикотаж</a>
+                                        <a href="#">Кардиганы</a>
+                                        <a href="#">Свитера</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Жакеты</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Платья</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Брюки, бриджи</a>
+                                        <a href="#">Брюки</a>
+                                        <a href="#">Бриджи</a>
+                                        <a href="#">Джинсы</a>
+                                        <a href="#">Легинсы</a>
+                                        <a href="#">Шорты</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Юбки</a>
                                     </div>
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Школа</a>
-                                    </div>
-                                    <div class="catalog-tab__menu">
                                         <a href="#">Жакеты</a>
                                     </div>
                                     <div class="catalog-tab__menu">
+                                        <a href="#">Школа</a>
+                                        <a href="#">Платья</a>
+                                        <a href="#">Сарафаны</a>
+                                        <a href="#">Блузы</a>
+                                        <a href="#">Водолазки</a>
+                                        <a href="#">Джемперы, лонгсливы</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Жакеты</a>
+                                        <a href="#">Брюки</a>
+                                        <a href="#">Юбки</a>
+                                        <a href="#">Комплекты</a>
+                                    </div>
+
+                                    <div class="catalog-tab__menu">
                                         <a href="#">Верхняя одежда</a>
+                                        <a href="#">Жакеты</a>
+                                        <a href="#">Куртки</a>
+                                        <a href="#">Плащи</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Пальто</a>
+                                        <a href="#">Комбинезоны</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Колготки, носки</a>
+                                        <a href="#">Классические колготки</a>
+                                        <a href="#">Фантазийные колготки</a>
+                                        <a href="#">Носки</a>
+                                        <a href="#">Гольфы</a>
+                                        <a href="#">GIULIA</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Нижнее бельё</a>
-                                    </div>
-                                    <div class="catalog-tab__menu">
-                                        <a href="#">Купальники</a>
+                                        <a href="#">Бюстгальтеры</a>
+                                        <a href="#">Трусы</a>
+                                        <a href="#">Термобелье</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Майки</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Костюмы</a>
+                                        <a href="#">Карнавальные</a>
+                                        <a href="#">Комплекты (Платье+Жакет)</a>
+                                        <a href="#">Комплекты с шортами</a>
+                                        <a href="#">Комплекты (Брюки+Футболка)</a>
+                                        <a href="#">Комплекты (Брюки+Джемпер)</a>
+                                        <a href="#">Спортивные</a>
+                                        <a href="#">Юбочные</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Одежда для дома</a>
+                                        <a href="#">Домашние костюмы</a>
+                                        <a href="#">Пижамы</a>
+                                        <a href="#">Халаты</a>
+                                        <a href="#">Сорочки</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Комбинезоны</a>
@@ -595,13 +690,45 @@
                                         <a href="#">Боди</a>
                                     </div>
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Одежда для дома</a>
+                                        <a href="#">Купальники</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Аксессуары</a>
+                                        <a href="#">Бижутерия</a>
+                                        <a href="#">Шапки</a>
+                                        <a href="#">Шапки с помпоном</a>
+                                        <a href="#">Шапки с завязками</a>
+                                        <a href="#">Шапки-шлемы</a>
+                                        <a href="#">Панамки, шляпы</a>
+                                        <a href="#">Кепки, бейсболки</a>
+                                        <a href="#">Чепчики, шапочки</a>
+                                        <a href="#">Комплекты с шапкой</a>
+                                        <a href="#">Снуды, шарфы</a>
+                                        <a href="#">Манишки</a>
+                                        <a href="#">Повязки, косынки</a>
+                                        <a href="#">Варежки, перчатки</a>
+                                        <a href="#">Очки</a>
+                                        <a href="#">Галстуки, воротнички</a>
+                                        <a href="#">Пинетки, рукавички</a>
+                                        <a href="#">Нагрудники</a>
+                                        <a href="#">Пеленки, пледы, простынки</a>
+                                        <a href="#">Конверты</a>
+                                        <a href="#">Рюкзаки, сумки, футляры</a>
+                                        <a href="#">Ремни</a>
+                                        <a href="#">Аксессуары для волос</a>
                                     </div>
                                     <div class="catalog-tab__menu">
                                         <a href="#">Обувь</a>
+                                        <a href="#">Балетки</a>
+                                        <a href="#">Ботинки</a>
+                                        <a href="#">Кроссовки</a>
+                                        <a href="#">Полуботинки</a>
+                                        <a href="#">Сабо</a>
+                                        <a href="#">Сандалии</a>
+                                        <a href="#">Сапоги</a>
+                                        <a href="#">Туфли</a>
+                                        <a href="#">Тапки</a>
+                                        <a href="#">Шлепанцы</a>
                                     </div>
                                 </div>
                             </div>
@@ -609,7 +736,81 @@
                                 <div class="catalog-tab__title">Одежда для девочек до 3-x лет</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
+                                        <a href="#">Аксессуары</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Нагрудники</a>
+                                        <a href="#">Пелёнки, пледы</a>
+                                        <a href="#">Рукавички</a>
+                                        <a href="#">Шапочки, чепчики</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Нижнее белье</a>
+                                        <a href="#">Майки</a>
+                                        <a href="#">Трусы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Боди</a>
+                                        <a href="#">Боди без рукавов</a>
+                                        <a href="#">Боди с длинным рукавом</a>
+                                        <a href="#">Боди с коротким рукавом</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Брюки и шорты</a>
+                                        <a href="#">Брюки</a>
+                                        <a href="#">Ползунки</a>
+                                        <a href="#">Шорты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Верхняя одежда</a>
+                                        <a href="#">Комбинезоны</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Куртки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Колготки, носки</a>
+                                        <a href="#">Классические колготки</a>
+                                        <a href="#">Фантазийные колготки</a>
+                                        <a href="#">Носки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Комбинезоны</a>
+                                        <a href="#">Комбинезоны</a>
+                                        <a href="#">Песочники</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Костюмы и комплекты</a>
+                                        <a href="#">Комплекты (Джемпер+Брюки)</a>
+                                        <a href="#">Комплекты (Футболка+Брюки)</a>
+                                        <a href="#">Комплекты (Футболка+Шорты)</a>
+                                        <a href="#">Юбочные</a>
+                                        <a href="#">Ясельные комплекты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Обувь</a>
+                                        <a href="#">Сандалии</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Одежда для дома</a>
+                                        <a href="#">Пижамы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Платья, юбки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Распашонки</a>
+                                        <a href="#">Распашонки с длинным рукавом</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Толстовки и джемперы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Трикотаж</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Кардиганы</a>
                                         <a href="#">Платья</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Футболки</a>
                                     </div>
                                 </div>
                             </div>
@@ -617,7 +818,78 @@
                                 <div class="catalog-tab__title">Мужская одежда</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Платья</a>
+                                        <a href="#">Майки, футболки</a>
+                                        <a href="#">Майки</a>
+                                        <a href="#">Футболки</a>
+                                        <a href="#">Футболки-поло</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Рубашки</a>
+                                        <a href="#">Рубашки с длинным рукавом</a>
+                                        <a href="#">Рубашки с коротким рукавом</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Трикотаж</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Кардиганы</a>
+                                        <a href="#">Свитеры</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Верха</a>
+                                        <a href="#">Водолазки</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Лонгсливы</a>
+                                        <a href="#">Свитшоты</a>
+                                        <a href="#">Толстовки</a>
+                                        <a href="#">Худи</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Верхняя одежда</a>
+                                        <a href="#">Бомберы</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Ветровки</a>
+                                        <a href="#">Куртки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Брюки, джинсы, шорты</a>
+                                        <a href="#">Джинсы</a>
+                                        <a href="#">Брюки</a>
+                                        <a href="#">Шорты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Костюмы</a>
+                                        <a href="#">Домашние</a>
+                                        <a href="#">Карнавальные</a>
+                                        <a href="#">Спортивные</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Одежда для дома</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Халаты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Нижнее белье</a>
+                                        <a href="#">Майки</a>
+                                        <a href="#">Трусы</a>
+                                        <a href="#">Термобелье</a>
+                                        <a href="#">Пляжная одежда</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Носки</a>
+                                        <a href="#">Гольфы</a>
+                                        <a href="#">Носки</a>
+                                        <a href="#">Подследники</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Аксессуары</a>
+                                        <a href="#">Головные уборы</a>
+                                        <a href="#">Перчатки</a>
+                                        <a href="#">Сумки, кошельки</a>
+                                        <a href="#">Шарфы, платки</a>
+                                        <a href="#">Шнурки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Обувь</a>
                                     </div>
                                 </div>
                             </div>
@@ -625,7 +897,125 @@
                                 <div class="catalog-tab__title">Одежда для мальчиков-подростков</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Платья</a>
+                                        <a href="#">Верхняя одежда</a>
+                                        <a href="#">Жакеты</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Куртки</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Комбинезоны</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Лонгсливы</a>
+                                        <a href="#">Толстовки</a>
+                                        <a href="#">Жакеты</a>
+                                        <a href="#">Водолазки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Трикотаж</a>
+                                        <a href="#">Водолазки</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Кардиганы</a>
+                                        <a href="#">Кофты</a>
+                                        <a href="#">Пуловеры</a>
+                                        <a href="#">Свитера</a>
+                                        <a href="#">Жилеты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Футболки</a>
+                                        <a href="#">Майки</a>
+                                        <a href="#">Поло</a>
+                                        <a href="#">Футболки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Худи</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Рубашки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Брюки, шорты</a>
+                                        <a href="#">Брюки, бриджи</a>
+                                        <a href="#">Джинсы</a>
+                                        <a href="#">Шорты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Комбинезоны</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Костюмы</a>
+                                        <a href="#">Карнавальные</a>
+                                        <a href="#">Комплект (Брюки+Футболка)</a>
+                                        <a href="#">Комплекты с шортами</a>
+                                        <a href="#">Комплект (Брюки+Джемпер)</a>
+                                        <a href="#">Спортивные</a>
+                                        <a href="#">Трикотажные</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Школа</a>
+                                        <a href="#">Брюки</a>
+                                        <a href="#">Жилеты</a>
+                                        <a href="#">Рубашки</a>
+                                        <a href="#">Костюмы</a>
+                                        <a href="#">Поло</a>
+                                        <a href="#">Спортивная форма</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Пиджаки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Нижнее белье</a>
+                                        <a href="#">Колготки</a>
+                                        <a href="#">Плавки</a>
+                                        <a href="#">Трусы</a>
+                                        <a href="#">Термобелье</a>
+                                        <a href="#">Майки</a>
+                                        <a href="#">Комплекты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Обувь</a>
+                                        <a href="#">Ботинки</a>
+                                        <a href="#">Кроссовки</a>
+                                        <a href="#">Полуботинки</a>
+                                        <a href="#">Сабо</a>
+                                        <a href="#">Сандалии</a>
+                                        <a href="#">Сапоги</a>
+                                        <a href="#">Тапки</a>
+                                        <a href="#">Туфли</a>
+                                        <a href="#">Шлепанцы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Аксессуары</a>
+                                        <a href="#">Шапки</a>
+                                        <a href="#">Шапки с помпоном</a>
+                                        <a href="#">Шапки с завязками</a>
+                                        <a href="#">Шапки-шлемы</a>
+                                        <a href="#">Панамки, береты</a>
+                                        <a href="#">Кепки, бейсболки, банданы</a>
+                                        <a href="#">Манишки, шарфы, снуды</a>
+                                        <a href="#">Комплекты с шапкой</a>
+                                        <a href="#">Варежки, перчатки</a>
+                                        <a href="#">Пинетки, рукавички</a>
+                                        <a href="#">Чепчики, шапочки</a>
+                                        <a href="#">Конверты для новорожденных</a>
+                                        <a href="#">Пеленки, пледы, простынки</a>
+                                        <a href="#">Нагрудники</a>
+                                        <a href="#">Очки</a>
+                                        <a href="#">Ремни</a>
+                                        <a href="#">Рюкзаки, сумки</a>
+                                        <a href="#">Бабочки, галстуки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Одежда для дома</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Пижамы</a>
+                                        <a href="#">Халаты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Носки, кальсоны</a>
+                                        <a href="#">Носки</a>
+                                        <a href="#">Колготки, кальсоны</a>
                                     </div>
                                 </div>
                             </div>
@@ -633,7 +1023,75 @@
                                 <div class="catalog-tab__title">Одежда для мальчиков до 3-x лет</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Платья</a>
+                                        <a href="#">Аксессуары</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Нагрудники</a>
+                                        <a href="#">Пелёнки, пледы</a>
+                                        <a href="#">Рукавички</a>
+                                        <a href="#">Шапочки, чепчики</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Нижнее белье</a>
+                                        <a href="#">Майки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Боди</a>
+                                        <a href="#">Боди без рукавов</a>
+                                        <a href="#">Боди с длинным рукавом</a>
+                                        <a href="#">Боди с коротким рукавом</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Брюки, шорты</a>
+                                        <a href="#">Брюки</a>
+                                        <a href="#">Ползунки</a>
+                                        <a href="#">Шорты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Верхняя одежда</a>
+                                        <a href="#">Комбинезоны</a>
+                                        <a href="#">Комплекты</a>
+                                        <a href="#">Куртки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Носки, колготки</a>
+                                        <a href="#">Колготки</a>
+                                        <a href="#">Носки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Комбинезоны</a>
+                                        <a href="#">Комбинезоны</a>
+                                        <a href="#"> Песочники</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Костюмы и комплекты</a>
+                                        <a href="#">Комплекты (Джемпер+Брюки)</a>
+                                        <a href="#">Комплекты (Футболка+Брюки)</a>
+                                        <a href="#">Комплекты (Футболка+Шорты)</a>
+                                        <a href="#">Ясельные комплекты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Обувь</a>
+                                        <a href="#">Пинетки</a>
+                                        <a href="#">Сандалии</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Одежда для дома</a>
+                                        <a href="#">Пижамы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Распашонки</a>
+                                        <a href="#">Распашонки с длинным рукавом</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Толстовки и джемперы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Трикотаж</a>
+                                        <a href="#">Джемперы</a>
+                                        <a href="#">Кардиганы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Футболки</a>
                                     </div>
                                 </div>
                             </div>
@@ -641,7 +1099,53 @@
                                 <div class="catalog-tab__title">Домашний текстиль</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Платья</a>
+                                        <a href="#">Постельное белье</a>
+                                        <a href="#">Бязь</a>
+                                        <a href="#">Детское</a>
+                                        <a href="#">Макосатин</a>
+                                        <a href="#">Микрофибра</a>
+                                        <a href="#">Наволочки</a>
+                                        <a href="#">Перкаль</a>
+                                        <a href="#">Пододеяльники</a>
+                                        <a href="#">Поплин</a>
+                                        <a href="#">Простыни</a>
+                                        <a href="#">Сатин</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Пледы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Покрывала</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Одеяла</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Полотенца</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Фартуки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Для кухни</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Для ванной</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Шторы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Подушки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Фурнитура</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Декор</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Домашним животным</a>
                                     </div>
                                 </div>
                             </div>
@@ -649,7 +1153,37 @@
                                 <div class="catalog-tab__title">Игрушки и игры</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
-                                        <a href="#">Платья</a>
+                                        <a href="#">Аксессуары</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Конструирование</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Куклы</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Логические игры</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Настольные</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Опыты</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Развлечение</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Ранее развитие</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Мягкие игрушки</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Творчество</a>
+                                    </div>
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Фокусы</a>
                                     </div>
                                 </div>
                             </div>
