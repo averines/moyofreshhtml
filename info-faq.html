@@ -25,10 +25,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap">
 
-    <link rel="stylesheet" href="../assets/libs/fancybox/css.min.css">
-    <link rel="stylesheet" href="../assets/css/style.min.css">
-    <link rel="icon" href="../assets/img/favicon/favicon.png" type="image/png" sizes="32x32">
-    <link rel="icon" href="../assets/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/libs/fancybox/css.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="icon" href="./assets/img/favicon/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="./assets/img/favicon/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
@@ -41,22 +41,22 @@
                             <li>
                                 <span class="top-menu__title">О магазине</span>
                                 <ul>
-                                    <li><a href="#">Компания</a></li>
-                                    <li><a href="#">Сотрудничество с&nbsp;производителями</a></li>
-                                    <li><a href="#">Парсеры и API</a></li>
+                                    <li><a href="info-about.html">Компания</a></li>
+                                    <li><a href="info-cooperation.html">Сотрудничество с&nbsp;производителями</a></li>
+                                    <li><a href="info-api.html">Парсеры и API</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span class="top-menu__title">Покупателям</span>
                                 <ul>
-                                    <li><a href="#">Условия</a></li>
-                                    <li><a href="#">Доставка</a></li>
-                                    <li><a href="#">Оплата</a></li>
-                                    <li><a href="./info/faq.html">Ответы на вопросы</a></li>
-                                    <li><a href="#">Таблица размеров</a></li>
+                                    <li><a href="info-conditions.html">Условия</a></li>
+                                    <li><a href="info-delivery.html">Доставка</a></li>
+                                    <li><a href="info-payment.html">Оплата</a></li>
+                                    <li><a href="info-faq.html">Ответы на вопросы</a></li>
+                                    <li><a href="info-sizes.html">Таблица размеров</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a href="info-contacts.html">Контакты</a></li>
                         </ul>
                     </nav>
                     <div class="header-info">
@@ -83,7 +83,7 @@
         <div class="header-main">
             <div class="container">
                 <div class="header-main__inner">
-                    <a class="logo" href="/">Optmoyo.ru – интернет-магазин женской, мужской и детской одежды.</a>
+                    <a class="logo" href="index.html">Optmoyo.ru – интернет-магазин женской, мужской и детской одежды.</a>
                     <button class="catalog-btn"><span>Каталог</span></button>
                     <div class="search">
                         <div class="search__wrapper">
@@ -107,7 +107,7 @@
                                 <div class="text-bold text-sm mb-1">Личный кабинет</div>
                                 <div class="text-sm mb-2">Войдите или зарегистрируйтесь, чтобы совершать покупки и&nbsp;отслеживать заказы</div>
                                 <button class="btn btn--full" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-login">Войти</button>
-                                <button class="btn btn--full btn--outline mt-1" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-register">Зарегистрироваться</button>
+                                <a class="btn btn--full btn--outline mt-1" href="user-register.html">Зарегистрироваться</a>
                             </div>
                         </div>
                         <div class="user-nav">
@@ -1204,15 +1204,15 @@
             <div class="container">
                 <nav>
                     <ul class="main-menu">
-                        <li><a href="#">Женщинам</a></li>
-                        <li><a href="#">Мужчинам</a></li>
-                        <li><a href="#">Девочкам</a></li>
-                        <li><a href="#">Мальчикам</a></li>
-                        <li><a href="#">Для дома</a></li>
-                        <li><a href="#">Игрушки</a></li>
-                        <li><a href="#">Бренды</a></li>
-                        <li><a href="#">Скидки</a></li>
-                        <li><a href="#">Только для <span class="icon-pro"></span></a></li>
+                        <li><a href="category.html">Женщинам</a></li>
+                        <li><a href="category.html">Мужчинам</a></li>
+                        <li><a href="category.html">Девочкам</a></li>
+                        <li><a href="category.html">Мальчикам</a></li>
+                        <li><a href="category.html">Для дома</a></li>
+                        <li><a href="category.html">Игрушки</a></li>
+                        <li><a href="brands.html">Бренды</a></li>
+                        <li><a href="category.html">Скидки</a></li>
+                        <li><a href="category.html">Только для <span class="icon-pro"></span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -1228,7 +1228,7 @@
                         <meta itemprop="position" content="1">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a href="index.html" itemprop="item"><span itemprop="name">Информация</span></a>
+                        <a href="info-index.html" itemprop="item"><span itemprop="name">Информация</span></a>
                         <meta itemprop="position" content="2">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -1504,46 +1504,42 @@
                 <nav class="footer-nav">
                     <h2 class="footer-nav__title">О магазине</h2>
                     <ul class="footer-menu">
-                        <li><a href="#">Компания</a></li>
-                        <li><a href="#">Сотрудничество с&nbsp;производителями</a></li>
-                        <li><a href="#">Парсеры и API</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="info-about.html">Компания</a></li>
+                        <li><a href="info-cooperation.html">Сотрудничество с&nbsp;производителями</a></li>
+                        <li><a href="info-api.html">Парсеры и API</a></li>
+                        <li><a href="info-contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
-
                 <nav class="footer-nav">
                     <h2 class="footer-nav__title">Покупателям</h2>
                     <ul class="footer-menu">
-                        <li><a href="#">Условия</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Оплата</a></li>
-                        <li><a href="#">Ответы на вопросы</a></li>
-                        <li><a href="#">Таблица размеров</a></li>
+                        <li><a href="info-conditions.html">Условия</a></li>
+                        <li><a href="info-delivery.html">Доставка</a></li>
+                        <li><a href="info-payment.html">Оплата</a></li>
+                        <li><a href="info-faq.html">Ответы на вопросы</a></li>
+                        <li><a href="info-sizes.html">Таблица размеров</a></li>
                     </ul>
                 </nav>
-
                 <nav class="footer-nav">
                     <h2 class="footer-nav__title">Каталог</h2>
                     <ul class="footer-menu">
-                        <li><a href="#">Женская одежда</a></li>
-                        <li><a href="#">Мужская одежда</a></li>
-                        <li><a href="#">Одежда для девочек</a></li>
-                        <li><a href="#">Одежда для мальчиков</a></li>
-                        <li><a href="#">Домашний текстиль</a></li>
-                        <li><a href="#">Игрушки</a></li>
-                        <li><a href="#">Все бренды</a></li>
+                        <li><a href="category.html">Женская одежда</a></li>
+                        <li><a href="category.html">Мужская одежда</a></li>
+                        <li><a href="category.html">Одежда для девочек</a></li>
+                        <li><a href="category.html">Одежда для мальчиков</a></li>
+                        <li><a href="category.html">Домашний текстиль</a></li>
+                        <li><a href="category.html">Игрушки</a></li>
+                        <li><a href="brands.html">Все бренды</a></li>
                     </ul>
                 </nav>
-
                 <div class="footer-partner">
                     <div class="footer-partner__title">Партнерский сайт</div>
-                    <a class="footer-partner__link" href="https://moyo.moda/">Moyo.moda</a>
+                    <a class="footer-partner__link" href="https://moyo.moda/" target="_blank">Moyo.moda</a>
                     <div class="footer-partner__content">
                         <p>Минимальная сумма заказа формируется c&nbsp;учетом заказа на&nbsp;партнерском сайте.</p>
                         <p>Заказы будут отправлены одним общим отправлением.</p>
                     </div>
                 </div>
-
                 <div class="footer-contacts">
                     <div class="footer-phones">
                         <a href="tel:+74996088925" rel="noopener">8 499 608-89-25</a>
@@ -1560,18 +1556,17 @@
                         <img src="./i/rating.png" alt="Рейтинг в Яндексе" loading="lazy" width="150" height="50">
                     </a>
                 </div>
-
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom__copyrights">© 2015—2023 <span class="text-nowrap">Интернет-магазин OptMoyo.ru</span></div>
                 <img class="footer-bottom__pay" src="./assets/img/pay.svg" alt="Принимаем оплату МИР, Visa, Master Card" loading="lazy" width="140" height="17">
-                <a class="footer-bottom__link" href="#">Политика обработки данных</a>
+                <a class="footer-bottom__link" href="info-privacy.html">Политика обработки данных</a>
             </div>
         </div>
     </footer>
 
-    <script src="../assets/libs/fancybox/js.min.js"></script>
-    <script src="../assets/js/script.js"></script>
+    <script src="./assets/libs/fancybox/js.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

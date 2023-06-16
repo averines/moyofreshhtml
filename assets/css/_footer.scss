@@ -298,6 +298,10 @@
     &__content {
         font-size: 16px;
 
+        > p {
+            font-size: inherit;
+        }
+
         @media screen and (min-width: $bp-xxsm) {
             font-size: 13px;
         }

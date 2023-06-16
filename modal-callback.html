@@ -1,25 +1,27 @@
 <div class="modal modal--sm">
-    <div class="modal__header">
-        <div class="modal__title">Обратный звонок</div>
-    </div>
     <div class="modal__body">
-        <p class="text-sm">Укажите свои контактные данные и мы свяжемся с вами в ближайшее время.</p>
+        <div class="h3 mt-1">Обратный звонок</div>
+        <p>Укажите свои контактные данные и мы свяжемся с вами в ближайшее время.</p>
 
         <div class="form">
             <div class="form-row">
-                <input type="text" id="callback-phone">
-                <label for="callback-phone">Телефон</label>
+                <div class="form-field form-field--boxed">
+                    <input type="text" id="callback-name">
+                    <label for="callback-name">Ваше имя</label>
+                </div>
             </div>
             <div class="form-row">
-                <input type="text" id="callback-name">
-                <label for="callback-name">Ваше имя</label>
+                <div class="form-field form-field--boxed">
+                    <input type="text" id="callback-phone">
+                    <label for="callback-phone">Телефон</label>
+                </div>
             </div>
             <div class="form-row">
-                <button>Заказать звонок</button>
+                <button class="btn btn--full btn--bold" type="submit">Заказать звонок</button>
             </div>
         </div>
 
-        <p>Используя этот сайт я соглашаюсь с <a data-fancybox data-type="ajax" href="modal-privacy.html">Политикой обработки персональных данных</a></p>
-
+        <hr class="mt-2 mb-1">
+        <p class="text-sm text-center">Используя этот сайт я соглашаюсь с&nbsp;<a data-fancybox data-type="ajax" href="modal-privacy.html">Политикой обработки персональных данных</a></p>
     </div>
 </div>
