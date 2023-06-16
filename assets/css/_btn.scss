@@ -21,6 +21,10 @@
         width: 100%;
     }
 
+    &--bold {
+        padding: 1.25em 1.5em;
+    }
+
     &--outline {
         background-color: #fff;
         color: $main;
@@ -39,5 +43,19 @@
         &:hover {
             background-color: darken($main-ll, 2);
         }
+    }
+}
+
+.btn-inline {
+    display: inline;
+    background: none;
+    padding: 0;
+    border: none;
+    color: $main;
+    font-size: inherit;
+
+    &:hover {
+        color: $main-d;
+        text-decoration: underline;
     }
 }

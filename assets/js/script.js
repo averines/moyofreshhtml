@@ -33,6 +33,26 @@ window.addEventListener('click', (e) => {
             catalogNav.classList.add("is-active");
         }
     }
+
+    // показать вкладку, используя атрибут "data-tab-target", скрыть прочие вкладки из этой группы
+    if (e.target.dataset.hasOwnProperty('tabTarget')) {
+
+        let target = e.target.dataset.tabTarget;
+        let targetGroup = target.split("-")[0];
+
+
+        if (targetGroup) {
+            tabs = document.querySelectorAll(`[data-tab-id*="${targetGroup}"]`);
+            if (tabs) {
+                tabs.forEach(t => {
+                    t.classList.remove("is-active")
+                    if (t.dataset.tabId == target) {
+                        t.classList.add("is-active");
+                    }
+                });
+            }
+        }
+    }
 })
 
 // подсчёт пунктов в выпадающем меню каталога и кнопка показать/скрыть для длинных меню
@@ -71,3 +91,10 @@ if (catalogTabTitles && catalogTabs) {
         })
     })
 }
+
+// всплывающие окна через фансибокс
+Fancybox.bind("[data-fancybox]", {});
+
+// слайдер через фансибокс
+const sliderMain = document.getElementById("sliderMain");
+if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }

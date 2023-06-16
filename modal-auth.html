@@ -1,0 +1,76 @@
+<div class="modal modal--sm">
+    <div class="modal__body">
+        <div class="tab is-active" data-tab-id="auth-login">
+            <div class="h3 mt-1">Войдите в личный кабинет</div>
+            <p class="mt-0">или <button class="btn-inline" data-tab-target="auth-register">зарегистрируйтесь</button></p>
+            <form class="form mt-2">
+                <div class="form-row">
+                    <div class="form-field form-field--boxed">
+                        <input type="text" id="login-email">
+                        <label for="login-email">E-mail</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field form-field--boxed">
+                        <input type="text" id="login-password">
+                        <label for="login-password">Пароль</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn--full btn--bold" type="submit">Войти</button>
+                </div>
+            </form>
+            <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-recovery">Забыли пароль?</button></p>
+        </div>
+
+        <div class="tab" data-tab-id="auth-recovery">
+            <div class="h3 mt-1">Восстановление пароля</div>
+            <p>Укажите e-mail, использованный при регистрации и мы отправим на него ссылку для смены пароля.</p>
+            <form class="form mt-2">
+                <div class="form-row">
+                    <div class="form-field form-field--boxed">
+                        <input type="text" id="recovery-email">
+                        <label for="recovery-email">E-mail</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn--full btn--bold" type="submit">Восстановить пароль</button>
+                </div>
+            </form>
+            <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-login">Отмена</button></p>
+        </div>
+
+        <div class="tab" data-tab-id="auth-register">
+            <div class="h3 m1-">Зарегистрируйтесь</div>
+            <p class="mt-0">или <button class="btn-inline" data-tab-target="auth-login">войдите в личный кабинет</button></p>
+            <form class="form mt-2">
+                <form class="form mt-2">
+                    <div class="form-row">
+                        <div class="form-field form-field--boxed">
+                            <input type="text" id="register-username">
+                            <label for="register-username">ФИО</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field form-field--boxed">
+                            <input type="text" id="register-email">
+                            <label for="register-email">E-mail</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field form-field--boxed">
+                            <input type="text" id="register-phone">
+                            <label for="register-phone">Телефон</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button class="btn btn--full btn--bold" type="submit">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </form>
+        </div>
+
+        <hr class="mt-2 mb-1">
+        <p class="text-sm text-center">Используя этот сайт я соглашаюсь с&nbsp;<a data-fancybox data-type="ajax" href="modal-privacy.html">Политикой обработки персональных данных</a></p>
+    </div>
+</div>

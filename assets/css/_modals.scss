@@ -1,0 +1,52 @@
+.modals {
+    display: none;
+}
+
+.modal {
+    background-color: #fff;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: $br-xl;
+
+    &--xsm {
+        max-width: 300px;
+    }
+
+    &--sm {
+        max-width: 450px;
+    }
+
+    &--md {
+        max-width: 750px;
+    }
+
+    &--lg {
+        max-width: 1000px;
+    }
+
+    &--xl {
+        max-width: 1400px;
+    }
+
+    &__header {
+        padding: 30px 20px 15px 20px;
+        border-bottom: 1px solid $line;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__body {
+        padding: 15px 20px 30px 20px;
+
+        @media screen and (min-width: $bp-sm) {
+            padding: 25px 30px 40px 30px;
+        }
+
+        @media screen and (min-width: $bp-md) {
+            padding: 40px 50px 60px 50px;
+        }
+    }
+}

@@ -25,13 +25,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap">
 
+    <link rel="stylesheet" href="./assets/libs/fancybox/css.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <link rel="icon" href="./assets/img/favicon/favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="./assets/img/favicon/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
-
     <header class="header">
         <div class="header-top">
             <div class="container">
@@ -71,7 +71,7 @@
                                     <div class="header-phone__title">+7 499 608-89-25</div>
                                     <div class="header-phone__description">Для звонков из&nbsp;Москвы</div>
                                 </a>
-                                <button class="btn btn--main">Обратный звонок</button>
+                                <button class="btn btn--main" data-fancybox data-type="ajax" data-src="modal-callback.html">Обратный звонок</button>
                                 <div class="text-sm text-light">Приём звонков по&nbsp;будням с&nbsp;10:00 до&nbsp;20:00 по&nbsp;московскому времени</div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="user-navs">
                         <div class="user-nav">
-                            <a class="user-btn" href="#">
+                            <button class="user-btn" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-login">
                                 <div class="user-btn__icon">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -102,12 +102,12 @@
                                     </svg>
                                 </div>
                                 <div class="user-btn__title">Войти</div>
-                            </a>
+                            </button>
                             <div class="user-nav-dropdown user-nav-dropdown--md">
                                 <div class="text-bold text-sm mb-1">Личный кабинет</div>
                                 <div class="text-sm mb-2">Войдите или зарегистрируйтесь, чтобы совершать покупки и&nbsp;отслеживать заказы</div>
-                                <button class="btn btn--full">Войти</button>
-                                <button class="btn btn--full btn--outline mt-1">Зарегистрироваться</button>
+                                <button class="btn btn--full" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-login">Войти</button>
+                                <button class="btn btn--full btn--outline mt-1" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-register">Зарегистрироваться</button>
                             </div>
                         </div>
                         <div class="user-nav">
@@ -359,11 +359,11 @@
                                     <span>Женщинам</span>
                                 </a>
                                 <a class="catalog-nav__title catalog-nav__title--female" href="#" data-tab-target="2">
-                                    <img src="./assets/img/categories/woman.png" alt="Девочкам" loading="lazy">
+                                    <img src="./assets/img/categories/girl.png" alt="Девочкам" loading="lazy">
                                     <span>Девочкам</span>
                                 </a>
                                 <a class="catalog-nav__title catalog-nav__title--female" href="#" data-tab-target="3">
-                                    <img src="./assets/img/categories/woman.png" alt="Девочкам до 3-х лет" loading="lazy">
+                                    <img src="./assets/img/categories/babygirl.png" alt="Девочкам до 3-х лет" loading="lazy">
                                     <span>Девочкам до&nbsp;3&#8209;х&nbsp;лет</span>
                                 </a>
                                 <a class="catalog-nav__title catalog-nav__title--male" href="#" data-tab-target="4">
@@ -371,15 +371,15 @@
                                     <span>Мужчинам</span>
                                 </a>
                                 <a class="catalog-nav__title catalog-nav__title--male" href="#" data-tab-target="5">
-                                    <img src="./assets/img/categories/man.png" alt="Мальчикам" loading="lazy">
+                                    <img src="./assets/img/categories/boy.png" alt="Мальчикам" loading="lazy">
                                     <span>Мальчикам</span>
                                 </a>
                                 <a class="catalog-nav__title catalog-nav__title--male" href="#" data-tab-target="6">
-                                    <img src="./assets/img/categories/man.png" alt="Мальчикам до 3-х лет" loading="lazy">
+                                    <img src="./assets/img/categories/babyboy.png" alt="Мальчикам до 3-х лет" loading="lazy">
                                     <span>Мальчикам до&nbsp;3&#8209;x&nbsp;лет</span>
                                 </a>
                                 <a class="catalog-nav__title" href="#" data-tab-target="7">
-                                    <img src="./assets/img/categories/woman.png" alt="Домашний текстиль">
+                                    <img src="./assets/img/categories/house.png" alt="Домашний текстиль">
                                     <span>Домашний текстиль</span>
                                 </a>
                                 <a class="catalog-nav__title" href="#" data-tab-target="8">
@@ -387,7 +387,7 @@
                                     <span>Игрушки</span>
                                 </a>
                                 <a class="catalog-nav__title catalog-nav__title--special" href="#" data-tab-target="9">
-                                    <img src="./assets/img/categories/woman.png" alt="Акции" loading="lazy">
+                                    <img src="./assets/img/categories/action.png" alt="Акции" loading="lazy">
                                     <span>Акции</span>
                                 </a>
                             </nav>
@@ -1716,6 +1716,7 @@
         </div>
     </footer>
 
+    <script src="./assets/libs/fancybox/js.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
