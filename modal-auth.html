@@ -2,7 +2,11 @@
     <div class="modal__body">
         <div class="tab is-active" data-tab-id="auth-login">
             <div class="h3 mt-1">Войдите в личный кабинет</div>
-            <p class="mt-0">или <button class="btn-inline" data-tab-target="auth-register">зарегистрируйтесь</button></p>
+
+            <p class="mt-0">или <a href="user-register.html">зарегистрируйтесь</a></p>
+
+            <!-- короткий вариант регистрации в этом же модальном окне -->
+            <!-- <p class="mt-0">или <button class="btn-inline" data-tab-target="auth-register">зарегистрируйтесь</button></p> -->
             <form class="form mt-2">
                 <div class="form-row">
                     <div class="form-field form-field--boxed">
@@ -34,13 +38,14 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <button class="btn btn--full btn--bold" type="submit">Восстановить пароль</button>
+                    <button class="btn btn--full btn--bold btn--dark" type="submit">Восстановить пароль</button>
                 </div>
             </form>
             <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-login">Отмена</button></p>
         </div>
 
-        <div class="tab" data-tab-id="auth-register">
+        <!-- короткий вариант регистрации в этом же модальном окне -->
+        <!-- <div class="tab" data-tab-id="auth-register">
             <div class="h3 m1-">Зарегистрируйтесь</div>
             <p class="mt-0">или <button class="btn-inline" data-tab-target="auth-login">войдите в личный кабинет</button></p>
             <form class="form mt-2">
@@ -68,7 +73,7 @@
                     </div>
                 </form>
             </form>
-        </div>
+        </div> -->
 
         <hr class="mt-2 mb-1">
         <p class="text-sm text-center">Используя этот сайт я соглашаюсь с&nbsp;<a data-fancybox data-type="ajax" href="modal-privacy.html">Политикой обработки персональных данных</a></p>

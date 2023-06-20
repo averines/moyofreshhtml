@@ -44,6 +44,25 @@
             background-color: darken($main-ll, 2);
         }
     }
+
+    &--dark {
+        background-color: $text;
+        border-color: $text;
+
+        &:hover {
+            background-color: darken($text, 4);
+        }
+
+        &.btn--outline {
+            background-color: #fff;
+            color: $text;
+            border-color: $text;
+
+            &:hover {
+                background-color: $bg-l;
+            }
+        }
+    }
 }
 
 .btn-inline {
