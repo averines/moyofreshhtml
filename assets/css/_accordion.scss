@@ -73,6 +73,12 @@
         .accordion__item {
             background-color: $bg-l;
             margin-bottom: 10px;
+
+            &.is-opened {
+                .accordion__content {
+                    padding-bottom: 10px;
+                }
+            }
         }
 
         .accordion__title {

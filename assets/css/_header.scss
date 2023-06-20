@@ -206,23 +206,29 @@
 }
 
 .header-phone {
-    display: grid;
+    display: flex;
+    column-gap: 10px;
     padding: 15px;
     background-color: $bg-l;
     text-decoration: none;
-    border-radius: $br-md;
-    transition: $t;
+    border-radius: $br-lg;
+    transition: background-color 0.1s ease-in-out;
 
     &:hover {
         background-color: darken($bg-l, 1.2);
+    }
 
-        // .header-phone__title {
-        //     color: $main;
-        // }
+    &:active {
+        transform: scale(0.98);
+    }
 
-        // .header-phone__description {
-        //     color: $text;
-        // }
+    &__icon {
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    &__content {
+        flex-grow: 1;
     }
 
     &__title {
@@ -306,6 +312,7 @@
     letter-spacing: 0.025em;
     flex-shrink: 0;
     order: 1;
+    user-select: none;
 
     @media screen and (min-width: $bp-xxxsm) {
         margin-left: auto;

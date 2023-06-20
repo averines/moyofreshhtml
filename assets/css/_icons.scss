@@ -23,18 +23,6 @@
         background: url(../img/icons/sale-main.svg) no-repeat center/100%;
     }
 
-    // &--baby-girl {
-    //     background: url(../img/icons/category-baby-girl.svg) no-repeat center/100%;
-    // }
-
-    // &--duck {
-    //     background: url(../img/icons/category-duck.svg) no-repeat center/100%;
-    // }
-
-    // &--ball {
-    //     background: url(../img/icons/category-ball.svg) no-repeat center/100%;
-    // }
-
     // &--fire {
     //     background: url(../img/icons/fire.svg) no-repeat center/100%;
     // }
@@ -46,4 +34,11 @@
     height: 1em;
     background: url(../img/icons/pro.svg) no-repeat center/100%;
     transform: translateY(2px);
+}
+
+.icon-phone-call {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../img/icons/phone-call.svg) no-repeat center/100%;
 }

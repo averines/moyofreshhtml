@@ -557,7 +557,7 @@
     list-style: none;
 
     > li {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid $line;
 
         &:last-child {
             border-bottom: none;
