@@ -294,10 +294,10 @@
         }
 
         > span {
-            padding: 3px 15px 15px 15px;
+            padding: 5px 15px 15px 15px;
             margin: auto 0;
 
-            @media screen and (min-width: $bp-xsm) {
+            @media screen and (min-width: $bp-xxsm) {
                 padding-top: 15px;
                 padding-bottom: 20px;
             }
@@ -485,6 +485,7 @@
     }
 }
 
+// особый спискок брендов во вкладке выпадающего меню каталога
 .catalog-list {
     margin: 0;
     padding: 0;
@@ -544,6 +545,29 @@
             > a {
                 background-color: #eef3ff;
             }
+        }
+    }
+}
+
+// меню в аккордеоне, в выпадающем меню. дублирует ссылки из top-menu
+
+.catalog-menu {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        border-bottom: 1px solid #fff;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        > a {
+            display: inline-block;
+            padding: 0.75em 30px;
+            text-decoration: none;
+            color: $text;
         }
     }
 }

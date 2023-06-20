@@ -434,6 +434,16 @@
                 &:hover {
                     > span {
                         transform: translateY(-2px) scale(1.07) rotate(8deg);
+
+                        &::before {
+                            opacity: 1;
+                            transform: translateX(-4px) translateY(-2px) scale(1.2);
+                        }
+
+                        &::after {
+                            opacity: 1;
+                            transform: translateX(2px) translateY(-2px);
+                        }
                     }
                 }
 
@@ -442,6 +452,30 @@
                     height: 1.75em;
                     flex-shrink: 0;
                     transition: $t;
+                    position: relative;
+
+                    &::after,
+                    &::before {
+                        opacity: 0;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        transition: opacity 0.1s ease-in-out, transform 0.275s ease-in-out;
+                    }
+
+                    &::after {
+                        right: -3px;
+                        top: -2px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='6.74557' cy='6.59691' rx='3.45211' ry='4.60177' transform='rotate(50.2398 6.74557 6.59691)' fill='%23C87726'/%3E%3Cellipse cx='5.74557' cy='5.59691' rx='3.45211' ry='4.60177' transform='rotate(50.2398 5.74557 5.59691)' fill='%23FACB72'/%3E%3C/svg%3E%0A");
+                    }
+
+                    &::before {
+                        left: -1px;
+                        top: 5px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='3.22849' cy='4.51936' rx='3.22849' ry='4.51936' transform='matrix(-0.73865 0.67409 0.845438 0.534073 4.76953 0.820312)' fill='%23C87726'/%3E%3Cellipse cx='3.22849' cy='4.51936' rx='3.22849' ry='4.51936' transform='matrix(-0.73865 0.67409 0.845438 0.534073 4.84961 0)' fill='%23FACB72'/%3E%3C/svg%3E%0A");
+                    }
                 }
             }
         }

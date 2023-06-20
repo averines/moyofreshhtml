@@ -30,6 +30,10 @@
     flex-wrap: wrap;
 }
 
+.row-gap-1 {
+    row-gap: 20px;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -39,4 +43,10 @@
     padding: 0;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.d-sm-none {
+    @media screen and (min-width: $bp-sm) {
+        display: none;
+    }
 }

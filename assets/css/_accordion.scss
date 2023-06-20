@@ -68,4 +68,34 @@
             padding: 0 50px 0 67px;
         }
     }
+
+    &--menu {
+        .accordion__item {
+            background-color: $bg-l;
+            margin-bottom: 10px;
+        }
+
+        .accordion__title {
+            padding: 15px 30px;
+
+            &::after {
+                margin-left: auto;
+                content: "";
+                transition: $t;
+                display: block;
+                width: 22px;
+                height: 22px;
+                background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+                flex-shrink: 0;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .accordion__content {
+            padding: 0;
+        }
+    }
 }
