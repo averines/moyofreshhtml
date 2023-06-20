@@ -322,6 +322,10 @@ ol {
 	overflow: hidden;
 	max-height: 100vh;
 	padding-right: 17px;
+
+	@media (hover: none) and (pointer: coarse) {
+		padding-right: 0;
+	}
 }
 
 .is-hidden {

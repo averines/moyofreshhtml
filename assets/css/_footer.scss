@@ -296,10 +296,12 @@
     }
 
     &__content {
-        font-size: 16px;
+        font-size: 15px;
+        margin-top: 0.75em;
 
         > p {
             font-size: inherit;
+            margin: 0.33em 0 0 0;
         }
 
         @media screen and (min-width: $bp-xxsm) {

@@ -322,6 +322,10 @@
         padding-left: 50px;
     }
 
+    @media screen and (min-width: $bp-xxxl) {
+        max-width: 1200px;
+    }
+
     &.is-active {
         display: block;
     }
@@ -350,6 +354,14 @@
         @media screen and (min-width: $bp-lg) {
             column-gap: 30px;
             column-width: 200px;
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            column-gap: 40px;
+        }
+
+        @media screen and (min-width: $bp-xxxl) {
+            column-width: 230px;
         }
     }
 
@@ -380,6 +392,10 @@
                 @media screen and (min-width: $bp-md) {
                     font-weight: 500;
                 }
+
+                @media screen and (min-width: $bp-xxxl) {
+                    font-size: 15.5px;
+                }
             }
 
             &:hover {
@@ -397,6 +413,10 @@
             &:nth-child(n + 7) {
                 display: none;
             }
+
+            @media screen and (min-width: $bp-xxxl) {
+                font-size: 14.5px;
+            }
         }
     }
 
@@ -410,6 +430,12 @@
         }
 
         .catalog-tab__more {
+            color: $text-ll;
+
+            &:hover {
+                color: $text-l;
+            }
+
             &::before {
                 content: "Скрыть ";
             }
@@ -428,15 +454,16 @@
         font-size: 13px;
         text-align: left;
         color: $text-ll;
+        color: $main-l;
         background: none;
-        padding: 5px 0;
+        padding: 7px 0;
 
         @media screen and (min-width: $bp-md) {
             display: flex;
         }
 
         &:hover {
-            color: $main-l;
+            color: $main-d;
         }
 
         &::after {
