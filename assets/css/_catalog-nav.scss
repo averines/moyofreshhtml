@@ -199,6 +199,14 @@
         &:hover {
             background-color: $bg-d;
 
+            > img {
+                transform: translateY(7px);
+
+                @media screen and (min-width: $bp-sm) {
+                    transform: none;
+                }
+            }
+
             @media screen and (min-width: $bp-sm) {
                 background-color: $bg-l;
             }
@@ -279,12 +287,14 @@
             transform: translateY(10px);
             margin-top: -40px;
             pointer-events: none;
+            transition: $t;
 
             @media screen and (min-width: $bp-sm) {
                 width: 40px;
                 height: 40px;
                 transform: none;
                 margin: 0;
+                transition: none;
             }
 
             @media screen and (min-width: $bp-lg) {

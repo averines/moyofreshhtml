@@ -92,7 +92,7 @@ h2,
 
 h3,
 .h3 {
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
 	line-height: 1.2;
 }
@@ -188,6 +188,13 @@ p {
 	width: 1px;
 	height: 1px;
 	margin: -1px;
+}
+
+
+.text-marker {
+	background-color: $main-ll;
+	padding: 0.2em 0.35em;
+	border-radius: $br-sm;
 }
 
 .img-fluid {

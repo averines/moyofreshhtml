@@ -52,14 +52,16 @@
     position: relative;
 
     &:hover {
-        .user-nav-dropdown {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: all;
-            transform: translateY(0) translateX(-50%);
+        @media screen and (min-width: $bp-sm) {
+            .user-nav-dropdown {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+                transform: translateY(0) translateX(-50%);
 
-            &--right {
-                transform: translateY(0);
+                &--right {
+                    transform: translateY(0);
+                }
             }
         }
     }
