@@ -3,6 +3,7 @@ $main: #8d1ecd;
 $main-d: #7f0fc5;
 $main-l: #ac2dda;
 $main-ll: #f4e0fe;
+$main-dimmed: #b088fb;
 
 // холоднее
 // $main: #781ecd;
@@ -16,8 +17,10 @@ $bad: #e7003e;
 $special-1: #e7003e;
 $special-2: #cb2e8c;
 $special-3: #f459b6;
+$special-4: #03c5bb;
 
-$g-main: linear-gradient(100deg, $special-1, $special-2);
+$g-main: linear-gradient(100deg, $main, $special-3);
+$g-special: linear-gradient(100deg, $special-1, $special-2);
 // $g-good: linear-gradient(100deg, #20d798, #09b3bb);
 // $g-good: linear-gradient(80deg, #D2FF52, #01d8cd);
 $g-good: linear-gradient(100deg, #a3ee4e, #03c5bb);
