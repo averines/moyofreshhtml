@@ -190,7 +190,6 @@ p {
 	margin: -1px;
 }
 
-
 .text-marker {
 	background-color: $main-ll;
 	padding: 0.2em 0.35em;
@@ -234,12 +233,12 @@ hr {
 
 		&::before {
 			content: "•";
-			font-size: 1.25em;
+			font-size: 1.5em;
 			line-height: 1em;
 			position: absolute;
 			top: -0.1em;
 			left: -1em;
-			color: $main;
+			color: $main-l;
 		}
 
 		&.checked {
