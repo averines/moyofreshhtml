@@ -284,7 +284,7 @@
     }
 }
 
-.logo {
+.header-logo {
     display: block;
     text-indent: -1000em;
     width: 120px;
@@ -299,76 +299,7 @@
     }
 }
 
-.catalog-btn {
-    background-color: $main;
-    color: #fff;
-    border-radius: $br-sm;
-    border: none;
-    height: 42px;
-    width: 100%;
-    padding: 2px 11px 0 14px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    column-gap: 9px;
-    transition: background-color 0.2s ease-in-out;
-    line-height: 1;
-    letter-spacing: 0.025em;
-    flex-shrink: 0;
-    order: 1;
-    user-select: none;
-
-    @media screen and (min-width: $bp-xxxsm) {
-        margin-left: auto;
-        max-width: 135px;
-    }
-
-    @media screen and (min-width: $bp-sm) {
-        margin-left: 0;
-    }
-
-    @media screen and (min-width: $bp-md) {
-        max-width: 155px;
-        display: flex;
-        order: 1;
-    }
-
-    &:hover {
-        background-color: $main-d;
-    }
-
-    &::before {
-        content: "";
-        display: block;
-        width: 1em;
-        height: 1em;
-        background: url(../img/icons/burger.svg) no-repeat center/100%;
-        flex-shrink: 0;
-    }
-
-    &::after {
-        content: "";
-        width: 1em;
-        height: 1em;
-        background: url(../img/icons/chevron-down.svg) no-repeat center/130%;
-        flex-shrink: 0;
-        filter: brightness(10);
-        opacity: 0.5;
-        margin-left: auto;
-    }
-
-    &.is-active {
-        &::before {
-            background: url(../img/icons/close-w.svg) no-repeat center/130%;
-        }
-    }
-
-    > span {
-        pointer-events: none;
-    }
-}
-
-// низ======================
+// низ===========================
 .header-bottom {
     padding: 15px 0 14px 0;
     display: none;
@@ -443,7 +374,7 @@
                 column-gap: 2px;
 
                 &:hover {
-                    > span {
+                    > .icon--sale {
                         transform: translateY(-2px) scale(1.07) rotate(8deg);
 
                         &::before {
@@ -456,6 +387,15 @@
                             transform: translateX(2px) translateY(-2px);
                         }
                     }
+
+                    > .icon--fire {
+                        animation: fire 1s infinite alternate;
+                        transform-origin: bottom center;
+
+                        &::after {
+                            animation: spark 1s infinite;
+                        }
+                    }
                 }
 
                 > span {
@@ -464,7 +404,11 @@
                     flex-shrink: 0;
                     transition: $t;
                     position: relative;
+                }
+            }
 
+            &--sale {
+                > span {
                     &::after,
                     &::before {
                         opacity: 0;
@@ -479,16 +423,75 @@
                     &::after {
                         right: -3px;
                         top: -2px;
-                        background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='6.74557' cy='6.59691' rx='3.45211' ry='4.60177' transform='rotate(50.2398 6.74557 6.59691)' fill='%23C87726'/%3E%3Cellipse cx='5.74557' cy='5.59691' rx='3.45211' ry='4.60177' transform='rotate(50.2398 5.74557 5.59691)' fill='%23FACB72'/%3E%3C/svg%3E%0A");
+                        background: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='6.74557' cy='6.59691' rx='3.45211' ry='4.60177' transform='rotate(50.2398 6.74557 6.59691)' fill='%23C87726'/%3E%3Cellipse cx='5.74557' cy='5.59691' rx='3.45211' ry='4.60177' transform='rotate(50.2398 5.74557 5.59691)' fill='%23FACB72'/%3E%3C/svg%3E%0A") no-repeat center/100%;
                     }
 
                     &::before {
                         left: -1px;
                         top: 5px;
-                        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='3.22849' cy='4.51936' rx='3.22849' ry='4.51936' transform='matrix(-0.73865 0.67409 0.845438 0.534073 4.76953 0.820312)' fill='%23C87726'/%3E%3Cellipse cx='3.22849' cy='4.51936' rx='3.22849' ry='4.51936' transform='matrix(-0.73865 0.67409 0.845438 0.534073 4.84961 0)' fill='%23FACB72'/%3E%3C/svg%3E%0A");
+                        background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='3.22849' cy='4.51936' rx='3.22849' ry='4.51936' transform='matrix(-0.73865 0.67409 0.845438 0.534073 4.76953 0.820312)' fill='%23C87726'/%3E%3Cellipse cx='3.22849' cy='4.51936' rx='3.22849' ry='4.51936' transform='matrix(-0.73865 0.67409 0.845438 0.534073 4.84961 0)' fill='%23FACB72'/%3E%3C/svg%3E%0A") no-repeat center/100%;
+                    }
+                }
+            }
+
+            &--fire {
+                > span {
+                    transform-style: preserve-3d;
+
+                    &::after {
+                        opacity: 0;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 3px;
+                        height: 3px;
+                        right: 7px;
+                        bottom: 40%;
+                        transition: opacity 0.1s ease-in-out, transform 0.275s ease-in-out;
+                        background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.65 15.13'%3E%3Cpath fill='%23ff0040' d='M2.73,15.05c-6.54-4.58.7-10.25,1-15C4.62-.18,10.4,16.43,2.73,15.05Z'/%3E%3C/svg%3E") no-repeat center;
                     }
                 }
             }
         }
+    }
+}
+
+@keyframes fire {
+    0% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0.95) skewX(-3deg);
+        filter: saturate(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1.02) skewX(3deg);
+    }
+}
+
+@keyframes spark {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+
+    25% {
+        opacity: 0.75;
+        transform: translate(0, -6px);
+        filter: hue-rotate(40deg);
+    }
+
+    50% {
+        opacity: 0.75;
+        transform: translate(-1px, -7px);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: translate(-3px, -14px);
     }
 }

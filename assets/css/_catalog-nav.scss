@@ -1,3 +1,72 @@
+.catalog-btn {
+    background-color: $main;
+    color: #fff;
+    border-radius: $br-sm;
+    border: none;
+    height: 42px;
+    width: 100%;
+    padding: 2px 11px 0 14px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 9px;
+    transition: background-color 0.2s ease-in-out;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    flex-shrink: 0;
+    order: 1;
+    user-select: none;
+
+    @media screen and (min-width: $bp-xxxsm) {
+        margin-left: auto;
+        max-width: 135px;
+    }
+
+    @media screen and (min-width: $bp-sm) {
+        margin-left: 0;
+    }
+
+    @media screen and (min-width: $bp-md) {
+        max-width: 155px;
+        display: flex;
+        order: 1;
+    }
+
+    &:hover {
+        background-color: $main-d;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 1em;
+        height: 1em;
+        background: url(../img/icons/burger.svg) no-repeat center/100%;
+        flex-shrink: 0;
+    }
+
+    &::after {
+        content: "";
+        width: 1em;
+        height: 1em;
+        background: url(../img/icons/chevron-down.svg) no-repeat center/130%;
+        flex-shrink: 0;
+        filter: brightness(10);
+        opacity: 0.5;
+        margin-left: auto;
+    }
+
+    &.is-active {
+        &::before {
+            background: url(../img/icons/close-w.svg) no-repeat center/130%;
+        }
+    }
+
+    > span {
+        pointer-events: none;
+    }
+}
+
 .catalog-nav {
     position: absolute;
     background-color: #fff;
@@ -497,14 +566,17 @@
 
 // особый спискок брендов во вкладке выпадающего меню каталога
 .catalog-list {
-    margin: 0;
+    margin: 0 0 45px 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     column-gap: 8px;
     row-gap: 6px;
-    margin-bottom: 45px;
+
+    @media screen and (min-width: $bp-lg) {
+        margin-bottom: 20px;
+    }
 
     &__title {
         font-size: 14px;
@@ -534,6 +606,7 @@
             text-decoration: none;
             font-size: 12px;
             transition: $t;
+            line-height: 1.1;
 
             &:hover {
                 background-color: $main;
@@ -542,25 +615,56 @@
         }
     }
 
-    &--female {
+    &--female,
+    &--male {
+        @media screen and (min-width: $bp-lg) {
+            display: block;
+            border-radius: $br-lg;
+            background-color: #f9eeff;
+            padding: 20px;
+            column-fill: balance;
+            column-count: 4;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            grid-template-columns: repeat(5, 1fr);
+            column-count: 5;
+        }
+
+        @media screen and (min-width: $bp-xxl) {
+            grid-template-columns: repeat(6, 1fr);
+            column-count: 6;
+        }
+
         > li {
             > a {
                 background-color: #f9eeff;
+
+                @media screen and (min-width: $bp-lg) {
+                    padding: 0.3em 0.5em;
+                }
             }
         }
     }
 
     &--male {
+        @media screen and (min-width: $bp-lg) {
+            background-color: #eef3ff;
+        }
+
         > li {
             > a {
                 background-color: #eef3ff;
+
+                @media screen and (min-width: $bp-lg) {
+                    padding: 0.3em 0.5em;
+                }
             }
         }
     }
 }
 
 // меню в аккордеоне, в выпадающем меню. дублирует ссылки из top-menu
-
 .catalog-menu {
     margin: 10px 0 0 0;
     padding: 0;

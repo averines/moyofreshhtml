@@ -87,7 +87,7 @@
         <div class="header-main">
             <div class="container">
                 <div class="header-main__inner">
-                    <a class="logo" href="index.html">Optmoyo.ru – интернет-магазин женской, мужской и детской одежды.</a>
+                    <a class="header-logo" href="index.html">Optmoyo.ru – интернет-магазин женской, мужской и детской одежды.</a>
                     <button class="catalog-btn"><span>Каталог</span></button>
                     <div class="search">
                         <div class="search__wrapper">
@@ -394,7 +394,11 @@
                                     <img src="./assets/img/categories/action.png" alt="Акции" loading="lazy">
                                     <span>Акции</span>
                                 </a>
-                                <a class="catalog-nav__title" href="brands.html" data-tab-target="10">
+                                <a class="catalog-nav__title catalog-nav__title--special" href="category.html" data-tab-target="10">
+                                    <img src="./assets/img/categories/sale.png" alt="Скидки" loading="lazy">
+                                    <span>Скидки</span>
+                                </a>
+                                <a class="catalog-nav__title" href="brands.html" data-tab-target="11">
                                     <img src="./assets/img/categories/brand.png" alt="Бренды" loading="lazy">
                                     <span>Бренды</span>
                                 </a>
@@ -1241,7 +1245,7 @@
                                 </div>
                             </div>
                             <div class="catalog-tab" data-tab-id="9">
-                                <div class="catalog-tab__title">Акции и распродажи</div>
+                                <div class="catalog-tab__title">Акции и распродажи, ограниченные по времени</div>
                                 <div class="catalog-tab__content">
                                     <div class="catalog-tab__menu">
                                         <a href="#">Платья</a>
@@ -1249,6 +1253,14 @@
                                 </div>
                             </div>
                             <div class="catalog-tab" data-tab-id="10">
+                                <div class="catalog-tab__title">Скидки</div>
+                                <div class="catalog-tab__content">
+                                    <div class="catalog-tab__menu">
+                                        <a href="#">Платья</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-tab" data-tab-id="11">
                                 <div class="catalog-tab__title">Бренды по категориям</div>
                                 <div class="catalog-tab__content catalog-tab__content--block">
                                     <div class="catalog-list__wrapper">
@@ -1468,8 +1480,9 @@
                         <li><a href="category.html">Для дома</a></li>
                         <li><a href="category.html">Игрушки</a></li>
                         <li><a href="brands.html">Бренды</a></li>
-                        <li><a href="category.html" class="special special--flex">Акции <span class="icon icon--sale"></span></a></li>
-                        <!-- <li><a href="category.html">Только для <span class="icon-pro"></span></a></li> -->
+                        <li><a href="category.html" class="special special--flex special--fire">Акции <span class="icon icon--fire"></span></a></li>
+                        <li><a href="category.html" class="special special--flex special--sale">Скидки <span class="icon icon--sale"></span></a></li>
+                        <!-- <li><a href="category.html">Акции <span class="icon-pro"></span></a></li> -->
                     </ul>
                 </nav>
             </div>
