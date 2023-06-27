@@ -65,6 +65,17 @@ input[type="text"] {
 
 main {
 	min-height: 50vh;
+
+	a {
+		text-decoration: none;
+		color: $main;
+		transition: $t;
+
+		&:hover {
+			color: $main-dimmed;
+		}
+
+	}
 }
 
 h1,
@@ -85,14 +96,14 @@ h1,
 
 h2,
 .h2 {
-	font-size: 24px;
+	font-size: 25px;
 	font-weight: 500;
 	line-height: 1.2;
 }
 
 h3,
 .h3 {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 500;
 	line-height: 1.2;
 }
@@ -222,7 +233,7 @@ hr {
 	}
 }
 
-.marker {
+ul.marker {
 	margin: 1em 0;
 	padding: 0 0 0 2.5em;
 	list-style: none;
@@ -261,10 +272,18 @@ hr {
 }
 
 ol {
-	font-size: 14px;
+	font-size: 17px;
+	line-height: 1.5;
+	padding: 0 2em;
+	margin: 1em 0;
+
+	@media screen and (min-width: $bp-xsm) {
+		font-size: 16px;
+		line-height: 1.55;
+	}
 
 	li {
-		margin-bottom: 0.75em;
+		margin-bottom: 0.7em;
 
 		> a {
 			color: $main;
@@ -273,6 +292,61 @@ ol {
 			&:hover {
 				color: $main-d;
 				text-decoration: none;
+			}
+		}
+	}
+}
+
+ol.marker {
+	counter-reset: number;
+	list-style-type: none;
+	margin: 1.5em 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+
+
+	li {
+		position: relative;
+		padding-left: 2.5em;
+		margin: 0 0 1.25em 0;
+
+		&:last-child {
+			&::after {
+				content: "";
+				width: 1px;
+				height: 5000px;
+				background-color: $main-ll;
+				display: block;
+				left: calc(1em - 3px);
+				bottom: 100%;
+				position: absolute;
+				z-index: 0;
+			}
+		}
+
+		&::before {
+			content: counter(number);
+			counter-increment: number;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: -0.05em;
+			background-color: $main-ll;
+			padding: 0.45em 0.7em;
+			border-radius: $br-md;
+			line-height: 1;
+			z-index: 1;
+			font-size: 0.85em;
+			font-weight: 500;
+			color: $main-d;
+		}
+	}
+
+	&--center {
+		li {
+			&::before {
+				top: calc(50% - 0.9em);
 			}
 		}
 	}

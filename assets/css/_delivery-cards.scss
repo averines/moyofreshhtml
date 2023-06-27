@@ -1,0 +1,39 @@
+.delivery-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $bp-sm) {
+         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: $bp-lg) {
+        display: flex;
+    }
+}
+
+.delivery-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 10px;
+    padding: 35px 40px;
+    border-radius: $br-lg;
+    box-shadow: $bs-xsm;
+    transition: $t;
+    background-color: #fff;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $bs-sm;
+    }
+
+    > img {
+        display: block;
+        width: 100%;
+        max-width: 120px;
+    }
+}
