@@ -98,14 +98,14 @@
                     <div class="user-navs">
                         <div class="user-nav">
                             <button class="user-btn" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-login">
-                                <div class="user-btn__icon">
+                                <span class="user-btn__icon">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M4 18.5C8 12.5 14 12.5 18 18.5M11 4C11.9889 4 12.9556 4.29324 13.7779 4.84265C14.6001 5.39206 15.241 6.17295 15.6194 7.08658C15.9978 8.00021 16.0969 9.00555 15.9039 9.97545C15.711 10.9454 15.2348 11.8363 14.5355 12.5355C13.8363 13.2348 12.9454 13.711 11.9755 13.9039C11.0055 14.0969 10.0002 13.9978 9.08658 13.6194C8.17295 13.241 7.39206 12.6001 6.84265 11.7779C6.29324 10.9556 6 9.98891 6 9C6 7.67392 6.52678 6.40215 7.46447 5.46447C8.40215 4.52678 9.67392 4 11 4Z"
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" />
                                     </svg>
-                                </div>
-                                <div class="user-btn__title">Войти</div>
+                                </span>
+                                <span class="user-btn__title">Войти</span>
                             </button>
                             <div class="user-nav-dropdown user-nav-dropdown--md">
                                 <div class="text-bold text-sm mb-1">Личный кабинет</div>
@@ -213,7 +213,8 @@
                             <a class="user-btn" href="#">
                                 <div class="user-btn__icon">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.75 9.16699H3.66667M19.25 9.16699H18.3333M18.3333 9.16699L17.4167 18.3337H4.58333L3.66667 9.16699M18.3333 9.16699H14.6667M3.66667 9.16699H7.33333M11 12.8337V14.667M13.75 12.8337V14.667M8.25 12.8337V14.667M7.33333 9.16699H14.6667M7.33333 9.16699V7.33366C7.33333 6.11174 8.06667 3.66699 11 3.66699C13.9333 3.66699 14.6667 6.11174 14.6667 7.33366V9.16699"
+                                        <path
+                                            d="M2.75 9.16699H3.66667M19.25 9.16699H18.3333M18.3333 9.16699L17.4167 18.3337H4.58333L3.66667 9.16699M18.3333 9.16699H14.6667M3.66667 9.16699H7.33333M11 12.8337V14.667M13.75 12.8337V14.667M8.25 12.8337V14.667M7.33333 9.16699H14.6667M7.33333 9.16699V7.33366C7.33333 6.11174 8.06667 3.66699 11 3.66699C13.9333 3.66699 14.6667 6.11174 14.6667 7.33366V9.16699"
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
@@ -389,6 +390,10 @@
                                     <img src="./assets/img/categories/toy.png" alt="Игрушки" loading="lazy">
                                     <span>Игрушки</span>
                                 </a>
+                                <a class="catalog-nav__title" href="brands.html" data-tab-target="11">
+                                    <img src="./assets/img/categories/brand.png" alt="Бренды" loading="lazy">
+                                    <span>Бренды</span>
+                                </a>
                                 <a class="catalog-nav__title catalog-nav__title--special" href="category.html" data-tab-target="9">
                                     <img src="./assets/img/categories/action.png" alt="Акции" loading="lazy">
                                     <span>Акции</span>
@@ -396,10 +401,6 @@
                                 <a class="catalog-nav__title catalog-nav__title--special" href="category.html" data-tab-target="10">
                                     <img src="./assets/img/categories/sale.png" alt="Скидки" loading="lazy">
                                     <span>Скидки</span>
-                                </a>
-                                <a class="catalog-nav__title" href="brands.html" data-tab-target="11">
-                                    <img src="./assets/img/categories/brand.png" alt="Бренды" loading="lazy">
-                                    <span>Бренды</span>
                                 </a>
                             </nav>
                             <div class="accordion accordion--menu my-2 d-sm-none">
@@ -695,7 +696,7 @@
                                         <a href="#">Юбки</a>
                                         <a href="#">Комплекты</a>
                                     </div>
-    
+
                                     <div class="catalog-tab__menu">
                                         <a href="#">Верхняя одежда</a>
                                         <a href="#">Жакеты</a>
@@ -1366,11 +1367,11 @@
                                             <li><a href="#">WOLA</a></li>
                                             <li><a href="#">YOULALA</a></li>
                                         </ul>
-    
+
                                     </div>
                                     <div class="catalog-list__wrapper">
                                         <div class="catalog-list__title">Мужчинам</div>
-    
+
                                         <ul class="catalog-list catalog-list--male">
                                             <li><a href="#">АПРЕЛЬ</a></li>
                                             <li><a href="#">НАТАЛИ</a></li>
@@ -1396,7 +1397,7 @@
                                             <li><a href="#">VILATTE</a></li>
                                             <li><a href="#">WOLA</a></li>
                                         </ul>
-    
+
                                     </div>
                                     <div class="catalog-list__wrapper">
                                         <div class="catalog-list__title">Мальчикам</div>
@@ -1524,7 +1525,7 @@
                 </nav>
                 <p>Мы предлагаем широкий ассортимент одежды и аксессуаров: от домашней и повседневной одежды до элегантных нарядов для особых случаев.</p>
                 <p>Наша компания всегда старается предоставить наилучшие условия для своих клиентов.
-                Для этого мы развиваем автоматизацию процессов, увеличиваем скорость обработки заказов и повышаем качество обслуживания.</p>
+                    Для этого мы развиваем автоматизацию процессов, увеличиваем скорость обработки заказов и повышаем качество обслуживания.</p>
                 <p>Выбирая наш магазин, вы можете быть уверены в том, что покупаете не только модную и качественную одежду, но и экономите свой бюджет.
                     Мы стараемся установить доступные цены для каждого клиента. Это возможно благодаря тому, что мы работаем напрямую с производителями одежды, минуя посредников и дополнительные наценки.</p>
             </div>

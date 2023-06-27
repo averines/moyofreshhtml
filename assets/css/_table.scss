@@ -29,6 +29,12 @@
         }
     }
 
+    &--nowrap {
+        td {
+            white-space: nowrap;
+        }
+    }
+
     &--hover {
         tbody {
             tr {
@@ -167,6 +173,7 @@
 .table-responsive {
     width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
     padding-right: 30px;
     mask-image: linear-gradient(90deg, #000 calc(100% - 30px), transparent);
 
