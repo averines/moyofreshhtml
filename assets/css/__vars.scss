@@ -12,6 +12,7 @@ $main-dimmed: #b088fb;
 // $main-ll: #f0e0fe;
 
 $good: #59fc3f;
+$good-ll: #e1fcc3;
 $bad: #e7003e;
 
 $special-1: #e7003e;
@@ -20,10 +21,13 @@ $special-3: #f459b6;
 $special-4: #03c5bb;
 
 $g-main: linear-gradient(100deg, $main, $special-3);
+$g-main-l: linear-gradient(100deg, $main-ll, lighten($special-3, 30));
+
 $g-special: linear-gradient(100deg, $special-1, $special-2);
 // $g-good: linear-gradient(100deg, #20d798, #09b3bb);
 // $g-good: linear-gradient(80deg, #D2FF52, #01d8cd);
 $g-good: linear-gradient(100deg, #a3ee4e, #03c5bb);
+$g-good-l: linear-gradient(100deg, #e1fcc3, #97f3ee);
 
 $text: #2f3142;
 // $text-l: #71738f; //новый более контрастный
@@ -48,9 +52,9 @@ $cub2: cubic-bezier(0.71, -0.4, 0.09, 0.99);
 $bp-xxxsm: 320px;
 $bp-xxsm: 400px;
 $bp-xsm: 575px;
-// на 750 заканчиваетя мобильная версия
+// на 750 заканчиваетcя мобильная версия
 $bp-sm: 750px; 
-$bp-md: 900px;
+$bp-md: 1000px;
 $bp-lg: 1100px;
 $bp-xl: 1300px;
 $bp-xxl: 1600px;

@@ -17,6 +17,12 @@
         background-color: $main-d;
     }
 
+    &--sm {
+        padding: 0.45em 1em;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
     &--full {
         width: 100%;
     }
@@ -51,6 +57,7 @@
 
         &:hover {
             background-color: darken($text, 4);
+            color: #fff;
         }
 
         &.btn--outline {

@@ -55,18 +55,21 @@
                                     <li><a href="info-returns.html">Возврат</a></li>
                                     <li><a href="info-faq.html">Ответы на вопросы</a></li>
                                     <li><a href="info-sizes.html">Таблица размеров</a></li>
+                                    <li><a href="info-bonus.html">Организаторам совместных покупок</a></li>
                                 </ul>
                             </li>
                             <li><a href="info-contacts.html">Контакты</a></li>
+                            <li><a class="top-menu__special" href="info-cooperation.html">Продавайте на OptMoyo</a></li>
+                            <li><a class="top-menu__special top-menu__special--g-main" href="info-bonus.html">Организаторам СП</a></li>
                         </ul>
                     </nav>
                     <div class="header-info">
                         <div class="header-contacts">
-                            <a class="header-contacts__title" href="tel:88003012575">8 (800) 301-25-75</a>
+                            <a class="header-contacts__title" href="tel:88003012575">8 800 301-25-75</a>
                             <div class="header-contacts__content">
                                 <a href="tel:88003012575" class="header-phone">
                                     <div class="header-phone__content">
-                                        <div class="header-phone__title">8 (800) 301-25-75</div>
+                                        <div class="header-phone__title">8 800 301-25-75</div>
                                         <div class="header-phone__description">Бесплатный звонок по&nbsp;России</div>
                                     </div>
                                 </a>
@@ -425,6 +428,7 @@
                                             <li><a href="info-returns.html">Возврат</a></li>
                                             <li><a href="info-faq.html">Ответы на вопросы</a></li>
                                             <li><a href="info-sizes.html">Таблица размеров</a></li>
+                                            <li><a href="info-bonus.html">Организаторам совместных покупок</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -434,7 +438,7 @@
                                 <div class="h3">Мы на связи</div>
                                 <a href="tel:88003012575" class="header-phone header-phone--lg">
                                     <div class="header-phone__content">
-                                        <div class="header-phone__title">8 (800) 301-25-75</div>
+                                        <div class="header-phone__title">8 800 301-25-75</div>
                                         <div class="header-phone__description">Бесплатный звонок по&nbsp;России</div>
                                     </div>
                                     <div class="header-phone__icon"><span class="icon-phone-call"></span></div>
@@ -1503,7 +1507,7 @@
                         <meta itemprop="position" content="2">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name">Способы оплаты</span>
+                        <span itemprop="name">Парсеры и API</span>
                         <meta itemprop="position" content="3">
                     </li>
                 </ol>
@@ -1511,53 +1515,43 @@
         </div>
 
         <div class="container">
-            <div class="box box--sm">
-                <h1>Способы оплаты</h1>
+            <div class="box">
+                <h1>Парсеры и API</h1>
             </div>
 
-            <div class="box">
+            <div class="box box--sm">
                 <nav class="page-menu mt-2 mb-4">
-                    <a href="info-conditions.html" class="page-menu__item">Условия для покупателей</a>
-                    <a href="info-delivery.html" class="page-menu__item">Доставка</a>
-                    <span class="page-menu__item page-menu__item--active">Оплата</span>
-                    <a href="info-faq.html" class="page-menu__item">Ответы на вопросы</a>
-                    <a href="info-sizes.html" class="page-menu__item">Таблица размеров</a>
+                    <a href="info-about.html" class="page-menu__item">Компания</a>
+                    <a href="info-cooperation.html" class="page-menu__item">Сотрудничество с производителями</a>
+                    <span class="page-menu__item page-menu__item--active">Парсеры и API</span>
+                    <a href="info-contacts.html" class="page-menu__item">Контакты</a>
                 </nav>
             </div>
 
-            <div class="box my-4">
-                <p>Подтвержденный заказ можно оплатить следующими способами:</p>
+            <div class="box">
+                <h2>Ограничения для парсеров</h2>
+                <p>Страницы товаров и каталога отдаются со скоростью 3.5 стр/сек.</p>
+                <p>При более частых запросах устанавливается блокировка клиента на 60 сек.</p>
+
+                <h2 class="mt-2">Ответ сервера в формате YML</h2>
+                <p>Добавьте параметр <span class="text-marker text-marker--gray">yml</span> в конец url для <span class="text-bold">страниц каталога</span> и получите ответ от сервера в формате YML.</p>
+                <p>Например, <a href="https://optmoyo.ru/zhen/catalog/trikotazh?yml" target="_blank" rel="nofollow noindex">https://optmoyo.ru/zhen/catalog/trikotazh?yml</a></p>
+                <p>В ответе будет полная информация о каждом товаре (по умолчанию 60 шт.) и блок <span class="text-marker text-marker--gray">navigation</span>, в котором отображается итоговое количество страниц этой категории и ссылка на следующую страницу.</p>
+                <p>Если элемент <span class="text-marker text-marker--gray">next-page</span> со ссылкой на следующую страницу пуст, значит в этой категории товаров больше нет.</p>
+                
+                <h3 class="mt-2">Дополнительные параметры</h3>
+                <p>Можно передать в url и дополнительные параметры фильтрации, сортировки или пагинации, например: <br><a href="https://optmoyo.ru/zhen/catalog/trikotazh/3?page-size=198&sort=0&yml" target="_blank" rel="nofollow noindex">https://optmoyo.ru/zhen/catalog/trikotazh/3?page-size=198&sort=0&yml</a></p>
+                <p>Допустимые значения для параметра <span class="text-marker text-marker--gray">page-size</span>: 60, 198.</p>
+                <p>Если в YML не хватает какой-то информации, то свяжитесь с нами, мы дополним.</p>
+
+                
+                <h2 class="mt-3">Полный каталог (со штрихами)</h2>
+                <p>Последнее обновление от <span class="text-marker text-marker--good-ll">29.06.2023 14:12:38</span></p>
                 <ul class="marker">
-                    <li>Картой онлайн в личном кабинете или по ссылке из письма — для физ. лиц</li>
-                    <li>По выставленному счету — для юр.лиц</li>
-                    <li>Наличными или картой в пункте самовывоза при получении заказа — для физ. и юр. лиц</li>
+                    <li>Каталог в формате YML — <a href="https://optmoyo.ru/wapi/catalog.xml" target="_blank" rel="nofollow noindex">catalog.xml</a> (96,22 Mb)</li>
+                    <li>Каталог в формате YML (сжатый) — <a href="https://optmoyo.ru/wapi/catalog.xml" target="_blank" rel="nofollow noindex">catalog.xml.gz</a> (8,53 Mb)</li>
                 </ul>
-
-                <div class="alert alert--lg mt-4">
-                    <div class="alert__content">
-                        <h2>Сделки с маркируемым товаром</h2>
-                        <p>Обращаем внимание тех покупателей, которые являются ИП или юр. лицами (ООО, АО): законодательством установлены дополнительные требования для сделок с маркируемым товаром.</p>
-                        <p>Документооборот при отгрузке маркируемого товара между контрагентами, являющимися юр. лицами и ИП, должен осуществляться через систему ЭДО, независимо от способа оплаты товара. Если это правило не соблюдается, то товар с маркировкой выводится из оборота.</p>
-                        <p>Подробнее об обороте маркируемого товара на странице <a href="info-faq.html">Ответы на вопросы</a>.</p>
-                    </div>
-                </div>
-
-                <h2 class="h2 mt-3">Как оплатить?</h2>
-                <h3 class="h4 mt-1">Для покупателей со статусом «Розничная покупка»</h3>
-                <p>После подтверждения позиций поставщиком будет сформирована ссылка на оплату (в письме и в личном кабинете).
-                    Оплата на нашем сайте производится через эквайринг ПАО «Сбербанк» любыми картами любых банков.</p>
-                <h3 class="h4 mt-2">Для покупателей «Оптом для себя» и «Оптом для продажи»</h3>
-                <p>Сроки выставления счета по заказам 2-4 дня, зависит от заказанных брендов.</p>
-                <div class="alert alert--sm">
-                    <p class="text-sm">Внимание: корректировка заказа возможна только по согласованию с менеджером. <br>Оформленные заказы обязательны к выкупу.
-                    <p>
-                </div>
-
-                <p>Оплата можно произвести как по выставленному счету, так и по ссылке на оплату (в письме и в личном кабинете).
-                    Оплата на нашем сайте производится через экваринг ПАО «Сбербанк» любыми картами любых банков.</p>
-
-                <p class="mt-3">Подробнее о статусах покупателя на странице <a href="user-register.html">Регистрация</a>.</p>
-
+                <p>Файлы обновляются каждые 3 часа.</p>
             </div>
         </div>
     </main>
@@ -1583,6 +1577,7 @@
                         <li><a href="info-returns.html">Возврат</a></li>
                         <li><a href="info-faq.html">Ответы на вопросы</a></li>
                         <li><a href="info-sizes.html">Таблица размеров</a></li>
+                        <li><a href="info-bonus.html">Организаторам СП</a></li>
                         <li><a href="https://yandex.ru/maps/org/optmoyo_ru/37159877855/reviews/?add-review=true&ll=37.736501%2C55.778036&z=17" target="_blank" rel="nofollow noopener">Оставить отзыв <span class="text-nowrap">на Яндексе <span class="icon icon--external"></span></span></a></li>
                     </ul>
                 </nav>

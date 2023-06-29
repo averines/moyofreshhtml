@@ -42,6 +42,20 @@
         }
     }
 
+    &__icon {
+        padding: 0;
+        margin-left: 10px;
+        display: flex;
+
+        &--center {
+            justify-content: center;
+        }
+
+        &--end {
+            justify-content: flex-end;
+        }
+    }
+
     &--sm {
         padding: 12px 20px;
         border-radius: $br-md;
