@@ -30,6 +30,20 @@
     &--fire {
         background: url(../img/icons/fire.svg) no-repeat center/100%;
     }
+
+    &--external-main {
+        background: url(../img/icons/external-main.svg) no-repeat center/100%;
+    }
+
+    &--external{
+        background: url(../img/icons/external-main.svg) no-repeat center/100%;
+        filter: grayscale(1);
+        opacity: 0.5;
+        width: 1em;
+        height: 1em;
+        transform: translateY(1px);
+        transition: $t;
+    }
 }
 
 .icon-pro {

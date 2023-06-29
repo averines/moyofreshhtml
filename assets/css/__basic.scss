@@ -74,7 +74,6 @@ main {
 		&:hover {
 			color: $main-dimmed;
 		}
-
 	}
 }
 
@@ -155,6 +154,10 @@ p {
 
 .text-italic {
 	font-style: italic;
+}
+
+.text-dark {
+	color: $text;
 }
 
 .text-main {
@@ -304,7 +307,6 @@ ol.marker {
 	padding: 0;
 	position: relative;
 	overflow: hidden;
-
 
 	li {
 		position: relative;
