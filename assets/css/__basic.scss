@@ -282,13 +282,6 @@ ul.marker {
 			color: $main-l;
 		}
 
-		&.checked {
-			&::before {
-				content: "✔";
-				color: $good;
-			}
-		}
-
 		a {
 			text-decoration: none;
 			color: $main;
@@ -296,6 +289,24 @@ ul.marker {
 
 			&:hover {
 				color: $main-d;
+			}
+		}
+	}
+
+	&--checked {
+		li {
+			&::before {
+				content: "";
+				width: 1em;
+				height: 1em;
+				background: url(../img/icons/check.svg) no-repeat center/80%;
+				left: -1.25em;
+			}
+
+			&.marker__item--alert {
+				&::before {
+					background: url(../img/icons/alert-triangle.svg) no-repeat center/90%;
+				}
 			}
 		}
 	}
@@ -433,4 +444,30 @@ ol.marker {
 
 .fancybox__container {
 	--fancybox-bg: rgb(40 39 61 / 95%);
+}
+
+.worktime {
+	border: 1px solid $line-d;
+	padding: 0.5em 1em;
+	border-radius: $br-xl;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+	column-gap: 5px;
+	font-size: 14px;
+
+	&::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		display: block;
+		background-color: $good;
+		border-radius: 50%;
+	}
+
+	&.is-close {
+		&::before {
+			background-color: $bad;
+		}
+	}
 }

@@ -98,3 +98,29 @@ Fancybox.bind("[data-fancybox]", {});
 // слайдер через фансибокс
 const sliderMain = document.getElementById("sliderMain");
 if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
+
+
+// let nowMsk = new Date().toLocaleString("en-US", { timeZone: "Europe/Moscow" })
+// let offset = now.getTimezoneOffset();
+
+// function checkWorktime(start, end) {
+//     let now = new Date();
+//     let hours = now.getHours();
+
+//     let status;
+
+//     if (hours > start & hours < end) {
+//         status = "is-active";
+//         text = `Сейчас работает, осталось ${end - hours} часов`
+//     } else {
+//         status = "is-close"
+//     }
+
+//     let el = document.getElementById("js-worktime");
+//     if (el) {
+//         el.classList.add(status);
+//         el.innerText = text;
+//     }
+// }
+
+// console.log(checkWorktime(10, 20))
