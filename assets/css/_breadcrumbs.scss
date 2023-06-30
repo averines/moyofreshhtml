@@ -11,6 +11,8 @@
         display: flex;
         align-items: center;
         column-gap: 10px;
+        font-size: 14px;
+        margin: 0;
 
         &::after {
             content: "";
@@ -26,7 +28,6 @@
                 display: none;
             }
         }
-
 
         > a {
             text-decoration: none;

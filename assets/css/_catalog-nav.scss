@@ -70,15 +70,19 @@
 .catalog-nav {
     position: absolute;
     background-color: #fff;
-    top: 70px;
+    top: 120px;
     left: 0;
     right: 0;
     z-index: 2;
-    height: calc(100vh - 70px);
+    height: 100vh;
     display: none;
 
-    @media screen and (min-width: $bp-md) {
+    @media screen and (min-width: $bp-xxxsm) {
         top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    @media screen and (min-width: $bp-md) {
         height: calc(100vh - 110px);
     }
 
@@ -93,15 +97,15 @@
 
     > .container {
         height: 100%;
-        border-radius: $br-xl;
+        // border-radius: $br-xl;
 
-        @media screen and (min-height: 1200px) {
-            height: calc(80%);
-        }
+        // @media screen and (min-height: 1200px) {
+        //     height: 80%;
+        // }
     }
 
     &__inner {
-        height: calc(100% - 70px);
+        height: calc(100% - 75px);
 
         @media screen and (min-width: $bp-sm) {
             display: grid;
@@ -116,7 +120,6 @@
 
         @media screen and (min-width: $bp-xl) {
             margin: 0 -14px;
-            // padding-bottom: 50px;
         }
     }
 
@@ -196,14 +199,17 @@
     }
 
     &__titles {
+        margin: 0;
+        padding: 0;
+        list-style: none;
         display: grid;
+        grid-template-columns: 1fr 1fr;
         grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
         row-gap: 50px;
         column-gap: 10px;
         padding-top: 40px;
 
-        @media screen and (min-width: $bp-xxsm) {
-            column-gap: 15px;
+        @media screen and (min-width: $bp-xxxsm) {
             grid-template-columns: 1fr 1fr 1fr;
         }
 
@@ -220,6 +226,16 @@
             row-gap: 0;
             grid-template-columns: 1fr;
         }
+
+        > li {
+            &.is-active {
+                .catalog-nav__title {
+                    @media screen and (min-width: $bp-sm) {
+                        background-color: $bg-l;
+                    }
+                }
+            }
+        }
     }
 
     &__title {
@@ -232,15 +248,30 @@
         text-decoration: none;
         color: $text;
         border-radius: $br-xl;
-        font-size: 13.5px;
+        font-size: 13px;
         line-height: 1.2;
         transition: background-color 0.2s ease-in-out;
         font-weight: 500;
         position: relative;
+        height: 100%;
+
+        @media (hover: none) and (pointer: coarse) {
+            pointer-events: none;
+        }
+
+        @media screen and (min-width: $bp-xxxsm) {
+            font-size: 13.5px;
+        }
+
+        @media screen and (min-width: $bp-xxsm) {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
 
         @media screen and (min-width: $bp-xsm) {
             padding-left: 20px;
             padding-right: 20px;
+            font-size: 16px;
         }
 
         @media screen and (min-width: $bp-sm) {
@@ -291,12 +322,6 @@
                 margin-left: auto;
                 transform: rotate(-90deg);
                 opacity: 0.75;
-            }
-        }
-
-        &.is-active {
-            @media screen and (min-width: $bp-sm) {
-                background-color: $bg-l;
             }
         }
 
@@ -373,12 +398,11 @@
         }
 
         > span {
-            padding: 5px 15px 15px 15px;
+            padding: 5px 5px 15px 5px;
             margin: auto 0;
 
             @media screen and (min-width: $bp-xxsm) {
-                padding-top: 15px;
-                padding-bottom: 20px;
+                padding: 15px 15px 20px 15px;
             }
 
             @media screen and (min-width: $bp-sm) {
@@ -412,8 +436,14 @@
     &__title {
         font-size: 20px;
         font-weight: 500;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
         line-height: 1.1;
+        display: grid;
+        justify-content: start;
+        row-gap: 7px;
+        text-decoration: none;
+        color: $text;
+        transition: $t;
 
         @media screen and (min-width: $bp-md) {
             font-size: 24px;
@@ -421,6 +451,16 @@
 
         @media screen and (min-width: $bp-lg) {
             font-size: 28px;
+        }
+
+        &:hover {
+            color: $main-d;
+        }
+
+        > span {
+            text-decoration: none;
+            font-size: 0.55em;
+            color: $main;
         }
     }
 
@@ -564,7 +604,7 @@
     }
 }
 
-// особый спискок брендов во вкладке выпадающего меню каталога
+// список брендов во вкладке выпадающего меню каталога
 .catalog-list {
     margin: 0 0 45px 0;
     padding: 0;
@@ -620,7 +660,7 @@
         @media screen and (min-width: $bp-lg) {
             display: block;
             border-radius: $br-lg;
-            background-color: #f9eeff;
+            background-color: #fff6fd;
             padding: 20px;
             column-fill: balance;
             column-count: 4;
@@ -638,7 +678,7 @@
 
         > li {
             > a {
-                background-color: #f9eeff;
+                background-color: #fff6fd;
 
                 @media screen and (min-width: $bp-lg) {
                     padding: 0.3em 0.5em;
@@ -649,12 +689,12 @@
 
     &--male {
         @media screen and (min-width: $bp-lg) {
-            background-color: #eef3ff;
+            background-color: #f5f8ff;
         }
 
         > li {
             > a {
-                background-color: #eef3ff;
+                background-color: #f5f8ff;
 
                 @media screen and (min-width: $bp-lg) {
                     padding: 0.3em 0.5em;

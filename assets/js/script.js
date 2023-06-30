@@ -74,7 +74,7 @@ if (catalogTabMenus) {
 }
 
 // показать табы выпадающего меню каталога при наведении
-const catalogTabTitles = document.querySelectorAll(".catalog-nav__title");
+const catalogTabTitles = document.querySelectorAll(".catalog-nav__titles li");
 const catalogTabs = document.querySelectorAll(".catalog-tab");
 if (catalogTabTitles && catalogTabs) {
     catalogTabTitles.forEach(title => {

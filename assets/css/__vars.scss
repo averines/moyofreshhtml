@@ -49,6 +49,7 @@ $ls-sm: 0.07em;
 $cub1: cubic-bezier(0.61, -0.44, 0.29, 1.4);
 $cub2: cubic-bezier(0.71, -0.4, 0.09, 0.99);
 
+// всё, что меньше xxxsm - айфон SE
 $bp-xxxsm: 320px;
 $bp-xxsm: 400px;
 $bp-xsm: 575px;
