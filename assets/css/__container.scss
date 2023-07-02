@@ -3,12 +3,12 @@
     padding: 0 15px;
     margin: 0 auto;
 
-    @media screen and (min-width: $bp-lg) {
-        padding: 0 20px;
+    @media screen and (min-width: $bp-sm) {
+        padding: 0 30px;
     }
 
-    @media screen and (min-width: $bp-xl) {
-        padding: 0 30px;
+    @media screen and (min-width: $bp-lg) {
+        padding: 0 40px;
     }
 
     &--sm {

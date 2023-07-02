@@ -23,6 +23,7 @@
         line-height: 2;
         height: 40px;
         font-size: 16px;
+        color: $text;
 
         @media screen and (min-width: $bp-sm) {
             font-size: 15px;
@@ -35,18 +36,31 @@
         &::placeholder {
             color: $text-ll;
         }
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__btn {
         display: block;
         width: 60px;
         height: 42px;
-        border: none;
+        border: 2px solid transparent;
         background: url(../img/icons/search.svg) no-repeat center;
         transition: $t;
+        border-radius: 0 $br-sm  $br-sm 0;
 
         &:hover {
             background-color: $main-d;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            background-size: 18px;
         }
     }
 }

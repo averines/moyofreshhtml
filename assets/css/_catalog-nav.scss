@@ -65,6 +65,10 @@
     > span {
         pointer-events: none;
     }
+
+    &:focus {
+        outline: 1px solid $text;
+    }
 }
 
 .catalog-nav {
