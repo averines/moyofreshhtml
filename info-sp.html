@@ -1533,7 +1533,7 @@
                         <meta itemprop="position" content="2">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name">Парсеры и API</span>
+                        <span itemprop="name">Организаторам СП</span>
                         <meta itemprop="position" content="3">
                     </li>
                 </ol>
@@ -1542,43 +1542,24 @@
 
         <div class="container">
             <div class="box">
-                <h1>Парсеры и API</h1>
+                <h1>Организаторам совместных покупок</h1>
             </div>
 
             <div class="box box--sm">
                 <nav class="page-menu mt-2 mb-4">
-                    <a href="info-about.html" class="page-menu__item">Компания</a>
-                    <a href="info-cooperation.html" class="page-menu__item">Сотрудничество с производителями</a>
-                    <span class="page-menu__item page-menu__item--active">Парсеры и API</span>
-                    <a href="info-contacts.html" class="page-menu__item">Контакты</a>
+                    <a href="info-conditions.html" class="page-menu__item">Условия</a>
+                    <a href="info-delivery.html" class="page-menu__item">Доставка</a>
+                    <a href="info-payment.html" class="page-menu__item">Оплата</a>
+                    <a href="info-bonus.html" class="page-menu__item">Скидки и бонусы</a>
+                    <a href="info-sp.html" class="page-menu__item page-menu__item--active">Организаторам СП</a>
+                    <a href="info-returns.html" class="page-menu__item">Возврат</a>
+                    <a href="info-faq.html" class="page-menu__item">Ответы на вопросы</a>
+                    <a href="info-sizes.html" class="page-menu__item">Таблица размеров</a>
                 </nav>
             </div>
 
             <div class="box">
-                <h2>Ограничения для парсеров</h2>
-                <p>Страницы товаров и каталога отдаются со скоростью 3.5 стр/сек.</p>
-                <p>При более частых запросах устанавливается блокировка клиента на 60 сек.</p>
 
-                <h2 class="mt-2">Ответ сервера в формате YML</h2>
-                <p>Для более удобного и быстрого парсинга рекомендуем использовать этот вариант.</p>
-                <p>Добавьте параметр <span class="text-marker text-marker--gray">yml</span> в конец url для <span class="text-bold">страниц каталога</span> и получите ответ от сервера в формате YML.</p>
-                <p>Например, <a href="https://optmoyo.ru/zhen/catalog/trikotazh?yml" target="_blank" rel="nofollow noindex">https://optmoyo.ru/zhen/catalog/trikotazh?yml</a></p>
-                <p>В ответе будет полная информация о каждом товаре (по умолчанию 60 шт.) и блок <span class="text-marker text-marker--gray">navigation</span>, в котором отображается итоговое количество страниц этой категории и ссылка на следующую страницу.</p>
-                <p>Если элемент <span class="text-marker text-marker--gray">next-page</span> со ссылкой на следующую страницу пуст, значит в этой категории товаров больше нет.</p>
-                
-                <h3 class="mt-2">Дополнительные параметры</h3>
-                <p>Можно передать в url и дополнительные параметры фильтрации, сортировки или пагинации, например: <br><a href="https://optmoyo.ru/zhen/catalog/trikotazh/3?page-size=198&sort=0&yml" target="_blank" rel="nofollow noindex">https://optmoyo.ru/zhen/catalog/trikotazh/3?page-size=198&sort=0&yml</a></p>
-                <p>Допустимые значения для параметра <span class="text-marker text-marker--gray">page-size</span>: 60, 198.</p>
-                <p>Если в YML не хватает какой-то информации, то свяжитесь с нами, мы дополним.</p>
-
-                
-                <h2 class="mt-3">Полный каталог (со&nbsp;штрихами)</h2>
-                <p>Последнее обновление <span class="text-marker text-nowrap text-marker--good-ll">29.06.2023 14:12:38</span></p>
-                <ul class="marker">
-                    <li>Каталог в формате YML — <a href="https://optmoyo.ru/wapi/catalog.xml" target="_blank" rel="nofollow noindex">catalog.xml</a> (96,22 Mb)</li>
-                    <li>Каталог в формате YML (сжатый) — <a href="https://optmoyo.ru/wapi/catalog.xml" target="_blank" rel="nofollow noindex">catalog.xml.gz</a> (8,53 Mb)</li>
-                </ul>
-                <p>Файлы обновляются каждые 3 часа.</p>
             </div>
         </div>
     </main>

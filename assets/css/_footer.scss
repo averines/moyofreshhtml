@@ -29,7 +29,7 @@
     @media screen and (min-width: $bp-md) {
         grid-template-columns: 1fr 1fr 1fr 1.5fr;
         column-gap: 40px;
-        row-gap: 30px;
+        row-gap: 50px;
     }
 
     @media screen and (min-width: $bp-xl) {
@@ -232,6 +232,10 @@
 }
 
 .footer-partner {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 30px;
     background: $g-main;
     border-radius: $br-xl;
     padding: 25px;
@@ -244,6 +248,10 @@
         grid-column: 1 / 3;
     }
 
+    @media screen and (min-width: $bp-xsm) {
+        flex-wrap: nowrap;
+    }
+
     @media screen and (min-width: $bp-md) {
         grid-column: 1 / 5;
         padding: 33px 33px 25px 33px;
@@ -253,6 +261,7 @@
         order: 0;
         grid-column: auto;
         margin-right: 20px;
+        flex-wrap: wrap;
     }
 
     @media screen and (min-width: $bp-xxl) {
@@ -300,19 +309,21 @@
 
     &__content {
         font-size: 15px;
-        margin-top: 0.75em;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.33em;
 
         @media screen and (min-width: $bp-xxsm) {
             font-size: 13px;
         }
 
+        @media screen and (min-width: $bp-xl) {
+            row-gap: 0.75em;
+        }
+
         > p {
             font-size: inherit;
-            margin: 0.4em 0 0 0;
-
-            @media screen and (min-width: $bp-xxsm) {
-                margin-top: 0.5em;
-            }
+            margin: 0;
         }
     }
 }

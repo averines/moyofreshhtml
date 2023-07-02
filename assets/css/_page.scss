@@ -24,6 +24,7 @@
         &--active {
             background-color: $main;
             color: #fff;
+            user-select: none;
         }
 
         &:hover {
