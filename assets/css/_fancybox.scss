@@ -5,6 +5,9 @@
     }
 
     &__content {
+        padding: 0;
+        // background: none;
+
         > .f-button {
             &.is-close-btn {
                 --f-button-svg-width: 20px;
@@ -13,5 +16,22 @@
                 right: 10px;
             }
         }
+    }
+
+    &__slide {
+        @media screen and (min-width: 1024px) {
+            padding: 20px;
+        }
+    }
+}
+
+.f-carousel {
+    --f-carousel-dot-width: 6px;
+    --f-carousel-dot-height: 6px;
+    --f-carousel-theme-color: $text;
+
+    &__dots {
+        position: absolute;
+        bottom: 0;
     }
 }

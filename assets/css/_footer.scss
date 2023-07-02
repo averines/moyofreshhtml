@@ -235,7 +235,7 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 10px;
-    column-gap: 30px;
+    column-gap: 40px;
     background: $g-main;
     border-radius: $br-xl;
     padding: 25px;
@@ -302,7 +302,7 @@
             display: block;
             width: 1em;
             height: 1em;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             background: url(../img/icons/external-w.svg) no-repeat center/100%;
         }
     }
