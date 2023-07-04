@@ -24,7 +24,12 @@
     }
 
     &--full {
-        max-width: 2500px;
+        // max-width: 2500px;
+        max-width: 1560px;
+
+        @media screen and (min-width: $bp-xxxl) {
+            max-width: 2100px;
+        }
     }
 
     &--bg {
