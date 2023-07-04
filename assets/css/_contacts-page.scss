@@ -94,6 +94,22 @@
         grid-template-columns: 1fr 1fr 0.8fr;
     }
 
+    &__decor {
+        display: grid;
+        border-bottom: 1px solid $main-ll;
+        margin-bottom: 30px;
+
+        @media screen and (min-width: $bp-lg) {
+            margin-top: -100px;
+        }
+
+        > img {
+            @media screen and (min-width: $bp-lg) {
+                justify-self: center;
+            }
+        }
+    }
+
     &__map {
         @media screen and (min-width: $bp-sm) {
             grid-column: 1 / 3;
