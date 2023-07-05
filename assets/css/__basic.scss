@@ -423,12 +423,14 @@ ol.marker {
 	display: inline-flex;
 	align-items: center;
 	column-gap: 5px;
-	font-size: 14px;
+	font-size: 13px;
+	color: $text-l;
+	margin-top: 5px;
 
 	&::before {
 		content: "";
-		width: 8px;
-		height: 8px;
+		width: 7px;
+		height: 7px;
 		display: block;
 		background-color: $good;
 		border-radius: 50%;

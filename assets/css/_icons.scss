@@ -35,7 +35,7 @@
         background: url(../img/icons/external-main.svg) no-repeat center/100%;
     }
 
-    &--external{
+    &--external {
         background: url(../img/icons/external-main.svg) no-repeat center/100%;
         filter: grayscale(1);
         opacity: 0.5;
@@ -43,6 +43,10 @@
         height: 1em;
         transform: translateY(1px);
         transition: $t;
+    }
+
+    &--download-main {
+        background: url(../img/icons/download-main.svg) no-repeat center/100%;
     }
 }
 

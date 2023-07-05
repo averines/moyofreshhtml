@@ -1,0 +1,40 @@
+.file-cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 15px;
+    align-items: flex-start;
+}
+
+.file-card {
+    padding: 15px 40px 15px 20px;
+    border-radius: $br-xl;
+    box-shadow: $bs-xsm;
+    display: flex;
+    column-gap: 12px;
+    text-decoration: none;
+    color: $text;
+    transition: $t;
+    border: 1px solid $line;
+
+    &:hover {
+        color: $main;
+        transform: translateY(-2px);
+        box-shadow: $bs-sm;
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        color: $text-l;
+        margin-top: 5px;
+    }
+
+    &__footer {
+        font-size: 13px;
+        color: $text-l;
+    }
+}
