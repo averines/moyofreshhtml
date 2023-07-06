@@ -53,6 +53,21 @@ window.addEventListener('click', (e) => {
             }
         }
     }
+
+    // выпадающее меню сортировки
+    if (e.target.classList.contains("sort-list__link")) {
+        let sortList = e.target.closest(".sort-list");
+
+        if (e.target.classList.contains("is-active")) {
+            e.preventDefault();
+            sortList.classList.toggle("is-active");
+        } else {
+            sortList.classList.remove("is-active");
+            document.querySelectorAll('.sort-list__link').forEach(i => i.classList.remove("is-active"));
+            e.target.classList.add("is-active");
+        }
+    }
+
 })
 
 // подсчёт пунктов в выпадающем меню каталога и кнопка показать/скрыть для длинных меню

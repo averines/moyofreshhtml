@@ -38,27 +38,119 @@
 }
 
 .sort-list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 15px;
-    row-gap: 15px;
-    font-size: 14px;
+    position: relative;
+    width: 100%;
+    height: 40px;
 
-    > a {
-        line-height: 1.3;
-        color: $text-l;
-        border-bottom: 1px dashed;
-        border-bottom-color: lighten($text-l, 23);
+    @media screen and (min-width: $bp-sm) {
+        height: auto;
+        width: auto;
+    }
 
-        &:hover {
-            color: $main;
-            border-bottom-color: $main;
+    &.is-active {
+        z-index: 99;
+
+        .sort-list__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-bottom: 30px;
+            box-shadow: $bs-md;
         }
 
-        &.is-active {
-            color: $main;
-            border-bottom-color: transparent;
+        a {
+            display: block;
+            order: 1;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        column-gap: 18px;
+        row-gap: 5px;
+        font-size: 14.5px;
+        width: 100%;
+        background-color: $bg-l;
+        border-radius: $br-lg;
+
+        @media screen and (min-width: $bp-sm) {
+            flex-wrap: wrap;
+            flex-direction: row;
+            font-size: 14px;
+            row-gap: 18px;
+            background: none;
+        }
+
+        .sort-list__link {
+            display: none;
+            line-height: 1;
+            color: $text;
+            padding: 1em;
+            width: 95%;
+            border-bottom: 1px solid $line-d;
+            text-align: center;
+            border-radius: $br-xl;
+            background-color: #fff;
+
+            &:hover {
+                color: $main;
+                border-bottom-color: darken($line-d, 10);
+                box-shadow: $bs-xsm;
+
+                @media screen and (min-width: $bp-sm) {
+                    border-bottom-color: lighten($main-dimmed, 8);
+                    box-shadow: none;
+                }
+            }
+
+            @media screen and (min-width: $bp-sm) {
+                width: auto;
+                display: block;
+                color: $text-l;
+                border-bottom: 1px dashed;
+                border-bottom-color: lighten($text-l, 23);
+                border-radius: 0;
+                background: none;
+                padding: 0.2em 0;
+            }
+
+            &.is-active {
+                display: flex;
+                column-gap: 5px;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 1em;
+                order: 0;
+                user-select: none;
+                background: none;
+                border-bottom-color: transparent;
+                color: $main;
+                box-shadow: none;
+                transition: none;
+
+                @media screen and (min-width: $bp-sm) {
+                    width: auto;
+                    padding: 0.2em 0;
+                    transform: translateY(1px);
+                    transition: $t;
+                }
+
+                &::after {
+                    content: "";
+                    width: 1em;
+                    height: 1em;
+                    display: block;
+                    background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+
+                    @media screen and (min-width: $bp-sm) {
+                        display: none;
+                    }
+                }
+            }
         }
     }
 }
@@ -66,24 +158,41 @@
 .pagination {
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
     column-gap: 3px;
+    user-select: none;
 
-    &__link {
+    > a {
         line-height: 1;
-        display: block;
         padding: 0.55em 0.8em;
         color: $text;
         border-radius: $br-md;
 
-        &--active {
-            color: $main-l;
-            background-color: $bg-l;
-        }
-
         &:hover {
             background-color: $bg-l;
-            color: $text;
+            color: $main-l;
+        }
+
+        &::before {
+            filter: brightness(0);
+        }
+    }
+
+    > span {
+        line-height: 1;
+        padding: 0.55em 0.8em;
+        color: $text;
+        border-radius: $br-md;
+
+        &.pagination__cap {
+            color: $text-ll;
+            padding: 0.5em 0.65em;
+            pointer-events: none;
+        }
+
+        &.is-active {
+            background-color: $bg-l;
+            pointer-events: none;
         }
     }
 
@@ -91,6 +200,7 @@
         display: flex;
         align-items: center;
         column-gap: 1px;
+        flex-wrap: nowrap;
 
         &::before {
             content: "";
@@ -109,12 +219,6 @@
             }
         }
 
-        &.pagination__link {
-            &::before {
-                filter: brightness(0);
-            }
-        }
-
         &:hover {
             &::before {
                 transform: rotate(90deg) translateY(2px);
@@ -127,11 +231,166 @@
             }
         }
     }
+}
 
-    > span {
+.page-switch {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    row-gap: 5px;
+
+    &__title {
+        font-size: 14px;
+        color: $text-l;
+    }
+
+    &__content {
+        display: flex;
+        column-gap: 4px;
+        padding: 4px;
+        border-radius: $br-lg;
+        background-color: $bg-l;
+
+        > button {
+            line-height: 1;
+            font-size: 13.5px;
+            padding: 0.5em 0.75em;
+            background-color: $bg-l;
+            border-radius: $br-md;
+            border: none;
+            transition: $t;
+            outline: 1px solid transparent;
+
+            &:hover {
+                // background-color: #fff;
+                // outline: 1px solid $bg-d;
+
+                // background-color: $main;
+                // color: #fff;
+
+                background-color: $main-dimmed;
+                color: #fff;
+            }
+
+            &.is-active {
+                background-color: #fff;
+                box-shadow: $bs-xsm;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            &:active {
+                transform: translateY(2px);
+            }
+        }
+    }
+}
+
+.page-select {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+
+    &__title {
+        font-size: 14px;
+        color: $text-l;
         line-height: 1;
-        color: $text-ll;
-        padding: 0.5em 0.65em;
-        pointer-events: none;
+    }
+
+    &__wrapper {
+        position: relative;
+        width: 100px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2px;
+
+        &:hover {
+            position: absolute;
+            top: -29px;
+            left: -10px;
+            box-shadow: $bs-sm;
+            border-radius: $br-md;
+            background-color: #fff;
+            padding: 15px 10px;
+
+            > button {
+                display: flex;
+            }
+        }
+
+        > button {
+            display: none;
+            order: 1;
+            text-align: left;
+            line-height: 1;
+            font-size: 14px;
+            background: none;
+            border: none;
+            padding: 7px 0;
+            color: $text;
+            font-weight: 500;
+
+            &:hover {
+                color: $main;
+            }
+
+            &.is-active {
+                display: flex;
+                align-items: center;
+                column-gap: 2px;
+                color: $main;
+                order: 0;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1em;
+                    height: 1em;
+                    background: url(../img/icons/chevron-down.svg) no-repeat center/130%;
+                }
+            }
+        }
+    }
+}
+
+.catalog-header {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 30px;
+    justify-content: space-between;
+
+    .pagination {
+        display: none;
+
+        @media screen and (min-width: $bp-sm) {
+            display: flex;
+        }
+    }
+}
+
+.catalog-footer {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $bp-xsm) {
+        justify-content: space-between;
+    }
+
+    .page-switch {
+        order: 1;
+        flex-direction: column;
+
+        @media screen and (min-width: $bp-sm) {
+            flex-direction: row;
+            order: 0;
+        }
     }
 }
