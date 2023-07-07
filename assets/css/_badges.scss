@@ -33,6 +33,16 @@
     &--new {
         background: $g-good;
         text-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+
+        &::after {
+            content: "NEW";
+        }
+    }
+
+    &--hit {
+        &::after {
+            content: "ХИТ";
+        }
     }
 
     &--sale {
