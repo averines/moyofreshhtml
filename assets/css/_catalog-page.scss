@@ -22,7 +22,7 @@
     column-gap: 6px;
     row-gap: 6px;
 
-    > a {
+    &__item {
         display: block;
         padding: 0.4em 1em;
         font-size: 14px;
@@ -33,6 +33,17 @@
         &:hover {
             color: $text;
             background-color: $bg-d;
+        }
+
+        &--active {
+            color: #fff;
+            background-color: $main;
+            user-select: none;
+
+            &:hover {
+                color: #fff;
+                background-color: $main;
+            }
         }
     }
 }
