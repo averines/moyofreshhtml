@@ -1,12 +1,28 @@
 .catalog-page {
     &__header {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        row-gap: 5px;
         column-gap: 10px;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: $bp-md) {
+            align-items: center;
+            flex-direction: row;
+        }
 
         > h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 21px;
+            line-height: 1.2;
+
+            @media screen and (min-width: $bp-md) {
+                font-size: 23px;
+            }
+
+            @media screen and (min-width: $bp-lg) {
+                font-size: 26px;
+            }
         }
     }
 
@@ -21,6 +37,10 @@
     flex-wrap: wrap;
     column-gap: 6px;
     row-gap: 6px;
+
+    @media screen and (min-width: $bp-lg) {
+        max-width: 90%;
+    }
 
     &__item {
         display: block;
@@ -271,6 +291,8 @@
             border: none;
             transition: $t;
             outline: 1px solid transparent;
+            appearance: none;
+            color: $text;
 
             &:hover {
                 // background-color: #fff;
