@@ -3,7 +3,7 @@ const catalogNav = document.querySelector(".catalog-nav");
 const catalogBtn = document.querySelector(".catalog-btn");
 
 window.addEventListener('click', (e) => {
-    // показать/спрятать пунк аккордеона
+    // показать/спрятать пункт аккордеона
     if (e.target.classList.contains("accordion__title")) {
         e.target.closest(".accordion__item").classList.toggle("is-opened");
     }
@@ -68,6 +68,45 @@ window.addEventListener('click', (e) => {
         }
     }
 
+    // имитация добавления/удаления в козину по клику на рамер в мини-карточке товара
+    if (e.target.classList.contains("card-size")) {
+        e.target.classList.toggle("card-size--active");
+    }
+
+    // показать все цвета в мини-карточке товара
+    if (e.target.classList.contains("card-color__more")) {
+        // через каждый каждый цвет
+        // let cardColors = e.target.closest(".card-colors").querySelectorAll(".card-color--hidden");
+        // cardColors.forEach(i => i.classList.remove("card-color--hidden"));
+
+        // через родителя
+        e.target.closest(".card-colors").classList.add("card-colors--show-all")
+        e.target.classList.add("is-hidden");
+    }
+
+    // для мобилок блокируем клик по названию товара в мини-карточке товара
+    if (e.target.classList.contains("card-color")) {
+        e.preventDefault();
+    }
+
+
+})
+
+window.addEventListener('mouseover', (e) => {
+    // показать размеры, связанные с цветом в мини-карточке товара
+    if (e.target.classList.contains("card-color")) {
+        let cardColors = e.target.closest(".card-colors").querySelectorAll(".card-color");
+        cardColors.forEach(i => i.classList.remove("card-color--active"));
+        e.target.classList.add("card-color--active");
+
+        let cardSizes = e.target.closest(".product-card").querySelectorAll(".card-size");
+        cardSizes.forEach(i => {
+            i.classList.remove("card-size--showed");
+            if (e.target.dataset.colorId == i.dataset.colorId) {
+                i.classList.add("card-size--showed");
+            }
+        })
+    }
 })
 
 // подсчёт пунктов в выпадающем меню каталога и кнопка показать/скрыть для длинных меню

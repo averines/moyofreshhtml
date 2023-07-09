@@ -66,17 +66,29 @@
         .product-card__sizes {
             display: flex;
         }
+
+        .card-color {
+            &--active {
+                border-color: $main;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     &__wrapper {
-        // opacity: 0.2;
         border-radius: 1px;
         top: 0;
         left: 0;
         right: 0;
         background-color: #fff;
-        outline: 15px solid #fff;
-        // display: contents;
+        outline: 5px solid #fff;
+
+        @media screen and (min-width: $bp-md) {
+            outline: 15px solid #fff;
+        }
     }
 
     &__head {
@@ -160,6 +172,11 @@
 
     &__body-link {
         text-decoration: none;
+        pointer-events: none;
+
+        @media screen and (min-width: $bp-md) {
+            pointer-events: all;
+        }
     }
 
     &__header {
@@ -245,105 +262,6 @@
     &--action {
         .card-price__actual {
             color: $special-1;
-        }
-    }
-}
-
-.card-sizes {
-    display: none;
-    column-gap: 6px;
-    row-gap: 6px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.card-size {
-    border: none;
-    color: $text;
-    background-color: $bg-d;
-    font-size: 13.2px;
-    padding: 0.55em 0.5em;
-    border-radius: $br-sm;
-    line-height: 1;
-
-    &:hover {
-        color: #fff;
-        background-color: $main-dimmed;
-        color: $text;
-        background-color: darken($bg-d, 6);
-    }
-
-    &.is-active {
-        background-color: $main;
-        border-color: $main;
-        color: #fff;
-    }
-}
-
-.card-colors {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 1px;
-    row-gap: 10px;
-    margin-left: -6px;
-    margin-top: 5px;
-
-    @media screen and (min-width: $bp-xxxl) {
-        margin-left: -2px;
-    }
-}
-
-.card-color {
-    width: 22px;
-    height: 22px;
-    position: relative;
-
-    &::before {
-        content: "";
-        width: 12px;
-        height: 12px;
-        top: 6px;
-        left: 6px;
-        background-color: rgb(250, 142, 192);
-        display: block;
-        position: absolute;
-        z-index: 1;
-
-        border-radius: 20px;
-        opacity: 0.7;
-        transition: $t;
-
-        @media screen and (min-width: $bp-xxxl) {
-            width: 16px;
-            height: 16px;
-            top: 2px;
-            left: 2px;
-        }
-    }
-
-    &::after {
-        content: attr(aria-label);
-        display: none;
-        background-color: $text;
-        color: #fff;
-        padding: 5px 10px;
-        font-size: 13px;
-        position: absolute;
-        bottom: calc(100% + 5px);
-        left: 0;
-        z-index: 1;
-        line-height: 1;
-        border-radius: $br-sm;
-    }
-
-    &:hover {
-        &::after {
-            display: block;
-        }
-
-        &::before {
-            opacity: 1;
-            transform: scale(1.2);
         }
     }
 }

@@ -1,0 +1,39 @@
+.card-sizes {
+    display: none;
+    column-gap: 6px;
+    row-gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.card-size {
+    display: none;
+    border: none;
+    color: $text;
+    background-color: $bg-d;
+    font-size: 13.2px;
+    padding: 0.55em 0.5em;
+    border-radius: $br-sm;
+    line-height: 1;
+
+    &:hover {
+        color: $text;
+        background-color: darken($bg-d, 6);
+
+        &.card-size--active {
+            background-color: $main;
+            border-color: $main;
+            color: #fff;
+        }
+    }
+
+    &--active {
+        background-color: $main;
+        border-color: $main;
+        color: #fff;
+    }
+
+    &--showed {
+        display: block;
+    }
+}
