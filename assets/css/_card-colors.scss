@@ -44,13 +44,13 @@
         transition: $t;
 
         @media screen and (min-width: $bp-md) {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
         }
 
         @media screen and (min-width: $bp-xxxl) {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
         }
     }
 
@@ -60,9 +60,9 @@
         background-color: $text;
         color: #fff;
         padding: 6px 10px;
-        font-size: 12.5px;
+        font-size: 12.3px;
         position: absolute;
-        bottom: calc(100% + 3px);
+        bottom: calc(100% + 6px);
         left: 0;
         z-index: 1;
         line-height: 1;
@@ -81,7 +81,7 @@
             opacity: 1;
 
             @media screen and (min-width: $bp-md) {
-                transform: scale(1.1);
+                transform: scale(1.15);
             }
         }
     }
@@ -118,21 +118,21 @@
     &--white {
         &::before {
             background-color: #fff;
-            box-shadow: 0 0 2px 0 #1f1f1f;
+            box-shadow: 0 0 2px 0 #383838;
         }
     }
 
     &--blackwhite {
         &::before {
             background: linear-gradient(90deg, #fff 50%, #3e3f41 50%);
-            box-shadow: 0 0 2px 0 #1f1f1f;
+            box-shadow: 0 0 2px 0 #383838;
         }
     }
 
     &--biege {
         &::before {
             background-color: #ffe8d6;
-            box-shadow: 0 0 2px 0 #1f1f1f;
+            box-shadow: 0 0 2px 0 #383838;
         }
     }
 

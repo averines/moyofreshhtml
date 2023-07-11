@@ -6,7 +6,6 @@
     overflow-y: scroll;
     padding: 0 0 10px 0;
 
-
     &::after {
         content: "";
         display: block;
@@ -46,6 +45,23 @@
         padding: 12px 15px 12px 15px;
         border-radius: 0;
 
+        &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, $line, #fff);
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
         &:hover {
             background: linear-gradient(90deg, $bg-l, transparent);
         }
@@ -67,6 +83,9 @@
             font-size: 12px;
             width: auto;
             background-color: $bg-d;
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         &__badges {

@@ -69,7 +69,7 @@
 
         .card-color {
             &--active {
-                border-color: $main;
+                border-color: $text-l;
 
                 &::before {
                     opacity: 1;
