@@ -92,22 +92,101 @@ window.addEventListener('click', (e) => {
 
 })
 
-window.addEventListener('mouseover', (e) => {
-    // показать размеры, связанные с цветом в мини-карточке товара
-    if (e.target.classList.contains("card-color")) {
-        let cardColors = e.target.closest(".card-colors").querySelectorAll(".card-color");
-        cardColors.forEach(i => i.classList.remove("card-color--active"));
-        e.target.classList.add("card-color--active");
+let swapImagesTimer;
+function swapImages(productPic, colorPics, actualIndex) {
+    swapImagesTimer = setTimeout(() => {
+        updateSrcset(productPic, colorPics[actualIndex]);
+        swapImages(productPic, colorPics, actualIndex == colorPics.length - 1 ? 0 : actualIndex + 1);
+    }, 1000);
+}
 
-        let cardSizes = e.target.closest(".product-card").querySelectorAll(".card-size");
-        cardSizes.forEach(i => {
-            i.classList.remove("card-size--showed");
-            if (e.target.dataset.colorId == i.dataset.colorId) {
-                i.classList.add("card-size--showed");
-            }
+function updateSrcset(productPic, colorId) {
+    // console.log(colorId);
+    let nowSrcset = productPic.getAttribute("srcset");
+    let newSrcset = nowSrcset.replace(/\/([^\/]+)\.webp/g, (match, fileName) => match.replace(fileName, colorId));
+    productPic.setAttribute("srcset", newSrcset);
+};
+
+function updatePrices(product, priceActual, priceOld) {
+    if (priceActual) {
+        product.querySelector(".card-price__actual span").innerText = priceActual;
+    }
+
+    if (priceOld) {
+        product.querySelector(".card-price__old span").innerText = priceOld;
+    }
+};
+
+function updateLinks(product, productId) {
+    // TODO: сделать замену через регулярку для url вида https://optmoyo.ru/product/123456
+    product.querySelector(".product-card__body-link").href = productId;
+    product.querySelector(".product-card__head-link").href = productId;
+};
+
+function setActiveColor(cardColors, actualColor, product, cardSizes) {
+    // сделать наведенный цвет активным
+    cardColors.forEach(i => i.classList.remove("card-color--active"));
+    actualColor.classList.add("card-color--active");
+    product.dataset.activeColorId = actualColor.dataset.colorId;
+
+    // показать размеры, связанные с цветом в мини-карточке товара
+    cardSizes.forEach(i => {
+        i.classList.remove("card-size--showed");
+        if (actualColor.dataset.colorId == i.dataset.colorId) { i.classList.add("card-size--showed") }
+    })
+};
+
+function setSwiper(product) {
+    let productHeadLink = product.querySelector(".product-card__head-link");
+    let colorPics = product.querySelector(`[data-color-id="${product.dataset.activeColorId}"]`).dataset.images.split(",");
+    let swiper = product.querySelector(".product-card__swiper");
+    if (swiper) {swiper.remove()}
+
+    if (colorPics && colorPics.length > 1) {
+        let newSwiper = document.createElement("div");
+        newSwiper.classList.add("product-card__swiper");
+        for (let i = 0; i < colorPics.length; i++) { newSwiper.appendChild(document.createElement("div")) }
+        productHeadLink.append(newSwiper);
+    }
+};
+
+window.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains("card-color")) {
+        let actualColor = e.target;
+        let product = actualColor.closest(".product-card");
+        let cardColors = product.querySelectorAll(".card-color");
+        let cardSizes = product.querySelectorAll(".card-size");
+        let productPic = product.querySelector(".product-card__pic");
+        let colorPics = actualColor.dataset.images ? actualColor.dataset.images.split(",") : [];
+
+        clearTimeout(swapImagesTimer);
+        setActiveColor(cardColors, actualColor, product, cardSizes);
+        updateSrcset(productPic, actualColor.dataset.colorId);
+        updatePrices(product, actualColor.dataset.priceActual, actualColor.dataset.priceOld);
+        updateLinks(product, actualColor.dataset.colorId);
+        setSwiper(product);
+        if (colorPics.length > 1) {swapImages(productPic, colorPics, 1)}
+
+        actualColor.addEventListener("mouseleave", (event) => { clearTimeout(swapImagesTimer) })
+
+        // всё по умочанию при отведении с карточки товара
+        product.addEventListener("mouseleave", (event) => {
+            // console.log("отвел с карточки товара");
+            clearTimeout(swapImagesTimer);
+            updateSrcset(productPic, cardColors[0].dataset.colorId);
+            updatePrices(product, cardColors[0].dataset.priceActual, cardColors[0].dataset.priceOld);
+            updateLinks(product, cardColors[0].dataset.colorId);
+            setActiveColor(cardColors, cardColors[0], product, cardSizes);
         })
     }
+
+    // при наведении на картинку создаем ручной свайпер
+    if (e.target.classList.contains("product-card__head-link")) {
+        let product = e.target.closest(".product-card");
+        setSwiper(product);
+    }
 })
+
 
 // подсчёт пунктов в выпадающем меню каталога и кнопка показать/скрыть для длинных меню
 const catalogTabMenus = document.querySelectorAll(".catalog-tab__menu");

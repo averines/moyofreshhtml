@@ -98,6 +98,27 @@
         position: relative;
     }
 
+    &__swiper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: 1px solid red;
+        display: flex;
+        z-index: 1;
+
+        > div {
+            border: 1px solid;
+            width: 100%;
+            height: 100%;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+    }
+
     &__head-link {
         position: absolute;
         top: 0;
