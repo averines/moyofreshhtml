@@ -168,10 +168,22 @@ window.addEventListener('click', (e) => {
         e.target.classList.add("is-hidden");
     }
 
-    // для мобилок блокируем клик по названию товара в мини-карточке товара
+    // TODO: для мобилок блокируем клик по названию товара в мини-карточке товара
     if (e.target.classList.contains("card-color")) {
         e.preventDefault();
     }
+
+    if (e.target.classList.contains("catalog-filter__title")) {
+        e.target.classList.toggle("is-active");
+        body.classList.add("is-filter-open");
+    }
+
+    // спрятать ранее открытое меню фильтра при клике вне его контейнера
+    // if (!e.target.closest(".catalog-filter__content")) {
+    //     body.classList.remove("is-filter-open");
+    //     e.target.closest(".catalog-filter").querySelector(".catalog-filter__title").classList.remove("is-active");
+    // }
+
 
 
 })
@@ -260,8 +272,7 @@ if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
 
 
 function getRussainDeclension(variants, number) {
-    // ["час", "часа", "часов"]
-    // ..1 час, ..2/3/4 часа, остальные часов
+    // ["час", "часа", "часов"] = ..1 час, ..2/3/4 часа, остальные часов
     let variant;
     if (number === 1 || (number > 20 && number % 10 === 1)) {
         variant = variants[0];
@@ -273,42 +284,39 @@ function getRussainDeclension(variants, number) {
     return variant;
 }
 
+// расчет времени до закрытия/открытия магазина на странице Контакты
 function getWorktimeStatus(element) {
     // Получаем текущую дату и время в часовом поясе Москвы
     const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
     const currentTime = new Date(now);
 
-    let openTime = new Date();
+    const openTime = new Date();
     openTime.setHours(parseInt(element.dataset.timeOpen.split(":")[0]));
     openTime.setMinutes(parseInt(element.dataset.timeOpen.split(":")[1]));
 
-    let closeTime = new Date();
+    const closeTime = new Date();
     closeTime.setHours(parseInt(element.dataset.timeClose.split(":")[0]));
     closeTime.setMinutes(parseInt(element.dataset.timeClose.split(":")[1]));
 
-    let hoursVariants = ["час", "часа", "часов"];
-    let minutesVariants = ["минуту", "минуты", "минут"];
+    let hours, minutes, timeDiff, message;
 
     // Проверяем, открыт ли магазин
     if (currentTime >= openTime && currentTime <= closeTime) {
-        // Рассчитываем оставшееся время до закрытия магазина
-        const timeDiff = Math.abs(closeTime - currentTime);
-        const hours = Math.floor(timeDiff / 3600000); // количество миллисекунд в часе
-        const minutes = Math.floor((timeDiff % 3600000) / 60000); // количество миллисекунд в минуте
-        element.innerText = `Сейчас открыто, закроется через ${hours} ${getRussainDeclension(hoursVariants, hours)} ${minutes} ${getRussainDeclension(minutesVariants, minutes)}`;
+        timeDiff = Math.abs(closeTime - currentTime); // время до закрытия магазина
+        message = "Сейчас открыто, закроется через";
     } else {
-        // Рассчитываем оставшееся время до открытия магазина
         const nextDay = new Date();
         nextDay.setDate(currentTime.getDate() + 1);
         nextDay.setHours(openTime.getHours());
         nextDay.setMinutes(openTime.getMinutes());
-
-        const timeDiff = Math.abs(nextDay - currentTime);
-        const hours = Math.floor(timeDiff / 3600000); // количество миллисекунд в часе
-        const minutes = Math.floor((timeDiff % 3600000) / 60000); // количество миллисекунд в минуте
-        element.innerText = `Сейчас закрыто, откроется через ${hours} ${getRussainDeclension(hoursVariants, hours)} ${minutes} ${getRussainDeclension(minutesVariants, minutes)}`;
-        element.classList.add("is-close")
+        timeDiff = Math.abs(nextDay - currentTime); // время до открытия магазина
+        message = "Сейчас закрыто, откроется через";
+        element.classList.add("is-close");
     }
+
+    hours = Math.floor(timeDiff / 3600000);
+    minutes = Math.floor((timeDiff % 3600000) / 60000);
+    element.innerHTML = `${message} ${hours > 0 ? hours + "&nbsp;" + getRussainDeclension(["час", "часа", "часов"], hours) : ""}&nbsp;${minutes}&nbsp;${getRussainDeclension(["минуту", "минуты", "минут"], minutes)}`
 }
 
 const worktimeEl = document.getElementById("js-worktime");

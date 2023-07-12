@@ -419,7 +419,7 @@ ol.marker {
 	border: 1px solid $line-d;
 	padding: 0.5em 1em;
 	border-radius: $br-xl;
-	line-height: 1;
+	line-height: 1.1;
 	display: inline-flex;
 	align-items: center;
 	column-gap: 5px;
@@ -434,6 +434,7 @@ ol.marker {
 		display: block;
 		background-color: $good;
 		border-radius: 50%;
+		flex-shrink: 0;
 	}
 
 	&.is-close {

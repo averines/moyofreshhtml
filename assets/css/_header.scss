@@ -82,7 +82,7 @@
 
             > li > a {
                 font-size: 14px;
-                color: $text-l;
+                color: darken($text-l, 8);
                 text-decoration: none;
                 transition: $t;
                 padding: 9px 20px;
