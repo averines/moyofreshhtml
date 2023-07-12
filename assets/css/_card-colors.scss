@@ -32,6 +32,11 @@
         height: 22px;
     }
 
+    @media screen and (min-width: $bp-md) {
+        width: 24px;
+        height: 24px;
+    }    
+
     &::before {
         content: "";
         width: 22px;

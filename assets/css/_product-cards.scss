@@ -260,18 +260,27 @@
 
     &__title {
         font-size: 14px;
-        // flex-grow: 1;
     }
 
     &__actual {
         font-weight: 500;
         font-size: 17px;
+        white-space: nowrap;
+
+        > span {
+            padding-right: 0.2em;
+        }
     }
 
     &__old {
         color: $text-l;
         font-size: 14px;
         text-decoration: line-through;
+        white-space: nowrap;
+        
+        > span {
+            padding-right: 0.2em;
+        }
     }
 
     &__warning {
