@@ -2,6 +2,90 @@ const body = document.querySelector("body");
 const catalogNav = document.querySelector(".catalog-nav");
 const catalogBtn = document.querySelector(".catalog-btn");
 
+let swapImagesTimer;
+function swapImages(productPic, colorPics, actualIndex) {
+    clearTimeout(swapImagesTimer);
+    swapImagesTimer = setInterval(() => {
+        updateSrcset(productPic, colorPics[actualIndex]);
+        actualIndex = (actualIndex + 1) % colorPics.length;
+    }, 1000);
+}
+
+let productHoverTimer;
+
+function updateSrcset(productPic, colorId) {
+    productPic.srcset = productPic.srcset.replace(/\/([^\/]+)\.webp/g, (match, fileName) => match.replace(fileName, colorId));
+};
+
+function updatePrices(product, priceActual, priceOld) {
+    if (priceActual) {
+        product.querySelector(".card-price__actual span").innerText = priceActual;
+    }
+
+    if (priceOld) {
+        product.querySelector(".card-price__old span").innerText = priceOld;
+    }
+};
+
+function updateLinks(product, productId) {
+    // TODO: сделать замену через регулярку для url вида https://optmoyo.ru/product/123456
+    product.querySelector(".product-card__body-link").href = productId;
+    product.querySelector(".product-card__head-link").href = productId;
+};
+
+function setActiveColor(cardColors, actualColor, product, cardSizes) {
+    // сделать наведенный цвет активным
+    cardColors.forEach(i => i.classList.toggle("card-color--active", i === actualColor));
+    product.dataset.activeColorId = actualColor.dataset.colorId;
+
+    // показать размеры, связанные с цветом в мини-карточке товара
+    cardSizes.forEach(i => { i.classList.toggle("card-size--showed", actualColor.dataset.colorId === i.dataset.colorId) });
+};
+
+function setSwiper(product) {
+    let productHeadLink = product.querySelector(".product-card__head-link");
+    let colorPics = product.querySelector(`[data-color-id="${product.dataset.activeColorId}"]`).dataset.images;
+    if (colorPics) {
+        colorPics = colorPics.replace(" ", "").split(",");
+
+        if (colorPics.length > 1) {
+            let productPic = product.querySelector(".product-card__pic");
+            let newSwiper = document.createElement("div");
+            newSwiper.classList.add("product-card__swiper");
+            const swiperFragment = document.createDocumentFragment();
+
+            for (let i = 0; i < colorPics.length; i++) {
+                let swiperImage = document.createElement("div");
+                swiperImage.addEventListener('mouseover', () => {
+                    updateSrcset(productPic, colorPics[i]);
+                });
+                swiperFragment.appendChild(swiperImage);
+            }
+            newSwiper.appendChild(swiperFragment);
+            productHeadLink.append(newSwiper);
+
+        }
+    }
+};
+
+function removeSwiper(product) {
+    let swiper = product.querySelector(".product-card__swiper");
+    if (swiper) { swiper.remove() }
+}
+
+function setProductDefaultState(product) {
+    let cardColors = product.querySelectorAll(".card-color");
+    let productPic = product.querySelector(".product-card__pic");
+    let cardSizes = product.querySelectorAll(".card-size");
+
+    clearTimeout(swapImagesTimer);
+    updateSrcset(productPic, cardColors[0].dataset.colorId);
+    updatePrices(product, cardColors[0].dataset.priceActual, cardColors[0].dataset.priceOld);
+    updateLinks(product, cardColors[0].dataset.colorId);
+    setActiveColor(cardColors, cardColors[0], product, cardSizes);
+    removeSwiper(product);
+}
+
 window.addEventListener('click', (e) => {
     // показать/спрятать пункт аккордеона
     if (e.target.classList.contains("accordion__title")) {
@@ -92,64 +176,6 @@ window.addEventListener('click', (e) => {
 
 })
 
-let swapImagesTimer;
-function swapImages(productPic, colorPics, actualIndex) {
-    swapImagesTimer = setTimeout(() => {
-        updateSrcset(productPic, colorPics[actualIndex]);
-        swapImages(productPic, colorPics, actualIndex == colorPics.length - 1 ? 0 : actualIndex + 1);
-    }, 1000);
-}
-
-function updateSrcset(productPic, colorId) {
-    // console.log(colorId);
-    let nowSrcset = productPic.getAttribute("srcset");
-    let newSrcset = nowSrcset.replace(/\/([^\/]+)\.webp/g, (match, fileName) => match.replace(fileName, colorId));
-    productPic.setAttribute("srcset", newSrcset);
-};
-
-function updatePrices(product, priceActual, priceOld) {
-    if (priceActual) {
-        product.querySelector(".card-price__actual span").innerText = priceActual;
-    }
-
-    if (priceOld) {
-        product.querySelector(".card-price__old span").innerText = priceOld;
-    }
-};
-
-function updateLinks(product, productId) {
-    // TODO: сделать замену через регулярку для url вида https://optmoyo.ru/product/123456
-    product.querySelector(".product-card__body-link").href = productId;
-    product.querySelector(".product-card__head-link").href = productId;
-};
-
-function setActiveColor(cardColors, actualColor, product, cardSizes) {
-    // сделать наведенный цвет активным
-    cardColors.forEach(i => i.classList.remove("card-color--active"));
-    actualColor.classList.add("card-color--active");
-    product.dataset.activeColorId = actualColor.dataset.colorId;
-
-    // показать размеры, связанные с цветом в мини-карточке товара
-    cardSizes.forEach(i => {
-        i.classList.remove("card-size--showed");
-        if (actualColor.dataset.colorId == i.dataset.colorId) { i.classList.add("card-size--showed") }
-    })
-};
-
-function setSwiper(product) {
-    let productHeadLink = product.querySelector(".product-card__head-link");
-    let colorPics = product.querySelector(`[data-color-id="${product.dataset.activeColorId}"]`).dataset.images.split(",");
-    let swiper = product.querySelector(".product-card__swiper");
-    if (swiper) {swiper.remove()}
-
-    if (colorPics && colorPics.length > 1) {
-        let newSwiper = document.createElement("div");
-        newSwiper.classList.add("product-card__swiper");
-        for (let i = 0; i < colorPics.length; i++) { newSwiper.appendChild(document.createElement("div")) }
-        productHeadLink.append(newSwiper);
-    }
-};
-
 window.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains("card-color")) {
         let actualColor = e.target;
@@ -160,30 +186,39 @@ window.addEventListener('mouseover', (e) => {
         let colorPics = actualColor.dataset.images ? actualColor.dataset.images.split(",") : [];
 
         clearTimeout(swapImagesTimer);
+        removeSwiper(product);
         setActiveColor(cardColors, actualColor, product, cardSizes);
         updateSrcset(productPic, actualColor.dataset.colorId);
         updatePrices(product, actualColor.dataset.priceActual, actualColor.dataset.priceOld);
         updateLinks(product, actualColor.dataset.colorId);
-        setSwiper(product);
-        if (colorPics.length > 1) {swapImages(productPic, colorPics, 1)}
+        if (colorPics.length > 1) { swapImages(productPic, colorPics, 1) }
 
-        actualColor.addEventListener("mouseleave", (event) => { clearTimeout(swapImagesTimer) })
+        // прекращаем автосвайпать при отведении с иконки цвета
+        actualColor.addEventListener("mouseleave", () => { clearTimeout(swapImagesTimer) })
 
-        // всё по умочанию при отведении с карточки товара
-        product.addEventListener("mouseleave", (event) => {
-            // console.log("отвел с карточки товара");
-            clearTimeout(swapImagesTimer);
-            updateSrcset(productPic, cardColors[0].dataset.colorId);
-            updatePrices(product, cardColors[0].dataset.priceActual, cardColors[0].dataset.priceOld);
-            updateLinks(product, cardColors[0].dataset.colorId);
-            setActiveColor(cardColors, cardColors[0], product, cardSizes);
+        // всё по умочанию при отведении с карточки товара после наведения на цвет
+        product.addEventListener("mouseleave", () => {
+            setProductDefaultState(product);
         })
     }
 
-    // при наведении на картинку создаем ручной свайпер
+    // при наведении на ссылку с фоткой создаем ручной свайпер
     if (e.target.classList.contains("product-card__head-link")) {
-        let product = e.target.closest(".product-card");
-        setSwiper(product);
+        productHoverTimer = setTimeout(() => {
+            setSwiper(e.target.closest(".product-card"));
+            let product = e.target.closest(".product-card");
+
+            // всё по умочанию при отведении с карточки товара после наведения на фотку
+            product.addEventListener("mouseleave", () => {
+                clearTimeout(productHoverTimer);
+                setProductDefaultState(product);
+            })
+        }, 250)
+    }
+
+    //фиксируем высоту родительской обертки товара, чтобы не было сдвига, когда контент карточки становится позиционирован абсолютно (не адаптивно)
+    if (e.target.closest(".product-card")) {
+        e.target.closest(".product-card").style.height = `${e.target.closest(".product-card").getBoundingClientRect().height}px`;
     }
 })
 
@@ -197,11 +232,8 @@ if (catalogTabMenus) {
             let button = document.createElement("button");
             button.classList.add("catalog-tab__more");
             button.innerText = `${items.length - 6}`;
+            button.addEventListener("click", () => { catalogTabMenu.classList.toggle("catalog-tab__menu--show-all") })
             catalogTabMenu.append(button);
-
-            button.addEventListener("click", () => {
-                catalogTabMenu.classList.toggle("catalog-tab__menu--show-all");
-            })
         }
     })
 }
@@ -214,13 +246,7 @@ if (catalogTabTitles && catalogTabs) {
         title.addEventListener("mouseenter", (e) => {
             catalogTabTitles.forEach(t => t.classList.remove("is-active"));
             title.classList.add("is-active");
-
-            catalogTabs.forEach(tab => {
-                tab.classList.remove("is-active");
-                if (tab.dataset.tabId == e.target.dataset.tabTarget) {
-                    tab.classList.add("is-active");
-                }
-            })
+            catalogTabs.forEach(tab => { tab.classList.toggle("is-active", tab.dataset.tabId === e.target.dataset.tabTarget); })
         })
     })
 }
@@ -233,27 +259,57 @@ const sliderMain = document.getElementById("sliderMain");
 if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
 
 
-// let nowMsk = new Date().toLocaleString("en-US", { timeZone: "Europe/Moscow" })
-// let offset = now.getTimezoneOffset();
+function getRussainDeclension(variants, number) {
+    // ["час", "часа", "часов"]
+    // ..1 час, ..2/3/4 часа, остальные часов
+    let variant;
+    if (number === 1 || (number > 20 && number % 10 === 1)) {
+        variant = variants[0];
+    } else if ((number >= 2 && number <= 4) || (number > 20 && number % 10 >= 2 && number % 10 <= 4)) {
+        variant = variants[1];
+    } else {
+        variant = variants[2];
+    }
+    return variant;
+}
 
-// function checkWorktime(start, end) {
-//     let now = new Date();
-//     let hours = now.getHours();
+function getWorktimeStatus(element) {
+    // Получаем текущую дату и время в часовом поясе Москвы
+    const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
+    const currentTime = new Date(now);
 
-//     let status;
+    let openTime = new Date();
+    openTime.setHours(parseInt(element.dataset.timeOpen.split(":")[0]));
+    openTime.setMinutes(parseInt(element.dataset.timeOpen.split(":")[1]));
 
-//     if (hours > start & hours < end) {
-//         status = "is-active";
-//         text = `Сейчас работает, осталось ${end - hours} часов`
-//     } else {
-//         status = "is-close"
-//     }
+    let closeTime = new Date();
+    closeTime.setHours(parseInt(element.dataset.timeClose.split(":")[0]));
+    closeTime.setMinutes(parseInt(element.dataset.timeClose.split(":")[1]));
 
-//     let el = document.getElementById("js-worktime");
-//     if (el) {
-//         el.classList.add(status);
-//         el.innerText = text;
-//     }
-// }
+    let hoursVariants = ["час", "часа", "часов"];
+    let minutesVariants = ["минуту", "минуты", "минут"];
 
-// console.log(checkWorktime(10, 20))
+    // Проверяем, открыт ли магазин
+    if (currentTime >= openTime && currentTime <= closeTime) {
+        // Рассчитываем оставшееся время до закрытия магазина
+        const timeDiff = Math.abs(closeTime - currentTime);
+        const hours = Math.floor(timeDiff / 3600000); // количество миллисекунд в часе
+        const minutes = Math.floor((timeDiff % 3600000) / 60000); // количество миллисекунд в минуте
+        element.innerText = `Сейчас открыто, закроется через ${hours} ${getRussainDeclension(hoursVariants, hours)} ${minutes} ${getRussainDeclension(minutesVariants, minutes)}`;
+    } else {
+        // Рассчитываем оставшееся время до открытия магазина
+        const nextDay = new Date();
+        nextDay.setDate(currentTime.getDate() + 1);
+        nextDay.setHours(openTime.getHours());
+        nextDay.setMinutes(openTime.getMinutes());
+
+        const timeDiff = Math.abs(nextDay - currentTime);
+        const hours = Math.floor(timeDiff / 3600000); // количество миллисекунд в часе
+        const minutes = Math.floor((timeDiff % 3600000) / 60000); // количество миллисекунд в минуте
+        element.innerText = `Сейчас закрыто, откроется через ${hours} ${getRussainDeclension(hoursVariants, hours)} ${minutes} ${getRussainDeclension(minutesVariants, minutes)}`;
+        element.classList.add("is-close")
+    }
+}
+
+const worktimeEl = document.getElementById("js-worktime");
+if (worktimeEl) { getWorktimeStatus(worktimeEl) }
