@@ -50,7 +50,6 @@
 
     &:hover {
         z-index: 98;
-        // padding-top: 200%;
 
         .product-card__wrapper {
             position: absolute;
@@ -61,24 +60,27 @@
             height: auto;
         }
 
-        // .product-card__header {
-        //     max-height: none;
-        //     overflow: hidden;
-        //     text-overflow: ellipsis;
-        //     display: inline-block;
-        // }
-
         .product-card__sizes {
             display: flex;
         }
 
         .card-color {
             &--active {
-                border-color: $text-l;
+                border-color: $text-ll;
 
                 &::before {
                     opacity: 1;
+                    @media screen and (min-width: $bp-md) {
+                        transform: scale(1.16);
+                    }
                 }
+            }
+
+            &--incart {
+                border-color: $main-l;
+                // &.card-color--active {
+                //     border-color: $main;
+                // }
             }
         }
     }
@@ -215,7 +217,7 @@
 
     &__header {
         color: $text-l;
-        font-size: 14px;
+        font-size: 13.5px;
         transition: $t;
         font-weight: 400;
         margin: 0;
@@ -243,6 +245,7 @@
         text-transform: uppercase;
         color: $text;
         transition: $t;
+        font-size: 13px;
 
         &::after {
             content: " /";
@@ -264,7 +267,7 @@
 
     &__actual {
         font-weight: 500;
-        font-size: 17px;
+        font-size: 16.5x;
         white-space: nowrap;
 
         > span {
@@ -277,7 +280,7 @@
         font-size: 14px;
         text-decoration: line-through;
         white-space: nowrap;
-        
+
         > span {
             padding-right: 0.2em;
         }

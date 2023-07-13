@@ -2,7 +2,10 @@ const body = document.querySelector("body");
 const catalogNav = document.querySelector(".catalog-nav");
 const catalogBtn = document.querySelector(".catalog-btn");
 
+let productHoverTimer;
 let swapImagesTimer;
+let isFilterOpen = false;
+
 function swapImages(productPic, colorPics, actualIndex) {
     clearTimeout(swapImagesTimer);
     swapImagesTimer = setInterval(() => {
@@ -11,11 +14,9 @@ function swapImages(productPic, colorPics, actualIndex) {
     }, 1000);
 }
 
-let productHoverTimer;
-
 function updateSrcset(productPic, colorId) {
     productPic.srcset = productPic.srcset.replace(/\/([^\/]+)\.webp/g, (match, fileName) => match.replace(fileName, colorId));
-};
+}
 
 function updatePrices(product, priceActual, priceOld) {
     if (priceActual) {
@@ -25,13 +26,13 @@ function updatePrices(product, priceActual, priceOld) {
     if (priceOld) {
         product.querySelector(".card-price__old span").innerText = priceOld;
     }
-};
+}
 
 function updateLinks(product, productId) {
     // TODO: сделать замену через регулярку для url вида https://optmoyo.ru/product/123456
     product.querySelector(".product-card__body-link").href = productId;
     product.querySelector(".product-card__head-link").href = productId;
-};
+}
 
 function setActiveColor(cardColors, actualColor, product, cardSizes) {
     // сделать наведенный цвет активным
@@ -40,7 +41,7 @@ function setActiveColor(cardColors, actualColor, product, cardSizes) {
 
     // показать размеры, связанные с цветом в мини-карточке товара
     cardSizes.forEach(i => { i.classList.toggle("card-size--showed", actualColor.dataset.colorId === i.dataset.colorId) });
-};
+}
 
 function setSwiper(product) {
     let productHeadLink = product.querySelector(".product-card__head-link");
@@ -66,7 +67,7 @@ function setSwiper(product) {
 
         }
     }
-};
+}
 
 function removeSwiper(product) {
     let swiper = product.querySelector(".product-card__swiper");
@@ -86,19 +87,26 @@ function setProductDefaultState(product) {
     removeSwiper(product);
 }
 
+function checkIsMobile() {
+    let isMobile = window.matchMedia || window.msMatchMedia;
+    if (isMobile) {
+        let match_mobile = isMobile("(pointer:coarse)");
+        return match_mobile.matches;
+    }
+    return false;
+}
+
 window.addEventListener('click', (e) => {
     // показать/спрятать пункт аккордеона
-    if (e.target.classList.contains("accordion__title")) {
-        e.target.closest(".accordion__item").classList.toggle("is-opened");
-    }
+    if (e.target.classList.contains("accordion__title")) { e.target.closest(".accordion__item").classList.toggle("is-opened") }
 
     // добавить/убрать в избранное в карточке товара
     if (e.target.classList.contains("product-card__fav")) {
-        if (!e.target.classList.contains("is-active")) {
-            e.target.classList.toggle("is-active");
-            e.target.innerHTML = "<span></span>";
-        } else {
+        if (e.target.classList.contains("is-active")) {
             e.target.classList.remove("is-active");
+        } else {
+            e.target.classList.add("is-active");
+            e.target.innerHTML = "<span></span>";
         }
     }
 
@@ -120,21 +128,11 @@ window.addEventListener('click', (e) => {
 
     // показать вкладку, используя атрибут "data-tab-target", скрыть прочие вкладки из этой группы
     if (e.target.dataset.hasOwnProperty('tabTarget')) {
-
         let target = e.target.dataset.tabTarget;
         let targetGroup = target.split("-")[0];
-
-
         if (targetGroup) {
             tabs = document.querySelectorAll(`[data-tab-id*="${targetGroup}"]`);
-            if (tabs) {
-                tabs.forEach(t => {
-                    t.classList.remove("is-active")
-                    if (t.dataset.tabId == target) {
-                        t.classList.add("is-active");
-                    }
-                });
-            }
+            if (tabs) { tabs.forEach(t => { t.classList.toggle("is-active", t.dataset.tabId == target) }) }
         }
     }
 
@@ -147,43 +145,70 @@ window.addEventListener('click', (e) => {
             sortList.classList.toggle("is-active");
         } else {
             sortList.classList.remove("is-active");
-            document.querySelectorAll('.sort-list__link').forEach(i => i.classList.remove("is-active"));
+            sortList.querySelectorAll('.sort-list__link').forEach(i => i.classList.remove("is-active"));
             e.target.classList.add("is-active");
         }
     }
 
-    // имитация добавления/удаления в козину по клику на рамер в мини-карточке товара
-    if (e.target.classList.contains("card-size")) {
-        e.target.classList.toggle("card-size--active");
-    }
-
     // показать все цвета в мини-карточке товара
     if (e.target.classList.contains("card-color__more")) {
-        // через каждый каждый цвет
-        // let cardColors = e.target.closest(".card-colors").querySelectorAll(".card-color--hidden");
-        // cardColors.forEach(i => i.classList.remove("card-color--hidden"));
-
-        // через родителя
         e.target.closest(".card-colors").classList.add("card-colors--show-all")
         e.target.classList.add("is-hidden");
     }
 
-    // TODO: для мобилок блокируем клик по названию товара в мини-карточке товара
+    // показать все фильтры на странице каталога
+    if (e.target.classList.contains("catalog-filter__more")) {
+        e.target.closest(".catalog-filters").classList.add("catalog-filters--show-all")
+        e.target.classList.add("is-hidden");
+    }    
+
+    // для мобилок блокируем клик по названию товара в мини-карточке товара
     if (e.target.classList.contains("card-color")) {
-        e.preventDefault();
+        if (checkIsMobile()) { e.preventDefault() }
     }
 
-    if (e.target.classList.contains("catalog-filter__title")) {
-        e.target.classList.toggle("is-active");
-        body.classList.add("is-filter-open");
+    //  добавить/удалить в козину по клику на рамер в мини-карточке товара
+    if (e.target.classList.contains("card-size")) {
+        e.target.classList.toggle("card-size--active");
+
+        // получаем активные (добавленные в корзину) размеры этого цвета
+        let activeSiblingSizes = e.target.closest(".card-sizes").querySelectorAll(`.card-size--active[data-color-id="${e.target.dataset.colorId}"]`);
+
+        // помечаем/убираем цвет добавленным в корзину
+        let activeColor = e.target.closest(".product-card").querySelector(`.card-color[data-color-id="${e.target.dataset.colorId}"]`);
+        activeColor.classList.toggle("card-color--incart", activeSiblingSizes.length > 0)
     }
 
-    // спрятать ранее открытое меню фильтра при клике вне его контейнера
-    // if (!e.target.closest(".catalog-filter__content")) {
-    //     body.classList.remove("is-filter-open");
-    //     e.target.closest(".catalog-filter").querySelector(".catalog-filter__title").classList.remove("is-active");
-    // }
+    // показать/скрыть меню фильтра
+    if (!e.target.closest(".catalog-filter__content")) {
+        if (e.target.classList.contains("catalog-filter__title")) {
+            if (e.target.closest(".catalog-filter").classList.contains("is-active")) {
+                // console.log("скрываю родительский активный");
+                e.target.closest(".catalog-filter").classList.remove("is-active");
+            } else {
+                // console.log("скрываю все активные");
+                let activeFilter = body.querySelector(".catalog-filter.is-active");
+                if (activeFilter) { activeFilter.classList.remove("is-active") }
 
+                // console.log("показываю родительский");
+                e.target.closest(".catalog-filter").classList.add("is-active");
+            }
+        } else {
+            // console.log("скрываю все активные");
+            let activeFilter = body.querySelector(".catalog-filter.is-active");
+            if (activeFilter) { activeFilter.classList.remove("is-active") }
+        }
+    }
+
+    // отслеживаем изменение чекбокса в фильтрах
+    if (e.target.classList.contains("filter-checkbox")) {
+        let activeSiblingCheckboxes = e.target.closest(".filter").querySelectorAll("input.filter-checkbox:checked");
+        if (activeSiblingCheckboxes.length) {
+            e.target.closest(".catalog-filter").dataset.activeFilterCount = activeSiblingCheckboxes.length;
+        } else {
+            delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
+        }
+    }
 
 
 })
@@ -209,9 +234,7 @@ window.addEventListener('mouseover', (e) => {
         actualColor.addEventListener("mouseleave", () => { clearTimeout(swapImagesTimer) })
 
         // всё по умочанию при отведении с карточки товара после наведения на цвет
-        product.addEventListener("mouseleave", () => {
-            setProductDefaultState(product);
-        })
+        product.addEventListener("mouseleave", () => { setProductDefaultState(product) })
     }
 
     // при наведении на ссылку с фоткой создаем ручной свайпер
@@ -258,7 +281,7 @@ if (catalogTabTitles && catalogTabs) {
         title.addEventListener("mouseenter", (e) => {
             catalogTabTitles.forEach(t => t.classList.remove("is-active"));
             title.classList.add("is-active");
-            catalogTabs.forEach(tab => { tab.classList.toggle("is-active", tab.dataset.tabId === e.target.dataset.tabTarget); })
+            catalogTabs.forEach(tab => { tab.classList.toggle("is-active", tab.dataset.tabId === e.target.dataset.tabTarget) })
         })
     })
 }
@@ -270,23 +293,20 @@ Fancybox.bind("[data-fancybox]", {});
 const sliderMain = document.getElementById("sliderMain");
 if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
 
-
+// окончания для единиц измерения на русском языке
 function getRussainDeclension(variants, number) {
     // ["час", "часа", "часов"] = ..1 час, ..2/3/4 часа, остальные часов
     let variant;
-    if (number === 1 || (number > 20 && number % 10 === 1)) {
-        variant = variants[0];
-    } else if ((number >= 2 && number <= 4) || (number > 20 && number % 10 >= 2 && number % 10 <= 4)) {
-        variant = variants[1];
-    } else {
-        variant = variants[2];
-    }
+    if (number === 1 || (number > 20 && number % 10 === 1)) { variant = variants[0] }
+    else if ((number >= 2 && number <= 4) || (number > 20 && number % 10 >= 2 && number % 10 <= 4)) { variant = variants[1] }
+    else { variant = variants[2] }
     return variant;
 }
 
-// расчет времени до закрытия/открытия магазина на странице Контакты
+// расчет времени до закрытия/открытия магазина
 function getWorktimeStatus(element) {
-    // Получаем текущую дату и время в часовом поясе Москвы
+    // у element должны быть атрибуты data-time-open и data-time-close со значениями в формате "23:30"
+    // получаем текущую дату и время в часовом поясе Москвы
     const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
     const currentTime = new Date(now);
 
@@ -300,7 +320,7 @@ function getWorktimeStatus(element) {
 
     let hours, minutes, timeDiff, message;
 
-    // Проверяем, открыт ли магазин
+    // проверяем, открыт ли магазин сейчас
     if (currentTime >= openTime && currentTime <= closeTime) {
         timeDiff = Math.abs(closeTime - currentTime); // время до закрытия магазина
         message = "Сейчас открыто, закроется через";

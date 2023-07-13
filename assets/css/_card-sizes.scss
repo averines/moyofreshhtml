@@ -11,10 +11,14 @@
     border: none;
     color: $text;
     background-color: $bg-d;
-    font-size: 13.2px;
+    font-size: 14px;
     padding: 0.55em 0.5em;
     border-radius: $br-sm;
     line-height: 1;
+
+    @media screen and (min-width: $bp-lg) {
+        font-size: 13.2px;
+    }
 
     &:hover {
         color: $text;

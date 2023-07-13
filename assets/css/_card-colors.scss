@@ -1,10 +1,12 @@
 .card-colors {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     column-gap: 1px;
     row-gap: 2px;
     margin-left: -2px;
     margin-top: 5px;
+    padding-right: 10px;
 
     @media screen and (min-width: $bp-xxxl) {
         margin-left: -2px;
@@ -18,13 +20,13 @@
 }
 
 .card-color {
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
     position: relative;
     display: none;
     align-items: center;
     justify-content: center;
-    border-radius: $br-sm;
+    border-radius: $br-lg;
     border: 1px solid transparent;
 
     @media screen and (min-width: $bp-md) {
@@ -35,12 +37,12 @@
     @media screen and (min-width: $bp-md) {
         width: 24px;
         height: 24px;
-    }    
+    }
 
     &::before {
         content: "";
-        width: 22px;
-        height: 22px;
+        width: 19px;
+        height: 19px;
         background-color: $bg-d;
         display: block;
         z-index: 1;
@@ -51,11 +53,6 @@
         @media screen and (min-width: $bp-md) {
             width: 12px;
             height: 12px;
-        }
-
-        @media screen and (min-width: $bp-xxxl) {
-            width: 14px;
-            height: 14px;
         }
     }
 
@@ -84,10 +81,6 @@
 
         &::before {
             opacity: 1;
-
-            @media screen and (min-width: $bp-md) {
-                transform: scale(1.15);
-            }
         }
     }
 
@@ -101,9 +94,10 @@
         background-color: $bg-d;
         color: $text;
         font-size: 13px;
-        padding: 0.2em 0.5em;
+        padding: 0.4em 0.5em;
         line-height: 1;
         margin-left: 2px;
+        margin-top: 1px;
 
         &:hover {
             background-color: darken($bg-d, 6);
@@ -112,6 +106,12 @@
 
     &--hidden {
         display: none;
+    }
+
+    &--incart {
+        box-shadow: $bs-xsm;
+        // box-shadow: $bs-xsm, 0 0 0px 1px $main inset;
+        border-color: $main-l;
     }
 
     &--black {

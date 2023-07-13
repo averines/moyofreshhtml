@@ -78,21 +78,23 @@
         width: auto;
     }
 
-    &.is-active {
-        z-index: 99;
+    @media screen and (max-width: $bp-sm) {
+        &.is-active {
+            z-index: 99;
 
-        .sort-list__content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding-bottom: 30px;
-            box-shadow: $bs-md;
-        }
+            .sort-list__content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding-bottom: 30px;
+                box-shadow: $bs-md;
+            }
 
-        a {
-            display: block;
-            order: 1;
+            a {
+                display: block;
+                order: 1;
+            }
         }
     }
 
