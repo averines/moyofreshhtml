@@ -6,6 +6,89 @@ let productHoverTimer;
 let swapImagesTimer;
 let isFilterOpen = false;
 
+const delegate = (selector) => (cb) => (e) => e.target.matches(selector) && cb(e);
+const inputDelegate = delegate('input[type=text]');
+
+// отслеживаем изменение инпутов в поиске по фильтрам
+body.addEventListener('focusin', inputDelegate((el) => {
+
+    // изменения чекбоксов
+    if (el.target.classList.contains("filter-search__input")) {
+        el.target.addEventListener("input", (e) => {
+            let filter = e.target.closest(".filter");
+            let clearBtn = filter.querySelector(".filter-search__clear");
+            let filterRowValues = filter.querySelectorAll(".filter-value");
+            let filterContent = filter.querySelector(".filter-content");
+
+            clearBtn.addEventListener("click", () => {
+                e.target.value = "";
+                clearBtn.classList.remove("is-active");
+                filterRowValues.forEach(i => i.closest(".filter-content__row").classList.remove("is-hidden"));
+                filterContent.classList.remove("is-noresults");
+            })
+
+            if (e.target.value.length) {
+                let hiddenCount = 0;
+                clearBtn.classList.add("is-active");
+
+                filterRowValues.forEach(i => {
+                    if (!i.innerText.toLowerCase().includes(e.target.value.toLowerCase())) {
+                        i.closest(".filter-content__row").classList.add("is-hidden");
+                        hiddenCount += 1;
+                    } else {
+                        i.closest(".filter-content__row").classList.remove("is-hidden");
+                    }
+                });
+                filterContent.classList.toggle("is-noresults", hiddenCount == filterRowValues.length)
+            } else {
+                clearBtn.classList.remove("is-active");
+                filterRowValues.forEach(i => i.closest(".filter-content__row").classList.remove("is-hidden"));
+                filterContent.classList.remove("is-noresults");
+            }
+        })
+    }
+
+    // изменения диапазона
+    if (el.target.classList.contains("filter-range__input")) {
+        el.target.addEventListener("blur", (e) => {
+
+            let rangeMin = parseInt(e.target.closest(".filter-range").dataset.rangeMin);
+            let rangeMax = parseInt(e.target.closest(".filter-range").dataset.rangeMax);
+
+            e.target.value = parseInt(e.target.value.replace(/\D/gi, '')) || 0;
+
+
+            if (e.target.dataset.range == "min") {
+                if (e.target.value < rangeMin || e.target.value > rangeMax) {
+                    e.target.value = rangeMin;
+                }
+
+                if (e.target.value != rangeMin) {
+                    setTimeout(() => { e.target.closest(".catalog-filter").dataset.activeFilterCount = ""; }, 150);
+                    // e.target.closest(".catalog-filter").dataset.activeFilterCount = "";
+                }
+            }
+
+            if (e.target.dataset.range == "max") {
+                if (e.target.value < rangeMin + 1) {
+                    e.target.value = rangeMin + 1;
+                }
+
+                if (e.target.value > rangeMax) {
+                    e.target.value = rangeMax;
+                }
+
+                if (e.target.value != rangeMax) {
+                    // setTimeout(() => { e.target.closest(".catalog-filter").dataset.activeFilterCount = ""; }, 150);
+                    e.target.closest(".catalog-filter").dataset.activeFilterCount = "";
+                }
+            }
+
+        })
+    }
+}));
+
+
 function swapImages(productPic, colorPics, actualIndex) {
     clearTimeout(swapImagesTimer);
     swapImagesTimer = setInterval(() => {
@@ -160,7 +243,7 @@ window.addEventListener('click', (e) => {
     if (e.target.classList.contains("catalog-filter__more")) {
         e.target.closest(".catalog-filters").classList.add("catalog-filters--show-all")
         e.target.classList.add("is-hidden");
-    }    
+    }
 
     // для мобилок блокируем клик по названию товара в мини-карточке товара
     if (e.target.classList.contains("card-color")) {
@@ -198,6 +281,11 @@ window.addEventListener('click', (e) => {
             let activeFilter = body.querySelector(".catalog-filter.is-active");
             if (activeFilter) { activeFilter.classList.remove("is-active") }
         }
+    } else {
+        if (e.target.classList.contains("filter-controls__close")) {
+            // console.log("скрываю родительский активный");
+            e.target.closest(".catalog-filter").classList.remove("is-active");
+        }
     }
 
     // отслеживаем изменение чекбокса в фильтрах
@@ -211,6 +299,22 @@ window.addEventListener('click', (e) => {
     }
 
 
+    if (e.target.classList.contains("filter-controls__clear")) {
+        // сбрасываем чекбоксы при нажатии на кнопку Сбросить
+        let activeSiblingCheckboxes = e.target.closest(".filter").querySelectorAll("input.filter-checkbox:checked");
+        if (activeSiblingCheckboxes.length) {
+            activeSiblingCheckboxes.forEach(i => { i.checked = false });
+            delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
+        }
+
+        // сбрасываем цены при нажатии кнопки Сбросить
+        let filterRange = e.target.closest(".filter").querySelector(".filter-range");
+        if (filterRange) {
+            filterRange.querySelector('.filter-range__input[data-range="min"]').value = filterRange.dataset.rangeMin;
+            filterRange.querySelector('.filter-range__input[data-range="max"]').value = filterRange.dataset.rangeMax;
+            delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
+        }
+    }
 })
 
 window.addEventListener('mouseover', (e) => {

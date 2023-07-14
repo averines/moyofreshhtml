@@ -51,7 +51,6 @@ $cub1: cubic-bezier(0.61, -0.44, 0.29, 1.4);
 $cub2: cubic-bezier(0.71, -0.4, 0.09, 0.99);
 $cub3: cubic-bezier(0.8, -1, 0.5, 1.8);
 
-
 // всё, что меньше xxxsm - айфон SE
 $bp-xxxsm: 320px;
 $bp-xxsm: 400px;
@@ -77,3 +76,20 @@ $bs-md: 0 8px 16px #2f314221;
 $bs-lg: 0 10px 18px #2f314221;
 $bs-xl: 0 12px 20px #2f314221;
 $bs-xxl: 0 10px 40px #2f314257;
+
+$c-black: #404142;
+$c-white: #fff;
+$c-blackwhite: linear-gradient(90deg, #fff 50%, #3e3f41 50%);
+$c-biege: #ffe8d6;
+$c-lightblue: #afcdf5;
+$c-yellow: #fcd111;
+$c-green: #51da28;
+$c-brown: #a75c46;
+$c-red: #fc3d2f;
+$c-orange: #ffa51f;
+$c-magenta: #ff8ac5;
+$c-gray: #b5b8b9;
+$c-blue: #4491f5;
+$c-purple: #cb7cff;
+$c-multi-linear: linear-gradient(#add8e6, #2d76ff, #b921b9, #f00, #ffa500, #ff0, #71dd0b);
+$c-multi-conic: conic-gradient(#add8e6, #2d76ff, #b921b9, #f00, #ffa500, #ff0, #71dd0b);

@@ -116,95 +116,95 @@
 
     &--black {
         &::before {
-            background-color: #404142;
+            background-color: $c-black;
         }
     }
 
     &--white {
         &::before {
-            background-color: #fff;
+            background-color: $c-white;
             box-shadow: 0 0 2px 0 #383838;
         }
     }
 
     &--blackwhite {
         &::before {
-            background: linear-gradient(90deg, #fff 50%, #3e3f41 50%);
+            background: $c-blackwhite;
             box-shadow: 0 0 2px 0 #383838;
         }
     }
 
     &--biege {
         &::before {
-            background-color: #ffe8d6;
+            background-color: $c-biege;
             box-shadow: 0 0 2px 0 #383838;
         }
     }
 
     &--lightblue {
         &::before {
-            background-color: #afcdf5;
+            background-color: $c-lightblue;
         }
     }
 
     &--yellow {
         &::before {
-            background-color: #fcd111;
+            background-color: $c-yellow;
         }
     }
 
     &--green {
         &::before {
-            background-color: #51da28;
+            background-color: $c-green;
         }
     }
 
     &--brown {
         &::before {
-            background-color: #a75c46;
+            background-color: $c-brown;
         }
     }
 
     &--red {
         &::before {
-            background-color: #fc3d2f;
+            background-color: $c-red;
         }
     }
 
     &--orange {
         &::before {
-            background-color: #ffa51f;
+            background-color: $c-orange;
         }
     }
 
     &--magenta {
         &::before {
-            background-color: #ff8ac5;
+            background-color: $c-magenta;
         }
     }
 
     &--gray {
         &::before {
-            background-color: #b5b8b9;
+            background-color: $c-gray;
         }
     }
 
     &--blue {
         &::before {
-            background-color: #4491f5;
+            background-color: $c-blue;
         }
     }
 
     &--purple {
         &::before {
-            background-color: #cb7cff;
+            background-color: $c-purple;
         }
     }
 
     &--multi {
         &::before {
-            background: linear-gradient(#add8e6, #2d76ff, #b921b9, #f00, #ffa500, #ff0, #71dd0b);
-            background: conic-gradient(#add8e6, #2d76ff, #b921b9, #f00, #ffa500, #ff0, #71dd0b);
+            background: $c-multi-linear;
+            background: $c-multi-conic;
         }
     }
 }
