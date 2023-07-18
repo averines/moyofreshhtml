@@ -409,38 +409,51 @@ function getRussainDeclension(variants, number) {
 
 // расчет времени до закрытия/открытия магазина
 function getWorktimeStatus(element) {
-    // у element должны быть атрибуты data-time-open и data-time-close со значениями в формате "23:30"
+    // у element должны быть атрибуты data-worktime-open и data-worktime-close со значениями в формате "23:30"
+    // и data-worktime-close с перечеслением номеров дней недели
+
     // получаем текущую дату и время в часовом поясе Москвы
-    const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
-    const currentTime = new Date(now);
+    const moscowTime = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
+    const currentTime = new Date(moscowTime);
+    const currentDayOfWeek = currentTime.getDay()
+
+    // получаем сортированный список рабочих дней недели
+    let workDays = element.dataset.worktimeDays.replace(" ", "").split(",").map(i => parseInt(i)).sort();
+
+    // определяем номер следующего рабочего дня
+    let nextWorkDayOfWeek = workDays.find(day => day > currentDayOfWeek) || workDays[0];
 
     const openTime = new Date();
-    openTime.setHours(parseInt(element.dataset.timeOpen.split(":")[0]));
-    openTime.setMinutes(parseInt(element.dataset.timeOpen.split(":")[1]));
+    const [worktimeOpenHours, worktimeOpenMinutes] = element.dataset.worktimeOpen.replace(" ", "").split(":").map(i => parseInt(i));
+    openTime.setHours(worktimeOpenHours);
+    openTime.setMinutes(worktimeOpenMinutes);
 
     const closeTime = new Date();
-    closeTime.setHours(parseInt(element.dataset.timeClose.split(":")[0]));
-    closeTime.setMinutes(parseInt(element.dataset.timeClose.split(":")[1]));
+    let [worktimeCloseHours, worktimeCloseMinutes] = element.dataset.worktimeClose.replace(" ", "").split(":").map(i => parseInt(i));
+    closeTime.setHours(worktimeCloseHours);
+    closeTime.setMinutes(worktimeCloseMinutes);
 
-    let hours, minutes, timeDiff, message;
+    let statusHours, statusMinutes, timeDiff, statusMessage;
 
     // проверяем, открыт ли магазин сейчас
-    if (currentTime >= openTime && currentTime <= closeTime) {
+    if (workDays.includes(currentDayOfWeek) && currentTime >= openTime && currentTime <= closeTime) {
         timeDiff = Math.abs(closeTime - currentTime); // время до закрытия магазина
-        message = "Сейчас открыто, закроется через";
+        statusMessage = "Сейчас открыто, закроется через";
     } else {
-        const nextDay = new Date();
-        nextDay.setDate(currentTime.getDate() + 1);
-        nextDay.setHours(openTime.getHours());
-        nextDay.setMinutes(openTime.getMinutes());
-        timeDiff = Math.abs(nextDay - currentTime); // время до открытия магазина
-        message = "Сейчас закрыто, откроется через";
+        const delta = nextWorkDayOfWeek > currentDayOfWeek ? nextWorkDayOfWeek - currentDayOfWeek : 7 - currentDayOfWeek + workDays[0];
+        const nextWorkDay = new Date();
+        nextWorkDay.setDate(currentTime.getDate() + delta);
+        nextWorkDay.setHours(openTime.getHours());
+        nextWorkDay.setMinutes(openTime.getMinutes());
+
+        timeDiff = Math.abs(nextWorkDay - currentTime); // время до открытия магазина
+        statusMessage = "Сейчас закрыто, откроется через";
         element.classList.add("is-close");
     }
 
-    hours = Math.floor(timeDiff / 3600000);
-    minutes = Math.floor((timeDiff % 3600000) / 60000);
-    element.innerHTML = `${message} ${hours > 0 ? hours + "&nbsp;" + getRussainDeclension(["час", "часа", "часов"], hours) : ""}&nbsp;${minutes}&nbsp;${getRussainDeclension(["минуту", "минуты", "минут"], minutes)}`
+    statusHours = Math.floor(timeDiff / 3600000);
+    statusMinutes = Math.floor((timeDiff % 3600000) / 60000);
+    element.innerHTML = `${statusMessage} ${statusHours > 0 ? statusHours + "&nbsp;" + getRussainDeclension(["час", "часа", "часов"], statusHours) : ""}&nbsp;${statusMinutes}&nbsp;${getRussainDeclension(["минуту", "минуты", "минут"], statusMinutes)}`
 }
 
 const worktimeEl = document.getElementById("js-worktime");
