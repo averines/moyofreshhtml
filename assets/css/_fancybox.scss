@@ -43,3 +43,42 @@
     --f-button-color: $text-l;
     --f-button-hover-color: $text;
 }
+
+.f-carousel.product-cards {
+    border: 1px solid red;
+    display: block;
+    --f-carousel-slide-width: 100%;
+
+    .product-card {
+        .product-card__pic {
+            width: auto;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .f-carousel {
+            --f-carousel-slide-width: calc(100% / 3);
+        }
+    }
+}
+
+.swiper {
+    width: calc(100% + 50px);
+    // border: 1px solid black;
+    overflow-x: clip !important;
+    overflow-y: initial !important;
+    margin: 0 -25px 0 -25px !important;
+    padding: 0 25px !important;
+}
+
+.swiper-slide {
+    // border: 1px solid red;
+}
+
+.swiper-slide.product-card {
+    &:hover {
+        .product-card__wrapper {
+            box-shadow: 0 8px 25px rgba(47, 49, 66, 0.3411764706);
+        }
+    }
+}

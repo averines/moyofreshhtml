@@ -356,9 +356,9 @@ window.addEventListener('mouseover', (e) => {
     }
 
     //фиксируем высоту родительской обертки товара, чтобы не было сдвига, когда контент карточки становится позиционирован абсолютно (не адаптивно)
-    if (e.target.closest(".product-card")) {
-        e.target.closest(".product-card").style.height = `${e.target.closest(".product-card").getBoundingClientRect().height}px`;
-    }
+    // if (e.target.closest(".product-card")) {
+    //     e.target.closest(".product-card").style.height = `${e.target.closest(".product-card").getBoundingClientRect().height}px`;
+    // }
 })
 
 
@@ -396,6 +396,11 @@ Fancybox.bind("[data-fancybox]", {});
 // слайдер через фансибокс
 const sliderMain = document.getElementById("sliderMain");
 if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
+
+// слайдер Просмотренных товаров фансибокс
+// const sliderViewedProducts = document.getElementById("viewedProducts");
+// if (sliderViewedProducts) { new Carousel(sliderViewedProducts, { infinite: false, fill: false, slidesPerPage: 7, transition: "slide" }) }
+
 
 // окончания для единиц измерения на русском языке
 function getRussainDeclension(variants, number) {
@@ -458,3 +463,61 @@ function getWorktimeStatus(element) {
 
 const worktimeEl = document.getElementById("js-worktime");
 if (worktimeEl) { getWorktimeStatus(worktimeEl) }
+
+
+// добавляем плейсхолдеры в блоке Просмотренные товары на странице Товара
+const productPlaceholdersEl = document.querySelector(".product-cards--placeholder");
+if (productPlaceholdersEl) {
+    let productCards = productPlaceholdersEl.querySelectorAll(".product-card");
+    if (productCards.length) {
+        const placeholders = document.createDocumentFragment();
+        for (let i = 0; i < 7 - productCards.length; i++) {
+            let placeholder = document.createElement("div");
+            placeholder.classList.add("product-card-placeholder");
+            placeholders.appendChild(placeholder);
+        }
+
+        productPlaceholdersEl.appendChild(placeholders);
+    }
+}
+
+const swiper = new Swiper('.swiper', {
+    loop: false,
+    spaceBetween: 20,
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
+    slidesPerView: 2,
+
+    breakpoints: {
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        },
+        400: {
+            slidesPerView: 2.5,
+            spaceBetween: 10
+        },
+        575: {
+            slidesPerView: 3.5,
+            spaceBetween: 10
+        },
+        750: {
+            slidesPerView: 4.5,
+            spaceBetween: 10
+        },
+        1000: {
+            slidesPerView: 5,
+            spaceBetween: 20
+        },
+        1100: {
+            slidesPerView: 6,
+            spaceBetween: 20
+        },
+        1300: {
+            slidesPerView: 7,
+        },
+        1600: {
+            slidesPerView: 7,
+            spaceBetween: 30
+        }        
+    }
+});
