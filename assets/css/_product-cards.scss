@@ -139,7 +139,7 @@
         > div {
             border: 3px solid transparent;
             width: 100%;
-            height: 100%;
+            height: auto;
 
             &:hover {
                 border-bottom-color: $text-l;

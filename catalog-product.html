@@ -26,16 +26,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap">
 
     <link rel="stylesheet" href="./assets/libs/fancybox/css.min.css">
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
+
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <link rel="icon" href="./assets/img/favicon/favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="./assets/img/favicon/favicon.svg" type="image/svg+xml">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-top">
             <div class="container">
                 <div class="header-top__inner">
@@ -1517,20 +1516,21 @@
                         <meta itemprop="position" content="3">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name">VILATTE Туника 6696П</span>
+                        <span itemprop="name">VILATTE Туника</span>
                         <meta itemprop="position" content="4">
                     </li>
                 </ol>
             </nav>
         </div>
 
+        <!-- товар -->
         <div class="container">
             <div class="product">
                 <div class="product__header">
                     <h1 class="product__title">VILATTE Туника 6696П, фиолетовый</h1>
                     <div class="product-info">
                         <div class="product-info__rating" data-rating="5">4.5</div>
-                        <a class="product-info__gotolink" href="#reviews">Отзывов 12</a>
+                        <a class="product-info__gotolink" href="#reviews" data-action="scroll">Отзывов 12</a>
                         <div class="product-info__buycount">Купили 7 раз</div>
                         <div class="product-info__badges">
                             <div class="badge badge--hit"></div>
@@ -1545,13 +1545,162 @@
                     </div>
                 </div>
                 <div class="product__content">
-                    <div class="product__gallery"></div>
-                    <div class="product__details"></div>
+                    <div class="product__images">
+                        <div class="sticky-wrapper">
+                            <div class="product-images">
+                                <div class="product-image"><img alt="Vilatte Туника 6696П фото 1" width="600" height="900" src="./i/products/600x900/555101.jpg" srcset="./i/products/300x450/555101.webp 300w, ./i/products/600x900/555101.webp 600w" sizes="(max-width: 1200px) 200px, 600px"></div>
+                                <div class="product-image"><img alt="Vilatte Туника 6696П фото 2" width="600" height="900" src="./i/products/600x900/555101-a1.jpg" srcset="./i/products/300x450/555101-a1.webp 300w, ./i/products/600x900/555101-a1.webp 600w" sizes="(max-width: 1200px) 200px, 600px"></div>
+                                <div class="product-image"><img alt="Vilatte Туника 6696П фото 3" width="600" height="900" src="./i/products/600x900/555101-a2.jpg" srcset="./i/products/300x450/555101-a2.webp 300w, ./i/products/600x900/555101-a2.webp 600w" sizes="(max-width: 1200px) 200px, 600px"></div>
+                                <div class="product-image"><img alt="Vilatte Туника 6696П фото " width="600" height="900" src="./i/products/600x900/555101-a2.jpg" srcset="./i/products/300x450/555101-a2.webp 300w, ./i/products/600x900/555101-a2.webp 600w" sizes="(max-width: 1200px) 200px, 600px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__details">
+                        <div class="sticky-wrapper">
+                            <div class="product__buy">
+                                <div class="product-price">
+                                    <div class="product-price__header"></div>
+                                    <div class="product-price__content">
+                                        <div class="product-price__actual">2450 ₽</div>
+                                        <div class="product-price__old">3450 ₽</div>
+                                    </div>
+                                </div>
+                                <div class="product-alerts">
+                                    <div class="product-alert product-alert--bad">Товар только для оптовых покупателей</div>
+                                    <div class="product-alert">Возврату и обмену не подлежит</div>
+                                </div>
+
+                                <div class="product-sizes__wrapper">
+                                    <button class="btn-showsizes" data-fancybox data-type="ajax" data-src="modal-sizes.html">Таблица размеров</button>
+                                    <div class="product-sizes">
+                                        <div class="product-size">
+                                            <button class="product-size__add" aria-label="Добавить размер в корзину">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">48</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                        <div class="product-size">
+                                            <button class="product-size__add">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">50</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove" aria-label="Удалить размер из корзины"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-total">Этот товар в корзине: <span>10 шт./ 22300 ₽</span></div>
+                            </div>
+
+                            <div class="mt-4">
+                                <p class="h3">Цвет: <span class="text-normal">Фиолетовый</span></p>
+                                <div class="product-colors">
+                                    <div class="product-color product-color--active" title="Фиолетовый"><img src="./i/products/67x100/555101.jpg" srcset="./i/products/67x100/555101.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="67" height="100"></div>
+                                    <a class="product-color" href="catalog-product.html" title="Красный"><img src="./i/products/67x100/555102.jpg" srcset="./i/products/67x100/555102.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="67" height="100"></a>
+                                    <a class="product-color" href="catalog-product.html" title="Зеленый"><img src="./i/products/67x100/555103.jpg" srcset="./i/products/67x100/555103.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="67" height="100"></a>
+                                    <a class="product-color" href="catalog-product.html" title="Розовый"><img src="./i/products/67x100/555104.jpg" srcset="./i/products/67x100/555104.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="67" height="100"></a>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <ul class="product-specs">
+                                    <li class="product-spec"><span class="product-spec__title">Артикул</span><span class="product-spec__content">0102219PP</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">ID</span><span class="product-spec__content">854203</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Цвет</span><span class="product-spec__content">Фиолетовый</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Состав</span><span class="product-spec__content">70% Район, 25% Нейлон, 5% Эластан</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Сезон</span><span class="product-spec__content">Весна-лето</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Страна производства</span><span class="product-spec__content">Россия</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Страна вендора</span><span class="product-spec__content">Россия</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Длина</span><span class="product-spec__content">Миди</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Фасон</span><span class="product-spec__content">Расклешенное</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Рукав</span><span class="product-spec__content">Короткие</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Вид застежки</span><span class="product-spec__content">Молния</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Вырез горловины</span><span class="product-spec__content">V-образный</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Тип карманов</span><span class="product-spec__content">В шве</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Стиль</span><span class="product-spec__content">Повседневный</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Основная ткань</span><span class="product-spec__content">Район</span></li>
+                                </ul>
+                                <!-- если характеристик больше 6-ти, то показываем кнопку -->
+                                <button class="btn-showmore" data-action="showmore-product-specs">Показать все характеристики</button>
+                            </div>
+
+                            <div class="mt-3">
+                                <h2 class="h3">О товаре</h2>
+                                <!-- если в product__description более 220 символов, то добавить класс is-collapsed" -->
+                                <div class="product__description is-collapsed">
+                                    <p>Лонгслив женский - это универсальная вещь в гардеробе каждой модницы. Он идеально подходит для создания различных образов и может быть использован как в повседневной жизни, так и для спортивных занятий. Лонгслив женский оверсайз отличается свободным кроем и подходит для создания стильного и непринужденного образа. Лонгслив женский с вырезом добавит нотку
+                                        сексуальности и изысканности вашему образу. Лонгслив с разрезами создаст эффектный и необычный образ, который точно привлечет внимание окружающих. Лонгслив женский удлиненный идеально подходит для создания спортивного или уличного образа. Лонгслив для девочки будет не только стильной, но и комфортной для активных игр и занятий спортом. Лонгслив спортивный
+                                        выполнен из высококачественного хлопка и обеспечивает комфорт и свободу движений. Лонгслив с широкими рукавами добавит вашему образу особую изюминку и стильность. Кофта женская оверсайз отлично сочетается с джинсами или леггинсами и подходит для создания различных образов. Однотонная кофта легко сочетается с любыми брюками или юбками и подходит для любого
+                                        случая.</p>
+                                </div>
+                                <!-- если в product__description более 220 символов, то показать кнопку -->
+                                <button class="btn-showmore" data-action="showmore-product-description">Развернуть описание</button>
+                            </div>
+
+                            <div class="product__related-links mt-3">
+                                <a href="catalog-brand.html" title="Все товары бренда VILATTE">
+                                    <img src="./i/vendors/150x75/02.jpg" srcset="./i/vendors/150x75/02.webp" alt="VILATTE" width="100" height="50">
+                                </a>
+                                <a href="#">Другие вечерние платья VILATTE</a>
+                                <a href="#">Все платья VILATTE</a>
+                                <a href="#">Все повседневные платья</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product__aside">
                         <div class="box mt-3">
                             <h2>Похожие категории</h2>
                             <div class="subcategories-list">
-                                <a class="subcategories-list__item" href="catalog-subcategory.html">Повседневные</a>
                                 <a class="subcategories-list__item" href="catalog-subcategory.html">Офисные</a>
                                 <a class="subcategories-list__item" href="catalog-subcategory.html">Трикотажные</a>
                                 <a class="subcategories-list__item" href="catalog-subcategory.html">Свадебные</a>
@@ -1566,7 +1715,7 @@
                             </div>
                         </div>
 
-                        <div class="box mt-3">
+                        <div class="box mt-3" id="reviews">
                             <h2>Отзывы и вопросы</h2>
                             <p class="text-bold">Отзывов или вопросов о товаре пока нет</p>
                             <p class="text-muted">
@@ -1580,6 +1729,7 @@
             </div>
         </div>
 
+        <!-- похожие товары -->
         <div class="container mt-4">
             <h2>Похожие товары</h2>
             <div class="product-cards">
@@ -1945,12 +2095,12 @@
                 </article>
             </div>
         </div>
-
+        <!-- вы смотрели -->
         <div class="container mt-4">
             <div class="section-header">
-                <h2>Вы смотрели</h2> <a href="user-viewed.html">Показать все</a>
+                <h2>Вы смотрели</h2> <a href="user-recent.html">Показать все</a>
             </div>
-            <div class="swiper my-2">
+            <div class="swiper mb-3">
                 <div class="swiper-wrapper">
                     <article class="swiper-slide product-card" data-active-color-id="555101">
                         <div class="product-card__wrapper">
@@ -2305,6 +2455,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <button class="btn-scroll" id="scroll-to-top" data-action="scroll" data-scroll-target="header" aria-label="Наверх"></button>
                 <div class="footer-bottom__copyrights">© 2015—2023 <span class="text-nowrap">Интернет-магазин OptMoyo.ru</span></div>
                 <img class="footer-bottom__pay" src="./assets/img/pay.svg" alt="Принимаем оплату МИР, Visa, Master Card" loading="lazy" width="140" height="17">
                 <a class="footer-bottom__link" href="info-privacy.html">Политика обработки данных</a>
@@ -2313,7 +2464,8 @@
     </footer>
 
     <script src="./assets/libs/fancybox/js.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/libs/swiper/swiper.min.js"></script>
+    <script src="./assets/js.min.js"></script>
 </body>
 
 </html>

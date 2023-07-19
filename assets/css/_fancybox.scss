@@ -63,22 +63,73 @@
 }
 
 .swiper {
-    width: calc(100% + 50px);
     // border: 1px solid black;
-    overflow-x: clip !important;
-    overflow-y: initial !important;
-    margin: 0 -25px 0 -25px !important;
-    padding: 0 25px !important;
+    width: calc(100% + 50px);
+    overflow-x: clip;
+    overflow-y: initial;
+    margin: 0 -25px 0 -25px;
+    padding: 0 25px;
 }
 
 .swiper-slide {
     // border: 1px solid red;
+
+    &.product-card {
+        &:hover {
+            .product-card__wrapper {
+                box-shadow: 0 10px 22px rgba(47, 49, 66, 0.3411764706);
+            }
+        }
+    }
 }
 
-.swiper-slide.product-card {
+.swiper-button-next,
+.swiper-button-prev {
+    --swiper-navigation-sides-offset: 5px;
+    top: calc(35% - 20px);
+    width: 45px;
+    height: 45px;
+    margin-top: 0;
+    color: $main;
+    background-color: #fff;
+    border-radius: $br-xl;
+    box-shadow: $bs-xsm;
+    border: 1px solid $line;
+    transition: $t;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: url(../img/icons/chevron-down.svg) no-repeat center/70%;
+        transform: rotate(90deg);
+        transition: $t;
+    }
+
     &:hover {
-        .product-card__wrapper {
-            box-shadow: 0 8px 25px rgba(47, 49, 66, 0.3411764706);
+        &::after {
+            filter: brightness(0);
         }
+    }
+
+    &.swiper-button-disabled {
+        pointer-events: all;
+        opacity: 1;
+
+        &::after {
+            opacity: 0.35;
+        }
+
+        &:hover {
+            &::after {
+                filter: none;
+            }
+        }
+    }
+}
+
+.swiper-button-next {
+    &::after {
+        transform: rotate(-90deg);
     }
 }

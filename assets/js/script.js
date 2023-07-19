@@ -1,3 +1,5 @@
+"use strict";
+
 const body = document.querySelector("body");
 const catalogNav = document.querySelector(".catalog-nav");
 const catalogBtn = document.querySelector(".catalog-btn");
@@ -298,7 +300,6 @@ window.addEventListener('click', (e) => {
         }
     }
 
-
     if (e.target.classList.contains("filter-controls__clear")) {
         // сбрасываем чекбоксы при нажатии на кнопку Сбросить
         let activeSiblingCheckboxes = e.target.closest(".filter").querySelectorAll("input.filter-checkbox:checked");
@@ -315,6 +316,39 @@ window.addEventListener('click', (e) => {
             delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
         }
     }
+
+    // обработка кликов с data-action
+    if (e.target.dataset.hasOwnProperty('action')) {
+
+        // плавный переход к блоку
+        if (e.target.dataset.action == "scroll") {
+            e.preventDefault();
+            let scrollToEl;
+            if (e.target.getAttribute('href')) {
+                scrollToEl = e.target.getAttribute('href');
+                scrollToEl = scrollToEl.replace("#", "");
+            } else {
+                scrollToEl = e.target.dataset.scrollTarget;
+            }
+            document.getElementById(scrollToEl).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // показать все характеристики товара
+        if (e.target.dataset.action == "showmore-product-specs") {
+            const productSpecs = document.querySelector(".product-specs");
+            productSpecs.classList.add("is-active");
+            e.target.classList.add("is-hidden");
+        }
+
+        // показать целиком описание товара
+        if (e.target.dataset.action == "showmore-product-description") {
+            const productDescription = document.querySelector(".product__description");
+            productDescription.classList.add("is-active");
+            e.target.classList.add("is-hidden");
+        }
+    }
+
+
 })
 
 window.addEventListener('mouseover', (e) => {
@@ -518,6 +552,6 @@ const swiper = new Swiper('.swiper', {
         1600: {
             slidesPerView: 7,
             spaceBetween: 30
-        }        
+        }
     }
 });
