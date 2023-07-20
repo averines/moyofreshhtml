@@ -321,6 +321,83 @@ a.product-color {
         font-size: 18px;
         text-decoration: line-through;
     }
+
+    &__header {
+        color: #fff;
+        padding: 10px 30px 10px 15px;
+        border-radius: $br-md;
+        background: $g-main;
+        display: inline-flex;
+        align-items: center;
+        column-gap: 20px;
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        &--action {
+            column-gap: 5px;
+            padding: 13px 35px 13px 20px;
+            background: $g-special;
+
+            .product-price__countdown {
+                display: block;
+            }
+
+            .product-price__profit {
+                padding-right: 25px;
+                margin-right: 15px;
+                font-size: 13px;
+
+                > br {
+                    display: inline;
+                }
+
+                &::after {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    &__percent {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    &__profit {
+        color: $main-ll;
+        line-height: 1;
+        position: relative;
+        font-size: 14px;
+        padding-left: 15px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+            position: absolute;
+            left: 0;
+            top: -6px;
+            bottom: -6px;
+        }
+
+        > br {
+            display: none;
+        }
+
+        > span {
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+
+    &__countdown {
+        font-size: 14px;
+        display: none;
+    }
 }
 
 .product-alerts {
