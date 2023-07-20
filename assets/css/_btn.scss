@@ -91,8 +91,8 @@
     width: 45px;
     height: 45px;
     border-radius: $br-xl;
-    left: 30px;
-    bottom: 30px;
+    left: 15px;
+    bottom: 80px;
     z-index: 99;
     border: none;
     box-shadow: $bs-xsm;
@@ -102,6 +102,11 @@
     opacity: 0;
     transform: translateY(15px);
     pointer-events: none;
+
+    @media screen and (min-width: $bp-sm) {
+        left: 30px;
+        bottom: 30px;
+    }
 
     &.is-active {
         visibility: visible;
@@ -158,6 +163,7 @@
     display: flex;
     column-gap: 5px;
     align-items: center;
+    margin-bottom: 15px;
 
     &::before {
         content: "";

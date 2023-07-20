@@ -26,13 +26,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap">
 
     <link rel="stylesheet" href="./assets/libs/fancybox/css.min.css">
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
+
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <link rel="icon" href="./assets/img/favicon/favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="./assets/img/favicon/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-top">
             <div class="container">
                 <div class="header-top__inner">
@@ -225,7 +227,8 @@
                             <a class="user-btn" href="user-cart.html">
                                 <div class="user-btn__icon">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.75 9.16699H3.66667M19.25 9.16699H18.3333M18.3333 9.16699L17.4167 18.3337H4.58333L3.66667 9.16699M18.3333 9.16699H14.6667M3.66667 9.16699H7.33333M11 12.8337V14.667M13.75 12.8337V14.667M8.25 12.8337V14.667M7.33333 9.16699H14.6667M7.33333 9.16699V7.33366C7.33333 6.11174 8.06667 3.66699 11 3.66699C13.9333 3.66699 14.6667 6.11174 14.6667 7.33366V9.16699"
+                                        <path
+                                            d="M2.75 9.16699H3.66667M19.25 9.16699H18.3333M18.3333 9.16699L17.4167 18.3337H4.58333L3.66667 9.16699M18.3333 9.16699H14.6667M3.66667 9.16699H7.33333M11 12.8337V14.667M13.75 12.8337V14.667M8.25 12.8337V14.667M7.33333 9.16699H14.6667M7.33333 9.16699V7.33366C7.33333 6.11174 8.06667 3.66699 11 3.66699C13.9333 3.66699 14.6667 6.11174 14.6667 7.33366V9.16699"
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
@@ -420,7 +423,7 @@
                                             <li><a href="info-returns.html">Возврат</a></li>
                                             <li><a href="info-faq.html">Ответы на&nbsp;вопросы</a></li>
                                             <li><a href="info-sizes.html">Таблица размеров</a></li>
-    
+
                                         </ul>
                                     </div>
                                 </div>
@@ -704,7 +707,7 @@
                                         <a href="catalog-subcategory.html">Юбки</a>
                                         <a href="catalog-subcategory.html">Комплекты</a>
                                     </div>
-    
+
                                     <div class="catalog-tab__menu">
                                         <a href="catalog-category.html">Верхняя одежда</a>
                                         <a href="catalog-subcategory.html">Жакеты</a>
@@ -1375,11 +1378,11 @@
                                             <li><a href="catalog-brand.html">WOLA</a></li>
                                             <li><a href="catalog-brand.html">YOULALA</a></li>
                                         </ul>
-    
+
                                     </div>
                                     <div class="catalog-list__wrapper">
                                         <div class="catalog-list__title">Мужчинам</div>
-    
+
                                         <ul class="catalog-list catalog-list--male">
                                             <li><a href="catalog-brand.html">АПРЕЛЬ</a></li>
                                             <li><a href="catalog-brand.html">НАТАЛИ</a></li>
@@ -1405,7 +1408,7 @@
                                             <li><a href="catalog-brand.html">VILATTE</a></li>
                                             <li><a href="catalog-brand.html">WOLA</a></li>
                                         </ul>
-    
+
                                     </div>
                                     <div class="catalog-list__wrapper">
                                         <div class="catalog-list__title">Мальчикам</div>
@@ -1497,7 +1500,7 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="container container--lg">
             <nav>
                 <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -1505,49 +1508,729 @@
                         <meta itemprop="position" content="1">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a href="info-index.html" itemprop="item"><span itemprop="name">Информация</span></a>
+                        <a href="catalog-section.html" itemprop="item"><span itemprop="name">Женщинам</span></a>
                         <meta itemprop="position" content="2">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name">Организаторам СП</span>
+                        <a href="catalog-subcategory.html" itemprop="item"><span itemprop="name">Платья</span></a>
                         <meta itemprop="position" content="3">
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">VILATTE Туника</span>
+                        <meta itemprop="position" content="4">
                     </li>
                 </ol>
             </nav>
-        </div>
 
-        <div class="container">
-            <div class="box">
-                <h1>Организаторам совместных покупок</h1>
+            <!-- товар -->
+            <div class="product">
+                <div class="product__header">
+                    <h1 class="product__title">VILATTE Туника 6696П, фиолетовый</h1>
+                    <div class="product-info">
+                        <div class="product-info__rating product-info__rating--empty">Нет оценок</div>
+                        <a class="product-info__gotolink" href="#reviews" data-action="scroll">Добавить отзыв или вопрос</a>
+                        <div class="product-info__aside">
+                            <div class="product-info__code">Код товара: 555101</div>
+                            <button class="product-info__fav" aria-label="В избранное"></button>
+                            <button class="product-info__share" aria-label="Поделиться" data-fancybox data-type="ajax" data-src="modal-auth.html"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product__content">
+                    <div class="product__images">
+                        <div class="sticky-wrapper">
+                            <div class="product-images">
+                                <div class="product-image"><img alt="Vilatte Туника 6696П фото 1" width="600" height="900" src="./i/products/600x900/555101.jpg" srcset="./i/products/300x450/555101.webp 300w, ./i/products/600x900/555101.webp 600w" sizes="(max-width: 1200px) 200px, 600px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__details">
+                        <div class="sticky-wrapper">
+                            <div class="product__buy">
+                                <div class="product-price">
+                                    <div class="product-price__header"></div>
+                                    <div class="product-price__content">
+                                        <div class="product-price__actual">2450 ₽</div>
+                                    </div>
+                                </div>
+                                <div class="product-sizes__wrapper">
+                                    <!-- <button class="btn-showsizes" data-fancybox data-type="ajax" data-src="modal-sizes.html">Таблица размеров</button> -->
+                                    <div class="product-sizes">
+                                        <div class="product-size">
+                                            <button class="product-size__add" aria-label="Добавить размер в корзину">+</button>
+                                            <div class="product-size__content">
+                                                <div class="product-size__title">48</div>
+                                                <div class="product-size__counter"><span>0</span> шт.</div>
+                                            </div>
+                                            <button class="product-size__remove"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-total">Этот товар в Корзине: <span>0 шт./ 0 ₽</span></div>
+                            </div>
+
+                            <div class="mt-3">
+                                <p class="h3">Цвет: <span class="text-normal">Фиолетовый</span></p>
+                                <!-- если цветов > 1, то выделять активный добавляя product-color--active-->
+                                <div class="product-colors">
+                                    <div class="product-color" title="Фиолетовый"><img src="./i/products/67x100/555101.jpg" srcset="./i/products/67x100/555101.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="67" height="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <ul class="product-specs">
+                                    <li class="product-spec"><span class="product-spec__title">Артикул</span><span class="product-spec__content">0102219PP</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">ID</span><span class="product-spec__content">854203</span></li>
+                                    <li class="product-spec"><span class="product-spec__title">Цвет</span><span class="product-spec__content">Фиолетовый</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-3">
+                                <h2 class="h3">О товаре</h2>
+                                <!-- если в product__description более 220 символов, то добавить класс is-collapsed" -->
+                                <div class="product__description">
+                                    <p>Лонгслив женский - это универсальная вещь в гардеробе каждой модницы. Он идеально подходит для создания различных образов.</p>
+                                </div>
+                            </div>
+
+                            <div class="product__related-links mt-3">
+                                <a href="catalog-brand.html" title="Все товары бренда VILATTE">
+                                    <img src="./i/vendors/150x75/02.jpg" srcset="./i/vendors/150x75/02.webp" alt="VILATTE" width="100" height="50">
+                                </a>
+                                <a href="#">Другие вечерние платья VILATTE</a>
+                                <a href="#">Все платья VILATTE</a>
+                                <a href="#">Все повседневные платья</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__after">
+                        <div class="box mt-3">
+                            <h2>Похожие категории</h2>
+                            <div class="subcategories-list">
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Офисные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Трикотажные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Свадебные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Длинные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Сарафаны</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Летние</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Короткие</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Выпускные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Кружевные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Пляжные</a>
+                                <a class="subcategories-list__item" href="catalog-subcategory.html">Свадебные</a>
+                            </div>
+                        </div>
+
+                        <div class="box mt-3" id="reviews">
+                            <h2>Отзывы и вопросы</h2>
+                            <p class="text-bold">Отзывов или вопросов о товаре пока нет</p>
+                            <p class="text-muted">
+                                Вы можете поделиться своим мнением о совершенной покупке или задать вопрос о товаре.
+                                Вам ответит менеджер нашего магазина, уведомление об этом поступит на ваш email.
+                            </p>
+                            <button class="btn btn--outline btn--main">Добавить отзыв/вопрос</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="box box--sm">
-                <nav class="page-menu mt-2 mb-4">
-                    <a href="info-conditions.html" class="page-menu__item">Условия</a>
-                    <a href="info-delivery.html" class="page-menu__item">Доставка</a>
-                    <a href="info-payment.html" class="page-menu__item">Оплата</a>
-                    <a href="info-bonus.html" class="page-menu__item">Скидки и бонусы</a>
-                    <a href="info-sp.html" class="page-menu__item page-menu__item--active">Организаторам СП</a>
-                    <a href="info-returns.html" class="page-menu__item">Возврат</a>
-                    <a href="info-faq.html" class="page-menu__item">Ответы на вопросы</a>
-                    <a href="info-sizes.html" class="page-menu__item">Таблица размеров</a>
-                </nav>
+            <!-- покупают вместе 6шт. внимание, тут заголовки товаров h3-->
+            <div class="mt-4">
+                <h2>С этим товаром покупают</h2>
+                <div class="product-cards">
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
 
-            <div class="box">
-                <ul class="marker marker--checked">
-                    <li>Мы работаем с физическими и юридическими лицами;</li>
-                    <li>Минимальная сумма заказа 7500 рублей;</li>
-                    <li>Товары продаются поштучно, без размерных рядов;</li>
-                    <li>Можно сделать дозаказ на любую сумму до момента оплаты;</li>
-                    <li>Готовые выгрузки всего каталога товаров с фотографиями для размещения на форумах и в соцсетях;</li>
-                    <li>Заказ отправляется после полной оплаты;</li>
-                    <li>Отгружаем товар от 3 до 14-ти дней, в зависимости от объема заказа;</li>
-                    <li>Бесплатная доставка до терминала транспортных компаний в Москве;</li>
-                    <li>Доставка через транспортные и курьерские компании по всей России, а также в Казахстан, Белоруссию и другие страны;</li>
-                    <li>Вернуть товар можно только в случае фабричного брака или пересорта. Пересылка за наш счёт.</li>
-                    <li>Накопительная скидка до 5% и начисление бонусов 1% с каждого заказа</li>
-                </ul>
+            <!-- похожие товары 12шт. внимание, тут заголовки товаров h3-->
+            <div class="mt-4">
+                <h2>Похожие товары</h2>
+                <div class="product-cards">
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-active-color-id="555101">
+                        <div class="product-card__wrapper">
+                            <div class="product-card__head">
+                                <button class="product-card__fav" aria-label="В избранное"></button>
+                                <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__prices">
+                                    <div class="card-price">
+                                        <div class="card-price__actual"><span>2450</span>₽</div>
+                                    </div>
+                                </div>
+                                <a class="product-card__body-link" href="#">
+                                    <h3 class="product-card__header">
+                                        <span class="product-card__brand">Vilatte</span>
+                                        <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                    </h3>
+                                </a>
+                                <div class="product-card__colors card-colors">
+                                    <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                </div>
+                                <div class="product-card__sizes card-sizes">
+                                    <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                    <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- вы смотрели. внимание, тут заголовки товаров h3-->
+            <div class="my-4">
+                <div class="section-header">
+                    <h2>Вы смотрели</h2>
+                    <a href="user-recent.html">Показать все</a>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <article class="swiper-slide product-card" data-active-color-id="555101">
+                            <div class="product-card__wrapper">
+                                <div class="product-card__head">
+                                    <button class="product-card__fav" aria-label="В избранное"></button>
+                                    <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                                    <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                                </div>
+                                <div class="product-card__body">
+                                    <div class="product-card__prices">
+                                        <div class="card-price">
+                                            <div class="card-price__actual"><span>2450</span>₽</div>
+                                        </div>
+                                    </div>
+                                    <a class="product-card__body-link" href="#">
+                                        <h3 class="product-card__header">
+                                            <span class="product-card__brand">Vilatte</span>
+                                            <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                        </h3>
+                                    </a>
+                                    <div class="product-card__colors card-colors">
+                                        <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                    </div>
+                                    <div class="product-card__sizes card-sizes">
+                                        <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                        <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                        <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
         </div>
     </main>
@@ -1620,6 +2303,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <button class="btn-scroll" id="scroll-to-top" data-action="scroll" data-scroll-target="header" aria-label="Наверх"></button>
                 <div class="footer-bottom__copyrights">© 2015—2023 <span class="text-nowrap">Интернет-магазин OptMoyo.ru</span></div>
                 <img class="footer-bottom__pay" src="./assets/img/pay.svg" alt="Принимаем оплату МИР, Visa, Master Card" loading="lazy" width="140" height="17">
                 <a class="footer-bottom__link" href="info-privacy.html">Политика обработки данных</a>
@@ -1628,7 +2312,8 @@
     </footer>
 
     <script src="./assets/libs/fancybox/js.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/libs/swiper/swiper.min.js"></script>
+    <script src="./assets/js.min.js"></script>
 </body>
 
 </html>

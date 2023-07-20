@@ -524,30 +524,31 @@ const swiper = new Swiper('.swiper', {
     breakpoints: {
         320: {
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: 15
         },
         400: {
             slidesPerView: 2.5,
-            spaceBetween: 10
+            spaceBetween: 15
         },
         575: {
             slidesPerView: 3.5,
-            spaceBetween: 10
+            spaceBetween: 15
         },
         750: {
             slidesPerView: 4.5,
-            spaceBetween: 10
+            spaceBetween: 20
         },
         1000: {
             slidesPerView: 5,
             spaceBetween: 20
         },
         1100: {
-            slidesPerView: 6,
-            spaceBetween: 20
+            slidesPerView: 5.5,
+            spaceBetween: 25
         },
         1300: {
             slidesPerView: 7,
+            spaceBetween: 25
         },
         1600: {
             slidesPerView: 7,

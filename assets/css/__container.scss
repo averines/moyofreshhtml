@@ -19,12 +19,19 @@
         max-width: 800px;
     }
 
+    &--lg {
+        max-width: 1560px;
+
+        @media screen and (min-width: $bp-xxxl) {
+            max-width: 1800px;
+        }
+    }
+
     &--xl {
         max-width: 1900px;
     }
 
     &--full {
-        // max-width: 2500px;
         max-width: 1560px;
 
         @media screen and (min-width: $bp-xxxl) {
