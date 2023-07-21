@@ -30,9 +30,10 @@ $g-special: linear-gradient(100deg, $special-1, $special-2);
 $g-good: linear-gradient(100deg, #a3ee4e, #03c5bb);
 $g-good-l: linear-gradient(100deg, #e1fcc3, #97f3ee);
 
-$text: #2f3142;
-// $text-l: #71738f; //новый более контрастный
-$text-l: #8e90a7; //старый, посветлее
+$text: #2f3142;  //старый, посветлее
+$text: #222330; //более темный
+// $text-l: #8e90a7; //старый, посветлее
+$text-l: #727487; //более контрастный
 $text-ll: #b0b1c2;
 
 $line: #f2f2f9;

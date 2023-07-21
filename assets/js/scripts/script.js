@@ -425,7 +425,7 @@ if (catalogTabTitles && catalogTabs) {
 }
 
 // всплывающие окна через фансибокс
-Fancybox.bind("[data-fancybox]", {});
+// Fancybox.bind("[data-fancybox]", {});
 
 // слайдер через фансибокс
 const sliderMain = document.getElementById("sliderMain");
@@ -515,7 +515,9 @@ if (productPlaceholdersEl) {
     }
 }
 
-const swiper = new Swiper('.swiper', {
+
+// слайдер просмотренных товаров
+const swiperRecentProducts = new Swiper('.js-swiper-recent-products', {
     loop: false,
     spaceBetween: 20,
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
@@ -556,3 +558,7 @@ const swiper = new Swiper('.swiper', {
         }
     }
 });
+
+
+
+
