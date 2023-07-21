@@ -21,14 +21,17 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"> -->
 
-    <link rel="stylesheet" href="./assets/libs/fancybox/css.min.css">
-    <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
+    <!-- <link rel="stylesheet" href="./assets/libs/fancybox/css.min.css"> -->
+    <!-- <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css"> -->
 
+    <link rel="preload" href="./assets/libs/fancybox/css.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./assets/libs/swiper/swiper.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="./assets/css/style.min.css">
+
     <link rel="icon" href="./assets/img/favicon/favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="./assets/img/favicon/favicon.svg" type="image/svg+xml">
 </head>
@@ -2617,7 +2620,7 @@
         </div>
     </footer>
 
-    <script src="./assets/libs/fancybox/js.min.js"></script>
+    <script src="./assets/libs/fancybox/js.min.js" defer></script>
     <script src="./assets/libs/swiper/swiper.min.js"></script>
     <script src="./assets/js.min.js"></script>
 </body>
