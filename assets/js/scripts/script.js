@@ -424,16 +424,6 @@ if (catalogTabTitles && catalogTabs) {
     })
 }
 
-// всплывающие окна через фансибокс
-// Fancybox.bind("[data-fancybox]", {});
-
-// слайдер через фансибокс
-const sliderMain = document.getElementById("sliderMain");
-if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
-
-// слайдер Просмотренных товаров фансибокс
-// const sliderViewedProducts = document.getElementById("viewedProducts");
-// if (sliderViewedProducts) { new Carousel(sliderViewedProducts, { infinite: false, fill: false, slidesPerPage: 7, transition: "slide" }) }
 
 
 // окончания для единиц измерения на русском языке
@@ -516,7 +506,7 @@ if (productPlaceholdersEl) {
 }
 
 
-// слайдер просмотренных товаров
+// слайдер просмотренных товаров через свайпер
 const swiperRecentProducts = new Swiper('.js-swiper-recent-products', {
     loop: false,
     spaceBetween: 20,
@@ -559,6 +549,16 @@ const swiperRecentProducts = new Swiper('.js-swiper-recent-products', {
     }
 });
 
+// всплывающие окна через фансибокс
+Fancybox.bind("[data-fancybox]", {});
 
+
+// слайдер через фансибокс
+// const sliderMain = document.getElementById("sliderMain");
+// if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
+
+// слайдер Просмотренных товаров фансибокс
+// const sliderViewedProducts = document.getElementById("viewedProducts");
+// if (sliderViewedProducts) { new Carousel(sliderViewedProducts, { infinite: false, fill: false, slidesPerPage: 7, transition: "slide" }) }
 
 
