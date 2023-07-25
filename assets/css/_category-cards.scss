@@ -25,7 +25,9 @@
     }
 
     &--horizontal {
-        grid-template-columns: repeat(7, 1fr);
+        @media screen and (min-width: $bp-xl) {
+            grid-template-columns: repeat(8, 1fr);
+        }
 
         .category-card {
             height: 100px;
