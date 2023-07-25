@@ -3,22 +3,12 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 10px;
     column-gap: 30px;
-    background-color: #fff;
     padding: 0;
-    margin: 0;
+    margin: 20px 0;
     border-radius: $br-lg;
-    // margin-top: 60px;
-    // box-shadow: $bs-xsm;
-    // border: 1px solid $line-d;
 
     &__wrapper {
-        // background-color: lighten($bg-l, 1);
-        // padding: 20px 0 0 0;
-        // border-top: 1px solid $line;
-        // border-bottom: 1px solid $line;
-        border: 1px solid $line-d;
-        border-radius: $br-xxl;
-        padding: 50px 50px 60px 50px;
+        padding: 50px 0;
     }
 
     @media screen and (min-width: $bp-xsm) {
