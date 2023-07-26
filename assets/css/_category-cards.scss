@@ -1,9 +1,9 @@
 .category-cards {
-    margin: 60px 0;
+    margin: 0;
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
     row-gap: 30px;
     grid-row: 1fr;
@@ -43,7 +43,6 @@
         }
 
         .category-card__pic {
-            // border: 1px solid red;
             position: absolute;
             width: 50%;
             height: 70%;
@@ -57,28 +56,76 @@
             }
         }
     }
+
+    &--xl {
+        column-gap: 25px;
+
+        @media screen and (min-width: $bp-xsm) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (min-width: $bp-sm) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media screen and (min-width: $bp-md) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .category-card {
+            height: 140px;
+        }
+
+        .category-card__header {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .category-card__title {
+            font-weight: 500;
+        }
+
+        .category-card__pic {
+            margin-top: auto;
+            // border: 1px solid red;
+            width: 45%;
+            height: 55%;
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            > img {
+                object-position: left bottom;
+                object-fit: contain;
+            }
+        }
+    }
 }
 
 .category-card {
     border-radius: $br-xl;
-    height: 120px;
+    height: 135px;
     position: relative;
     overflow: hidden;
     transition: $t;
-
-    @media screen and (min-width: $bp-sm) {
-        height: 135px;
-    }
+    // background-color: #fff;
+    // box-shadow: 0 3px 6px rgba(22, 19, 37, 0.1);
 
     @media screen and (min-width: $bp-md) {
-        height: 150px;
+        height: 160px;
     }
 
     &:hover {
         transform: translateY(-2px);
 
         &::after {
-            background-color: rgba(15, 13, 27, 0.05);
+            background-color: rgba(15, 15, 65, 0.05);
         }
     }
 
@@ -88,19 +135,25 @@
         position: absolute;
         inset: 0;
         border-radius: $br-xl;
-        background-color: rgba(15, 13, 27, 0.03);
+        background-color: rgba(15, 15, 65, 0.03);
         pointer-events: none;
         transition: $t;
+        // display: none;
     }
 
     &--special {
         &::after {
-            background-color: rgba(253, 5, 129, 0.11);
+            // background-color: rgba(253, 5, 129, 0.11);
+            background-color: $main-l;
+            // background: $g-good;
+            opacity: 0.1;
         }
 
         &:hover {
             &::after {
-                background-color: rgba(253, 5, 129, 0.15);
+                // background-color: rgba(253, 5, 129, 0.15);
+                background-color: $main-l;
+                opacity: 0.15;
             }
         }
     }
@@ -111,18 +164,29 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
-        row-gap: 10px;
+    }
+
+    &__header {
+        padding: 20px;
+        font-size: 13px;
+        color: $text;
+        display: grid;
+        row-gap: 5px;
+        z-index: 1;
+        color: $text-l;
+        // border: 1px solid red;
     }
 
     &__title {
+        // border: 1px solid red;
         color: $text;
-        padding: 20px;
         flex-shrink: 0;
         display: block;
         line-height: 1.25;
         max-height: 4em;
         overflow: hidden;
         font-size: 14px;
+        z-index: 1;
 
         word-break: break-word;
         overflow-wrap: break-word;
@@ -132,26 +196,33 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+        // margin-bottom: auto;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        font-size: 13px;
+        color: $text-l;
     }
 
     &__pic {
         // border: 1px solid blue;
-        height: 100%;
-        width: 80%;
         // mix-blend-mode: multiply;
+        height: 60%;
+        width: 60%;
         overflow: hidden;
         align-self: flex-end;
+        margin-top: auto;
 
         > img {
             // border: 1px solid red;
             display: block;
             width: 100%;
-            // position: absolute;
-            // right: -40px;
-            // height: auto;
             height: 100%;
-            object-fit: cover;
-            object-position: 25px 0px;
+            object-fit: contain;
+            object-position: 20px bottom;
         }
     }
 }

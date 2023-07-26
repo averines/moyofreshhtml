@@ -1,0 +1,13 @@
+.banners {
+    display: flex;
+    column-gap: 40px;
+    row-gap: 30px;
+
+}
+
+.banner {
+    width: 100%;
+    min-height: 150px;
+    background-color: $bg-l;
+    border-radius: $br-xxl;
+}

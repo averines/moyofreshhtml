@@ -10,6 +10,10 @@
 
     &--xsm {
         max-width: 300px;
+
+        .modal__body {
+            padding: 20px 40px 40px 40px;
+        }
     }
 
     &--sm {

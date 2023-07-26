@@ -1,5 +1,15 @@
 .section-header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     column-gap: 20px;
+    row-gap: 7px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+
+    h2,
+    .h2,
+    h3,
+    .h3 {
+        margin: 0;
+    }
 }

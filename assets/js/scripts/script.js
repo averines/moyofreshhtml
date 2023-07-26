@@ -553,8 +553,18 @@ const swiperRecentProducts = new Swiper('.js-swiper-recent-products', {
 Fancybox.bind("[data-fancybox]", {});
 
 
+const swiperMainSlider = new Swiper('.js-swiper-main-slider', {
+    loop: true,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    autoplay: {
+        delay: 3000,
+    },
+});
+
 // слайдер через фансибокс
-// const sliderMain = document.getElementById("sliderMain");
+// const sliderMain = document.getElementById("main-slider");
 // if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
 
 // слайдер Просмотренных товаров фансибокс

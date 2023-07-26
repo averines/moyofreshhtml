@@ -1,0 +1,45 @@
+.main-slider {
+    margin-top: 20px;
+
+    .swiper {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.main-slide {
+    background-color: $bg-l;
+    border-radius: $br-xxl;
+    height: 400px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 30px;
+    margin: 30px 0;
+
+    &__content {
+        // border: 1px solid red;
+        padding: 80px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 34px;
+        margin-bottom: 0.33em;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+    }
+
+    &__pic {
+        // border: 1px solid red;
+
+        > img {
+            // border: 1px solid red;
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+        }
+    }
+}
