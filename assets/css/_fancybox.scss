@@ -134,9 +134,39 @@
     }
 }
 
-// .swiper {
-//     border: 1px solid red;
-//     overflow: hidden;
-//     width: 600px;
-//     height: 300px;
-// }
+.main-slider {
+    .swiper {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            --swiper-navigation-sides-offset: 15px;
+            top: calc(50% - 20px);
+            display: none;
+
+            @media screen and (min-width: $bp-lg) {
+                display: flex;
+            }
+        }
+
+        .swiper-pagination-bullets {
+            --swiper-pagination-bottom: -5px;
+            --swiper-pagination-bullet-horizontal-gap: 3px;
+            --swiper-pagination-bullet-border-radius: 6px;
+            --swiper-pagination-bullet-width: 8px;
+            --swiper-pagination-bullet-height: 6px;
+            --swiper-theme-color: #8d1ecd;
+            --swiper-pagination-bullet-inactive-opacity: 0.1;
+
+            .swiper-pagination-bullet {
+                transition: $t;
+
+                &-active {
+                    width: 12px;
+                }
+            }
+        }
+    }
+}

@@ -216,7 +216,7 @@ window.addEventListener('click', (e) => {
         let target = e.target.dataset.tabTarget;
         let targetGroup = target.split("-")[0];
         if (targetGroup) {
-            tabs = document.querySelectorAll(`[data-tab-id*="${targetGroup}"]`);
+            let tabs = document.querySelectorAll(`[data-tab-id*="${targetGroup}"]`);
             if (tabs) { tabs.forEach(t => { t.classList.toggle("is-active", t.dataset.tabId == target) }) }
         }
     }
@@ -549,19 +549,26 @@ const swiperRecentProducts = new Swiper('.js-swiper-recent-products', {
     }
 });
 
-// всплывающие окна через фансибокс
-Fancybox.bind("[data-fancybox]", {});
-
-
 const swiperMainSlider = new Swiper('.js-swiper-main-slider', {
     loop: true,
     spaceBetween: 0,
     slidesPerView: 1,
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    autoplay: {
-        delay: 3000,
+    pagination: { el: '.swiper-pagination' },
+    a11y: {
+        prevSlideMessage: 'Назад',
+        nextSlideMessage: 'Вперёд',
     },
+    // effect: "fade",
+    autoplay: {
+        delay: 5000,
+    },
+    autoHeight: true,
 });
+
+// всплывающие окна через фансибокс
+Fancybox.bind("[data-fancybox]", {});
+
 
 // слайдер через фансибокс
 // const sliderMain = document.getElementById("main-slider");

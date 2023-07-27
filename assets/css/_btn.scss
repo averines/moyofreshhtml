@@ -15,6 +15,7 @@
 
     &:hover {
         background-color: $main-d;
+        color: #fff;
     }
 
     &--sm {
@@ -38,6 +39,7 @@
 
         &:hover {
             background-color: lighten($main-ll, 4.5);
+            color: $main;
         }
     }
 
@@ -48,6 +50,7 @@
 
         &:hover {
             background-color: darken($main-ll, 2);
+            color: $main;
         }
     }
 
