@@ -11,6 +11,10 @@
         padding: 0 40px;
     }
 
+    &--xsm {
+        max-width: 600px;
+    }
+
     &--sm {
         max-width: 700px;
     }
@@ -51,6 +55,14 @@
 .box {
     max-width: 820px;
 
+    &--xxsm {
+        max-width: 400px;
+    }
+
+    &--xsm {
+        max-width: 500px;
+    }
+
     &--sm {
         max-width: 700px;
     }
@@ -65,5 +77,9 @@
 
     &--xxl {
         max-width: 1450px;
+    }
+
+    &--center {
+        margin: 0 auto;
     }
 }

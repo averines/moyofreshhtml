@@ -18,12 +18,17 @@
 .register-card {
     border-radius: $br-xxl;
     padding: 30px 15px;
-    box-shadow: 0 10px 40px #190f4715, 0 25px 20px -30px #380d684d;
+    box-shadow:
+        0 10px 40px #190f4715,
+        0 25px 20px -30px #380d684d;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: #fff;
     transition: $t;
+    border: 2px double transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
     @media screen and (min-width: $bp-xxsm) {
         padding: 30px;
@@ -96,7 +101,7 @@
         }
     }
 
-    &--main-l {
+    &--active {
         // position: relative;
         // &::before {
         //     content: "";
@@ -108,14 +113,14 @@
         //     border-radius: $br-xl + 7px;
         // }
 
-        border: 2px double transparent;
+        // border: 2px double transparent;
         background-image: linear-gradient(white, white), radial-gradient(circle at top left, $special-2, $main);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+        // background-origin: border-box;
+        // background-clip: padding-box, border-box;
 
-        .register-card__alert {
-            background-color: $main-d;
-        }
+        // .register-card__alert {
+        //     background-color: $main-d;
+        // }
     }
 
     &--main-d {
@@ -159,7 +164,9 @@
     }
 
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 40px rgba(25, 15, 71, 0.1), 0 30px 40px -30px rgba(56, 13, 104, 0.2);
+        // transform: translateY(-2px);
+        box-shadow:
+            0 10px 40px rgba(25, 15, 71, 0.1),
+            0 30px 40px -30px rgba(56, 13, 104, 0.2);
     }
 }

@@ -348,6 +348,14 @@ window.addEventListener('click', (e) => {
         }
     }
 
+    // переключение статуса покупателя на странице Регистрация
+    if (e.target.dataset.action == "set-customer-status") {
+        let cardRegister = document.querySelectorAll(".register-card");
+        cardRegister.forEach(i => { i.classList.remove("register-card--active") });
+        e.target.closest(".register-card").classList.add("register-card--active");
+        document.querySelector("[data-customer-status-target]").innerText = e.target.dataset.customerStatus;
+    }
+
 
 })
 

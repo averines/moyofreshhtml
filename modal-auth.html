@@ -1,13 +1,13 @@
 <div class="modal modal--sm">
     <div class="modal__body">
-        <div class="tab is-active" data-tab-id="auth-login">
+        <div class="tab is-active" data-tab-id="modalauth-login">
             <div class="modal__title mt-1">Войдите в личный кабинет<br><span>или <a href="user-register.html">зарегистрируйтесь</a></span></div>
             
 
             <!-- короткий вариант регистрации в этом же модальном окне -->
             <!-- <p class="mt-0">или <button class="btn-inline" data-tab-target="auth-register">зарегистрируйтесь</button></p> -->
             
-            <form class="form mt-2">
+            <form class="form  form--text-lg mt-2">
                 <div class="form-row">
                     <div class="form-field form-field--boxed">
                         <input type="text" id="login-email">
@@ -24,10 +24,10 @@
                     <button class="btn btn--full btn--bold" type="submit">Войти</button>
                 </div>
             </form>
-            <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-recovery">Забыли пароль?</button></p>
+            <p class="text-sm text-center"><button class="btn-inline" data-tab-target="modalauth-recovery">Забыли пароль?</button></p>
         </div>
 
-        <div class="tab" data-tab-id="auth-recovery">
+        <div class="tab" data-tab-id="modalauth-recovery">
             <div class="modal__title mt-1">Восстановление пароля</div>
             <p>Укажите e-mail, использованный при регистрации, и мы отправим на него ссылку для смены пароля.</p>
             <form class="form mt-2">
@@ -41,7 +41,7 @@
                     <button class="btn btn--full btn--bold btn--dark" type="submit">Восстановить пароль</button>
                 </div>
             </form>
-            <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-login">Отмена</button></p>
+            <p class="text-sm text-center"><button class="btn-inline" data-tab-target="modalauth-login">Отмена</button></p>
         </div>
 
         <!-- короткий вариант регистрации в этом же модальном окне -->
