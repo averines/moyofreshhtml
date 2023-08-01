@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="user-nav">
-                            <a class="user-btn" href="customer-news.html">
+                            <a class="user-btn" href="user-news.html">
                                 <div class="user-btn__icon">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.0003 4.58333C9.16699 4.58333 5.50033 5.68333 5.50033 10.0833V13.75L3.66699 15.5833H8.25033M11.0003 4.58333C15.4003 4.58333 16.5003 8.25 16.5003 10.0833V13.75L18.3337 15.5833H13.7503M11.0003 4.58333V2.75M8.25033 15.5833V16.5C8.25033 17.4167 8.80033 19.25 11.0003 19.25C13.2003 19.25 13.7503 17.4167 13.7503 16.5V15.5833M8.25033 15.5833H13.7503"
@@ -1528,60 +1528,16 @@
         </div>
 
         <div class="container container--center container--xsm my-2">
-
             <div class="d-grid row-gap-0 justify-items-center">
                 <img src="./assets/img/hero/woman-smartphone.jpg" alt="" width="220" height="220">
                 <h1 class="h2 text-center mb-0">Мои заказы</h1>
                 <p class="text-center">Просмотр и управление заказами доступно только авторизованным пользователям.</p>
                 <p class="text-center">
-                    <button class="btn btn--full" data-fancybox data-type="ajax" data-src="modal-auth.html" data-tab-target="auth-login">Войти</button>
+                    <!-- перенаправлять пользователя именно на страницу Мои заказы, после того как произошел вход на этой странице -->
+                    <button class="btn btn--full" data-fancybox data-type="ajax" data-src="modal-auth.html">Войти</button>
                     <a class="btn btn--full btn--outline mt-1" href="user-register.html">Зарегистрироваться</a>
                 </p>
             </div>
-
-            <!-- <div class="box box--xxsm">
-                <div class="tab is-active" data-tab-id="auth-login">
-                    <h1 class="h2">Заказы</h1>
-                    <p>Для просмотра заказов необходимо войти на сайт.</p>
-
-                    <form class="form mt-2">
-                        <div class="form-row">
-                            <div class="form-field form-field--boxed">
-                                <input type="text" id="login-email">
-                                <label for="login-email">E-mail</label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-field form-field--boxed">
-                                <input type="password" id="login-password" autocomplete="login-password">
-                                <label for="login-password">Пароль</label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <button class="btn btn--full btn--bold" type="submit">Войти</button>
-                        </div>
-                    </form>
-                    <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-recovery">Забыли пароль?</button></p>
-                </div>
-
-                <div class="tab" data-tab-id="auth-recovery">
-                    <div class="modal__title mt-1">Восстановление пароля</div>
-                    <p>Укажите e-mail, использованный при регистрации, и мы отправим на него ссылку для смены пароля.</p>
-                    <form class="form mt-2">
-                        <div class="form-row">
-                            <div class="form-field form-field--boxed">
-                                <input type="text" id="recovery-email">
-                                <label for="recovery-email">E-mail</label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <button class="btn btn--full btn--bold btn--dark" type="submit">Восстановить пароль</button>
-                        </div>
-                    </form>
-                    <p class="text-sm text-center"><button class="btn-inline" data-tab-target="auth-login">Отмена</button></p>
-                </div>
-            </div> -->
-
         </div>
     </main>
 
