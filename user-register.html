@@ -1532,7 +1532,7 @@
                 <p>Всем покупателям доступна скидка за суммарный объём заказов и бонус за&nbsp;выкуп! Подробнее на странице <a href="info-bonus.html">Скидки и бонусы</a>.</p>
             </div>
 
-            <div class="box box--xxl my-3">
+            <div class="box box--xxl py-3" id="register-step-1">
                 <p class="h2">Шаг 1. Выберите статус покупателя:</p>
                 <div class="register-cards">
                     <div class="register-card">
@@ -1550,7 +1550,7 @@
                                 <li class="marker__item--alert">Для покупки доступны только те&nbsp;товары, у&nbsp;которых есть розничная цена.</li>
                             </ul>
                         </div>
-                        <button class="btn btn--full" data-action="set-customer-status" data-customer-status="Розничная покупка">Выбрать</button>
+                        <button class="btn btn--full" data-action="set-customer-status, scroll" data-scroll-target="register-step-2" data-customer-status-title="Розничная покупка" data-customer-status-id="1" data-customer-status-minsumm="Без ограничений">Выбрать</button>
                     </div>
 
                     <div class="register-card register-card--active">
@@ -1568,10 +1568,10 @@
                                 <li class="marker__item--alert">Маркировка не транслируется через ЭДО. Купленные товары не&nbsp;предназначены для&nbsp;перепродажи.</li>
                             </ul>
                         </div>
-                        <button class="btn btn--full" data-action="set-customer-status" data-customer-status="Оптом для себя">Выбрать</button>
+                        <button class="btn btn--full" data-action="set-customer-status, scroll" data-scroll-target="register-step-2" data-customer-status-title="Оптом для себя" data-customer-status-id="2" data-customer-status-minsumm="7500&#8239;₽">Выбрать</button>
                     </div>
 
-                    <div class="register-card ">
+                    <div class="register-card">
                         <div class="register-card__header">
                             <div class="register-card__title">Оптом для продажи</div>
                             <div class="register-card__alert">Минимальная сумма заказа 7500&#8239;₽</div>
@@ -1587,22 +1587,23 @@
                                 <li>Транслируется маркировка через ЭДО.</li>
                             </ul>
                         </div>
-                        <button class="btn btn--full" data-action="set-customer-status" data-customer-status="Оптом для продажи">Выбрать</button>
+                        <button class="btn btn--full" data-action="set-customer-status, scroll" data-scroll-target="register-step-2" data-customer-status-title="Оптом для продажи" data-customer-status-id="3" data-customer-status-minsumm="7500&#8239;₽">Выбрать</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <section class="pt-4 pb-6 mt-6 decor--bg-gray decor--gradient-bottom-md" style="position: relative; margin-bottom: -60px; z-index: 1">
+        <section id="register-step-2" class="pt-4 pb-6 decor--bg-gray decor--gradient-bottom-md" style="position: relative; margin-bottom: -60px; z-index: 1">
             <div class="container">
                 <div class="box box--center box--xsm">
                     <h2>Шаг 2. Заполните анкету</h2>
-                    <p>Выбранный статус покупателя: <span class="text-marker text-marker--g-good-ll" data-customer-status-target>Оптом для себя</span></p>
+                    <p>Выбранный статус: <span class="text-marker text-marker--g-good-ll mr-1" data-customer-status-title-target>Оптом для себя</span> <a href="register-step-1" data-action="scroll">Изменить</a></p>
+                    <p>Минимальная сумма заказа: <span data-customer-status-minsumm-target>7500&nbsp;₽</span></p>
 
-                    <form class="form form--sm d-none">
+                    <!-- <form class="form form--sm d-none-">
                         <div class="form-row">
                             <div class="form-field form-field--boxed">
-                                <input type="text" id="register-inn">
+                                <input type="text" id="register-inn" placeholder="777000555000">
                                 <label for="register-inn">ИНН</label>
                             </div>
                         </div>
@@ -1616,26 +1617,26 @@
 
                         <div class="form-row">
                             <div class="form-field form-field--boxed">
-                                <input type="text" id="register-name">
-                                <label for="register-name">Имя</label>
-                            </div>
-                            <div class="form-field form-field--boxed">
-                                <input type="text" id="register-last-name">
+                                <input type="text" id="register-last-name" placeholder="Пушкина">
                                 <label for="register-last-name">Фамилия</label>
                             </div>
                             <div class="form-field form-field--boxed">
-                                <input type="text" id="register-middle-name">
+                                <input type="text" id="register-name" placeholder="Александра">
+                                <label for="register-name">Имя</label>
+                            </div>
+                            <div class="form-field form-field--boxed">
+                                <input type="text" id="register-middle-name" placeholder="Сергеевна">
                                 <label for="register-middle-name">Отчество</label>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-field form-field--boxed">
-                                <input type="text" id="register-phone">
+                                <input type="text" id="register-phone" placeholder="+7 999 000 11 22">
                                 <label for="register-phone">Номер телефона</label>
                             </div>
                             <div class="form-field form-field--boxed">
-                                <input type="text" id="register-email">
+                                <input type="text" id="register-email" placeholder="my@mail.ru">
                                 <label for="register-email">E-mail</label>
                             </div>
                         </div>
@@ -1652,20 +1653,15 @@
                         </div>
 
                         <button class="btn btn--full btn--bold mt-1">Зарегистрироваться</button>
-                    </form>
+                    </form> -->
 
-                    <form class="form form--sm mt-2 form--bg">
-                        <div class="form-row">
+                    <hr class="hr--dark my-2">
+
+                    <form class="form form--sm mt-2 d-none- form--bg">
+                        <div class="form-row d-none" data-customer-inn>
                             <div class="form-field">
                                 <input type="text" id="register-inn" placeholder="777000555000">
                                 <label for="register-inn">ИНН</label>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-field">
-                                <input type="text" id="register-city" placeholder="Москва">
-                                <label for="register-city">Город доставки</label>
                             </div>
                         </div>
 
@@ -1683,6 +1679,13 @@
                                 <label for="register-middle-name">Отчество</label>
                             </div>
                         </div>
+
+                        <!-- <div class="form-row">
+                            <div class="form-field">
+                                <input type="text" id="register-city" placeholder="Москва">
+                                <label for="register-city">Город доставки</label>
+                            </div>
+                        </div> -->
 
                         <div class="form-row">
                             <div class="form-field">
@@ -1712,7 +1715,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">

@@ -321,7 +321,7 @@ window.addEventListener('click', (e) => {
     if (e.target.dataset.hasOwnProperty('action')) {
 
         // плавный переход к блоку
-        if (e.target.dataset.action == "scroll") {
+        if (e.target.dataset.action.includes("scroll")) {
             e.preventDefault();
             let scrollToEl;
             if (e.target.getAttribute('href')) {
@@ -334,14 +334,14 @@ window.addEventListener('click', (e) => {
         }
 
         // показать все характеристики товара
-        if (e.target.dataset.action == "showmore-product-specs") {
+        if (e.target.dataset.action.includes("showmore-product-specs")) {
             const productSpecs = document.querySelector(".product-specs");
             productSpecs.classList.add("is-active");
             e.target.classList.add("is-hidden");
         }
 
         // показать целиком описание товара
-        if (e.target.dataset.action == "showmore-product-description") {
+        if (e.target.dataset.action.includes("showmore-product-description")) {
             const productDescription = document.querySelector(".product__description");
             productDescription.classList.add("is-active");
             e.target.classList.add("is-hidden");
@@ -349,13 +349,20 @@ window.addEventListener('click', (e) => {
     }
 
     // переключение статуса покупателя на странице Регистрация
-    if (e.target.dataset.action == "set-customer-status") {
+    if (e.target.dataset.action.includes("set-customer-status")) {
         let cardRegister = document.querySelectorAll(".register-card");
         cardRegister.forEach(i => { i.classList.remove("register-card--active") });
         e.target.closest(".register-card").classList.add("register-card--active");
-        document.querySelector("[data-customer-status-target]").innerText = e.target.dataset.customerStatus;
-    }
+        document.querySelector("[data-customer-status-title-target]").innerText = e.target.dataset.customerStatusTitle;
+        document.querySelector("[data-customer-status-minsumm-target]").innerText = e.target.dataset.customerStatusMinsumm;
 
+        let formRegisterInn = document.querySelector("[data-customer-inn]");
+        if (e.target.dataset.customerStatusId == "3") {
+            formRegisterInn.classList.remove("d-none");
+        } else {
+            formRegisterInn.classList.add("d-none");
+        }
+    }
 
 })
 
