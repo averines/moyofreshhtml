@@ -1,7 +1,7 @@
 .fancybox {
     &__container {
         --fancybox-bg: rgb(40 39 61 / 95%);
-        --fancybox-color: $text-l;
+        --fancybox-color: #727487;
     }
 
     &__content {
@@ -28,7 +28,7 @@
 .f-carousel {
     --f-carousel-dot-width: 6px;
     --f-carousel-dot-height: 6px;
-    --f-carousel-theme-color: $text;
+    --f-carousel-theme-color: #222330;
 
     &__dots {
         position: absolute;
@@ -40,8 +40,8 @@
     --f-button-bg: transparent;
     --f-button-hover-bg: transparent;
     --f-button-active-bg: transparent;
-    --f-button-color: $text-l;
-    --f-button-hover-color: $text;
+    --f-button-color: #727487;
+    --f-button-hover-color: #222330;
 }
 
 .f-carousel.product-cards {
