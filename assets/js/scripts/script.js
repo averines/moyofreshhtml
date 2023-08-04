@@ -317,7 +317,7 @@ window.addEventListener('click', (e) => {
         }
     }
 
-    // обработка кликов с data-action
+    // обработка кликов с data-action ===========================
     if (e.target.dataset.hasOwnProperty('action')) {
 
         // плавный переход к блоку
@@ -346,21 +346,21 @@ window.addEventListener('click', (e) => {
             productDescription.classList.add("is-active");
             e.target.classList.add("is-hidden");
         }
-    }
 
-    // переключение статуса покупателя на странице Регистрация
-    if (e.target.dataset.action.includes("set-customer-status")) {
-        let cardRegister = document.querySelectorAll(".register-card");
-        cardRegister.forEach(i => { i.classList.remove("register-card--active") });
-        e.target.closest(".register-card").classList.add("register-card--active");
-        document.querySelector("[data-customer-status-title-target]").innerText = e.target.dataset.customerStatusTitle;
-        document.querySelector("[data-customer-status-minsumm-target]").innerText = e.target.dataset.customerStatusMinsumm;
+        // переключение статуса покупателя на странице Регистрация
+        if (e.target.dataset.action.includes("set-customer-status")) {
+            let cardRegister = document.querySelectorAll(".register-card");
+            cardRegister.forEach(i => { i.classList.remove("register-card--active") });
+            e.target.closest(".register-card").classList.add("register-card--active");
+            document.querySelector("[data-customer-status-title-target]").innerText = e.target.dataset.customerStatusTitle;
+            document.querySelector("[data-customer-status-minsumm-target]").innerText = e.target.dataset.customerStatusMinsumm;
 
-        let formRegisterInn = document.querySelector("[data-customer-inn]");
-        if (e.target.dataset.customerStatusId == "3") {
-            formRegisterInn.classList.remove("d-none");
-        } else {
-            formRegisterInn.classList.add("d-none");
+            let formRegisterInn = document.querySelector("[data-customer-inn]");
+            if (e.target.dataset.customerStatusId == "3") {
+                formRegisterInn.classList.remove("d-none");
+            } else {
+                formRegisterInn.classList.add("d-none");
+            }
         }
     }
 
@@ -438,7 +438,6 @@ if (catalogTabTitles && catalogTabs) {
         })
     })
 }
-
 
 
 // окончания для единиц измерения на русском языке
