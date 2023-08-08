@@ -83,8 +83,18 @@
     row-gap: 20px;
 }
 
-.col-gap-1 {
-    column-gap: 20px;
+// .col-gap-1 {
+//     column-gap: 20px;
+// }
+
+// .col-gap-2 {
+//     column-gap: 40px;
+// }
+
+@for $i from 0 through 5 {
+  .col-gap-#{$i}{
+     column-gap: 20px * $i;
+  }
 }
 
 .visually-hidden {
