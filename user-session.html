@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-top">
             <div class="container">
                 <div class="header-top__inner">
@@ -142,10 +142,10 @@
                                 <!-- <div class="user-btn__dot"></div> -->
                                 <div class="user-btn__title">Уведомления</div>
                             </a>
-                            <div class="user-nav-dropdown user-nav-dropdown--md">
-                                <div class="text-bold text-sm mb-1">Требуется авторизация</div>
-                                <div class="text-sm">Войдите или зарегистрируйтесь для&nbsp;получения уведомлений о&nbsp;скидках, поступлениях и&nbsp;работе нашего магазина</div>
-                            </div>
+                            <!-- <div class="user-nav-dropdown user-nav-dropdown--md">
+                                        <div class="text-bold text-sm mb-1">Требуется авторизация</div>
+                                        <div class="text-sm">Войдите или зарегистрируйтесь для&nbsp;получения уведомлений о&nbsp;скидках, поступлениях и&nbsp;работе нашего магазина</div>
+                                    </div> -->
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="user-orders.html">
@@ -156,10 +156,10 @@
                                 </div>
                                 <div class="user-btn__title">Заказы</div>
                             </a>
-                            <div class="user-nav-dropdown user-nav-dropdown--md">
-                                <div class="text-bold text-sm mb-1">Требуется авторизация</div>
-                                <div class="text-sm">История заказов доступна только авторизованным пользователям</div>
-                            </div>
+                            <!-- <div class="user-nav-dropdown user-nav-dropdown--md">
+                                        <div class="text-bold text-sm mb-1">Требуется авторизация</div>
+                                        <div class="text-sm">История заказов доступна только авторизованным пользователям</div>
+                                    </div> -->
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="user-favorites.html">
@@ -1588,6 +1588,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <button class="btn-scroll" id="scroll-to-top" data-action="scroll" data-scroll-target="header" aria-label="Наверх"></button>
                 <div class="footer-bottom__copyrights">© 2015—2023 <span class="text-nowrap">Интернет-магазин OptMoyo.ru</span></div>
                 <img class="footer-bottom__pay" src="./assets/img/pay.svg" alt="Принимаем оплату МИР, Visa, Master Card" loading="lazy" width="140" height="17">
                 <a class="footer-bottom__link" href="info-privacy.html">Политика обработки данных</a>
