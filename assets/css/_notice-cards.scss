@@ -1,0 +1,64 @@
+.notice-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid $line;
+    border-radius: $br-lg;
+    max-width: 750px;
+}
+
+.notice-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    padding: 35px 60px;
+    border-bottom: 1px solid $line;
+    position: relative;
+    transition: $t;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &--active {
+        &::after {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: $main;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        &:hover {
+            background-color: lighten($bg-l, 1.5);
+        }
+    }
+
+    @media screen and (min-width: $bp-md) {
+        grid-template-columns: 9fr minmax(100px, 1fr);
+        column-gap: 30px;
+    }
+
+    &__date {
+        color: $text-ll;
+        font-size: 13px;
+
+        @media screen and (min-width: $bp-md) {
+            order: 1;
+            text-align: right;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        margin-bottom: 0.33em;
+    }
+
+    &__content {
+        color: $text-l;
+        font-size: 15px;
+    }
+}

@@ -14,12 +14,14 @@ $main-dimmed: #b088fb;
 // $good: #59fc3f;
 $good: #8ce4a5;
 $good-ll: #e1fcc3;
+$good-d: #36BF48;
 $bad: #eb7a84;
 
 $special-1: #e7003e;
 $special-2: #cb2e8c;
 $special-3: #f459b6;
 $special-4: #03c5bb;
+$special-5: #36BF48;
 
 $g-main: linear-gradient(100deg, $main, $special-3);
 $g-main-l: linear-gradient(100deg, $main-ll, lighten($special-3, 30));
