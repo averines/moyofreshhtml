@@ -1,9 +1,17 @@
 .form {
     display: grid;
-    row-gap: 15px;
+    row-gap: 23px;
+
+    @media screen and (min-width: $bp-xsm) {
+        row-gap: 15px;
+    }
 
     &--sm {
         max-width: 500px;
+    }
+
+    &--md {
+        max-width: 700px;
     }
 
     &--text-lg {
@@ -23,10 +31,14 @@
 
 .form-field {
     display: grid;
-    grid-template-columns: minmax(100px, 170px) 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     column-gap: 20px;
     row-gap: 5px;
+
+    @media screen and (min-width: $bp-xsm) {
+        grid-template-columns: minmax(100px, 170px) 1fr;
+    }
 
     > label {
         font-size: 14px;
@@ -58,6 +70,7 @@
         > label {
             font-size: 13px;
             padding-left: 15px;
+            padding-right: 15px;
             color: $text-l;
             order: 1;
             z-index: 1;
@@ -96,17 +109,36 @@
                 }
             }
         }
+
+        textarea {
+            + label {
+                padding-top: 5px;
+            }
+        }
     }
 }
 
 .form-row {
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media screen and (min-width: $bp-xsm) {
+        row-gap: 0;
+    }
 
     .form-field {
         border-radius: 0;
         margin-top: -1px;
 
         > label {
+            font-size: 13px;
+
+            @media screen and (min-width: $bp-xsm) {
+               font-size: 14px; 
+            }
+
             &::after {
                 border-radius: 0;
             }
@@ -114,7 +146,11 @@
 
         > input,
         textarea {
-            border-radius: 0;
+            border-radius: $br-md;
+
+            @media screen and (min-width: $bp-xsm) {
+                border-radius: 0;
+            }
         }
 
         &:first-child {
@@ -135,6 +171,7 @@
                 border-top-right-radius: $br-md;
             }
         }
+
         &:last-child {
             border-bottom-left-radius: $br-md;
             border-bottom-right-radius: $br-md;
