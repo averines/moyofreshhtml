@@ -6,6 +6,22 @@
     &__aside {
         margin-top: 20px;
     }
+
+    &__header {
+        display: inline-flex;
+        column-gap: 5px;
+        align-items: center;
+
+        > a {
+            font-size: 1.15em;
+            transition: $t;
+            padding-right: 10px;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
 }
 
 .account-menu {
@@ -14,6 +30,10 @@
     row-gap: 5px;
 
     > a {
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+        column-gap: 13px;
         font-size: 15px;
         color: $text;
         padding: 0.75em 1.5em;
@@ -30,6 +50,12 @@
         &.is-active {
             background-color: $bg-l;
         }
+
+        > .icon {
+            transform: translateY(-2px);
+            font-size: 1.2em;
+            line-height: 1;
+        } 
     }
 }
 

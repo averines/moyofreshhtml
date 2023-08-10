@@ -1,26 +1,43 @@
-.notice-cards {
+.notice-groups {
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px solid $line;
-    border-radius: $br-lg;
-    max-width: 750px;
+    border-radius: $br-xxl;
+    box-shadow: $bs-box;
+    padding: 40px 0;
+    row-gap: 30px;
+}
+
+.notice-group {
+    row-gap: 10px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: $bp-md) {
+        grid-template-columns: minmax(90px, 1fr) 9fr;
+    }
+
+    &__date {
+        color: $text-ll;
+        font-size: 13px;
+        margin-top: 10px;
+        white-space: nowrap;
+    }
+
+    &__content {
+        display: grid;
+        row-gap: 5px;
+    }
 }
 
 .notice-card {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-    padding: 35px 60px;
-    border-bottom: 1px solid $line;
     position: relative;
+    padding: 10px 40px;
+    border-radius: $br-xl;
     transition: $t;
 
-    &:last-child {
-        border-bottom: none;
-    }
-
     &--active {
-        &::after {
+        &::before {
             content: "";
             display: block;
             width: 7px;
@@ -28,37 +45,23 @@
             border-radius: 50%;
             background-color: $main;
             position: absolute;
-            right: 20px;
-            top: 20px;
+            left: 15px;
+            top: 15px;
         }
 
         &:hover {
-            background-color: lighten($bg-l, 1.5);
-        }
-    }
-
-    @media screen and (min-width: $bp-md) {
-        grid-template-columns: 9fr minmax(100px, 1fr);
-        column-gap: 30px;
-    }
-
-    &__date {
-        color: $text-ll;
-        font-size: 13px;
-
-        @media screen and (min-width: $bp-md) {
-            order: 1;
-            text-align: right;
+            background-color: lighten($bg-l, 1);
         }
     }
 
     &__title {
+        font-size: 15px;
         font-weight: 500;
         margin-bottom: 0.33em;
     }
 
     &__content {
         color: $text-l;
-        font-size: 15px;
+        font-size: 14.5px;
     }
 }

@@ -53,15 +53,47 @@
         background: url(../img/icons/question.svg) no-repeat center/100%;
         // transform: translateY(2px);
     }
+
+    &--arrow-left {
+        background: url(../img/icons/arrow-left.svg) no-repeat center/100%;
+    }
+
+    &--user {
+        background: url(../img/icons/user.svg) no-repeat center/100%;
+    }
+
+    &--heart {
+        background: url(../img/icons/heart.svg) no-repeat center/100%;
+    }
+
+    &--noteblock {
+        background: url(../img/icons/noteblock.svg) no-repeat center/100%;
+    }
+
+    &--bell {
+        background: url(../img/icons/bell.svg) no-repeat center/100%;
+    }
+
+    &--crown {
+        background: url(../img/icons/crown.svg) no-repeat center/100%;
+    }
+
+    &--return {
+        background: url(../img/icons/return.svg) no-repeat center/100%;
+    }
+
+    &--logout {
+        background: url(../img/icons/logout.svg) no-repeat center/100%;
+    }
 }
 
-.icon-pro {
-    display: inline-block;
-    width: 4em;
-    height: 1em;
-    background: url(../img/icons/pro.svg) no-repeat center/100%;
-    transform: translateY(2px);
-}
+// .icon-pro {
+//     display: inline-block;
+//     width: 4em;
+//     height: 1em;
+//     background: url(../img/icons/pro.svg) no-repeat center/100%;
+//     transform: translateY(2px);
+// }
 
 .icon-phone-call {
     display: block;

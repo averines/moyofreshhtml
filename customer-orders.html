@@ -1508,32 +1508,46 @@
     </header>
 
     <main>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="index.html" itemprop="item" title="OptMoyo.ru – интернет-магазин одежды"><span itemprop="name">Главная</span></a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="customer-account.html" itemprop="item"><span itemprop="name">Личный кабинет</span></a>
+                        <meta itemprop="position" content="2">
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Мои заказы</span>
+                        <meta itemprop="position" content="3">
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
         <div class="container mt-3">
             <div class="account-layout">
                 <div class="account-layout__aside">
-                    <div class="account-card">
-                        <div class="account-card__title">Пушкина А.С.</div>
-                        <div class="account-card__subtitle">1 адрес доставки</div>
-                        <div class="account-card__footer">
-                            <a href="#">Все данные покупателя</a>
-                        </div>
-                    </div>
-
                     <div class="account-menu">
                         <!-- <a href="customer-cart.html">Корзина</a> -->
-                        <!-- <a href="customer-favorites.html">Избранное</a> -->
-                        <a class="is-active" href="customer-orders.html">Мои заказы</a>
-                        <a href="customer-reclamations.html">Рекламации</a>
-                        <a href="customer-news.html">Новости и уведомления</a>
-                        <!-- <a href="customer-info.html">Данные покупателя</a> -->
-                        <a href="customer-bonus.html">Скидки и бонусы</a>
+                        <!-- <a href="customer-favorites.html"><span class="icon icon--heart"></span> Избранное</a> -->
+                        <a href="customer-info.html"><span class="icon icon--user"></span> Данные покупателя</a>
+                        <a href="customer-orders.html" class="is-active"><span class="icon icon--noteblock"></span> Мои заказы</a>
+                        <a href="customer-bonus.html"><span class="icon icon--crown"></span> Скидки и бонусы</a>
+                        <a href="customer-reclamations.html"><span class="icon icon--return"></span> Рекламации</a>
+                        <a href="customer-news.html"><span class="icon icon--bell"></span> Новости и уведомления</a>
                         <hr>
-                        <a href="#">Выйти</a>
+                        <a href="#"><span class="icon icon--logout"></span> Выйти</a>
                     </div>
                 </div>
 
                 <div class="account-layout__body">
-                    <h1 class="h2 mb-1">Мои заказы</h1>
+                    <div class="account-layout__header">
+                        <a href="customer-account.html" aria-label="Назад в личный кабинет"><span class="icon icon--arrow-left"></span></a>
+                        <h1 class="h2 mb-1">Мои заказы</h1>
+                    </div>
                 </div>
             </div>
         </div>
