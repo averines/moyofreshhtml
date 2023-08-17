@@ -1,10 +1,26 @@
 .account-layout {
     display: grid;
-    grid-template-columns: minmax(350px, 1fr) 4fr;
+    grid-template-columns: minmax(300px, 1fr) 4fr;
     column-gap: 100px;
 
     &__aside {
-        margin-top: 20px;
+        // margin-top: 20px;
+    }
+
+    &__main {
+        &--sm {
+            max-width: 800px;
+        }
+    }
+
+    &__body {
+        display: grid;
+        row-gap: 65px;
+    }
+
+    &__row {
+        display: grid;
+        row-gap: 30px;
     }
 
     &__header {
@@ -22,6 +38,12 @@
             }
         }
     }
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    column-gap: 30px;
 }
 
 .account-menu {
@@ -55,18 +77,14 @@
             transform: translateY(-2px);
             font-size: 1.2em;
             line-height: 1;
-        } 
+        }
     }
 }
 
-.account-card {
+.profile-card {
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    background-color: $bg-l;
-    border-radius: $br-xxl;
-    margin-bottom: 20px;
-    min-height: 190px;
+    min-height: 150px;
 
     &__title {
         font-size: 24px;
@@ -85,10 +103,11 @@
 .bonus-card {
     display: flex;
     flex-direction: column;
-    padding: 17px 30px;
-    border: 1px solid $line-d;
-    border-radius: $br-xxl;
-    position: relative;
+    padding: 10px 0;
+    // padding: 17px 30px;
+    // border: 1px solid $line-d;
+    // border-radius: $br-xxl;
+    // position: relative;
     overflow: hidden;
 
     &--dark {
@@ -123,9 +142,9 @@
 }
 
 .progress-card {
-    padding: 17px 30px;
-    border: 1px solid $line-d;
-    border-radius: $br-xxl;
+    // padding: 17px 30px;
+    // border: 1px solid $line-d;
+    // border-radius: $br-xxl;
 
     &--dark {
         background-color: $bg-l;
@@ -187,5 +206,39 @@
     &__value {
         color: $text-l;
         font-size: 15px;
+    }
+}
+
+.account-block {
+    display: grid;
+    row-gap: 12px;
+
+    // border: 1px solid $line-d;
+    // padding: 30px;
+    // border-radius: $br-xl;
+
+    &__header {
+        display: flex;
+        column-gap: 15px;
+        row-gap: 15px;
+        align-items: center;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &__link {
+        font-size: 15px;
+    }
+
+    &__content {
+        border-top: 1px solid $line;
+        box-shadow: $bs-box;
+        padding: 20px 30px;
+        border-radius: $br-xxl;
+        position: relative;
+        overflow: hidden;
     }
 }
