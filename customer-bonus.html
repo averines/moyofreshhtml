@@ -1527,18 +1527,11 @@
             </nav>
         </div>
 
-        <div class="container mt-3">
+        <div class="container mt-2">
             <div class="account-layout">
                 <div class="account-layout__aside">
-                    <!-- <div class="account-card">
-                        <div class="account-card__title">Пушкина А.С.</div>
-                        <div class="account-card__subtitle">1 адрес доставки</div>
-                        <div class="account-card__footer">
-                            <a href="#">Все данные покупателя</a>
-                        </div>
-                    </div> -->
-
                     <div class="account-menu">
+                        <a href="customer-account.html"><span class="icon icon--dashboard"></span> Кабинет</a>
                         <!-- <a href="customer-cart.html">Корзина</a> -->
                         <!-- <a href="customer-favorites.html"><span class="icon icon--heart"></span> Избранное</a> -->
                         <a href="customer-info.html"><span class="icon icon--user"></span> Данные покупателя</a>
@@ -1546,49 +1539,56 @@
                         <a class="is-active" href="customer-bonus.html"><span class="icon icon--crown"></span> Скидки и бонусы</a>
                         <a href="customer-reclamations.html"><span class="icon icon--return"></span> Рекламации</a>
                         <a href="customer-news.html"><span class="icon icon--bell"></span> Новости и уведомления</a>
-                        <hr>
-                        <a href="#"><span class="icon icon--logout"></span> Выйти</a>
+                        <a class="mt-1" href="#"><span class="icon icon--logout"></span> Выйти</a>
                     </div>
                 </div>
-
-                <div class="account-layout__body">
+                <div class="account-layout__main account-layout__main--sm">
                     <div class="account-layout__header">
                         <a href="customer-account.html" aria-label="Назад в личный кабинет"><span class="icon icon--arrow-left"></span></a>
                         <h1 class="h2 mb-1">Скидки и бонусы</h1>
                     </div>
 
-                    <div class="box box--xsm">
-                        <div class="bonus-card bonus-card--dark-">
-                            <div class="bonus-card__value">1250 ₽</div>
-                            <div class="bonus-card__title">Бонусный баланс</div>
-                            <div class="bonus-card__decor">
-                                <img src="./assets/img/bonus.png" alt="123" width="70">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box box--sm">
-                        <div class="progress-card progress-card--dark- mt-1">
-                            <div class="progress-card__header">
-                                <div class="progress-card__title">Скидка покупателя</div>
-                                <div class="progress-card__value">1%</div>
-                            </div>
-                            <div class="progress-card__footer">
-                                <div class="progress-card__subtitle">Осталось 87 620 ₽ до скидки 2%</div>
-                                <div class="progress-card__subtitle">Заказы за последние 90 дней:</div>
-                                <div class="progress-line">
-                                    <progress class="progress-line__bar" max="120000" value="29500"></progress>
-                                    <div class="progress-line__values">
-                                        <div class="progress-line__value">29 500 ₽</div>
-                                        <div class="progress-line__value">120 000 ₽</div>
+                    <div class="account-layout__body">
+                        <div class="box box--sm">
+                            <div class="account-block">
+                                <div class="account-block__content">
+                                    <div class="bonus-card">
+                                        <div class="bonus-card__value">1250 ₽</div>
+                                        <div class="bonus-card__title">Бонусный баланс</div>
+                                        <div class="bonus-card__decor">
+                                            <img src="./assets/img/bonus.png" alt="bonus" width="70">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="box box--sm">
+                            <div class="account-block">
+                                <div class="account-block__content">
+                                    <div class="progress-card progress-card--dark- mt-1">
+                                        <div class="progress-card__header">
+                                            <div class="progress-card__title">Скидка покупателя</div>
+                                            <div class="progress-card__value">1%</div>
+                                        </div>
+                                        <div class="progress-card__footer">
+                                            <div class="progress-card__subtitle">Осталось 87 620 ₽ до скидки 2%</div>
+                                            <div class="progress-card__subtitle">Заказы за последние 90 дней:</div>
+                                            <div class="progress-line">
+                                                <progress class="progress-line__bar" max="120000" value="29500"></progress>
+                                                <div class="progress-line__values">
+                                                    <div class="progress-line__value">29 500 ₽</div>
+                                                    <div class="progress-line__value">120 000 ₽</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p><a href="info-bonus.html">Как начисляются бонусы и скидки?</a></p>
                     </div>
-
-                    <p><a href="info-bonus.html">Как начисляются бонусы и скидки?</a></p>
-
                 </div>
+
             </div>
         </div>
     </main>
