@@ -43,6 +43,17 @@
         }
     }
 
+    &--white {
+        background-color: transparent;
+        color: #fff;
+        border-color: #fff;
+
+        &:hover {
+            background-color: lighten($main-ll, 4.5);
+            color: $main;
+        }
+    }
+
     &--secondary {
         background-color: $main-ll;
         border-color: $main-ll;

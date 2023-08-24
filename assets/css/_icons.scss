@@ -2,6 +2,7 @@
     width: 1.2em;
     height: 1.2em;
     display: inline-block;
+    flex-shrink: 0;
 
     &--vk {
         background: url(../img/icons/social-vk.svg) no-repeat center/100%;
