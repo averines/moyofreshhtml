@@ -1,5 +1,6 @@
 .header {
     border-bottom: 1px solid $line;
+    z-index: 100;
 }
 
 // верх==========================
@@ -472,7 +473,9 @@
                         position: absolute;
                         width: 10px;
                         height: 10px;
-                        transition: opacity 0.1s ease-in-out, transform 0.275s ease-in-out;
+                        transition:
+                            opacity 0.1s ease-in-out,
+                            transform 0.275s ease-in-out;
                     }
 
                     &::after {
@@ -504,7 +507,9 @@
                         height: 3px;
                         right: 7px;
                         bottom: 40%;
-                        transition: opacity 0.1s ease-in-out, transform 0.275s ease-in-out;
+                        transition:
+                            opacity 0.1s ease-in-out,
+                            transform 0.275s ease-in-out;
                         background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.65 15.13'%3E%3Cpath fill='%23ff0040' d='M2.73,15.05c-6.54-4.58.7-10.25,1-15C4.62-.18,10.4,16.43,2.73,15.05Z'/%3E%3C/svg%3E") no-repeat center;
                     }
                 }
