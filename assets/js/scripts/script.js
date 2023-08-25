@@ -292,12 +292,45 @@ window.addEventListener('click', (e) => {
 
     // отслеживаем изменение чекбокса в фильтрах
     if (e.target.classList.contains("filter-checkbox")) {
+
+
+        // показываем родительскую обертку для активных фильтров
+        let activeFiltersWrap = document.querySelector(".active-filters-wrap");
+        activeFiltersWrap.classList.remove("active-filters-wrap--hidden")
+
+        let activeFilters = document.querySelector(".active-filters");
+        let activeFilter = document.createElement("button");
+
+        if (e.target.checked) {
+            // добаляем кнопку для удаления этого фильтра
+            activeFilter.classList.add("active-filter");
+            activeFilter.innerText = e.target.closest(".filter-content__row").querySelector(".filter-value").innerText;
+            activeFilter.dataset.action = "clear-filter";
+            activeFilter.dataset.filterId = e.target.id;
+            activeFilter.dataset.filterGroup = e.target.dataset.filterGroup;
+            activeFilters.appendChild(activeFilter);
+
+        } else {
+            // удаляем кнопку для удаления этого фильтра
+            activeFilters.querySelector(`[data-filter-id="${e.target.id}"]`).remove();
+
+            // прячем обертку удаления фильтров
+            if (!activeFilters.hasChildNodes()) {
+                let clearFiltersWrap = document.querySelector(".active-filters-wrap");
+                clearFiltersWrap.classList.add("active-filters-wrap--hidden");
+            }
+
+        }
+
+        // обновляем счетчик активных фильтров
         let activeSiblingCheckboxes = e.target.closest(".filter").querySelectorAll("input.filter-checkbox:checked");
+
         if (activeSiblingCheckboxes.length) {
             e.target.closest(".catalog-filter").dataset.activeFilterCount = activeSiblingCheckboxes.length;
         } else {
             delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
         }
+
     }
 
     if (e.target.classList.contains("filter-controls__clear")) {
@@ -306,6 +339,17 @@ window.addEventListener('click', (e) => {
         if (activeSiblingCheckboxes.length) {
             activeSiblingCheckboxes.forEach(i => { i.checked = false });
             delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
+
+            //удаляем кнопки удаления фильтров для этого фильтра
+            let activeGroupFilters = document.querySelectorAll(`.active-filter[data-filter-group="${e.target.dataset.filterGroup}"]`);
+            activeGroupFilters.forEach(i => i.remove());
+
+            // прячем обертку удаления фильтров
+            let activeFilters = document.querySelector(".active-filters");
+            if (!activeFilters.hasChildNodes()) {
+                let clearFiltersWrap = document.querySelector(".active-filters-wrap");
+                clearFiltersWrap.classList.add("active-filters-wrap--hidden");
+            }
         }
 
         // сбрасываем цены при нажатии кнопки Сбросить
@@ -362,8 +406,43 @@ window.addEventListener('click', (e) => {
                 formRegisterInn.classList.add("d-none");
             }
         }
-    }
 
+        // сбросить все фильтры в каталоге товаров
+        if (e.target.dataset.action == "clear-filters") {
+
+            // очищаем и прячем обертку активных фильтров
+            let clearFiltersWrap = e.target.closest(".active-filters-wrap");
+            clearFiltersWrap.querySelector(".active-filters").replaceChildren();
+            clearFiltersWrap.classList.add("active-filters-wrap--hidden");
+
+            // проходимся по всем группам и снимаем фильтры
+            document.querySelectorAll("input.filter-checkbox").forEach(i => i.checked = false);
+            document.querySelectorAll(".catalog-filter").forEach(i => delete i.dataset.activeFilterCount);
+        }
+
+        // сбросить один фильтр в каталоге товаров
+        if (e.target.dataset.action == "clear-filter") {
+            e.target.remove();
+            let activeCheckbox = document.getElementById(e.target.dataset.filterId);
+            activeCheckbox.checked = false;
+
+            // обновляем счетчик активных фильтров этой группы
+            let activeSiblingCheckboxes = document.querySelectorAll(`input.filter-checkbox:checked[data-filter-group="${e.target.dataset.filterGroup}"]`);
+
+            if (activeSiblingCheckboxes.length) {
+                document.querySelector(`.catalog-filter[data-filter-group="${e.target.dataset.filterGroup}"]`).dataset.activeFilterCount = activeSiblingCheckboxes.length;
+            } else {
+                delete document.querySelector(`.catalog-filter[data-filter-group="${e.target.dataset.filterGroup}"]`).dataset.activeFilterCount;
+            }
+
+            // прячем обертку удаления фильтров
+            let activeFilters = document.querySelector(".active-filters");
+            if (!activeFilters.hasChildNodes()) {
+                let clearFiltersWrap = document.querySelector(".active-filters-wrap");
+                clearFiltersWrap.classList.add("active-filters-wrap--hidden");
+            }
+        }
+    }
 })
 
 window.addEventListener('mouseover', (e) => {
