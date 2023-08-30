@@ -143,9 +143,9 @@
                                 <div class="user-btn__title">Уведомления</div>
                             </a>
                             <!-- <div class="user-nav-dropdown user-nav-dropdown--md">
-                                    <div class="text-bold text-sm mb-1">Требуется авторизация</div>
-                                    <div class="text-sm">Войдите или зарегистрируйтесь для&nbsp;получения уведомлений о&nbsp;скидках, поступлениях и&nbsp;работе нашего магазина</div>
-                                </div> -->
+                                        <div class="text-bold text-sm mb-1">Требуется авторизация</div>
+                                        <div class="text-sm">Войдите или зарегистрируйтесь для&nbsp;получения уведомлений о&nbsp;скидках, поступлениях и&nbsp;работе нашего магазина</div>
+                                    </div> -->
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="user-orders.html">
@@ -162,9 +162,9 @@
                                 <div class="user-btn__title">Заказы</div>
                             </a>
                             <!-- <div class="user-nav-dropdown user-nav-dropdown--md">
-                                    <div class="text-bold text-sm mb-1">Требуется авторизация</div>
-                                    <div class="text-sm">История заказов доступна только авторизованным пользователям</div>
-                                </div> -->
+                                        <div class="text-bold text-sm mb-1">Требуется авторизация</div>
+                                        <div class="text-sm">История заказов доступна только авторизованным пользователям</div>
+                                    </div> -->
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="user-favorites.html">
@@ -1513,98 +1513,26 @@
     </header>
 
     <main>
-        <div class="container mt-5">
-            <div class="d-grid flex-wrap col-gap-4 row-gap-1">
-                <!-- информация -->
-                <div>
-                    <p class="h4">Информация</p>
-                    <ul class="marker">
-                        <li><a href="info-index.html">Информация</a></li>
-                        <li><a href="info-privacy.html">Политика обработки данных</a></li>
-                    </ul>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="index.html" itemprop="item" title="OptMoyo.ru – интернет-магазин одежды"><span itemprop="name">Главная</span></a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Избранное</span>
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </nav>
+        </div>
 
-                    <p class="mt-2">Компания</p>
-                    <ul class="marker">
-                        <li><a href="info-about.html">О компании</a></li>
-                        <li><a href="info-cooperation.html">Сотрудничество</a></li>
-                        <li><a href="info-api.html">Парсеры и api</a></li>
-                        <li><a href="info-contacts.html">Контакты</a></li>
-                    </ul>
-
-                    <p class="mt-2">Покупателям</p>
-                    <ul class="marker">
-                        <li><a href="info-conditions.html">Условия для покупателей</a></li>
-                        <li><a href="info-delivery.html">Доставка</a></li>
-                        <li><a href="info-payment.html">Оплата</a></li>
-                        <li><a href="info-bonus.html">Скидки и бонусы</a></li>
-                        <li><a href="info-sp.html">Организаторам СП</a></li>
-                        <li><a href="info-returns.html">Возврат</a></li>
-                        <li><a href="info-faq.html">Ответы на вопросы</a></li>
-                        <li><a href="info-sizes.html">Таблица размеров</a></li>
-                    </ul>
-                </div>
-
-                <!-- каталог -->
-                <div>
-                    <p class="h4">Каталог</p>
-                    <ul class="marker">
-                        <li><a href="catalog-brands.html">Бренды</a></li>
-                        <li><a href="catalog-section.html">Раздел (Женщинам)</a></li>
-                        <li><a href="catalog-category.html">Категория (Платья)</a></li>
-                        <li><a href="catalog-subcategory.html">Подкатегория (Повседневные)</a></li>
-                        <li><a href="catalog-product.html">Товар (много контента)</a></li>
-                        <li><a href="catalog-product-min.html">Товар (мало контента)</a></li>
-                    </ul>
-                </div>
-
-                <!-- пользователь -->
-                <div>
-                    <p class="h4">Пользователь (авторизованный)</p>
-                    <ul class="marker">
-                        <li><a href="customer-account.html">Аккаунт</a></li>
-                        <li><a href="customer-info.html">Данные покупателя</a></li>
-                        <li><a href="customer-bonus.html">Скидки и бонусы</a></li>
-                        <li><a href="customer-reclamations.html">Рекламации</a></li>
-                        <li><a href="customer-news.html">Уведомления</a></li>
-                        <li><a href="customer-orders.html">Заказы</a></li>
-                        <li><a href="customer-orders-empty.html">Пустые заказы</a></li>
-
-                        <li><a href="customer-cart.html">Корзина</a></li>
-                        <li><a href="customer-cart-empty.html">Пустая корзина</a></li>
-
-                        <li><a href="customer-favorites.html">Избранное</a></li>
-                        <li><a href="customer-favorites-empty.html">Пустое избранное</a></li>
-
-                        <li><a href="customer-session.html">Сессия устарела (требуется вход)</a></li>
-                    </ul>
-                </div>
-
-                <!-- посетитель -->
-                <div>
-                    <p class="h4">Посетитель (неавторизованный)</p>
-                    <ul class="marker">
-                        <li><a href="user-register.html">Регистрация</a></li>
-
-                        <li><a href="user-cart.html">Корзина</a></li>
-                        <li><a href="user-cart-empty.html">Пустая корзина</a></li>
-
-                        <li><a href="user-favorites.html">Избранное</a></li>
-                        <li><a href="user-favorites-empty.html">Пустое избранное</a></li>
-
-                        <li><a href="user-news.html">Уведомления (требуется вход)</a></li>
-                        <li><a href="user-orders.html">Заказы (требуется вход)</a></li>
-                    </ul>
-                </div>
-
-                <!-- технические -->
-                <div>
-                    <p class="h4">Технические страницы</p>
-                    <ul class="marker">
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="elements.html">Библиотека элементов</a></li>
-                        <li><a href="search-empty.html">Пустой поиск</a></li>
-                    </ul>
-                </div>
+        <div class="container container--center container--xsm my-3">
+            <div class="d-grid row-gap-0 justify-items-center">
+                <img class="img-fluid" src="./assets/img/hero/empty-favorites.webp" alt="Избранные товары" width="220" height="220">
+                <h1 class="h2 text-center mb-0">Нет избранных товаров</h1>
+                <p class="text-center">Добавляйте товары в избранное, нажимая на кнопку с сердечком.</p>
             </div>
         </div>
     </main>

@@ -4,6 +4,7 @@
     align-items: center;
     column-gap: 8px;
     row-gap: 10px;
+    padding-right: 170px;
 
     &--show-all {
         .catalog-filter {
@@ -427,7 +428,7 @@
 
 .active-filters-wrap {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     column-gap: 10px;
 
     &--hidden {
@@ -437,6 +438,7 @@
 
 .active-filters {
     display: flex;
+    flex-wrap: wrap;
     column-gap: 8px;
 }
 
@@ -453,6 +455,7 @@
     column-gap: 0.4em;
     transition: $t;
     font-size: 13px;
+    white-space: nowrap;
 
     &:hover {
         color: #fff;
