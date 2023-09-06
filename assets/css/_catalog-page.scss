@@ -37,6 +37,7 @@
     flex-wrap: wrap;
     column-gap: 6px;
     row-gap: 6px;
+    margin-top: 15px;
 
     @media screen and (min-width: $bp-lg) {
         max-width: 90%;
@@ -72,6 +73,7 @@
     position: relative;
     width: 100%;
     height: 40px;
+    margin-top: 5px;
 
     @media screen and (min-width: $bp-sm) {
         height: auto;
@@ -110,7 +112,7 @@
         border-radius: $br-lg;
 
         @media screen and (min-width: $bp-sm) {
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
             flex-direction: row;
             font-size: 14px;
             row-gap: 18px;
@@ -127,6 +129,7 @@
             text-align: center;
             border-radius: $br-xl;
             background-color: #fff;
+            white-space: nowrap;
 
             &:hover {
                 color: $main;
@@ -392,19 +395,23 @@
 }
 
 .catalog-header {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     column-gap: 50px;
     row-gap: 30px;
     justify-content: space-between;
+    margin-top: 25px;
 
-    .pagination {
-        display: none;
-
-        @media screen and (min-width: $bp-sm) {
-            display: flex;
-        }
+    @media screen and (min-width: $bp-lg) {
+        display: flex;
     }
+
+    // .pagination {
+    //     display: none;
+
+    //     @media screen and (min-width: $bp-sm) {
+    //         display: flex;
+    //     }
+    // }
 }
 
 .catalog-footer {

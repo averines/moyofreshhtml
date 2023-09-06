@@ -4,7 +4,7 @@
     align-items: center;
     column-gap: 8px;
     row-gap: 10px;
-    padding-right: 170px;
+    // padding-right: 170px;
 
     &--show-all {
         .catalog-filter {
@@ -18,7 +18,7 @@
     position: relative;
     display: none;
 
-    &:nth-child(-n + 10) {
+    &:nth-child(-n + 6) {
         display: block;
     }
 
@@ -491,6 +491,7 @@
     column-gap: 0.4em;
     transition: $t;
     font-size: 13px;
+    order: 1;
 
     &:hover {
         color: $text;

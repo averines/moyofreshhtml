@@ -11,10 +11,20 @@ let isFilterOpen = false;
 const delegate = (selector) => (cb) => (e) => e.target.matches(selector) && cb(e);
 const inputDelegate = delegate('input[type=text]');
 
-// отслеживаем изменение инпутов в поиске по фильтрам
+function checkIsMobile() {
+    let isMobile = window.matchMedia || window.msMatchMedia;
+    if (isMobile) {
+        let match_mobile = isMobile("(pointer:coarse)");
+        return match_mobile.matches;
+    }
+    return false;
+}
+
+
+// отслеживаем изменение инпутов в фильтрах товаров
 body.addEventListener('focusin', inputDelegate((el) => {
 
-    // изменения чекбоксов
+    // поиск по фильтру
     if (el.target.classList.contains("filter-search__input")) {
         el.target.addEventListener("input", (e) => {
             let filter = e.target.closest(".filter");
@@ -53,12 +63,11 @@ body.addEventListener('focusin', inputDelegate((el) => {
     // изменения диапазона
     if (el.target.classList.contains("filter-range__input")) {
         el.target.addEventListener("blur", (e) => {
-
             let rangeMin = parseInt(e.target.closest(".filter-range").dataset.rangeMin);
             let rangeMax = parseInt(e.target.closest(".filter-range").dataset.rangeMax);
-
             e.target.value = parseInt(e.target.value.replace(/\D/gi, '')) || 0;
 
+            let filterGroup = e.target.closest(".catalog-filter")
 
             if (e.target.dataset.range == "min") {
                 if (e.target.value < rangeMin || e.target.value > rangeMax) {
@@ -66,8 +75,9 @@ body.addEventListener('focusin', inputDelegate((el) => {
                 }
 
                 if (e.target.value != rangeMin) {
-                    setTimeout(() => { e.target.closest(".catalog-filter").dataset.activeFilterCount = ""; }, 150);
+                    setTimeout(() => { filterGroup.dataset.activeFilterCount = ""; }, 150);
                     // e.target.closest(".catalog-filter").dataset.activeFilterCount = "";
+                    setFilterRange(filterGroup.dataset.filterGroup, e.target.value, rangeMax)
                 }
             }
 
@@ -81,8 +91,9 @@ body.addEventListener('focusin', inputDelegate((el) => {
                 }
 
                 if (e.target.value != rangeMax) {
-                    // setTimeout(() => { e.target.closest(".catalog-filter").dataset.activeFilterCount = ""; }, 150);
+                    // setTimeout(() => { filterGroup.dataset.activeFilterCount = ""; }, 150);
                     e.target.closest(".catalog-filter").dataset.activeFilterCount = "";
+                    setFilterRange(filterGroup.dataset.filterGroup, rangeMin, e.target.value)
                 }
             }
 
@@ -91,95 +102,6 @@ body.addEventListener('focusin', inputDelegate((el) => {
 }));
 
 
-function swapImages(productPic, colorPics, actualIndex) {
-    clearTimeout(swapImagesTimer);
-    swapImagesTimer = setInterval(() => {
-        updateSrcset(productPic, colorPics[actualIndex]);
-        actualIndex = (actualIndex + 1) % colorPics.length;
-    }, 1000);
-}
-
-function updateSrcset(productPic, colorId) {
-    productPic.srcset = productPic.srcset.replace(/\/([^\/]+)\.webp/g, (match, fileName) => match.replace(fileName, colorId));
-}
-
-function updatePrices(product, priceActual, priceOld) {
-    if (priceActual) {
-        product.querySelector(".card-price__actual span").innerText = priceActual;
-    }
-
-    if (priceOld) {
-        product.querySelector(".card-price__old span").innerText = priceOld;
-    }
-}
-
-function updateLinks(product, productId) {
-    // TODO: сделать замену через регулярку для url вида https://optmoyo.ru/product/123456
-    product.querySelector(".product-card__body-link").href = productId;
-    product.querySelector(".product-card__head-link").href = productId;
-}
-
-function setActiveColor(cardColors, actualColor, product, cardSizes) {
-    // сделать наведенный цвет активным
-    cardColors.forEach(i => i.classList.toggle("card-color--active", i === actualColor));
-    product.dataset.activeColorId = actualColor.dataset.colorId;
-
-    // показать размеры, связанные с цветом в мини-карточке товара
-    cardSizes.forEach(i => { i.classList.toggle("card-size--showed", actualColor.dataset.colorId === i.dataset.colorId) });
-}
-
-function setSwiper(product) {
-    let productHeadLink = product.querySelector(".product-card__head-link");
-    let colorPics = product.querySelector(`[data-color-id="${product.dataset.activeColorId}"]`).dataset.images;
-    if (colorPics) {
-        colorPics = colorPics.replace(" ", "").split(",");
-
-        if (colorPics.length > 1) {
-            let productPic = product.querySelector(".product-card__pic");
-            let newSwiper = document.createElement("div");
-            newSwiper.classList.add("product-card__swiper");
-            const swiperFragment = document.createDocumentFragment();
-
-            for (let i = 0; i < colorPics.length; i++) {
-                let swiperImage = document.createElement("div");
-                swiperImage.addEventListener('mouseover', () => {
-                    updateSrcset(productPic, colorPics[i]);
-                });
-                swiperFragment.appendChild(swiperImage);
-            }
-            newSwiper.appendChild(swiperFragment);
-            productHeadLink.append(newSwiper);
-
-        }
-    }
-}
-
-function removeSwiper(product) {
-    let swiper = product.querySelector(".product-card__swiper");
-    if (swiper) { swiper.remove() }
-}
-
-function setProductDefaultState(product) {
-    let cardColors = product.querySelectorAll(".card-color");
-    let productPic = product.querySelector(".product-card__pic");
-    let cardSizes = product.querySelectorAll(".card-size");
-
-    clearTimeout(swapImagesTimer);
-    updateSrcset(productPic, cardColors[0].dataset.colorId);
-    updatePrices(product, cardColors[0].dataset.priceActual, cardColors[0].dataset.priceOld);
-    updateLinks(product, cardColors[0].dataset.colorId);
-    setActiveColor(cardColors, cardColors[0], product, cardSizes);
-    removeSwiper(product);
-}
-
-function checkIsMobile() {
-    let isMobile = window.matchMedia || window.msMatchMedia;
-    if (isMobile) {
-        let match_mobile = isMobile("(pointer:coarse)");
-        return match_mobile.matches;
-    }
-    return false;
-}
 
 window.addEventListener('click', (e) => {
     // показать/спрятать пункт аккордеона
@@ -292,73 +214,10 @@ window.addEventListener('click', (e) => {
 
     // отслеживаем изменение чекбокса в фильтрах
     if (e.target.classList.contains("filter-checkbox")) {
-
-
-        // показываем родительскую обертку для активных фильтров
-        let activeFiltersWrap = document.querySelector(".active-filters-wrap");
-        activeFiltersWrap.classList.remove("active-filters-wrap--hidden")
-
-        let activeFilters = document.querySelector(".active-filters");
-        let activeFilter = document.createElement("button");
-
-        if (e.target.checked) {
-            // добаляем кнопку для удаления этого фильтра
-            activeFilter.classList.add("active-filter");
-            activeFilter.innerText = e.target.closest(".filter-content__row").querySelector(".filter-value").innerText;
-            activeFilter.dataset.action = "clear-filter";
-            activeFilter.dataset.filterId = e.target.id;
-            activeFilter.dataset.filterGroup = e.target.dataset.filterGroup;
-            activeFilters.appendChild(activeFilter);
-
-        } else {
-            // удаляем кнопку для удаления этого фильтра
-            activeFilters.querySelector(`[data-filter-id="${e.target.id}"]`).remove();
-
-            // прячем обертку удаления фильтров
-            if (!activeFilters.hasChildNodes()) {
-                let clearFiltersWrap = document.querySelector(".active-filters-wrap");
-                clearFiltersWrap.classList.add("active-filters-wrap--hidden");
-            }
-
-        }
-
-        // обновляем счетчик активных фильтров
-        let activeSiblingCheckboxes = e.target.closest(".filter").querySelectorAll("input.filter-checkbox:checked");
-
-        if (activeSiblingCheckboxes.length) {
-            e.target.closest(".catalog-filter").dataset.activeFilterCount = activeSiblingCheckboxes.length;
-        } else {
-            delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
-        }
-
-    }
-
-    if (e.target.classList.contains("filter-controls__clear")) {
-        // сбрасываем чекбоксы при нажатии на кнопку Сбросить
-        let activeSiblingCheckboxes = e.target.closest(".filter").querySelectorAll("input.filter-checkbox:checked");
-        if (activeSiblingCheckboxes.length) {
-            activeSiblingCheckboxes.forEach(i => { i.checked = false });
-            delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
-
-            //удаляем кнопки удаления фильтров для этого фильтра
-            let activeGroupFilters = document.querySelectorAll(`.active-filter[data-filter-group="${e.target.dataset.filterGroup}"]`);
-            activeGroupFilters.forEach(i => i.remove());
-
-            // прячем обертку удаления фильтров
-            let activeFilters = document.querySelector(".active-filters");
-            if (!activeFilters.hasChildNodes()) {
-                let clearFiltersWrap = document.querySelector(".active-filters-wrap");
-                clearFiltersWrap.classList.add("active-filters-wrap--hidden");
-            }
-        }
-
-        // сбрасываем цены при нажатии кнопки Сбросить
-        let filterRange = e.target.closest(".filter").querySelector(".filter-range");
-        if (filterRange) {
-            filterRange.querySelector('.filter-range__input[data-range="min"]').value = filterRange.dataset.rangeMin;
-            filterRange.querySelector('.filter-range__input[data-range="max"]').value = filterRange.dataset.rangeMax;
-            delete e.target.closest(".catalog-filter").dataset.activeFilterCount;
-        }
+        let filterText = e.target.closest(".filter-content__row").querySelector(".filter-value").innerText;
+        toggleFilter(e.target.id, e.target.checked, filterText)
+        updateActiveFilterCount(e.target.closest(".catalog-filter"));
+        updateVisibilityActiveFiltersWrap()
     }
 
     // обработка кликов с data-action ===========================
@@ -409,38 +268,22 @@ window.addEventListener('click', (e) => {
 
         // сбросить все фильтры в каталоге товаров
         if (e.target.dataset.action == "clear-filters") {
-
-            // очищаем и прячем обертку активных фильтров
-            let clearFiltersWrap = e.target.closest(".active-filters-wrap");
-            clearFiltersWrap.querySelector(".active-filters").replaceChildren();
-            clearFiltersWrap.classList.add("active-filters-wrap--hidden");
-
-            // проходимся по всем группам и снимаем фильтры
-            document.querySelectorAll("input.filter-checkbox").forEach(i => i.checked = false);
-            document.querySelectorAll(".catalog-filter").forEach(i => delete i.dataset.activeFilterCount);
+            let filterGroups = document.querySelectorAll(".catalog-filter");
+            filterGroups.forEach(filterGroup => {
+                filterGroup.querySelectorAll("input.filter-checkbox").forEach(i => i.checked = false);
+                updateActiveFilterCount(filterGroup);
+                updateVisibilityActiveFiltersWrap();
+            });
         }
 
-        // сбросить один фильтр в каталоге товаров
+        // удалить одну группу фильтров в каталоге товаров
+        if (e.target.dataset.action == "clear-filter-group") {
+            clearFilterGroup(e.target.dataset.filterGroup)
+        }
+
+        // удалить один фильтр в каталоге товаров
         if (e.target.dataset.action == "clear-filter") {
-            e.target.remove();
-            let activeCheckbox = document.getElementById(e.target.dataset.filterId);
-            activeCheckbox.checked = false;
-
-            // обновляем счетчик активных фильтров этой группы
-            let activeSiblingCheckboxes = document.querySelectorAll(`input.filter-checkbox:checked[data-filter-group="${e.target.dataset.filterGroup}"]`);
-
-            if (activeSiblingCheckboxes.length) {
-                document.querySelector(`.catalog-filter[data-filter-group="${e.target.dataset.filterGroup}"]`).dataset.activeFilterCount = activeSiblingCheckboxes.length;
-            } else {
-                delete document.querySelector(`.catalog-filter[data-filter-group="${e.target.dataset.filterGroup}"]`).dataset.activeFilterCount;
-            }
-
-            // прячем обертку удаления фильтров
-            let activeFilters = document.querySelector(".active-filters");
-            if (!activeFilters.hasChildNodes()) {
-                let clearFiltersWrap = document.querySelector(".active-filters-wrap");
-                clearFiltersWrap.classList.add("active-filters-wrap--hidden");
-            }
+            toggleFilter(e.target.dataset.filterId)
         }
     }
 })
@@ -490,98 +333,6 @@ window.addEventListener('mouseover', (e) => {
 })
 
 
-// подсчёт пунктов в выпадающем меню каталога и кнопка показать/скрыть для длинных меню
-const catalogTabMenus = document.querySelectorAll(".catalog-tab__menu");
-if (catalogTabMenus) {
-    catalogTabMenus.forEach(catalogTabMenu => {
-        let items = catalogTabMenu.querySelectorAll("a");
-        if (items.length > 6) {
-            let button = document.createElement("button");
-            button.classList.add("catalog-tab__more");
-            button.innerText = `${items.length - 6}`;
-            button.addEventListener("click", () => { catalogTabMenu.classList.toggle("catalog-tab__menu--show-all") })
-            catalogTabMenu.append(button);
-        }
-    })
-}
-
-// показать табы выпадающего меню каталога при наведении
-const catalogTabTitles = document.querySelectorAll(".catalog-nav__titles li");
-const catalogTabs = document.querySelectorAll(".catalog-tab");
-if (catalogTabTitles && catalogTabs) {
-    catalogTabTitles.forEach(title => {
-        title.addEventListener("mouseenter", (e) => {
-            catalogTabTitles.forEach(t => t.classList.remove("is-active"));
-            title.classList.add("is-active");
-            catalogTabs.forEach(tab => { tab.classList.toggle("is-active", tab.dataset.tabId === e.target.dataset.tabTarget) })
-        })
-    })
-}
-
-
-// окончания для единиц измерения на русском языке
-function getRussainDeclension(variants, number) {
-    // ["час", "часа", "часов"] = ..1 час, ..2/3/4 часа, остальные часов
-    let variant;
-    if (number === 1 || (number > 20 && number % 10 === 1)) { variant = variants[0] }
-    else if ((number >= 2 && number <= 4) || (number > 20 && number % 10 >= 2 && number % 10 <= 4)) { variant = variants[1] }
-    else { variant = variants[2] }
-    return variant;
-}
-
-// расчет времени до закрытия/открытия магазина
-function getWorktimeStatus(element) {
-    // у element должны быть атрибуты data-worktime-open и data-worktime-close со значениями в формате "23:30"
-    // и data-worktime-close с перечеслением номеров дней недели
-
-    // получаем текущую дату и время в часовом поясе Москвы
-    const moscowTime = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
-    const currentTime = new Date(moscowTime);
-    const currentDayOfWeek = currentTime.getDay()
-
-    // получаем сортированный список рабочих дней недели
-    let workDays = element.dataset.worktimeDays.replace(" ", "").split(",").map(i => parseInt(i)).sort();
-
-    // определяем номер следующего рабочего дня
-    let nextWorkDayOfWeek = workDays.find(day => day > currentDayOfWeek) || workDays[0];
-
-    const openTime = new Date();
-    const [worktimeOpenHours, worktimeOpenMinutes] = element.dataset.worktimeOpen.replace(" ", "").split(":").map(i => parseInt(i));
-    openTime.setHours(worktimeOpenHours);
-    openTime.setMinutes(worktimeOpenMinutes);
-
-    const closeTime = new Date();
-    let [worktimeCloseHours, worktimeCloseMinutes] = element.dataset.worktimeClose.replace(" ", "").split(":").map(i => parseInt(i));
-    closeTime.setHours(worktimeCloseHours);
-    closeTime.setMinutes(worktimeCloseMinutes);
-
-    let statusHours, statusMinutes, timeDiff, statusMessage;
-
-    // проверяем, открыт ли магазин сейчас
-    if (workDays.includes(currentDayOfWeek) && currentTime >= openTime && currentTime <= closeTime) {
-        timeDiff = Math.abs(closeTime - currentTime); // время до закрытия магазина
-        statusMessage = "Сейчас открыто, закроется через";
-    } else {
-        const delta = nextWorkDayOfWeek > currentDayOfWeek ? nextWorkDayOfWeek - currentDayOfWeek : 7 - currentDayOfWeek + workDays[0];
-        const nextWorkDay = new Date();
-        nextWorkDay.setDate(currentTime.getDate() + delta);
-        nextWorkDay.setHours(openTime.getHours());
-        nextWorkDay.setMinutes(openTime.getMinutes());
-
-        timeDiff = Math.abs(nextWorkDay - currentTime); // время до открытия магазина
-        statusMessage = "Сейчас закрыто, откроется через";
-        element.classList.add("is-close");
-    }
-
-    statusHours = Math.floor(timeDiff / 3600000);
-    statusMinutes = Math.floor((timeDiff % 3600000) / 60000);
-    element.innerHTML = `${statusMessage} ${statusHours > 0 ? statusHours + "&nbsp;" + getRussainDeclension(["час", "часа", "часов"], statusHours) : ""}&nbsp;${statusMinutes}&nbsp;${getRussainDeclension(["минуту", "минуты", "минут"], statusMinutes)}`
-}
-
-const worktimeEl = document.getElementById("js-worktime");
-if (worktimeEl) { getWorktimeStatus(worktimeEl) }
-
-
 // добавляем плейсхолдеры в блоке Просмотренные товары на странице Товара
 const productPlaceholdersEl = document.querySelector(".product-cards--placeholder");
 if (productPlaceholdersEl) {
@@ -599,76 +350,5 @@ if (productPlaceholdersEl) {
 }
 
 
-// слайдер просмотренных товаров через свайпер
-const swiperRecentProducts = new Swiper('.js-swiper-recent-products', {
-    loop: false,
-    spaceBetween: 20,
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
-    slidesPerView: 2,
-
-    breakpoints: {
-        320: {
-            slidesPerView: 2,
-            spaceBetween: 15
-        },
-        400: {
-            slidesPerView: 2.5,
-            spaceBetween: 15
-        },
-        575: {
-            slidesPerView: 3.5,
-            spaceBetween: 15
-        },
-        750: {
-            slidesPerView: 4.5,
-            spaceBetween: 20
-        },
-        1000: {
-            slidesPerView: 5,
-            spaceBetween: 20
-        },
-        1100: {
-            slidesPerView: 5.5,
-            spaceBetween: 25
-        },
-        1300: {
-            slidesPerView: 7,
-            spaceBetween: 25
-        },
-        1600: {
-            slidesPerView: 7,
-            spaceBetween: 30
-        }
-    }
-});
-
-const swiperMainSlider = new Swiper('.js-swiper-main-slider', {
-    loop: true,
-    spaceBetween: 0,
-    slidesPerView: 1,
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    pagination: { el: '.swiper-pagination' },
-    a11y: {
-        prevSlideMessage: 'Назад',
-        nextSlideMessage: 'Вперёд',
-    },
-    // effect: "fade",
-    autoplay: {
-        delay: 5000,
-    },
-    autoHeight: true,
-});
-
 // всплывающие окна через фансибокс
 Fancybox.bind("[data-fancybox]", {});
-
-
-// слайдер через фансибокс
-// const sliderMain = document.getElementById("main-slider");
-// if (sliderMain) { new Carousel(sliderMain, { infinite: false }) }
-
-// слайдер Просмотренных товаров фансибокс
-// const sliderViewedProducts = document.getElementById("viewedProducts");
-// if (sliderViewedProducts) { new Carousel(sliderViewedProducts, { infinite: false, fill: false, slidesPerPage: 7, transition: "slide" }) }
-
-
