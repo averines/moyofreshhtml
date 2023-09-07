@@ -153,7 +153,8 @@
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18.6886 6.56128L11.0001 11.0002L3.30859 6.5542" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M11 11V19.25" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M10.0834 2.36281C10.6507 2.03531 11.3495 2.03531 11.9168 2.36281L18.022 5.88767C18.5893 6.21517 18.9387 6.8204 18.9387 7.47538V14.5251C18.9387 15.1801 18.5893 15.7853 18.022 16.1129L11.9168 19.6376C11.3495 19.9651 10.6507 19.9651 10.0834 19.6376L3.97819 16.1129C3.41095 15.7853 3.06152 15.1801 3.06152 14.5251V7.47538C3.06152 6.8204 3.41095 6.21517 3.97819 5.88767L10.0834 2.36281Z"
+                                        <path
+                                            d="M10.0834 2.36281C10.6507 2.03531 11.3495 2.03531 11.9168 2.36281L18.022 5.88767C18.5893 6.21517 18.9387 6.8204 18.9387 7.47538V14.5251C18.9387 15.1801 18.5893 15.7853 18.022 16.1129L11.9168 19.6376C11.3495 19.9651 10.6507 19.9651 10.0834 19.6376L3.97819 16.1129C3.41095 15.7853 3.06152 15.1801 3.06152 14.5251V7.47538C3.06152 6.8204 3.41095 6.21517 3.97819 5.88767L10.0834 2.36281Z"
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M7.79199 4.125L14.667 8.25" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
@@ -1547,13 +1548,181 @@
                     </div>
                 </div>
 
-                <div class="account-layout__main account-layout__main--sm">
+                <div class="account-layout__main">
                     <div class="account-layout__header">
-                        <a href="customer-account.html" aria-label="Назад в личный кабинет"><span class="icon icon--arrow-left"></span></a>
+                        <a href="customer-account.html" title="Назад в личный кабинет"><span class="icon icon--arrow-left"></span></a>
                         <h1 class="h2 mb-1">Мои заказы</h1>
                     </div>
                     <div class="account-layout__body">
+                        <div class="account-block">
+                            <div class="account-block__content">
+                                <div class="order-cards order-cards--lg">
+                                    <div class="order-card">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">№3894</a>
+                                            <div class="order-card__subtitle">от 01.05.2023</div>
+                                        </div>
+                                        <div class="order-card__status">
+                                            <div class="order-status-primary">Новый</div>
+                                            <div class="order-status-secondary">Поставщик еще не подтвердил</div>
+                                        </div>
+                                        <div class="order-card__delivery">
+                                            <div class="order-delivery">
+                                                <div class="order-delivery__type">Самовывоз</div>
+                                                <div class="order-delivery__recipient">Пушкина А.С</div>
+                                            </div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <!-- если товаров в заказе > 5, то показывается 4 товара и счетчик тех, которые не показались -->
+                                            <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                            <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
+                                            <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                            <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
+                                            <div class="order-card-product order-card-product--more">+4</div>
+                                        </div>
+                                        <div class="order-card__total">12 890 ₽</div>
+                                        <div class="order-card__payment">
+                                            <a href="#" class="btn btn--sm">Оплатить</a>
+                                        </div>
+                                    </div>
 
+                                    <div class="order-card order-card--extra">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">Дозаказ №3894</a>
+                                            <div class="order-card__subtitle">от 01.05.2023</div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <!-- если товаров в заказе > 5, то показывается 4 товара и счетчик тех, которые не показались -->
+                                            <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                            <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
+                                            <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                            <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
+                                            <div class="order-card-product order-card-product--more">+4</div>
+                                        </div>
+                                        <div class="order-card__total">12 890 ₽</div>
+                                        <div></div>
+                                    </div>
+
+                                    <div class="order-card">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">№3020</a>
+                                            <div class="order-card__subtitle">от 01.05.2023</div>
+                                        </div>
+                                        <div class="order-card__status">
+                                            <div class="order-status-primary">Обрабатывается</div>
+                                            <div class="order-status-secondary">Поставщик еще не подтвердил</div>
+                                        </div>
+                                        <div class="order-card__delivery">
+                                            <div class="order-delivery">
+                                                <div class="order-delivery__type">Самовывоз</div>
+                                                <div class="order-delivery__recipient">Пушкина А.С</div>
+                                            </div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <div class="order-card__products">
+                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
+                                            </div>
+                                        </div>
+                                        <div class="order-card__total">12 890 ₽</div>
+                                        <div class="order-card__payment"><a href="#" class="btn btn--sm">Оплатить</a></div>
+                                    </div>
+                                    <div class="order-card">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">№3020</a>
+                                            <div class="order-card__subtitle">от 01.05.2023</div>
+                                        </div>
+                                        <div class="order-card__status">
+                                            <div class="order-status-primary">На упаковке</div>
+                                            <div class="order-status-secondary">Поставщик подтвердил</div>
+                                        </div>
+                                        <div class="order-card__delivery">
+                                            <div class="order-delivery">
+                                                <div class="order-delivery__type">Россия, Московская обл., г. Москва, ул. Охотный ряд, д. 1</div>
+                                                <div class="order-delivery__recipient">Пушкина А.С</div>
+                                            </div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <div class="order-card__products">
+                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
+                                            </div>
+                                        </div>
+                                        <div class="order-card__total">12 890 ₽</div>
+                                        <div class="order-card__payment">Оплачен</div>
+                                    </div>
+                                    <div class="order-card">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">№3019</a>
+                                            <div class="order-card__subtitle">от 25.04.2023</div>
+                                        </div>
+                                        <div class="order-card__status">
+                                            <div class="order-status-primary">Упакован</div>
+                                            <div class="order-status-secondary">Поставщик подтвердил</div>
+                                        </div>
+                                        <div class="order-delivery">
+                                            <div class="order-delivery__type">Россия, Московская обл., г. Москва, ул. Охотный ряд, д. 1</div>
+                                            <div class="order-delivery__recipient">Пушкина А.С</div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <div class="order-card__products">
+                                                <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                            </div>
+                                        </div>
+                                        <div class="order-card__total">1250 ₽</div>
+                                        <div class="order-card__payment">Оплачен</div>
+                                    </div>
+                                    <div class="order-card">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">№3019</a>
+                                            <div class="order-card__subtitle">от 25.04.2023</div>
+                                        </div>
+                                        <div class="order-card__status">
+                                            <div class="order-status-primary order-status-primary--good">Отправлен</div>
+                                            <div class="order-status-secondary">Поставщик подтвердил</div>
+                                        </div>
+                                        <div class="order-delivery">
+                                            <div class="order-delivery__type">Россия, Московская обл., г. Москва, ул. Охотный ряд, д. 1</div>
+                                            <div class="order-delivery__recipient">Пушкина А.С</div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <div class="order-card__products">
+                                                <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                            </div>
+                                        </div>
+                                        <div class="order-card__total">1250 ₽</div>
+                                        <div class="order-card__payment">Оплачен</div>
+                                    </div>
+                                    <div class="order-card">
+                                        <div class="order-card__header">
+                                            <a class="order-card__title" href="customer-order.html">№3019</a>
+                                            <div class="order-card__subtitle">от 25.04.2023</div>
+                                        </div>
+                                        <div class="order-card__status">
+                                            <div class="order-status-primary order-status-primary--bad">Отменен</div>
+                                            <div class="order-status-secondary">Поставщик подтвердил</div>
+                                        </div>
+                                        <div class="order-delivery">
+                                            <div class="order-delivery__type">Россия, Московская обл., г. Москва, ул. Охотный ряд, д. 1</div>
+                                            <div class="order-delivery__recipient">Пушкина А.С</div>
+                                        </div>
+                                        <div class="order-card__products">
+                                            <div class="order-card__products">
+                                                <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                            </div>
+                                        </div>
+                                        <div class="order-card__total">1250 ₽</div>
+                                        <div class="order-card__payment">Оплачен</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

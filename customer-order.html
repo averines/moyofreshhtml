@@ -153,7 +153,8 @@
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18.6886 6.56128L11.0001 11.0002L3.30859 6.5542" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M11 11V19.25" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M10.0834 2.36281C10.6507 2.03531 11.3495 2.03531 11.9168 2.36281L18.022 5.88767C18.5893 6.21517 18.9387 6.8204 18.9387 7.47538V14.5251C18.9387 15.1801 18.5893 15.7853 18.022 16.1129L11.9168 19.6376C11.3495 19.9651 10.6507 19.9651 10.0834 19.6376L3.97819 16.1129C3.41095 15.7853 3.06152 15.1801 3.06152 14.5251V7.47538C3.06152 6.8204 3.41095 6.21517 3.97819 5.88767L10.0834 2.36281Z"
+                                        <path
+                                            d="M10.0834 2.36281C10.6507 2.03531 11.3495 2.03531 11.9168 2.36281L18.022 5.88767C18.5893 6.21517 18.9387 6.8204 18.9387 7.47538V14.5251C18.9387 15.1801 18.5893 15.7853 18.022 16.1129L11.9168 19.6376C11.3495 19.9651 10.6507 19.9651 10.0834 19.6376L3.97819 16.1129C3.41095 15.7853 3.06152 15.1801 3.06152 14.5251V7.47538C3.06152 6.8204 3.41095 6.21517 3.97819 5.88767L10.0834 2.36281Z"
                                             stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M7.79199 4.125L14.667 8.25" stroke="#3D3F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
@@ -1524,7 +1525,7 @@
                         <meta itemprop="position" content="2">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name">Новости и уведомления</span>
+                        <span itemprop="name">Мои заказы</span>
                         <meta itemprop="position" content="3">
                     </li>
                 </ol>
@@ -1539,103 +1540,24 @@
                         <!-- <a href="customer-cart.html"><span class="icon icon--cart"></span> Корзина</a> -->
                         <!-- <a href="customer-favorites.html"><span class="icon icon--heart"></span> Избранное</a> -->
                         <a href="customer-info.html"><span class="icon icon--user"></span> Данные покупателя</a>
-                        <a href="customer-orders.html"><span class="icon icon--box"></span> Мои заказы</a>
+                        <a class="is-active" href="customer-orders.html"><span class="icon icon--box"></span> Мои заказы</a>
                         <a href="customer-bonus.html"><span class="icon icon--gem"></span> Скидки и бонусы</a>
                         <a href="customer-reclamations.html"><span class="icon icon--return"></span> Рекламации</a>
-                        <a class="is-active" href="customer-news.html"><span class="icon icon--bell"></span> Новости и уведомления</a>
+                        <a href="customer-news.html"><span class="icon icon--bell"></span> Новости и уведомления</a>
                         <a class="mt-1" href="#"><span class="icon icon--logout"></span> Выйти</a>
                     </div>
                 </div>
-                <div class="account-layout__main account-layout__main--sm">
+
+                <div class="account-layout__main">
                     <div class="account-layout__header">
-                        <a href="customer-account.html" title="Назад в личный кабинет"><span class="icon icon--arrow-left"></span></a>
-                        <h1 class="h2 mb-1">Новости и уведомления</h1>
+                        <a href="customer-orders.html" title="Назад к заказам"><span class="icon icon--arrow-left"></span></a>
+                        <h1 class="h2 mb-1">Заказ №3894</h1>
                     </div>
                     <div class="account-layout__body">
                         <div class="account-block">
                             <div class="account-block__content">
-                                <div class="box box--md">
-                                    <!-- группируются по дням -->
-                                    <div class="notice-groups">
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">28.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card notice-card--active">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                                <div class="notice-card notice-card--active">
-                                                    <div class="notice-card__title">Акция на весь ассортимент PLAYTODAY</div>
-                                                    <div class="notice-card__content">Уважаемые покупатели. <br> Стартовала акция на весь ассортимент PLAYTODAY! Сроки акции до конца дня 06 агуста.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">27.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card notice-card--active">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Акция на весь ассортимент PLAYTODAY</div>
-                                                    <div class="notice-card__content">Уважаемые покупатели. <br> Стартовала акция на весь ассортимент PLAYTODAY! Сроки акции до конца дня 06 агуста.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">26.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">20.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">19.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">10.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Акция на весь ассортимент PLAYTODAY</div>
-                                                    <div class="notice-card__content">Уважаемые покупатели. <br> Стартовала акция на весь ассортимент PLAYTODAY! Сроки акции до конца дня 06 агуста.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="notice-group">
-                                            <div class="notice-group__date">09.07.2023</div>
-                                            <div class="notice-group__content">
-                                                <div class="notice-card">
-                                                    <div class="notice-card__title">Игрушки BONDIBON и BONNA в продаже</div>
-                                                    <div class="notice-card__content">Дорогие клиенты, сообщаем, что игрушки BONDIBON и BONNA снова доступны к заказам.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
-                            <p class="text-center text-muted mt-2">Показаны последние 10 уведомлений</p>
                         </div>
                     </div>
                 </div>

@@ -289,6 +289,7 @@ window.addEventListener('click', (e) => {
 })
 
 window.addEventListener('mouseover', (e) => {
+    // свайп фоток товара при наведении на иконку цвета
     if (e.target.classList.contains("card-color")) {
         let actualColor = e.target;
         let product = actualColor.closest(".product-card");
@@ -324,6 +325,11 @@ window.addEventListener('mouseover', (e) => {
                 setProductDefaultState(product);
             })
         }, 250)
+    }
+
+    // убираем отметку непрочитанной новости
+    if (e.target.classList.contains("notice-card--active")) {
+        e.target.classList.remove("notice-card--active");
     }
 
     //фиксируем высоту родительской обертки товара, чтобы не было сдвига, когда контент карточки становится позиционирован абсолютно (не адаптивно)

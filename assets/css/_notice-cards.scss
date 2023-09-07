@@ -36,6 +36,10 @@
     border-radius: $br-xl;
     transition: $t;
 
+    &:hover {
+        background-color: lighten($bg-l, 1);
+    }
+
     &--active {
         &::before {
             content: "";
@@ -47,10 +51,6 @@
             position: absolute;
             left: 15px;
             top: 15px;
-        }
-
-        &:hover {
-            background-color: lighten($bg-l, 1);
         }
     }
 
