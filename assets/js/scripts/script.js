@@ -206,7 +206,7 @@ window.addEventListener('click', (e) => {
             if (activeFilter) { activeFilter.classList.remove("is-active") }
         }
     } else {
-        if (e.target.classList.contains("filter-controls__close")) {
+        if (e.target.dataset.action == "close-filter") {
             // console.log("скрываю родительский активный");
             e.target.closest(".catalog-filter").classList.remove("is-active");
         }

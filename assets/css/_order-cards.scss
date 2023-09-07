@@ -17,6 +17,7 @@
     &__title {
         font-weight: 500;
         font-size: 15px;
+        color: $text;
     }
 
     &__subtitle {
@@ -68,6 +69,7 @@
         font-weight: 500;
         font-size: 16px;
         text-align: right;
+        white-space: nowrap;
     }
 
     &__payment {
@@ -79,11 +81,12 @@
 
 .order-status-primary {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.2;
 
     &--warning {
-        color: $warning;
+        // color: $warning;
+        color: $text;
     }
 
     &--good {
@@ -95,11 +98,11 @@
     font-size: 14px;
     line-height: 1.2;
 
-    &--good {
-        color: $text;
-    }
+    // &--good {
+    //     color: $text;
+    // }
 
-    &--warning {
-        color: $text-l;
-    }
+    // &--warning {
+    //     color: $text-l;
+    // }
 }

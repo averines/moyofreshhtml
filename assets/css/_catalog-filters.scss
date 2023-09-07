@@ -241,6 +241,11 @@
                     line-height: inherit;
                     color: inherit;
                 }
+
+                &.icon {
+                    font-size: 0.88em;
+                    margin-right: -1px;
+                }
             }
         }
 
@@ -492,6 +497,7 @@
     transition: $t;
     font-size: 13px;
     order: 1;
+    white-space: nowrap;
 
     &:hover {
         color: $text;

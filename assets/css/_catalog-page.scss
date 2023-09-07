@@ -6,7 +6,7 @@
         column-gap: 10px;
         flex-wrap: wrap;
 
-        @media screen and (min-width: $bp-md) {
+        @media screen and (min-width: $bp-sm) {
             align-items: center;
             flex-direction: row;
         }
@@ -37,7 +37,7 @@
     flex-wrap: wrap;
     column-gap: 6px;
     row-gap: 6px;
-    margin-top: 15px;
+    margin-top: 10px;
 
     @media screen and (min-width: $bp-lg) {
         max-width: 90%;
@@ -73,7 +73,7 @@
     position: relative;
     width: 100%;
     height: 40px;
-    margin-top: 5px;
+    margin-top: 7px;
 
     @media screen and (min-width: $bp-sm) {
         height: auto;
@@ -104,7 +104,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        column-gap: 18px;
+        column-gap: 15px;
         row-gap: 5px;
         font-size: 14.5px;
         width: 100%;
@@ -112,7 +112,6 @@
         border-radius: $br-lg;
 
         @media screen and (min-width: $bp-sm) {
-            // flex-wrap: wrap;
             flex-direction: row;
             font-size: 14px;
             row-gap: 18px;

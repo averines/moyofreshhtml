@@ -1528,7 +1528,7 @@
             </nav>
         </div>
 
-        <div class="container mt-2">
+        <div class="container my-2">
             <div class="account-layout">
                 <div class="account-layout__aside">
                     <div class="account-menu">
@@ -1551,52 +1551,66 @@
                                 <div class="account-block">
                                     <div class="account-block__content">
                                         <div class="profile-card">
-                                            <div class="profile-card__title">Пушкина А.С.</div>
+                                            <div class="profile-card__header">
+                                                <div class="profile-card-info">
+                                                    <div class="profile-card-info__title">Пушкина А.С.</div>
+                                                    <div class="profile-card-info__subtitle">ID 236998 <span class="text-muted">&bull;</span> apushkina@mail.ru</div>
+                                                </div>
+                                                <div class="profile-card-status">
+                                                    <div class="profile-card-status__title">Оптом для себя</div>
+                                                    <div class="profile-card-status__subtitle">Физ.лицо, маркировка гасится, заказы от 7500&nbsp;₽</div>
+                                                </div>
+                                            </div>
+                                            <div class="profile-card__footer">
+                                                <a href="customer-info.html">Изменить данные</a>
+                                                <a class="text-muted" href="#">Выйти</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="account-block">
-                                    <div class="account-block__content">
-                                        <div class="progress-card progress-card--dark- mt-1">
-                                            <div class="progress-card__header">
-                                                <div class="progress-card__title">Скидка покупателя</div>
-                                                <div class="progress-card__value">1%</div>
+                                <div class="account-grid__secondary">
+                                    <a class="account-block" href="customer-bonus.html">
+                                        <div class="account-block__content">
+                                            <div class="bonus-card">
+                                                <div class="bonus-card__value">1250 ₽</div>
+                                                <div class="bonus-card__title">Бонусный баланс</div>
+                                                <div class="bonus-card__decor">
+                                                    <img src="./assets/img/bonus.webp" alt="000" width="169" height="131">
+                                                </div>
                                             </div>
-                                            <div class="progress-card__footer">
-                                                <div class="progress-card__subtitle">Осталось 87 620 ₽ до скидки 2%</div>
-                                                <div class="progress-card__subtitle">Заказы за последние 90 дней:</div>
-                                                <div class="progress-line">
-                                                    <progress class="progress-line__bar" max="120000" value="29500"></progress>
-                                                    <div class="progress-line__values">
-                                                        <div class="progress-line__value">29 500 ₽</div>
-                                                        <div class="progress-line__value">120 000 ₽</div>
+                                        </div>
+                                    </a>
+                                    <a class="account-block" href="customer-bonus.html">
+                                        <div class="account-block__content">
+                                            <div class="progress-card">
+                                                <div class="progress-card__header">
+                                                    <div class="progress-card__title">Накопительная скидка</div>
+                                                    <div class="progress-card__value">1%</div>
+                                                </div>
+                                                <div class="progress-card__footer">
+                                                    <div class="progress-card__subtitle">Осталось 87620 ₽ до скидки 2%</div>
+                                                    <div class="progress-card__subtitle">Заказы за последние 90 дней:</div>
+                                                    <div class="progress-line">
+                                                        <progress class="progress-line__bar" max="120000" value="29500"></progress>
+                                                        <div class="progress-line__values">
+                                                            <div class="progress-line__value">29500 ₽</div>
+                                                            <div class="progress-line__value">120000 ₽</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
+                                    <!-- <p class="text-sm text-center"><a href="#" class="text-muted">Как начисляются скидки и бонусы?</a></p> -->
                                 </div>
-                            </div>
 
-                            <div class="account-block">
-                                <div class="account-block__content">
-                                    <div class="bonus-card bonus-card--dark-">
-                                        <div class="bonus-card__value">1250 ₽</div>
-                                        <div class="bonus-card__title">Бонусный баланс</div>
-                                        <div class="bonus-card__decor">
-                                            <img src="./assets/img/bonus.png" alt="123" width="70">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <div class="account-layout__row">
                             <div class="account-block">
                                 <div class="account-block__header">
-                                    <div class="account-block__title">Мои заказы</div>
-                                    <a class="account-block__link" href="#">Смотреть все</a>
+                                    <a class="account-block__title" href="customer-orders.html">Мои заказы <span class="icon icon--chevron-left"></span></a>
                                 </div>
                                 <div class="account-block__content">
                                     <div class="order-cards">
@@ -1607,13 +1621,14 @@
                                             </div>
                                             <div class="order-card__status">
                                                 <div class="order-status-primary order-status-primary--warning">Обрабатывается</div>
-                                                <div class="order-status-secondary order-status-secondary--warning">Поставщик еще не подтвердил</div>
+                                                <div class="order-status-secondary">Поставщик еще не подтвердил</div>
                                             </div>
                                             <div class="order-card__products">
-                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000">
-                                                <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000">
-                                                <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000">
-                                                <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000">
+                                                <!-- если товаров в заказе > 5, то показывается 4 товара и счетчик тех, которые не показались -->
+                                                <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                                <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
                                                 <div class="order-card-product order-card-product--more">+4</div>
                                             </div>
                                             <div class="order-card__total">12 890 ₽</div>
@@ -1628,31 +1643,52 @@
                                             </div>
                                             <div class="order-card__status">
                                                 <div class="order-status-primary order-status-primary--good">Отправлен</div>
-                                                <div class="order-status-secondary order-status-secondary--good">Поставщик подтвердил</div>
+                                                <div class="order-status-secondary">Поставщик подтвердил</div>
                                             </div>
                                             <div class="order-card__products">
                                                 <div class="order-card__products">
-                                                    <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000">
-                                                    <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000">
+                                                    <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                                    <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
                                                 </div>
                                             </div>
                                             <div class="order-card__total">12 890 ₽</div>
                                             <div class="order-card__payment">Оплачен</div>
                                         </div>
+                                        <div class="order-card">
+                                            <div class="order-card__header">
+                                                <a class="order-card__title" href="customer-order.html">№3019</a>
+                                                <div class="order-card__subtitle">от 25.04.2023</div>
+                                            </div>
+                                            <div class="order-card__status">
+                                                <div class="order-status-primary order-status-primary--good">Отправлен</div>
+                                                <div class="order-status-secondary">Поставщик подтвердил</div>
+                                            </div>
+                                            <div class="order-card__products">
+                                                <div class="order-card__products">
+                                                    <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
+                                                    <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
+                                                    <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
+                                                </div>
+                                            </div>
+                                            <div class="order-card__total">1250 ₽</div>
+                                            <div class="order-card__payment">Оплачен</div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!-- <div class="account-block__content">
+                                <!-- 
+                                <div class="account-block__content">
                                     <p class="text-muted text-center">Вы еще не совершали заказов</p>
-                                </div> -->
+                                </div>
+                                -->
                             </div>
                         </div>
 
                         <div class="account-layout__row">
                             <div class="account-block">
                                 <div class="account-block__header">
-                                    <div class="account-block__title">Новости и уведомления</div>
-                                    <a class="account-block__link" href="#">Смотреть все</a>
+                                    <a class="account-block__title" href="customer-news.html">Новости и уведомления <span class="icon icon--chevron-left"></span></a>
+                                    <!-- <a class="account-block__link" href="#">Смотреть все</a> -->
                                 </div>
                                 <div class="account-block__content">
                                     <div class="notice-groups">
@@ -1686,8 +1722,7 @@
                         <div class="account-layout__row">
                             <div class="account-block">
                                 <div class="account-block__header">
-                                    <div class="account-block__title">Рекламации</div>
-                                    <a class="account-block__link" href="#">Подробнее</a>
+                                    <a class="account-block__title" href="customer-reclamations.html">Рекламации <span class="icon icon--chevron-left"></span></a>
                                 </div>
                                 <div class="account-block__content">
                                     <p class="text-center text-muted">В настоящее время у вас нет активных заявок</p>

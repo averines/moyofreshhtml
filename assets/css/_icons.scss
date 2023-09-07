@@ -20,6 +20,22 @@
         background: url(../img/icons/sale.svg) no-repeat center/100%;
     }
 
+    &--sale-simple {
+        background: url(../img/icons/sale-simple.svg) no-repeat center/100%;
+    }
+
+    &--new-star {
+        background: url(../img/icons/new-star.svg) no-repeat center/100%;
+    }
+
+    &--new-star-simple {
+        background: url(../img/icons/new-star-simple.svg) no-repeat center/100%;
+    }
+
+    &--thumb-up {
+        background: url(../img/icons/thumb-up.svg) no-repeat center/100%;
+    }
+
     // &--sale-main {
     //     background: url(../img/icons/sale-main.svg) no-repeat center/100%;
     // }
@@ -30,6 +46,14 @@
 
     &--fire {
         background: url(../img/icons/fire.svg) no-repeat center/100%;
+    }
+
+    // &--fire-main {
+    //     background: url(../img/icons/fire-main.svg) no-repeat center/100%;
+    // }
+
+    &--fire-simple {
+        background: url(../img/icons/fire-simple.svg) no-repeat center/100%;
     }
 
     &--external-main {
@@ -57,6 +81,11 @@
 
     &--arrow-left {
         background: url(../img/icons/arrow-left.svg) no-repeat center/100%;
+    }
+
+    &--chevron-left {
+        background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+        transform: rotate(-90deg);
     }
 
     &--user {

@@ -1560,6 +1560,24 @@
                 <div>
                     <!-- доступные фильтры -->
                     <div class="catalog-filters">
+                        <div class="catalog-filter" data-filter-group="status">
+                            <button class="catalog-filter__title">Статус товара</button>
+                            <div class="catalog-filter__content">
+                                <div class="filter">
+                                    <div class="filter-content">
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="status-1"><label class="filter-label" for="status-1"><span class="icon icon--new-star-simple"></span><span class="filter-value">Новинка</span><span>69</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="status-2"><label class="filter-label" for="status-2"><span class="icon icon--thumb-up"></span><span class="filter-value">Хит</span><span>81</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="status-3"><label class="filter-label" for="status-3"><span class="icon icon--sale-simple"></span><span class="filter-value">Со скидкой</span><span>122</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="status-4"><label class="filter-label" for="status-4"><span class="icon icon--fire-simple"></span><span class="filter-value">Акция</span><span>122</span></label></div>
+                                    </div>
+                                    <div class="filter-controls">
+                                        <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="status">Сбросить</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="catalog-filter" data-filter-group="price">
                             <button class="catalog-filter__title">Цена</button>
                             <div class="catalog-filter__content">
@@ -1579,7 +1597,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="price">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1590,24 +1608,25 @@
                             <div class="catalog-filter__content">
                                 <div class="filter">
                                     <div class="filter-content">
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-1"><label class="filter-label" for="color-1"><span class="filter-value">Бежевый</span><span>62</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-2"><label class="filter-label" for="color-2"><span class="filter-value">Белый</span><span>90</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-3"><label class="filter-label" for="color-3"><span class="filter-value">Голубой</span><span>100</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-4"><label class="filter-label" for="color-4"><span class="filter-value">Желтый</span><span>58</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-5"><label class="filter-label" for="color-5"><span class="filter-value">Зелёный</span><span>100</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-6"><label class="filter-label" for="color-6"><span class="filter-value">Коричневый</span><span>109</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-7"><label class="filter-label" for="color-7"><span class="filter-value">Красный</span><span>68</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-8"><label class="filter-label" for="color-8"><span class="filter-value">Оранжевый</span><span>33</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-9"><label class="filter-label" for="color-9"><span class="filter-value">Розовый</span><span>29</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-10"><label class="filter-label" for="color-10"><span class="filter-value">Серый</span><span>54</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-11"><label class="filter-label" for="color-11"><span class="filter-value">Синий</span><span>80</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-12"><label class="filter-label" for="color-12"><span class="filter-value">Фиолетовый</span><span>60</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-13"><label class="filter-label" for="color-13"><span class="filter-value">Черно-белый</span><span>85</span></label></div>
-                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-14"><label class="filter-label" for="color-14"><span class="filter-value">Черный</span><span>94</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-1"><label class="filter-label" for="color-1"><span class="filter-value"><span class="filter-color-icon filter-color-icon--biege"></span>Бежевый</span><span>63</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-2"><label class="filter-label" for="color-2"><span class="filter-value"><span class="filter-color-icon filter-color-icon--white"></span>Белый</span><span>94</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-3"><label class="filter-label" for="color-3"><span class="filter-value"><span class="filter-color-icon filter-color-icon--lightblue"></span>Голубой</span><span>80</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-4"><label class="filter-label" for="color-4"><span class="filter-value"><span class="filter-color-icon filter-color-icon--yellow"></span>Желтый</span><span>98</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-5"><label class="filter-label" for="color-5"><span class="filter-value"><span class="filter-color-icon filter-color-icon--green"></span>Зелёный</span><span>93</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-6"><label class="filter-label" for="color-6"><span class="filter-value"><span class="filter-color-icon filter-color-icon--brown"></span>Коричневый</span><span>105</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-7"><label class="filter-label" for="color-7"><span class="filter-value"><span class="filter-color-icon filter-color-icon--red"></span>Красный</span><span>44</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-8"><label class="filter-label" for="color-8"><span class="filter-value"><span class="filter-color-icon filter-color-icon--orange"></span>Оранжевый</span><span>11</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-9"><label class="filter-label" for="color-9"><span class="filter-value"><span class="filter-color-icon filter-color-icon--magenta"></span>Розовый</span><span>89</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-10"><label class="filter-label" for="color-10"><span class="filter-value"><span class="filter-color-icon filter-color-icon--gray"></span>Серый</span><span>76</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-11"><label class="filter-label" for="color-11"><span class="filter-value"><span class="filter-color-icon filter-color-icon--blue"></span>Синий</span><span>91</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-12"><label class="filter-label" for="color-12"><span class="filter-value"><span class="filter-color-icon filter-color-icon--purple"></span>Фиолетовый</span><span>108</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-13"><label class="filter-label" for="color-13"><span class="filter-value"><span class="filter-color-icon filter-color-icon--blackwhite"></span>Черно-белый</span><span>40</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-14"><label class="filter-label" for="color-14"><span class="filter-value"><span class="filter-color-icon filter-color-icon--black"></span>Черный</span><span>9</span></label></div>
+                                        <div class="filter-content__row"><input class="filter-checkbox" type="checkbox" id="color-14"><label class="filter-label" for="color-14"><span class="filter-value"><span class="filter-color-icon filter-color-icon--multi"></span>Мульти</span><span>9</span></label></div>
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="color">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1708,7 +1727,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="size">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1748,7 +1767,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="brand">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1766,7 +1785,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="season">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1784,7 +1803,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="len">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1808,7 +1827,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="fashion">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1827,7 +1846,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="sleeve">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1848,7 +1867,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="fastener">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1879,7 +1898,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="neck">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1924,7 +1943,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="cloth">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1949,7 +1968,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="pattern">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1974,7 +1993,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="style">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -1995,7 +2014,7 @@
                                     </div>
                                     <div class="filter-controls">
                                         <button class="btn btn--sm btn--outline filter-controls__clear" data-action="clear-filter-group" data-filter-group="pocket">Сбросить</button>
-                                        <button class="btn btn--sm filter-controls__close">Закрыть</button>
+                                        <button class="btn btn--sm" data-action="close-filter">Закрыть</button>
                                     </div>
                                 </div>
                             </div>
@@ -2024,16 +2043,6 @@
                         <a class="sort-list__link" href="#">Акции</a>
                     </div>
                 </div>
-
-                <!-- <div class="pagination">
-                    <span class="pagination__cap">Назад</span>
-                    <span class="is-active">1</span>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <span>...</span>
-                    <a href="#">136</a>
-                    <a class="pagination__cap" href="#">Вперед</a>
-                </div> -->
             </div>
         </div>
 
@@ -2539,7 +2548,7 @@
             </div>
         </div>
 
-        <!-- пагинация -->
+        <!-- пагинация и переключатель количества -->
         <div class="container container--full">
             <div class="catalog-footer mt-2">
                 <div class="page-switch">
