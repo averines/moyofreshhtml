@@ -1,0 +1,169 @@
+.data-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &__description {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+}
+
+.data-row {
+    margin: 0 -10px;
+}
+
+.data-field {
+    padding: 13px 20px 13px 10px;
+    border-radius: $br-xxl;
+    display: flex;
+    column-gap: 18px;
+    align-items: center;
+    position: relative;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 16px;
+    margin-left: -15px;
+    transition: $t;
+
+    &:hover {
+        background-color: lighten($bg-l, 0.5);
+
+        .data-field__icon {
+            background-color: #fff;
+        }
+    }
+
+    &:last-child {
+        .data-field__content {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        background-color: $bg-l;
+        border-radius: $br-xl;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: $t;
+    }
+
+    &__content {
+        flex-basis: 100%;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, $line-d, transparent);
+            position: absolute;
+            bottom: -3px;
+            transition: $t;
+        }
+    }
+
+    &__title {
+        font-size: 15px;
+        color: $text;
+    }
+
+    &__subtitle {
+        font-size: 13px;
+        color: $text-l;
+    }
+
+    &__text {
+        font-size: 15px;
+        color: $text;
+    }
+
+    &__switch {
+        input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            visibility: hidden;
+            opacity: 0;
+
+            + span {
+                width: 32px;
+                height: 16px;
+                display: block;
+                border-radius: 30px;
+                background-color: $text;
+                cursor: pointer;
+                position: relative;
+                transition: $t;
+                box-shadow: 0 0 2px #00000034 inset;
+
+                &::after {
+                    position: absolute;
+                    top: -2px;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    display: block;
+                    background-color: #fff;
+                    border: 2px solid $text;
+                    transition: $t;
+                }
+            }
+
+            &:checked {
+                + span {
+                    background-color: $good-d;
+
+                    &::after {
+                        margin-left: calc(100% - 20px);
+                        background-color: #fff;
+                        border-color: $good-d;
+                    }
+                }
+            }
+        }
+    }
+}
+
+a.data-field {
+    &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
+        margin-left: auto;
+        transform: rotate(-90deg);
+    }
+}
+
+label.data-field {
+    user-select: none;
+    cursor: pointer;
+}
