@@ -144,15 +144,16 @@
     flex-direction: column;
     row-gap: 5px;
     align-items: flex-start;
-    background-color: $bg-l;
-    padding: 12px;
-    border-radius: $br-lg;
+    // background-color: $bg-l;
+    // padding: 12px;
+    // border-radius: $br-lg;
+
 
     &__title {
         background: $good-d;
         color: #fff;
         padding: 0.1em 0.6em;
-        border-radius: $br-sm;
+        border-radius: $br-xsm;
         font-size: 13px;
     }
 
