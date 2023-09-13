@@ -1,5 +1,6 @@
 .data-box {
     display: flex;
+    row-gap: 5px;
     flex-direction: column;
     max-width: 650px;
 
@@ -43,14 +44,7 @@
     font-size: 16px;
     margin-left: -15px;
     transition: $t;
-
-    &:hover {
-        background-color: lighten($bg-l, 0.5);
-
-        .data-field__icon {
-            background-color: #fff;
-        }
-    }
+    line-height: 1.4;
 
     &:last-child {
         .data-field__content {
@@ -71,6 +65,10 @@
         justify-content: center;
         flex-shrink: 0;
         transition: $t;
+
+        > .icon {
+            transition: $t;
+        }
     }
 
     &__content {
@@ -89,17 +87,17 @@
     }
 
     &__title {
-        font-size: 15px;
+        font-size: 15.5px;
         color: $text;
     }
 
     &__subtitle {
-        font-size: 13px;
-        color: $text-l;
+        font-size: 13.5px;
+        color: $text-ll;
     }
 
     &__text {
-        font-size: 15px;
+        font-size: 15.5px;
         color: $text;
     }
 
@@ -138,12 +136,12 @@
 
             &:checked {
                 + span {
-                    background-color: $good-d;
+                    background-color: $main;
 
                     &::after {
                         margin-left: calc(100% - 20px);
                         background-color: #fff;
-                        border-color: $good-d;
+                        border-color: $main;
                     }
                 }
             }
@@ -151,7 +149,16 @@
     }
 }
 
-a.data-field {
+a.data-field,
+button.data-field {
+    &:hover {
+        background-color: lighten($bg-l, 0.5);
+
+        .data-field__icon {
+            background-color: lighten($bg-l, 0.5);
+        }
+    }
+
     &::after {
         content: "";
         display: block;
@@ -166,4 +173,8 @@ a.data-field {
 label.data-field {
     user-select: none;
     cursor: pointer;
+
+    &:hover {
+        background-color: lighten($bg-l, 0.5);
+    }
 }

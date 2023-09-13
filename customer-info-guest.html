@@ -1525,14 +1525,18 @@
                         <meta itemprop="position" content="2">
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name">Данные покупателя</span>
+                        <a href="customer-info.html" itemprop="item"><span itemprop="name">Данные покупателя</span></a>
                         <meta itemprop="position" content="3">
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Гостевые логины</span>
+                        <meta itemprop="position" content="4">
                     </li>
                 </ol>
             </nav>
         </div>
 
-        <div class="container my-2">
+        <div class="container mt-2">
             <div class="account-layout">
                 <div class="account-layout__aside">
                     <div class="account-menu">
@@ -1550,95 +1554,34 @@
 
                 <div class="account-layout__main account-layout__main--sm">
                     <div class="account-layout__header">
-                        <a href="customer-account.html" title="Назад в личный кабинет"><span class="icon icon--arrow-left"></span></a>
-                        <h1 class="h2 mb-1">Данные покупателя</h1>
+                        <a href="customer-info.html" title="Назад к данным покупателя"><span class="icon icon--arrow-left"></span></a>
+                        <h1 class="h2 mb-1">Гостевые логины</h1>
                     </div>
                     <div class="account-layout__body">
                         <div class="data-box">
+                            <div class="data-box__header">
+                                <p>Здесь сохраняются адреса из заказов и адреса, добавленные вами вручную. Выберите адрес, который будет первым подставляться в заказы:</p>
+                            </div>
                             <div class="data-box__content">
-                                <div class="data-field">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--fingerprint"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__title">ID 228337</div>
-                                        <div class="data-field__subtitle">Физ.лицо, маркировка гасится, заказы от 7500&#8239;₽</div>
-                                    </div>
-                                </div>
-                                <div class="data-field">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--scan-user"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__subtitle">Логин</div>
-                                        <div class="data-field__text">apusklina@mail.ru</div>
+                                <div class="data-box__content">
+                                    <div class="form-radio form-radio--sm form-radio--reverse">
+                                        <input type="radio" id="change-delivery-1" name="change-delivery" checked>
+                                        <label for="change-delivery-1">
+                                            693000, Сахалинская область, Южно-Сахалинск, Мира пр-т, 2в/4, офис 1
+                                            <button class="ml-auto btn-icon"><span class="icon icon--delete"></span></button>
+                                        </label>
                                     </div>
                                 </div>
-                                <button class="data-field" data-fancybox data-type="ajax" data-src="modal-change-password.html">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--key"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__title">Обновить пароль</div>
-                                        <div class="data-field__subtitle">Обновлялся 127 дней назад</div>
-                                    </div>
-                                </button>
-                                <button class="data-field" data-fancybox data-type="ajax" data-src="modal-change-name.html">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--user-card"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__subtitle">Покупатель</div>
-                                        <div class="data-field__text">Пушкина Александра Сергеевна</div>
-                                    </div>
-                                </button>
-                                <button class="data-field" data-fancybox data-type="ajax" data-src="modal-change-phone.html">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--smartphone"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__subtitle">Телефон</div>
-                                        <div class="data-field__text">+7 993 237-11-27</div>
-                                    </div>
-                                </button>
-                                <a class="data-field" href="customer-info-address.html">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--house"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__subtitle">Адреса доставки</div>
-                                        <div class="data-field__title">Добавить адрес или назначить предпочтительный</div>
-                                    </div>
-                                </a>
-                                <button class="data-field" data-fancybox data-type="ajax" data-src="modal-change-delivery.html">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--truck"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__subtitle">Предпочтительная служба доставки</div>
-                                        <div class="data-field__text">Не указано</div>
-                                    </div>
-                                </button>
-                                <a class="data-field" href="customer-info-guest.html">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--suitcase"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__title">Гостевые логины</div>
-                                    </div>
-                                </a>
-                                <label class="data-field" for="customer-subscribe">
-                                    <div class="data-field__icon">
-                                        <span class="icon icon--megaphone"></span>
-                                    </div>
-                                    <div class="data-field__content">
-                                        <div class="data-field__title">Получать рассылку об акциях и новинках</div>
-                                    </div>
-                                    <div class="data-field__switch">
-                                        <input type="checkbox" id="customer-subscribe" checked>
-                                        <span></span>
-                                    </div>
-                                </label>
+                                <div class="data-box__content mt-1">
+                                    <button class="data-field" data-fancybox data-type="ajax" data-src="modal-add-address.html">
+                                        <div class="data-field__icon">
+                                            <span class="icon icon--plus"></span>
+                                        </div>
+                                        <div class="data-field__content">
+                                            <div class="data-field__title">Добавить гостевой логин</div>
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

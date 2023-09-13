@@ -197,3 +197,13 @@
         }
     }
 }
+
+.btn-icon {
+    border: none;
+    background: none;
+    border-radius: $br-lg;
+
+    &:hover {
+        background-color: $bg-l;
+    }
+}

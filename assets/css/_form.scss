@@ -40,12 +40,12 @@
         grid-template-columns: minmax(100px, 170px) 1fr;
     }
 
-    > label {
+    label {
         font-size: 14px;
         line-height: 1.2;
     }
 
-    > input,
+    input,
     textarea {
         font-size: 15px;
         line-height: 1.5;
@@ -58,6 +58,41 @@
         }
     }
 
+    input {
+        &.form-field__password {
+            padding-right: 55px;
+
+            &[type="password"] {
+                font-weight: 600;
+                letter-spacing: 0.25em;
+            }
+        }
+    }
+
+    &__password-show {
+        position: absolute;
+        right: 0;
+        width: 50px;
+        height: 100%;
+        cursor: pointer;
+        z-index: 2;
+        border: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.75 12.8335C2.75 8.27715 6.44365 4.5835 11 4.5835C15.5564 4.5835 19.25 8.27715 19.25 12.8335M15.5833 12.8335C15.5833 15.3648 13.5313 17.4168 11 17.4168C8.4687 17.4168 6.41667 15.3648 6.41667 12.8335C6.41667 10.3022 8.4687 8.25016 11 8.25016C13.5313 8.25016 15.5833 10.3022 15.5833 12.8335Z' stroke='%232F3142' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #fff;
+        opacity: 0.5;
+        transition: $t;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.is-active {
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.80914 8.80654C7.38378 9.58366 6.41667 11.0956 6.41667 12.8333C6.41667 15.3646 8.4687 17.4167 11 17.4167C12.7386 17.4167 14.2511 16.4487 15.0279 15.0222M19.25 12.8333C19.25 8.27699 15.5564 4.58333 11 4.58333C10.595 4.58333 10.1968 4.61252 9.80742 4.66889M2.75 12.8333C2.75 10.0897 4.08929 7.65887 6.14976 6.15896M2.75 2.75L19.25 19.25' stroke='%232F3142' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        }
+    }
+
     &--boxed {
         grid-template-columns: 1fr;
         border: 1px solid $line-d;
@@ -67,7 +102,7 @@
         padding-top: 7px;
         position: relative;
 
-        > label {
+        label {
             font-size: 13px;
             padding-left: 15px;
             padding-right: 15px;
@@ -88,7 +123,7 @@
             }
         }
 
-        > input,
+        input,
         textarea {
             z-index: 2;
             order: 2;
@@ -132,11 +167,11 @@
         border-radius: 0;
         margin-top: -1px;
 
-        > label {
+        label {
             font-size: 13px;
 
             @media screen and (min-width: $bp-xsm) {
-               font-size: 14px; 
+                font-size: 14px;
             }
 
             &::after {
@@ -144,7 +179,7 @@
             }
         }
 
-        > input,
+        input,
         textarea {
             border-radius: $br-md;
 
@@ -158,14 +193,14 @@
             border-top-right-radius: $br-md;
             margin-top: 0;
 
-            > label {
+            label {
                 &::after {
                     border-top-left-radius: $br-md;
                     border-top-right-radius: $br-md;
                 }
             }
 
-            > input,
+            input,
             textarea {
                 border-top-left-radius: $br-md;
                 border-top-right-radius: $br-md;
@@ -176,17 +211,103 @@
             border-bottom-left-radius: $br-md;
             border-bottom-right-radius: $br-md;
 
-            > label {
+            label {
                 &::after {
                     border-bottom-left-radius: $br-md;
                     border-bottom-right-radius: $br-md;
                 }
             }
 
-            > input,
+            input,
             textarea {
                 border-bottom-left-radius: $br-md;
                 border-bottom-right-radius: $br-md;
+            }
+        }
+    }
+
+    .btn {
+        transition:
+            background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out;
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+}
+
+.form-radio {
+    margin-left: -10px;
+    margin-top: 1px;
+
+    > input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        visibility: hidden;
+        opacity: 0;
+
+        &:checked {
+            + label {
+                background-color: $bg-l;
+
+                &::after {
+                    border-color: $main;
+                    background-color: $main;
+                    box-shadow: 0 0 0 3.5px #fff inset;
+                }
+            }
+        }
+    }
+
+    > label {
+        cursor: pointer;
+        display: flex;
+        column-gap: 20px;
+        line-height: 1.4;
+        padding: 0.6em 1em;
+        border-radius: $br-xl;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-left: auto;
+            border: 2px solid $line-d;
+            transition: $t;
+            flex-shrink: 0;
+        }
+
+        &:active {
+            transform: scale(0.992);
+        }
+
+        &:hover {
+            background-color: lighten($bg-l, 0.5);
+        }
+
+        > .btn-icon {
+            display: block;
+            width: 30px;
+            height: 30px;
+            &:hover {
+                background-color: $bg-d;
+            }
+        }
+    }
+
+    &--sm {
+        font-size: 13.5px;
+    }
+
+    &--reverse {
+        > label {
+            &::after {
+                order: -1;
+                margin-left: 0;
             }
         }
     }

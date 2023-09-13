@@ -1,2 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><circle class="cls-1" cx="6.27" cy="17.73" r="1.91"/><circle class="cls-1" cx="17.73" cy="17.73" r="1.91"/><polyline class="cls-1" points="4.36 17.73 1.5 17.73 1.5 4.36 18.68 4.36 18.68 8.18 20.59 12 22.5 13.07 22.5 17.73 19.64 17.73"/><line class="cls-1" x1="15.82" y1="17.73" x2="8.18" y2="17.73"/><polyline class="cls-1" points="20.59 12 14.86 12 14.86 8.18 18.68 8.18"/></svg>
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.74742 18.0031C6.71437 18.0031 7.49825 17.2193 7.49825 16.2523C7.49825 15.2853 6.71437 14.5015 5.74742 14.5015C4.78046 14.5015 3.99658 15.2853 3.99658 16.2523C3.99658 17.2193 4.78046 18.0031 5.74742 18.0031Z" stroke="#2F3142" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M16.2525 18.0031C17.2195 18.0031 18.0034 17.2193 18.0034 16.2523C18.0034 15.2853 17.2195 14.5015 16.2525 14.5015C15.2856 14.5015 14.5017 15.2853 14.5017 16.2523C14.5017 17.2193 15.2856 18.0031 16.2525 18.0031Z" stroke="#2F3142" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M3.99667 16.2524H2.375C1.82272 16.2524 1.375 15.8047 1.375 15.2524V4.99658C1.375 4.4443 1.82272 3.99658 2.375 3.99658H16.1233C16.6756 3.99658 17.1233 4.4443 17.1233 4.99658V7.49825L18.8742 10.9999L20.625 11.9807V16.2524H18.0033" stroke="#2F3142" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M14.5016 16.2524H7.49829" stroke="#2F3142" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M19 11H12V7H16.6667" stroke="#2F3142" stroke-width="2" stroke-miterlimit="10"/>
+</svg>

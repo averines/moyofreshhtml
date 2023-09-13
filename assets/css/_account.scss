@@ -12,6 +12,10 @@
         grid-template-columns: minmax(300px, 1fr) 4fr;
     }
 
+    &--full {
+        grid-template-columns: 1fr;
+    }
+
     &__aside {
         display: none;
 
@@ -42,6 +46,7 @@
         display: inline-flex;
         column-gap: 5px;
         align-items: center;
+        margin-left: -10px;
 
         > a {
             font-size: 1.15em;
@@ -79,7 +84,7 @@
         column-gap: 13px;
         font-size: 15px;
         color: $text;
-        padding: 0.75em 1.5em;
+        padding: 0.75em 1em;
         border-radius: $br-xxl;
         font-weight: 500;
         line-height: 1.2;
@@ -113,7 +118,8 @@
     &__header {
         display: flex;
         flex-direction: column;
-        row-gap: 20px;
+        align-items: flex-start;
+        row-gap: 5px;
         margin-top: 10px;
     }
 
@@ -121,45 +127,28 @@
         margin-top: auto;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         column-gap: 40px;
     }
-}
 
-.profile-card-info {
     &__title {
         font-size: 24px;
         font-weight: 500;
         white-space: nowrap;
+        margin-bottom: 7px;
     }
 
     &__subtitle {
         color: $text;
         font-size: 14.5px;
     }
-}
 
-.profile-card-status {
-    display: flex;
-    flex-direction: column;
-    row-gap: 5px;
-    align-items: flex-start;
-    // background-color: $bg-l;
-    // padding: 12px;
-    // border-radius: $br-lg;
-
-
-    &__title {
+    &__status {
         background: $good-d;
         color: #fff;
         padding: 0.1em 0.6em;
         border-radius: $br-xsm;
-        font-size: 13px;
-    }
-
-    &__subtitle {
-        font-size: 13px;
-        color: $text-l;
+        font-size: 12px;
     }
 }
 
