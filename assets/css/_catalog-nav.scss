@@ -442,9 +442,9 @@
         font-weight: 500;
         margin-bottom: 35px;
         line-height: 1.1;
-        display: grid;
-        justify-content: start;
-        row-gap: 7px;
+        display: inline-flex;
+        flex-direction: column;
+        row-gap: 5px;
         text-decoration: none;
         color: $text;
         transition: $t;

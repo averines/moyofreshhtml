@@ -79,7 +79,7 @@
             display: block;
             height: 1px;
             width: 100%;
-            background: linear-gradient(90deg, $line-d, transparent);
+            background: linear-gradient(90deg, darken($line, 2.5), transparent);
             position: absolute;
             bottom: -3px;
             transition: $t;
@@ -155,15 +155,15 @@ button.data-field {
         background-color: lighten($bg-l, 0.5);
 
         .data-field__icon {
-            background-color: lighten($bg-l, 0.5);
+            background-color: transparent;
         }
     }
 
     &::after {
         content: "";
         display: block;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         background: url(../img/icons/chevron-down.svg) no-repeat center/100%;
         margin-left: auto;
         transform: rotate(-90deg);

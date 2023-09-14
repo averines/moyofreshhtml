@@ -8,7 +8,7 @@
     display: none;
     padding: 5px 0 0 0;
 
-    @media screen and (min-width: $bp-md) {
+    @media screen and (min-width: $bp-sm) {
         display: block;
     }
 
@@ -27,6 +27,10 @@
     list-style: none;
     column-gap: 15px;
     white-space: nowrap;
+
+    @media screen and (min-width: $bp-md) {
+        column-gap: 10px;
+    }
 
     @media screen and (min-width: $bp-xl) {
         column-gap: 20px;
@@ -112,6 +116,7 @@
             }
 
             &.top-menu__special {
+                display: none;
                 color: $text;
                 background: $line;
                 padding: 0.2em 0.65em;
@@ -119,6 +124,10 @@
                 height: auto;
                 font-size: 13px;
                 margin-right: -5px;
+
+                @media screen and (min-width: $bp-md) {
+                    display: block;
+                }
 
                 &:hover {
                     color: $main;
