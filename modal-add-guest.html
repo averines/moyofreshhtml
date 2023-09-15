@@ -1,0 +1,43 @@
+<div class="modal modal--sm">
+    <div class="modal__body">
+        <div class="modal__title mb-1">Добавить гостевой логин</div>
+
+        <div class="form">
+            <div>
+                <div class="form-field form-field--boxed">
+                    <input type="email" id="guest-email" name="guest-email">
+                    <label for="guest-email">Гостевой email</label>
+                </div>
+                <p class="text-sm">Этот email будет использоваться для входа в гостевой личный кабинет. Письма с сайта на этот email отправляться не будут.</p>
+            </div>
+            <div class="form-row">
+                <div class="form-field form-field--boxed">
+                    <input type="text" id="guest-password" name="guest-password">
+                    <label for="guest-password">Пароль для гостя</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-field form-field--boxed">
+                    <input type="text" id="guest-charge-percent" name="guest-charge-percent" value="0" maxlength="5">
+                    <label for="guest-charge-percent">Наценка в процентах</label>
+                </div>
+                <div class="form-field form-field--boxed">
+                    <input type="text" id="guest-charge-fix" name="guest-charge-fix" value="0" maxlength="5">
+                    <label for="guest-charge-fix">Фиксированная наценка в рублях</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-checkbox">
+                    <input type="checkbox" name="guest-round-prices" id="guest-round-prices">
+                    <label for="guest-round-prices" class="text-sm">Округлять цены до целых рублей вверх</label>
+                </div>
+            </div>
+
+            <div class="form-row mt-2">
+                <button class="btn btn--full btn--bold" type="submit">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

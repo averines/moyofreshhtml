@@ -294,12 +294,21 @@ p {
 		background-color: $bg-d;
 	}
 
+	&--light {
+		background-color: $bg-l;
+		color: $text-l;
+	}	
+
 	&--g-good {
 		background: $g-good-l;
 	}
 
 	&--good-ll {
 		background: $good-ll;
+	}
+
+	&--sm {
+		font-size: 0.8em;
 	}
 }
 

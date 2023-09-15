@@ -263,6 +263,7 @@
     > label {
         cursor: pointer;
         display: flex;
+        align-items: center;
         column-gap: 20px;
         line-height: 1.4;
         padding: 0.6em 1em;
@@ -308,6 +309,51 @@
             &::after {
                 order: -1;
                 margin-left: 0;
+            }
+        }
+    }
+}
+
+.form-checkbox {
+    input[type="checkbox"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        visibility: hidden;
+        opacity: 0;
+
+        &:checked {
+            + label {
+                &::before {
+                    background-color: $main;
+                    border-color: $main;
+                }
+            }
+        }
+    }
+
+    label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid;
+            border-color: darken($line-d, 4);
+            border-radius: $br-sm;
+            background: url(../img/icons/check-w.svg) no-repeat center/73%;
+            transition: $t;
+            flex-shrink: 0;
+        }
+
+        &:hover {
+            &::before {
+                border-color: $text-l;
             }
         }
     }
