@@ -36,13 +36,41 @@
         background-color: $main-d;
     }
 
-    &::before {
-        content: "";
-        display: block;
-        width: 1em;
-        height: 1em;
-        background: url(../img/icons/burger.svg) no-repeat center/100%;
-        flex-shrink: 0;
+    // &::before {
+    //     content: "";
+    //     display: block;
+    //     width: 1em;
+    //     height: 1em;
+    //     background: url(../img/icons/burger.svg) no-repeat center/100%;
+    //     flex-shrink: 0;
+    // }
+
+    &__icon {
+        transition: all 0.25s;
+        user-select: none;
+        width: 22px;
+        height: 22px;
+
+        path,
+        line {
+            fill: none;
+            stroke-width: 3px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+            stroke: #fff;
+        }
+
+        path {
+            // transition: all 0.25s;
+            transition: none;
+            stroke-dasharray: 50 100;
+            stroke-dashoffset: -49px;
+        }
+
+        line {
+            transition: all 0.25s;
+        }
     }
 
     &::after {
@@ -57,8 +85,21 @@
     }
 
     &.is-active {
-        &::before {
-            background: url(../img/icons/close-w.svg) no-repeat center/130%;
+        // &::before {
+        //     background: url(../img/icons/close-w.svg) no-repeat center/130%;
+        // }
+
+        .catalog-btn__icon {
+            transform: rotate(45deg);
+
+            line {
+                opacity: 0;
+            }
+
+            path {
+                stroke-dasharray: 60 100;
+                stroke-dashoffset: 30px;
+            }
         }
     }
 
@@ -67,7 +108,7 @@
     }
 
     &:focus {
-        outline: 1px solid $text;
+        outline: none;
     }
 }
 

@@ -55,8 +55,12 @@ function getWorktimeStatus(element) {
     statusHours = Math.floor(timeDiff / 3600000);
     statusMinutes = Math.floor((timeDiff % 3600000) / 60000);
     element.innerHTML = `${statusMessage} ${statusHours > 0 ? statusHours + "&nbsp;" + getRussainDeclension(["час", "часа", "часов"], statusHours) : ""}&nbsp;${statusMinutes}&nbsp;${getRussainDeclension(["минуту", "минуты", "минут"], statusMinutes)}`
+    // console.log(123);
 }
 
 
 const worktimeEl = document.getElementById("js-worktime");
-if (worktimeEl) { getWorktimeStatus(worktimeEl) }
+if (worktimeEl) {
+    getWorktimeStatus(worktimeEl);
+    setInterval(() => getWorktimeStatus(worktimeEl), 2000)
+}
