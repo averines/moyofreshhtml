@@ -144,11 +144,50 @@
     }
 
     &__status {
-        background: $good-d;
-        color: #fff;
-        padding: 0.1em 0.6em;
-        border-radius: $br-xsm;
-        font-size: 12px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        > span {
+            // background: $good-d;
+            // background: $good-ll;
+            // color: #fff;
+            // color: $good-d;
+            // padding: 0.2em 0.6em;
+            border-radius: $br-sm;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    &__logout {
+        display: flex;
+        column-gap: 4px;
+
+        &:hover {
+            color: $main;
+
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                margin-top: -3px;
+            }
+        }
+
+        &::after {
+            opacity: 0;
+            margin-top: -1px;
+            visibility: hidden;
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            transition: $t;
+            background: url(../img/icons/hand-shake-main.svg) no-repeat center/100%;
+            transform-origin: 50% 100%;
+            animation: bye 0.35s 0s ease-in-out infinite alternate;
+        }
     }
 }
 
@@ -282,6 +321,23 @@
 
     &__link {
         font-size: 15px;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        column-gap: 2px;
+
+        &:hover {
+            color: $main-d;
+
+            .icon--arrow-right-main {
+                transform: translateY(-1px) translateX(2px);
+            }
+        }
+
+        .icon--arrow-right-main {
+            transition: $t;
+            transform: translateY(-1px);
+        }
     }
 
     &__content {

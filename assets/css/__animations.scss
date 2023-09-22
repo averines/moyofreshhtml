@@ -115,3 +115,14 @@
     transform: translate(0, -24px) scale(2.3);
   }
 }
+
+
+@keyframes bye {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+   transform: rotate(-20deg);
+  }
+}
