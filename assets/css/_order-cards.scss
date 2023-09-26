@@ -1,7 +1,7 @@
 .order-cards {
     display: flex;
     flex-direction: column;
-    row-gap: 35px;
+    row-gap: 40px;
     max-width: 900px;
 
     &--lg {
@@ -23,22 +23,37 @@
     box-shadow: $bs-box-l;
     border: 1px solid $line;
     border-radius: $br-xl;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
+
+    &__main {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        row-gap: 20px;
+    }
 
     &__header {
-        position: relative;
+        // border: 1px solid red;
+        // position: relative;
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-right: 30px;
-        margin-left: -1px;
-        margin-top: -1px;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    &__footer {
+        // border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        align-items: flex-end;
+        position: relative;
     }
 
     &__status {
+        // border: 1px solid red;
         display: flex;
         align-items: flex-end;
         column-gap: 15px;
+        transform: translate(-1px, -1px);
     }
 
     &__pay {
@@ -46,7 +61,7 @@
         column-gap: 20px;
         align-items: center;
         padding-top: 25px;
-        padding-bottom: 20px;
+        padding-right: 30px;
     }
 
     &__pay-status {
@@ -65,6 +80,7 @@
         font-size: 16px;
         text-align: right;
         line-height: 1;
+        white-space: nowrap;
     }
 
     &__count {
@@ -75,22 +91,24 @@
     }
 
     &__content {
-        // border: 1px solid red;
-        max-width: 50%;
         position: relative;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-
-        padding-left: 35px;
-        margin-bottom: -25px;
-        margin-top: -20px;
+        margin: 0 40px 0 30px;
+        color: $text;
+        padding: 12px 15px;
+        border-radius: $br-lg;
         z-index: 1;
+        transition: $t;
+
+        &:hover {
+            background-color: lighten($bg-l, 1);
+        }
     }
 
     &__title {
         color: $text;
-        // text-decoration: underline;
     }
 
     &__number {
@@ -144,11 +162,21 @@
         display: flex;
         align-items: baseline;
         column-gap: 8px;
-        font-size: 14px;
         row-gap: 2px;
+        font-size: 14px;
+        color: $text;
 
         > span {
+            display: inline;
             color: $text-l;
+            max-height: 1.5em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            // word-break: break-word;
+            hyphens: auto;
         }
     }
 }
@@ -165,7 +193,7 @@
         content: "";
         display: block;
         height: 0;
-        width: 55%;
+        width: 130%;
         border-bottom: 1px dashed $line-d;
         position: absolute;
         right: 0;
@@ -176,7 +204,7 @@
         content: "";
         display: block;
         height: 1px;
-        width: 55%;
+        width: 130%;
         background: linear-gradient(90deg, #fff, transparent);
         position: absolute;
         right: 0;
@@ -195,6 +223,7 @@
     color: $text;
     // font-weight: 500;
     // color: $main;
+    white-space: nowrap;
 
     &:hover {
         color: $text;
@@ -240,7 +269,7 @@
     //     border-top: 2px solid $special-6-l;
     // }
 
-    &--good {
+    &--send {
         color: $good-d;
         background-color: $good-ll;
         border-color: lighten($good, 15);
@@ -281,10 +310,12 @@
 .order-substatus {
     color: $text-l;
     font-size: 13px;
+    line-height: 1.2;
     margin-bottom: 4px;
     display: flex;
     align-items: center;
     column-gap: 6px;
+    white-space: nowrap;
 
     &::before {
         content: "";
@@ -323,17 +354,13 @@
     justify-content: space-between;
     align-items: center;
     column-gap: 30px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: $br-md;
     background-color: lighten($bg-l, 1);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 
     &:hover {
         background-color: $bg-l;
-
-        .order-card-extra__title {
-            color: $main;
-        }
     }
 
     &__title {
@@ -343,7 +370,7 @@
         display: flex;
         align-items: center;
         column-gap: 8px;
-        font-weight: 500;
+        // font-weight: 500;
         transition: $t;
 
         &::before {
@@ -352,6 +379,7 @@
             width: 16px;
             height: 16px;
             background: url(../img/icons/plus.svg) no-repeat center/100%;
+            opacity: 0.5;
         }
     }
 
@@ -364,11 +392,13 @@
     &__cost {
         font-weight: 500;
         color: $text;
-        font-size: 15px;
+        font-size: 14.5px;
     }
 
     &__count {
-        font-size: 13.5px;
+        font-size: 13px;
         color: $text-l;
+        min-width: 50px;
+        text-align: right;
     }
 }
