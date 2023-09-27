@@ -1618,42 +1618,31 @@
                         </div>
 
                         <!-- мои заказы -->
-                        <div class="account-layout__row">
+                        <div class="account-layout__row mt-1">
                             <div class="account-block">
                                 <div class="account-block__header">
-                                    <div class="account-block__title" href="customer-orders.html">Последний заказ</div>
+                                    <div class="account-block__title" href="customer-orders.html">Последние заказы</div>
                                     <a href="customer-orders.html" class="account-block__link text-bold">Все заказы <span class="icon icon--arrow-right-main"></span></a>
                                 </div>
-
-                                <!-- если товаров в заказе > 5, то показывается 4 товара и счетчик тех, которые не показались -->
-                                <!-- 
-                                    <div class="order-card__products">
-                                        <img class="order-card-product" src="./i/products/67x100/555101.webp" alt="000" width="67" height="100">
-                                        <img class="order-card-product" src="./i/products/67x100/555102.jpg" alt="000" width="67" height="100">
-                                        <img class="order-card-product" src="./i/products/67x100/555103.webp" alt="000" width="67" height="100">
-                                        <img class="order-card-product" src="./i/products/67x100/555104.webp" alt="000" width="67" height="100">
-                                        <div class="order-card-product order-card-product--more">+4</div>
-                                    </div> 
-                                -->
 
                                 <div class="order-cards">
                                     <div class="order-card">
                                         <div class="order-card__main">
                                             <div class="order-card__header">
                                                 <div class="order-card__status">
-                                                    <div class="order-status order-status--in-progress">Обрабатывается</div>
-                                                    <div class="order-substatus order-substatus--bad">На подтверждении поставщиками</div>
-                                                    <div class="order-substatus order-substatus--bad">В сборке на складе</div>
+                                                    <div class="order-status order-status--new">Новый</div>
+                                                    <div class="order-substatus">На подтверждении поставщиками</div>
+                                                    <div class="order-substatus">В сборке на складе</div>
                                                 </div>
-                                                <a class="order-card__content" href="customer-order.html">
-                                                    <div class="order-card__title">
+                                                <div class="order-card__content">
+                                                    <a class="order-card__title" href="customer-order.html">
                                                         <span class="order-card__number">№ 231703</span>
                                                         <span class="order-card__date">от 22.08.2023</span>
-                                                    </div>
+                                                    </a>
                                                     <div class="order-card__info">
                                                         <div class="order-card__delivery">EMS <span>Пушкина Александра Сергеевна</span></div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="order-card__footer">
                                                 <div class="order-card__pay">
@@ -1661,7 +1650,36 @@
                                                         <div class="order-card__cost">12 890 ₽</div>
                                                         <div class="order-card__count">44 шт.</div>
                                                     </div>
-                                                    <a href="#" class="btn btn--sm">Оплатить</a>
+                                                    <div class="order-card__pay-status">Оплата еще не&nbsp;доступна</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-card">
+                                        <div class="order-card__main">
+                                            <div class="order-card__header">
+                                                <div class="order-card__status">
+                                                    <div class="order-status order-status--packed">Упакован</div>
+                                                    <div class="order-substatus order-substatus--good">Подтвержден поставщиками</div>
+                                                    <div class="order-substatus order-substatus--good">Собран на складе</div>
+                                                </div>
+                                                <div class="order-card__content">
+                                                    <a class="order-card__title" href="customer-order.html">
+                                                        <span class="order-card__number">№ 231703</span>
+                                                        <span class="order-card__date">от 22.08.2023</span>
+                                                    </a>
+                                                    <div class="order-card__info">
+                                                        <div class="order-card__delivery">EMS <span>Пушкина Александра Сергеевна</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-card__footer">
+                                                <div class="order-card__pay">
+                                                    <div class="order-card__total">
+                                                        <div class="order-card__cost">12 890 ₽</div>
+                                                        <div class="order-card__count">44 шт.</div>
+                                                    </div>
+                                                    <div class="order-card__pay-status order-card__pay-status--good">Оплачен</div>
                                                 </div>
                                                 <div class="order-card-docs">
                                                     <a href="#" class="order-card-doc">Счет-договор</a>
