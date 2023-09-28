@@ -52,6 +52,7 @@
         color: $text;
         order: 1;
         padding: 0.65em 1em;
+        z-index: 1;
 
         &:focus {
             box-shadow: 0 0 0 1px lighten($text-ll, 10) inset;
@@ -75,7 +76,7 @@
         width: 50px;
         height: 100%;
         cursor: pointer;
-        z-index: 2;
+        z-index: 3;
         border: none;
         background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.75 12.8335C2.75 8.27715 6.44365 4.5835 11 4.5835C15.5564 4.5835 19.25 8.27715 19.25 12.8335M15.5833 12.8335C15.5833 15.3648 13.5313 17.4168 11 17.4168C8.4687 17.4168 6.41667 15.3648 6.41667 12.8335C6.41667 10.3022 8.4687 8.25016 11 8.25016C13.5313 8.25016 15.5833 10.3022 15.5833 12.8335Z' stroke='%232F3142' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;

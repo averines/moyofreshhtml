@@ -1,13 +1,14 @@
 .account-layout {
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 20px;
 
     @media screen and (min-width: $bp-md) {
         column-gap: 50px;
         grid-template-columns: minmax(250px, 1fr) 4fr;
     }
 
-    @media screen and (min-width: $bp-lg) {
+    @media screen and (min-width: $bp-xl) {
         column-gap: 100px;
         grid-template-columns: minmax(300px, 1fr) 4fr;
     }
@@ -17,11 +18,11 @@
     }
 
     &__aside {
-        display: none;
+        // display: none;
 
-        @media screen and (min-width: $bp-md) {
-            display: block;
-        }
+        // @media screen and (min-width: $bp-xsm) {
+        //     display: block;
+        // }
     }
 
     &__main {
@@ -46,7 +47,10 @@
         display: inline-flex;
         column-gap: 5px;
         align-items: center;
-        margin-left: -10px;
+
+        @media screen and (min-width: $bp-md) {
+            margin-left: -10px;
+        }
 
         > a {
             font-size: 1.15em;
@@ -62,8 +66,19 @@
 
 .account-grid {
     display: grid;
-    grid-template-columns: 1.35fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 30px;
+    row-gap: 15px;
+    margin-top: 20px;
+
+    @media screen and (min-width: $bp-sm) {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    @media screen and (min-width: $bp-md) {
+        grid-template-columns: 1.35fr 1fr;
+        margin-top: 0;
+    }
 
     &__secondary {
         display: flex;
@@ -74,35 +89,88 @@
 
 .account-menu {
     display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
 
-    > a {
+    @media screen and (min-width: $bp-md) {
+        align-items: initial;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+
+    a {
         display: inline-flex;
         align-items: center;
-        line-height: 1;
-        column-gap: 13px;
-        font-size: 15px;
+        column-gap: 6px;
+        font-size: 13px;
         color: $text;
-        padding: 0.75em 1em;
-        border-radius: $br-xxl;
-        font-weight: 500;
+        padding: 0.7em 1.2em 0.55em 0.9em;
+        border-radius: $br-lg;
         line-height: 1.2;
         transition: $t;
+        background-color: $bg-l;
+
+        @media screen and (min-width: $bp-md) {
+            background: none;
+            column-gap: 13px;
+            font-weight: 500;
+            border-radius: $br-xl;
+            font-size: 15px;
+            padding: 0.75em 1em;
+        }
 
         &:hover {
-            background-color: $bg-l;
+            background-color: $bg-d;
             color: $text;
+
+            @media screen and (min-width: $bp-md) {
+                background-color: $bg-l;
+            }
         }
 
         &.is-active {
-            background-color: $bg-l;
+            background-color: $main;
+            color: #fff;
+
+            > .icon {
+                filter: brightness(10);
+
+                @media screen and (min-width: $bp-md) {
+                    filter: none;
+                }
+            }
+
+            @media screen and (min-width: $bp-md) {
+                background-color: $bg-l;
+                color: $text;
+            }
         }
 
         > .icon {
+            display: none;
             transform: translateY(-2px);
             font-size: 1.2em;
             line-height: 1;
+            background-size: 85%;
+
+            @media screen and (min-width: $bp-xsm) {
+                display: block;
+            }
+
+            @media screen and (min-width: $bp-md) {
+                background-size: 100%;
+            }
+        }
+    }
+
+    a.account-menu__logout {
+        display: none;
+
+        @media screen and (min-width: $bp-md) {
+            margin-top: 20px;
+            display: flex;
         }
     }
 }
@@ -111,7 +179,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 120px;
+    min-height: 190px;
     font-size: 15px;
     height: 100%;
 
@@ -129,6 +197,17 @@
         justify-content: space-between;
         align-items: flex-end;
         column-gap: 40px;
+        margin-top: 20px;
+
+        > a {
+            color: $text-l;
+            white-space: nowrap;
+            font-size: 14px;
+
+            &:hover {
+                color: $main-d;
+            }
+        }
     }
 
     &__title {

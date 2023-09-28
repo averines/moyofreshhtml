@@ -123,10 +123,12 @@
     }
 
     &.is-active {
-        visibility: visible;
-        opacity: 1;
-        transform: none;
-        pointer-events: all;
+        @media screen and (min-width: $bp-md) {
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+            pointer-events: all;
+        }
     }
 
     &:hover {

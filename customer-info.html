@@ -105,13 +105,13 @@
                             </g>
                         </svg>
                     </a>
-                                        <button class="catalog-btn">
+                    <button class="catalog-btn">
                         <svg class="catalog-btn__icon" x="0px" y="0px" viewBox="0 0 50 50">
                             <path d="M25,10v14.7h15c4.9,0.2,8,2.2,8,4.7v0.2c0,2.5-3.1,4.5-8,4.5l-30,0" />
                             <line x1="9.9" y1="24.7" x2="40" y2="24.7" />
                             <path d="M25,39.4V24.7H10c-4.9-0.2-8-2.2-8-4.7v-0.2c0-2.5,3.1-4.5,8-4.5l30,0" />
                         </svg>
-                                                <span>Каталог</span>
+                        <span>Каталог</span>
                     </button>
                     <div class="search">
                         <div class="search__wrapper">
@@ -1552,7 +1552,7 @@
                         <a href="customer-reclamations.html"><span class="icon icon--return"></span> Рекламации</a>
                         <a href="customer-news.html"><span class="icon icon--bell"></span> Новости и уведомления</a>
                         <a href="customer-parser.html"><span class="icon icon--download"></span> Парсер</a>
-                        <a class="mt-1" href="#"><span class="icon icon--logout"></span> Выйти</a>
+                        <a class="account-menu__logout" href="#"><span class="icon icon--logout"></span> Выйти</a>
                     </div>
                 </div>
 
@@ -1642,7 +1642,7 @@
                                         <span class="icon icon--megaphone"></span>
                                     </div>
                                     <div class="data-field__content">
-                                        <div class="data-field__title">Получать рассылку об акциях и новинках</div>
+                                        <div class="data-field__title">Получать рассылку об&nbsp;акциях и&nbsp;новинках</div>
                                     </div>
                                     <div class="data-field__switch">
                                         <input type="checkbox" id="customer-subscribe" checked>
@@ -1660,43 +1660,51 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
-                <nav class="footer-nav">
-                    <h2 class="footer-nav__title">О магазине</h2>
-                    <ul class="footer-menu">
-                        <li><a href="info-about.html">Компания</a></li>
-                        <li><a href="info-cooperation.html">Сотрудничество с&nbsp;производителями</a></li>
-                        <li><a href="info-api.html">Парсеры и&nbsp;API</a></li>
-                        <li><a href="info-contacts.html">Контакты и&nbsp;реквизиты</a></li>
-                        <li><a href="https://yandex.ru/maps/org/optmoyo_ru/37159877855/reviews/?add-review=true&ll=37.736501%2C55.778036&z=17" target="_blank" rel="nofollow noopener">Оставить отзыв <span class="text-nowrap">на Яндексе <span class="icon icon--external"></span></span></a></li>
-                    </ul>
-                </nav>
-                <nav class="footer-nav">
-                    <h2 class="footer-nav__title">Покупателям</h2>
-                    <ul class="footer-menu">
-                        <li><a href="info-conditions.html">Условия</a></li>
-                        <li><a href="info-delivery.html">Доставка</a></li>
-                        <li><a href="info-payment.html">Оплата</a></li>
-                        <li><a href="info-bonus.html">Скидки и бонусы</a></li>
-                        <li><a href="info-sp.html">Организаторам СП</a></li>
-                        <li><a href="info-returns.html">Возврат</a></li>
-                        <li><a href="info-faq.html">Ответы на вопросы</a></li>
-                        <li><a href="info-sizes.html">Таблица размеров</a></li>
-                    </ul>
-                </nav>
-                <nav class="footer-nav">
-                    <h2 class="footer-nav__title">Каталог</h2>
-                    <ul class="footer-menu">
-                        <li><a href="catalog-section.html">Женская одежда</a></li>
-                        <li><a href="catalog-section.html">Мужская одежда</a></li>
-                        <li><a href="catalog-section.html">Одежда для&nbsp;девочек</a></li>
-                        <li><a href="catalog-section.html">Одежда для&nbsp;мальчиков</a></li>
-                        <li><a href="catalog-section.html">Домашний текстиль</a></li>
-                        <li><a href="catalog-section.html">Игрушки</a></li>
-                        <li><a href="catalog-section.html">Акции и&nbsp;распродажи</a></li>
-                        <li><a href="catalog-section.html">Товары со&nbsp;скидками</a></li>
-                        <li><a href="catalog-brands.html">Все бренды</a></li>
-                    </ul>
-                </nav>
+                <div class="footer-navs accordion accordion--menu">
+                    <nav class="footer-nav accordion__item">
+                        <h2 class="footer-nav__title accordion__title">О магазине</h2>
+                        <div class="accordion__content">
+                            <ul class="footer-menu">
+                                <li><a href="info-about.html">Компания</a></li>
+                                <li><a href="info-cooperation.html">Сотрудничество с&nbsp;производителями</a></li>
+                                <li><a href="info-api.html">Парсеры и&nbsp;API</a></li>
+                                <li><a href="info-contacts.html">Контакты и&nbsp;реквизиты</a></li>
+                                <li><a href="https://yandex.ru/maps/org/optmoyo_ru/37159877855/reviews/?add-review=true&ll=37.736501%2C55.778036&z=17" target="_blank" rel="nofollow noopener">Оставить отзыв <span class="text-nowrap">на Яндексе <span class="icon icon--external"></span></span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <nav class="footer-nav accordion__item">
+                        <h2 class="footer-nav__title accordion__title">Покупателям</h2>
+                        <div class="accordion__content">
+                            <ul class="footer-menu">
+                                <li><a href="info-conditions.html">Условия</a></li>
+                                <li><a href="info-delivery.html">Доставка</a></li>
+                                <li><a href="info-payment.html">Оплата</a></li>
+                                <li><a href="info-bonus.html">Скидки и бонусы</a></li>
+                                <li><a href="info-sp.html">Организаторам СП</a></li>
+                                <li><a href="info-returns.html">Возврат</a></li>
+                                <li><a href="info-faq.html">Ответы на вопросы</a></li>
+                                <li><a href="info-sizes.html">Таблица размеров</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <nav class="footer-nav accordion__item">
+                        <h2 class="footer-nav__title accordion__title">Каталог</h2>
+                        <div class="accordion__content">
+                            <ul class="footer-menu">
+                                <li><a href="catalog-section.html">Женская одежда</a></li>
+                                <li><a href="catalog-section.html">Мужская одежда</a></li>
+                                <li><a href="catalog-section.html">Одежда для&nbsp;девочек</a></li>
+                                <li><a href="catalog-section.html">Одежда для&nbsp;мальчиков</a></li>
+                                <li><a href="catalog-section.html">Домашний текстиль</a></li>
+                                <li><a href="catalog-section.html">Игрушки</a></li>
+                                <li><a href="catalog-section.html">Акции и&nbsp;распродажи</a></li>
+                                <li><a href="catalog-section.html">Товары со&nbsp;скидками</a></li>
+                                <li><a href="catalog-brands.html">Все бренды</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
                 <div class="footer-partner">
                     <div class="footer-partner__header">
                         <div class="footer-partner__title">Партнерский&nbsp;сайт</div>

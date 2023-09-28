@@ -28,7 +28,9 @@
 }
 
 .data-row {
-    margin: 0 -10px;
+    @media screen and (min-width: $bp-md) {
+        margin: 0 -10px;
+    }
 }
 
 .data-field {
@@ -42,9 +44,13 @@
     background: none;
     text-align: left;
     font-size: 16px;
-    margin-left: -15px;
     transition: $t;
     line-height: 1.4;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-md) {
+        margin-left: -15px;
+    }
 
     &:last-child {
         .data-field__content {

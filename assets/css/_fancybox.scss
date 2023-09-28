@@ -44,6 +44,14 @@
     --f-button-hover-color: #{$text};
 }
 
+.is-compact .fancybox__content > .f-button.is-close-btn {
+    --f-button-bg: transparent;
+    --f-button-hover-bg: transparent;
+    --f-button-active-bg: transparent;
+    --f-button-color: #{$text-l};
+    --f-button-hover-color: #{$text};
+}
+
 .f-carousel.product-cards {
     border: 1px solid red;
     display: block;

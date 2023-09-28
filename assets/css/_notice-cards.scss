@@ -1,20 +1,23 @@
 .notice-groups {
     display: grid;
     grid-template-columns: 1fr;
-    // border-radius: $br-xxl;
-    // box-shadow: $bs-box;
-    padding: 40px 0;
+    padding: 10px 0;
     row-gap: 30px;
+
+    @media screen and (min-width: $bp-md) {
+        padding: 40px 0;
+    }
 }
 
 .notice-group {
     row-gap: 10px;
-    padding: 0 40px;
+    padding: 0;
     display: grid;
     grid-template-columns: 1fr;
 
     @media screen and (min-width: $bp-md) {
         grid-template-columns: minmax(90px, 1fr) 9fr;
+        padding: 0 40px;
     }
 
     &__date {
@@ -32,9 +35,15 @@
 
 .notice-card {
     position: relative;
-    padding: 10px 40px;
+    padding: 10px 20px;
     border-radius: $br-xl;
     transition: $t;
+    margin: 0 -20px;
+
+    @media screen and (min-width: $bp-md) {
+        padding: 10px 40px;
+        margin: 0;
+    }
 
     &:hover {
         background-color: lighten($bg-l, 1);
@@ -44,13 +53,19 @@
         &::before {
             content: "";
             display: block;
-            width: 7px;
-            height: 7px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background-color: $main;
             position: absolute;
-            left: 15px;
+            left: 5px;
             top: 15px;
+
+            @media screen and (min-width: $bp-md) {
+                width: 7px;
+                height: 7px;
+                left: 15px;
+            }
         }
     }
 
