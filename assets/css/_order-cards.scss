@@ -3,7 +3,7 @@
     flex-direction: column;
     row-gap: 40px;
     max-width: 900px;
-    container-type: inline-size;
+    // container-type: inline-size;
 
     // &--lg {
     //     .order-card {
@@ -25,6 +25,17 @@
     border: 1px solid $line;
     border-radius: $br-xl;
     padding-bottom: 28px;
+    container-type: inline-size;
+
+    &--details {
+        .order-card__footer {
+            justify-content: flex-start;
+        }
+
+        .order-card__cost {
+            font-size: 20px;
+        }
+    }
 
     &__main {
         display: grid;
@@ -518,3 +529,4 @@
         }
     }
 }
+

@@ -14,7 +14,7 @@
 
     &__item {
         padding: 0.5em 0.9em;
-        background-color: $bg-d;
+        background-color: $bg-l;
         color: $text;
         font-size: 14px;
         text-decoration: none;
@@ -28,8 +28,8 @@
         }
 
         &:hover {
-            background-color: $main;
-            color: #fff;
+            background-color: $bg-d;
+            color: $text;
         }
     }
 }
