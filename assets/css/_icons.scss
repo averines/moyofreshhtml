@@ -176,6 +176,10 @@
         background: url(../img/icons/plus.svg) no-repeat center/100%;
     }
 
+    &--minus {
+        background: url(../img/icons/minus.svg) no-repeat center/100%;
+    }
+
     &--house {
         background: url(../img/icons/house.svg) no-repeat center/100%;
     }
@@ -186,6 +190,10 @@
 
     &--suitcase {
         background: url(../img/icons/suitcase.svg) no-repeat center/100%;
+    }
+
+    &--bin {
+        background: url(../img/icons/bin.svg) no-repeat center/100%;
     }
 }
 

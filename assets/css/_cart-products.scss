@@ -1,0 +1,229 @@
+.cart-layout {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    row-gap: 20px;
+    column-gap: 60px;
+
+    &__main {
+        // border: 1px solid #ccc;
+    }
+
+    &__aside {
+        border: 1px solid #ccc;
+    }
+}
+
+.cart-products {
+    display: flex;
+    flex-direction: column;
+    // row-gap: 60px;
+}
+
+.cart-product {
+    display: flex;
+    column-gap: 20px;
+    border-bottom: 1px dashed $line-d;
+    padding: 40px 0;
+
+    &:last-child {
+        border: none;
+    }
+
+    &__pic {
+        display: block;
+        transition: $t;
+        flex-shrink: 0;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        > img {
+            display: block;
+            border-radius: $br-sm;
+            overflow: hidden;
+        }
+    }
+
+    &__info {
+        // border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+    }
+
+    &__id {
+        font-size: 14px;
+        color: $text-l;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: $text;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 5px;
+
+        &:hover {
+            color: $main;
+        }
+    }
+
+    &__param {
+        font-size: 14px;
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        > span {
+            color: $text-l;
+            width: 50px;
+            display: inline-block;
+        }
+    }
+
+    &__more {
+        font-size: 14px;
+        color: $main;
+        border: none;
+        background: none;
+        padding: 0;
+        margin-top: 5px;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: $main-dimmed;
+        list-style: 1.4em;
+        transition: $t;
+        text-align: left;
+
+        &:hover {
+            color: $main-l;
+            text-decoration-color: lighten($main-dimmed, 10);
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-left: auto;
+        row-gap: 10px;
+    }
+
+    &__controls {
+        border-left: 1px dashed $line-d;
+        padding-left: 30px;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.cart-product-detail {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    &__size {
+        color: $text-l;
+        font-size: 14px;
+    }
+
+    &__price {
+        font-size: 14px;
+        color: $text-l;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    &__total {
+        font-weight: 500;
+        font-size: 15px;
+        white-space: nowrap;
+        text-align: right;
+    }
+}
+
+.cart-product-controls {
+    background-color: $bg-l;
+    padding: 6px 8px;
+    border-radius: $br-xl;
+    display: flex;
+    column-gap: 5px;
+
+    &__item {
+        border: none;
+        width: 36px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $br-lg;
+        background: none;
+        transition:
+            box-shadow $t,
+            background-color $t;
+
+        &:hover {
+            background-color: #fff;
+            box-shadow: $bs-xsm;
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+}
+
+.cart-product-count {
+    background-color: lighten($bg-d, 2);
+    padding: 4px;
+    border-radius: $br-xl;
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+
+    &__btn {
+        border: none;
+        width: 32px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $br-lg;
+        background: #fff;
+        transition: box-shadow $t;
+
+        &:hover {
+            background-color: #fff;
+            box-shadow: $bs-xsm;
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+
+    &__input[type="text"] {
+        border: none;
+        background: none;
+        width: 45px;
+        height: 28px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 0;
+        border-radius: $br-lg;
+
+        &:focus {
+            outline: 1px solid $main-dimmed;
+        }
+    }
+}
