@@ -7,6 +7,11 @@
     height: 100%;
     padding: 8px 9px;
     row-gap: 3px;
+
+    > span {
+        color: $special-1;
+        font-size: 14px;
+    }
 }
 
 .badge {
