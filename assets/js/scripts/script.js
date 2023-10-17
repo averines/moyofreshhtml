@@ -102,20 +102,9 @@ body.addEventListener('focusin', inputDelegate((el) => {
 }));
 
 
-
 window.addEventListener('click', (e) => {
     // показать/спрятать пункт аккордеона
     if (e.target.classList.contains("accordion__title")) { e.target.closest(".accordion__item").classList.toggle("is-opened") }
-
-    // добавить/убрать в избранное в карточке товара
-    if (e.target.classList.contains("product-card__fav")) {
-        if (e.target.classList.contains("is-active")) {
-            e.target.classList.remove("is-active");
-        } else {
-            e.target.classList.add("is-active");
-            e.target.innerHTML = "<span></span>";
-        }
-    }
 
     // спрятать ранее открытое меню каталога при клике вне его контейнера
     if (catalogNav.classList.contains("is-active")) {
@@ -223,6 +212,16 @@ window.addEventListener('click', (e) => {
     // обработка кликов с data-action ===========================
     if (e.target.dataset.hasOwnProperty('action')) {
 
+        // добавить/убрать в избранное
+        if (e.target.dataset.action == "toggle-favorites") {
+            if (e.target.classList.contains("is-active")) {
+                e.target.classList.remove("is-active");
+            } else {
+                e.target.classList.add("is-active");
+                e.target.innerHTML = "<span></span>";
+            }
+        }
+
         // плавный переход к блоку
         if (e.target.dataset.action.includes("scroll")) {
             e.preventDefault();
@@ -290,6 +289,27 @@ window.addEventListener('click', (e) => {
         if (e.target.dataset.action == "toggle-password") {
             e.target.classList.toggle("is-active");
             e.target.closest(".form-field").querySelector("input.form-field__password").type = e.target.classList.contains("is-active") ? "text" : "password";
+        }
+
+        // переключить видимость доступных размеров товара в корзине
+        if (e.target.dataset.action == "toggle-sizes") {
+            e.target.closest(".cart-product").querySelector(".cart-product__sizes").classList.toggle("cart-product__sizes--show-all");
+            e.target.classList.toggle("is-active");
+        }
+
+        // изменение количества товара в корзине
+        if (e.target.dataset.action == "cart-product-plus") {
+            let countEl = e.target.closest(".cart-product-count").querySelector(".cart-product-count__input");
+            countEl.value = parseInt(countEl.value.replace(/\D/gi, '')) || 0;
+            if (countEl.value < 999) { countEl.value++ }
+            updateCartProductSizeCount(e.target.closest(".cart-product-size"));
+        }
+
+        if (e.target.dataset.action == "cart-product-minus") {
+            let countEl = e.target.closest(".cart-product-count").querySelector(".cart-product-count__input");
+            countEl.value = parseInt(countEl.value.replace(/\D/gi, '')) || 0;
+            if (countEl.value > 0 && countEl.value <= 999) { countEl.value-- }
+            updateCartProductSizeCount(e.target.closest(".cart-product-size"));
         }
 
     }
@@ -361,20 +381,3 @@ if (productPlaceholdersEl) {
         productPlaceholdersEl.appendChild(placeholders);
     }
 }
-
-
-// всплывающие окна через фансибокс
-Fancybox.bind("[data-fancybox]", {
-    l10n: {
-        CLOSE: "Закрыть",
-        NEXT: "Вперед",
-        PREV: "Назад",
-        MODAL: "Можно закрыть, нажав ESC",
-        ERROR: "Ошибка",
-        IMAGE_ERROR: "Изображение не найдено",
-        ELEMENT_NOT_FOUND: "HTML не найден",
-        AJAX_NOT_FOUND: "Ошибка при загрузке AJAX: Контент не найден",
-        AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: Запрещено",
-        IFRAME_ERROR: "Ошибка при загрузке",
-    },
-});

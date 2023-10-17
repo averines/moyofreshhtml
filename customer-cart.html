@@ -1548,7 +1548,7 @@
                 <div class="cart-layout__main">
                     <div class="cart-products">
                         <div class="cart-product">
-                            <a class="cart-product__pic" href="product.html">
+                            <a class="cart-product__pic" href="catalog-product.html">
                                 <img src="./i/products/240x360/555101.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="85" height="128">
                             </a>
                             <div class="cart-product__info">
@@ -1560,92 +1560,97 @@
                                         <div class="badge badge--sale">-11%</div>
                                     </div>
                                     <div class="cart-product-controls">
-                                        <button class="cart-product-controls__item" aria-label="В избранное"><span class="icon icon--heart"></span></button>
+                                        <button class="cart-product-controls__item cart-product__fav" data-action="toggle-favorites" aria-label="В избранное"></button>
                                         <button class="cart-product-controls__item" aria-label="Удалить"><span class="icon icon--bin"></span></button>
                                     </div>
                                 </div>
-                                <a class="cart-product__title" href="product.html">Vilatte Туника 6696П</a>
+                                <a class="cart-product__title" href="catalog-product.html">Vilatte Туника 6696П</a>
                                 <div class="cart-product__param"><span>Арт. </span>WS1 BASIC 007</div>
                                 <div class="cart-product__param"><span>Цвет </span>Bianco/green</div>
-                                <button class="cart-product__more">Показать все доступные размеры</button>
                             </div>
                             <div class="cart-product__details">
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                <div class="cart-product__sizes">
+                                    <div class="cart-product-size cart-product-size--not-added">
+                                        <div class="cart-product-size__size">44</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus is-disabled" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="0" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total"></div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
-                                </div>
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                    <div class="cart-product-size cart-product-size--not-added">
+                                        <div class="cart-product-size__size">46</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus is-disabled" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="0" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total"></div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
-                                </div>
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                    <div class="cart-product-size">
+                                        <div class="cart-product-size__size">48</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="1" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total">500,00 ₽</div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
-                                </div>
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                    <div class="cart-product-size">
+                                        <div class="cart-product-size__size">50</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="1" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total">500,00 ₽</div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
-                                </div>
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                    <div class="cart-product-size">
+                                        <div class="cart-product-size__size">52</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="1" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total">500,00 ₽</div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
-                                </div>
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                    <div class="cart-product-size cart-product-size--not-added">
+                                        <div class="cart-product-size__size">56</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus is-disabled" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="0" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total"></div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
                                 </div>
+                                <div class="cart-product-sizes-warning">
+                                    <p>Не добавлены размеры для заказа. <br>Этот товар не будет учтен в&nbsp;заказе.</p>
+                                </div>
+                                <button class="cart-product__toggle-available-btn" data-action="toggle-sizes" aria-label="Показать все доступные размеры"></button>
                             </div>
                         </div>
                         <div class="cart-product">
-                            <a class="cart-product__pic" href="product.html">
+                            <a class="cart-product__pic" href="catalog-product.html">
                                 <img src="./i/products/240x360/555101.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="85" height="128">
                             </a>
                             <div class="cart-product__info">
@@ -1655,65 +1660,106 @@
                                         <div class="badge badge--action">-11% до 28.08</div>
                                     </div>
                                     <div class="cart-product-controls">
-                                        <button class="cart-product-controls__item" aria-label="В избранное"><span class="icon icon--heart"></span></button>
+                                        <button class="cart-product-controls__item cart-product__fav" data-action="toggle-favorites" aria-label="В избранное"></button>
                                         <button class="cart-product-controls__item" aria-label="Удалить"><span class="icon icon--bin"></span></button>
                                     </div>
                                 </div>
-                                <a class="cart-product__title" href="product.html">Vilatte Туника 6696П</a>
+                                <a class="cart-product__title" href="catalog-product.html">Vilatte Туника 6696П</a>
                                 <div class="cart-product__param"><span>Арт. </span>WS1 BASIC 007</div>
                                 <div class="cart-product__param"><span>Цвет </span>Bianco/green</div>
-                                <button class="cart-product__more">Показать все доступные размеры</button>
                             </div>
                             <div class="cart-product__details">
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                <div class="cart-product__sizes">
+                                    <div class="cart-product-size cart-product-size--not-added">
+                                        <div class="cart-product-size__size">44</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus is-disabled" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="0" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total"></div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
+                                    <div class="cart-product-size cart-product-size--not-added">
+                                        <div class="cart-product-size__size">46</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus is-disabled" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="0" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
+                                        </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total"></div>
+                                    </div>
+                                    <div class="cart-product-size">
+                                        <div class="cart-product-size__size">48</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="1" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
+                                        </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total">500,00 ₽</div>
+                                    </div>
                                 </div>
+                                <div class="cart-product-sizes-warning">
+                                    <p>Не добавлены размеры для заказа. <br>Этот товар не будет учтен в&nbsp;заказе.</p>
+                                </div>
+                                <button class="cart-product__toggle-available-btn" data-action="toggle-sizes" aria-label="Показать все доступные размеры"></button>
                             </div>
                         </div>
                         <div class="cart-product">
-                            <a class="cart-product__pic" href="product.html">
+                            <a class="cart-product__pic" href="catalog-product.html">
                                 <img src="./i/products/240x360/555101.webp" alt="Vilatte Туника 6696П" fetchpriority="low" loading="lazy" width="85" height="128">
                             </a>
                             <div class="cart-product__info">
                                 <div class="cart-product__header">
                                     <div class="cart-product__id">ID: 555101</div>
                                     <div class="cart-product-controls">
-                                        <button class="cart-product-controls__item" aria-label="В избранное"><span class="icon icon--heart"></span></button>
+                                        <button class="cart-product-controls__item cart-product__fav" data-action="toggle-favorites" aria-label="В избранное"></button>
                                         <button class="cart-product-controls__item" aria-label="Удалить"><span class="icon icon--bin"></span></button>
                                     </div>
                                 </div>
-                                <a class="cart-product__title" href="product.html">Vilatte Туника 6696П</a>
+                                <a class="cart-product__title" href="catalog-product.html">Vilatte Туника 6696П</a>
                                 <div class="cart-product__param"><span>Арт. </span>WS1 BASIC 007</div>
                                 <div class="cart-product__param"><span>Цвет </span>Bianco/green</div>
-                                <button class="cart-product__more">Показать все доступные размеры</button>
                             </div>
                             <div class="cart-product__details">
-                                <div class="cart-product-detail">
-                                    <div class="cart-product-detail__size">44</div>
-                                    <div class="cart-product-detail__count">
-                                        <div class="cart-product-count">
-                                            <button class="cart-product-count__btn" aria-label="Уменьшить количество"><span class="icon icon--minus"></span></button>
-                                            <input class="cart-product-count__input" type="text" value="1" maxlength="3">
-                                            <button class="cart-product-count__btn" aria-label="Увеличить количество"><span class="icon icon--plus"></span></button>
+                                <div class="cart-product__sizes cart-product__sizes--one-size">
+                                    <div class="cart-product-size">
+                                        <div class="cart-product-size__size">ONE SIZE</div>
+                                        <div class="cart-product-size__count">
+                                            <div class="cart-product-count">
+                                                <button class="cart-product-count__btn cart-product-count__btn--minus" aria-label="Уменьшить количество" data-action="cart-product-minus"></button>
+                                                <input class="cart-product-count__input" type="text" value="1" maxlength="3">
+                                                <button class="cart-product-count__btn cart-product-count__btn--plus" aria-label="Увеличить количество" data-action="cart-product-plus"></button>
+                                            </div>
                                         </div>
+                                        <div class="cart-product-size__price">500,00 ₽/шт.</div>
+                                        <div class="cart-product-size__total">500,00 ₽</div>
                                     </div>
-                                    <div class="cart-product-detail__price">500 ₽/шт.</div>
-                                    <div class="cart-product-detail__total">500 ₽</div>
+                                </div>
+                                <div class="cart-product-sizes-warning">
+                                    <p>Не добавлены размеры для заказа. <br>Этот товар не будет учтен в&nbsp;заказе.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="cart-layout__aside"></div>
+                <div class="cart-layout__aside">
+                    <div class="cart-info">
+                        Товары <br>
+                        Скидки и акции <br>
+                        Накопительная скидка (1%) <br>
+                        Бонусов к начислению <br>
+                        К оплате
+                    </div>
+                </div>
             </div>
         </div>
     </main>
