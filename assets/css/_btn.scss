@@ -6,7 +6,7 @@
     color: #fff;
     background-color: $main;
     border: 2px solid $main;
-    transition: $t;
+    transition: color $t-value, background-color $t-value, border-color $t-value;
     font-weight: 500;
     font-size: 14.5px;
     display: inline-block;
@@ -82,6 +82,12 @@
             &:hover {
                 background-color: $bg-l;
             }
+        }
+    }
+
+    &--translate {
+        &:active {
+            transform: translateY(1px);
         }
     }
 }
