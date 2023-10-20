@@ -83,20 +83,21 @@
 
     &__item {
         border: none;
-        width: 34px;
+        width: 32px;
         height: 32px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: $br-lg;
-        background: none;
+        background-color: #fff;
+        border-top: 1px solid #fff;
         transition:
             box-shadow $t,
             background-color $t;
 
         &:hover {
-            background-color: #fff;
             box-shadow: $bs-xsm;
+            border-color: $line;
         }
 
         &:active {
@@ -205,7 +206,6 @@
         background: linear-gradient(-90deg, #fff, transparent);
         top: -1px;
         left: 0;
-
     }
 
     &__pic {
@@ -253,12 +253,12 @@
     }
 
     &__fav {
-        background: url(../img/icons/heart.svg) no-repeat center/18px transparent;
+        background: url(../img/icons/heart.svg) no-repeat center/19px transparent;
         position: relative;
 
         &.is-active {
             opacity: 1;
-            background: url(../img/icons/heart-filled.svg) no-repeat center/18px;
+            background: url(../img/icons/heart-filled.svg) no-repeat center/19px;
 
             > span {
                 width: 12px;
@@ -269,8 +269,14 @@
                 top: calc(50% - 6px);
                 left: calc(50% - 6px);
                 animation: favorites 0.55s ease-in-out forwards;
+                z-index: 99;
             }
         }
+    }
+
+    &__del {
+        background: url(../img/icons/bin.svg) no-repeat center/19px transparent;
+        position: relative;
     }
 
     &__title {
