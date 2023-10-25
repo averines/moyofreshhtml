@@ -1,60 +1,25 @@
 .order-cards {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 50px;
     max-width: 900px;
-    // container-type: inline-size;
-
-    // &--lg {
-    //     .order-card {
-    //         grid-template-columns: 1.5fr 3fr 3fr 2fr 1fr 1.5fr;
-
-    //         &--extra {
-    //             .order-card__header {
-    //                 grid-column: 1 / 4;
-    //                 display: flex;
-    //                 column-gap: 10px;
-    //             }
-    //         }
-    //     }
-    // }
+    margin-top: 20px;
 }
 
 .order-card {
-    box-shadow: $bs-box-l;
+    box-shadow: $bs-box;
     border: 1px solid $line;
     border-radius: $br-xl;
-    padding-bottom: 28px;
     container-type: inline-size;
+    max-width: 850px;
 
-    &--details {
-        .order-card__footer {
-            justify-content: flex-start;
-        }
-
-        .order-card__cost {
-            font-size: 20px;
-        }
-    }
-
-    &__main {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 20px;
-        position: relative;
-
-        @container (min-width: 750px) {
-            grid-template-columns: 3fr 1fr;
-        }
-    }
-
-    &__header {
+    &__head {
         // border: 1px solid red;
         display: flex;
         flex-direction: column;
         row-gap: 10px;
 
-        @container (min-width: 750px) {
+        @container (min-width: 650px) {
             row-gap: 20px;
         }
     }
@@ -71,10 +36,58 @@
             flex-direction: row;
         }
 
-        @container (min-width: 750px) {
+        @container (min-width: 650px) {
             align-items: flex-end;
             flex-wrap: nowrap;
         }
+    }
+
+    &__body {
+        row-gap: 20px;
+        column-gap: 40px;
+        padding: 15px 20px 28px 20px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @container (min-width: 650px) {
+            padding: 25px 40px 38px 40px;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        @container (min-width: 750px) {
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+
+    &__main {
+        // border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+
+    &__aside {
+        // border: 1px solid green;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $line-d;
+        padding-top: 20px;
+        width: 100%;
+
+        @container (min-width: 650px) {
+            margin-left: auto;
+            width: auto;
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+
+    &__footer {
+        // border: 1px solid blue;
+        width: 100%;
+        margin-top: 10px;
+        grid-column: 1 / -1;
     }
 
     &__content {
@@ -87,240 +100,97 @@
         z-index: 1;
         line-height: 1.4;
 
-        @container (min-width: 750px) {
+        @container (min-width: 650px) {
             padding: 7px 40px;
         }
     }
+}
 
-    &__title {
-        color: $text;
+.order-card-title {
+    color: $text;
 
-        &:hover {
-            color: $main;
-        }
+    &:hover {
+        color: $main;
     }
 
     &__number {
         font-weight: 500;
-        font-size: 17px;
+        font-size: 16px;
     }
 
     &__date {
-        font-size: 14px;
-    }
-
-    &__info {
-        margin-top: 4px;
-    }
-
-    &__delivery {
-        display: flex;
-        align-items: baseline;
-        column-gap: 8px;
-        row-gap: 2px;
-        font-size: 14px;
-        color: $text;
-
-        > span {
-            display: inline;
-            color: $text-l;
-            max-height: 1.5em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            // word-break: break-word;
-            hyphens: auto;
-        }
-    }
-
-    &__footer {
-        // border: 1px solid blue;
-        display: flex;
-        flex-direction: column;
-        row-gap: 5px;
-        position: relative;
-
-        @container (min-width: 750px) {
-            align-items: flex-end;
-            justify-content: flex-end;
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-        }
-    }
-
-    &__pay {
-        display: flex;
-        column-gap: 20px;
-        align-items: center;
-        padding: 0 20px;
-
-        @container (min-width: 750px) {
-            padding: 25px 30px 10px 30px;
-        }
-    }
-
-    &__pay-status {
-        color: $text-ll;
-        font-size: 14px;
-        line-height: 1.2;
-        min-width: 100px;
-
-        @container (min-width: 750px) {
-            width: 100px;
-        }
-
-        &--good {
-            color: $good-d;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            column-gap: 4px;
-
-            &::before {
-                content: "";
-                width: 1em;
-                height: 1em;
-                display: block;
-                background: url(../img/icons/check-good.svg) no-repeat center/100%;
-                transform: translateY(-2px);
-            }
-        }
-    }
-
-    &__total {
-        display: flex;
-        row-gap: 3px;
-        column-gap: 5px;
-        align-items: center;
-
-        @container (min-width: 750px) {
-            flex-direction: column;
-            align-items: flex-end;
-        }
-    }
-
-    &__cost {
+        // font-size: 15px;
         font-weight: 500;
         font-size: 16px;
-        text-align: right;
-        line-height: 1;
         white-space: nowrap;
     }
+}
 
-    &__count {
-        text-align: right;
-        font-size: 13.5px;
+.order-card-notes {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.order-card-note {
+    display: flex;
+    align-items: baseline;
+    column-gap: 8px;
+    row-gap: 2px;
+    font-size: 14.5px;
+    color: $text;
+
+    &__content {
+        display: inline;
         color: $text-l;
-        line-height: 1;
-        white-space: nowrap;
-        text-align: right;
-    }
-
-    // не используется
-    &__products {
-        display: flex;
-        justify-items: flex-start;
-        // flex-direction: row-reverse;
-
-        .order-card-product {
-            display: block;
-            width: 44px;
-            height: 44px;
-            object-position: center;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #fff;
-            margin-left: -20px;
-            z-index: 1;
-
-            &:first-child {
-                margin-left: 0;
-            }
-
-            &--more {
-                margin-left: -10;
-                width: 44px;
-                height: 44px;
-                background-color: $bg-d;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 13px;
-                color: $text-l;
-            }
-        }
+        max-height: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        hyphens: auto;
     }
 }
 
 .order-card-docs {
     display: flex;
-    column-gap: 10px;
-    padding-right: 30px;
-    padding-left: 20px;
-    padding-top: 25px;
+    column-gap: 18px;
     position: relative;
-    margin-top: 10px;
+    margin-top: 15px;
 
-    @container (min-width: 750px) {
-        justify-content: flex-end;
-        padding-left: 0;
-        margin-top: 0;
+    @container (min-width: 650px) {
         padding-top: 15px;
-    }
-
-    &::before {
-        content: "";
-        display: block;
-        height: 0;
-        width: 100%;
-        border-bottom: 1px dashed $line-d;
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        @container (min-width: 750px) {
-            width: 130%;
-        }
-    }
-
-    &::after {
-        content: "";
-        display: block;
-        height: 1px;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        // background: linear-gradient(-90deg, #fff, transparent);
-
-        @container (min-width: 750px) {
-            width: 130%;
-            left: auto;
-            right: 0;
-            background: linear-gradient(90deg, #fff, transparent);
-        }
+        border-top: 1px solid $line;
     }
 }
 
 .order-card-doc {
     display: flex;
     align-items: center;
-    column-gap: 5px;
-    background-color: $bg-l;
-    padding: 0.5em 1em;
-    border-radius: $br-md;
-    font-size: 13px;
+    column-gap: 3px;
+    font-size: 14px;
     color: $text;
     white-space: nowrap;
+    font-weight: 500;
+    transition: $t;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url(../img/icons/download-file-main.svg) no-repeat center/100%;
+        filter: grayscale(1) brightness(0.3);
+        transition: $t;
+    }
 
     &:hover {
-        color: $text;
-        background-color: $bg-d;
+        color: $main;
+
+        &::before {
+            filter: none;
+        }
     }
 }
 
@@ -405,7 +275,7 @@
         align-items: flex-end;
     }
 
-    @container (min-width: 750px) {
+    @container (min-width: 650px) {
         margin-left: 0;
         padding-top: 0;
         flex-direction: row;
@@ -422,7 +292,7 @@
     column-gap: 6px;
     white-space: nowrap;
 
-    @container (min-width: 750px) {
+    @container (min-width: 650px) {
         margin-left: 0;
     }
 
@@ -444,15 +314,81 @@
     }
 }
 
+.order-card-pay {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 10px;
+    width: 100%;
+
+    @container (min-width: 650px) {
+        flex-direction: column;
+    }
+
+    &__status {
+        color: $text-ll;
+        font-size: 14px;
+        line-height: 1.2;
+        min-width: 100px;
+
+        &--good {
+            color: $good-d;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            justify-content: center;
+            column-gap: 4px;
+            font-size: 13.5px;
+            padding: 0.6em 1.5em;
+            background-color: $good-ll;
+            border-radius: $br-md;
+
+            &::before {
+                content: "";
+                width: 1em;
+                height: 1em;
+                display: block;
+                background: url(../img/icons/check-good.svg) no-repeat center/100%;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    &__total {
+        display: flex;
+        row-gap: 5px;
+        column-gap: 5px;
+        align-items: center;
+
+        @container (min-width: 650px) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__cost {
+        font-weight: 500;
+        font-size: 18px;
+        text-align: right;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    &__count {
+        width: 50px;
+        text-align: right;
+        font-size: 14px;
+        color: $text-l;
+        line-height: 1;
+        white-space: nowrap;
+        text-align: right;
+    }
+}
+
 .order-card-extras {
     display: flex;
     flex-direction: column;
     row-gap: 7px;
-    padding: 30px 20px 10px 20px;
-
-    @container (min-width: 750px) {
-        padding: 30px 30px 10px 30px;
-    }
 }
 
 .order-card-extra {
@@ -463,7 +399,7 @@
     padding: 10px 15px;
     border-radius: $br-md;
     background-color: lighten($bg-l, 1);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 
     @container (min-width: 500px) {
         flex-direction: row;
@@ -499,13 +435,13 @@
         align-items: center;
         column-gap: 7px;
 
-        @container (min-width: 750px) {
+        @container (min-width: 650px) {
             column-gap: 10px;
         }
     }
 
     &__cost {
-        font-weight: 500;
+        // font-weight: 500;
         color: $text;
         font-size: 14.5px;
         white-space: nowrap;
