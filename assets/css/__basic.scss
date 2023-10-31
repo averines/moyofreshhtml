@@ -529,6 +529,8 @@ ol.marker {
 
 .is-loading {
 	position: relative;
+	transition: $t;
+	max-height: 1000px;
 
 	&::after {
 		content: "";
@@ -549,5 +551,21 @@ ol.marker {
 		inset: 0;
 		background: url(../img/loading.svg) no-repeat center / 52px;
 		z-index: 99;
+	}
+
+	&--opacity {
+		opacity: 0.4;
+	}
+
+	&--scaleY {
+		transform: scaleY(0);
+		transform-origin: top center;
+		&::after {
+			opacity: 0;
+		}
+
+		&::before {
+			opacity: 0;
+		}
 	}
 }

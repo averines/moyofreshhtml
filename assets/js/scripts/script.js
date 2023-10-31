@@ -312,6 +312,22 @@ window.addEventListener('click', (e) => {
             updateCartProductSizeCount(e.target.closest(".cart-product-size"));
         }
 
+        if (e.target.dataset.action == "cart-product-delete") {
+            let productEl = e.target.closest(".cart-product");
+            productEl.classList.add("is-loading");
+            productEl.classList.add("is-loading--opacity");
+
+            setTimeout(() => {
+
+                setTimeout(() => {
+                    productEl.remove()
+                }, 150)
+
+                productEl.classList.add("is-loading--scaleY");
+            }, 450)
+
+        }
+
     }
 })
 

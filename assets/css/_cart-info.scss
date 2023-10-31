@@ -32,8 +32,13 @@
     column-gap: 20px;
     font-size: 15px;
 
+    &__title {
+        white-space: nowrap;
+    }
+
     &__content {
         text-align: right;
+        white-space: nowrap;
 
         &--good {
             color: $good-d;
