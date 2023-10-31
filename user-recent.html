@@ -150,9 +150,9 @@
                                 <div class="user-btn__title">Уведомления</div>
                             </a>
                             <!-- <div class="user-nav-dropdown user-nav-dropdown--md">
-                                    <div class="text-bold text-sm mb-1">Требуется авторизация</div>
-                                    <div class="text-sm">Войдите или зарегистрируйтесь для&nbsp;получения уведомлений о&nbsp;скидках, поступлениях и&nbsp;работе нашего магазина</div>
-                                </div> -->
+                                        <div class="text-bold text-sm mb-1">Требуется авторизация</div>
+                                        <div class="text-sm">Войдите или зарегистрируйтесь для&nbsp;получения уведомлений о&nbsp;скидках, поступлениях и&nbsp;работе нашего магазина</div>
+                                    </div> -->
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="user-orders.html">
@@ -169,9 +169,9 @@
                                 <div class="user-btn__title">Заказы</div>
                             </a>
                             <!-- <div class="user-nav-dropdown user-nav-dropdown--md">
-                                    <div class="text-bold text-sm mb-1">Требуется авторизация</div>
-                                    <div class="text-sm">История заказов доступна только авторизованным пользователям</div>
-                                </div> -->
+                                        <div class="text-bold text-sm mb-1">Требуется авторизация</div>
+                                        <div class="text-sm">История заказов доступна только авторизованным пользователям</div>
+                                    </div> -->
                         </div>
                         <div class="user-nav">
                             <a class="user-btn" href="user-favorites.html">
@@ -1520,105 +1520,198 @@
     </header>
 
     <main>
-        <div class="container mt-5">
-            <div class="d-grid flex-wrap col-gap-4 row-gap-1">
-                <!-- информация -->
-                <div>
-                    <p class="h4">Информация</p>
-                    <ul class="marker">
-                        <li><a href="info-index.html">Информация</a></li>
-                        <li><a href="info-privacy.html">Политика обработки данных</a></li>
-                    </ul>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="index.html" itemprop="item" title="OptMoyo.ru – интернет-магазин одежды"><span itemprop="name">Главная</span></a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Вы смотрели</span>
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </nav>
+        </div>
 
-                    <p class="mt-2">Компания</p>
-                    <ul class="marker">
-                        <li><a href="info-about.html">О компании</a></li>
-                        <li><a href="info-cooperation.html">Сотрудничество</a></li>
-                        <li><a href="info-api.html">Парсеры и api</a></li>
-                        <li><a href="info-contacts.html">Контакты</a></li>
-                    </ul>
+        <div class="container">
+            <h1 class="h2">Вы смотрели</h1>
+        </div>
 
-                    <p class="mt-2">Покупателям</p>
-                    <ul class="marker">
-                        <li><a href="info-conditions.html">Условия для покупателей</a></li>
-                        <li><a href="info-delivery.html">Доставка</a></li>
-                        <li><a href="info-payment.html">Оплата</a></li>
-                        <li><a href="info-bonus.html">Скидки и бонусы</a></li>
-                        <li><a href="info-sp.html">Организаторам СП</a></li>
-                        <li><a href="info-returns.html">Возврат</a></li>
-                        <li><a href="info-faq.html">Ответы на вопросы</a></li>
-                        <li><a href="info-sizes.html">Таблица размеров</a></li>
-                    </ul>
-                </div>
-
-                <!-- каталог -->
-                <div>
-                    <p class="h4">Каталог</p>
-                    <ul class="marker">
-                        <li><a href="catalog-brands.html">Бренды</a></li>
-                        <li><a href="catalog-section.html">Раздел (Женщинам)</a></li>
-                        <li><a href="catalog-category.html">Категория (Платья)</a></li>
-                        <li><a href="catalog-subcategory.html">Подкатегория (Повседневные)</a></li>
-                        <li><a href="catalog-product.html">Товар (много контента)</a></li>
-                        <li><a href="catalog-product-min.html">Товар (мало контента)</a></li>
-                    </ul>
-                </div>
-
-                <!-- покупатель -->
-                <div>
-                    <p class="h4">Покупатель (авторизованный) - customer</p>
-                    <ul class="marker">
-                        <li><a href="customer-account.html">Аккаунт</a></li>
-                        <li><a href="customer-info.html">Данные покупателя</a></li>
-                        <li><a href="customer-bonus.html">Скидки и бонусы</a></li>
-                        <li><a href="customer-reclamations.html">Рекламации</a></li>
-                        <li><a href="customer-news.html">Уведомления</a></li>
-                        <li><a href="customer-orders.html">Заказы</a></li>
-                        <li><a href="customer-orders-empty.html">Пустые заказы</a></li>
-                        <li><a href="customer-orders-demo.html">Демо всех статусов заказов</a></li>
-
-                        <li><a href="customer-cart.html">Корзина</a></li>
-                        <li><a href="customer-cart-empty.html">Пустая корзина</a></li>
-
-                        <li><a href="customer-favorites.html">Избранное</a></li>
-                        <li><a href="customer-favorites-empty.html">Пустое избранное</a></li>
-
-                        <li><a href="customer-recent.html">Вы смотрели</a></li>
-                        <li><a href="customer-recent-empty.html">Пустое Вы смотрели</a></li>
-
-                        <li><a href="customer-session.html">Сессия устарела (требуется вход)</a></li>
-                    </ul>
-                </div>
-
-                <!-- посетитель -->
-                <div>
-                    <p class="h4">Посетитель (неавторизованный) - user</p>
-                    <ul class="marker">
-                        <li><a href="user-register.html">Регистрация</a></li>
-
-                        <li><a href="user-cart.html">Корзина</a></li>
-                        <li><a href="user-cart-empty.html">Пустая корзина</a></li>
-
-                        <li><a href="user-favorites.html">Избранное</a></li>
-                        <li><a href="user-favorites-empty.html">Пустое избранное</a></li>
-
-                        <li><a href="user-recent.html">Вы смотрели</a></li>
-                        <li><a href="user-recent-empty.html">Пустое Вы смотрели</a></li>
-
-                        <li><a href="user-news.html">Уведомления (требуется вход)</a></li>
-                        <li><a href="user-orders.html">Заказы (требуется вход)</a></li>
-                    </ul>
-                </div>
-
-                <!-- технические -->
-                <div>
-                    <p class="h4">Технические страницы</p>
-                    <ul class="marker">
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="elements.html">Библиотека элементов</a></li>
-                        <li><a href="search-empty.html">Пустой поиск</a></li>
-                    </ul>
-                </div>
+        <div class="container">
+            <div class="product-cards product-cards--max-6">
+                <article class="product-card" data-active-color-id="555101">
+                    <div class="product-card__wrapper">
+                        <div class="product-card__head">
+                            <button class="product-card__fav" aria-label="В избранное" data-action="toggle-favorites"></button>
+                            <div class="product-card__badges badges">
+                                <div class="badge badge--new"></div>
+                                <div class="badge badge--hit"></div>
+                            </div>
+                            <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                            <a class="product-card__head-link" href="catalog-product.html" aria-label="Туника 6696П с растительным узором и апельсиновыми полосками"></a>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__prices">
+                                <div class="card-price">
+                                    <button class="card-price__alert" data-fancybox data-type="ajax" data-src="modal-closed-price.html">Оптовая цена закрыта <span class="icon icon--question"></span></button>
+                                </div>
+                                <div class="card-price">
+                                    <div class="card-price__actual"><span>2450</span>₽</div>
+                                </div>
+                            </div>
+                            <a class="product-card__body-link" href="catalog-product.html" title="Туника 6696П с растительным узором и апельсиновыми полосками">
+                                <h4 class="product-card__header">
+                                    <span class="product-card__brand">PHILIPPE MATIGNON</span>
+                                    <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                </h4>
+                            </a>
+                            <div class="product-card__colors card-colors">
+                                <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450"></a>
+                                <a class="card-color card-color--red" href="catalog-product.html" aria-label="Красный" data-color-id="555102" data-images="555102,555102-a1,555102-a2" data-price-actual="3280"></a>
+                                <a class="card-color card-color--green" href="catalog-product.html" aria-label="Зеленый" data-color-id="555103" data-images="555103,555103-a1,555103-a2,555103-a3" data-price-actual="2880"></a>
+                                <a class="card-color card-color--magenta" href="catalog-product.html" aria-label="Розовый" data-color-id="555104" data-images="555104,555104-a1,555104-a2" data-price-actual="700"></a>
+                                <a class="card-color card-color--green" href="catalog-product.html" aria-label="Темно-зеленый" data-color-id="555105" data-price-actual="2000"></a>
+                                <a class="card-color card-color--brown" href="catalog-product.html" aria-label="Коричневый" data-color-id="555106" data-price-actual="2000"></a>
+                                <a class="card-color card-color--black" href="catalog-product.html" aria-label="Черный" data-color-id="555107" data-price-actual="2000"></a>
+                                <a class="card-color card-color--blue" href="catalog-product.html" aria-label="Темно-синий" data-color-id="555108" data-price-actual="2000"></a>
+                                <button class="card-color__more">+3</button>
+                            </div>
+                            <div class="product-card__sizes card-sizes">
+                                <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">48</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">50</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">52</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">54</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">56</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">58</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">60-62</button>
+                                <button data-color-id="555102" class="card-size">52</button>
+                                <button data-color-id="555102" class="card-size">54</button>
+                                <button data-color-id="555103" class="card-size">48</button>
+                                <button data-color-id="555103" class="card-size">54</button>
+                                <button data-color-id="555104" class="card-size">52</button>
+                                <button data-color-id="555104" class="card-size">54</button>
+                                <button data-color-id="555104" class="card-size">56</button>
+                                <button data-color-id="555104" class="card-size">56-58</button>
+                                <button data-color-id="555105" class="card-size">52</button>
+                                <button data-color-id="555105" class="card-size">54-56</button>
+                                <button data-color-id="555105" class="card-size">56</button>
+                                <button data-color-id="555106" class="card-size">52</button>
+                                <button data-color-id="555107" class="card-size">52</button>
+                                <button data-color-id="555107" class="card-size">54</button>
+                                <button data-color-id="555107" class="card-size">56-58</button>
+                                <button data-color-id="555107" class="card-size">58-60</button>
+                                <button data-color-id="555107" class="card-size">62</button>
+                                <button data-color-id="555108" class="card-size">52</button>
+                                <button data-color-id="555108" class="card-size">54</button>
+                                <button data-color-id="555108" class="card-size">56</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-active-color-id="555101">
+                    <div class="product-card__wrapper">
+                        <div class="product-card__head">
+                            <button class="product-card__fav" aria-label="В избранное" data-action="toggle-favorites"></button>
+                            <div class="product-card__badges badges">
+                                <div class="badge badge--bottom badge--action">-11% до 28.08</div>
+                            </div>
+                            <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                            <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__prices">
+                                <div class="card-price">
+                                    <button class="card-price__alert" data-fancybox data-type="ajax" data-src="modal-closed-price.html">Оптовая цена закрыта <span class="icon icon--question"></span></button>
+                                </div>
+                                <div class="card-price card-price--action">
+                                    <div class="card-price__actual"><span>2450</span>₽</div>
+                                    <div class="card-price__old"><span>3450</span>₽</div>
+                                    <div class="card-price__warning">Осталось 3 дня</div>
+                                </div>
+                            </div>
+                            <a class="product-card__body-link" href="#">
+                                <h4 class="product-card__header">
+                                    <span class="product-card__brand">Vilatte</span>
+                                    <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                </h4>
+                            </a>
+                            <div class="product-card__colors card-colors">
+                                <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450" data-price-old="3450"></a>
+                                <a class="card-color card-color--red" href="catalog-product.html" aria-label="Красный" data-color-id="555102" data-images="555102,555102-a1,555102-a2" data-price-actual="3280" data-price-old="4280"></a>
+                                <a class="card-color card-color--green" href="catalog-product.html" aria-label="Зеленый" data-color-id="555103" data-images="555103,555103-a1,555103-a2,555103-a3" data-price-actual="2880" data-price-old="3880"></a>
+                                <a class="card-color card-color--magenta" href="catalog-product.html" aria-label="Розовый" data-color-id="555104" data-images="555104,555104-a1,555104-a2" data-price-actual="700" data-price-old="1700"></a>
+                            </div>
+                            <div class="product-card__sizes card-sizes">
+                                <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                <button data-color-id="555102" class="card-size">52</button>
+                                <button data-color-id="555102" class="card-size">54</button>
+                                <button data-color-id="555103" class="card-size">48</button>
+                                <button data-color-id="555103" class="card-size">54</button>
+                                <button data-color-id="555104" class="card-size">52</button>
+                                <button data-color-id="555104" class="card-size">54</button>
+                                <button data-color-id="555104" class="card-size">56</button>
+                                <button data-color-id="555104" class="card-size">56-58</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-active-color-id="555101">
+                    <div class="product-card__wrapper">
+                        <div class="product-card__head">
+                            <button class="product-card__fav" aria-label="В избранное" data-action="toggle-favorites"></button>
+                            <div class="product-card__badges badges">
+                                <div class="badge badge--bottom badge--sale">-11%</div>
+                            </div>
+                            <img class="product-card__pic" alt="Vilatte Туника 6696П" width="300" height="450" fetchpriority="low" loading="lazy" src="./i/products/300x450/555101.jpg" srcset="./i/products/240x360/555101.webp 240w, ./i/products/300x450/555101.webp 300w" sizes="(max-width: 2000px) 100px, 300px">
+                            <a class="product-card__head-link" href="#" aria-label="Vilatte Туника 6696П"></a>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__prices">
+                                <div class="card-price">
+                                    <div class="card-price__actual"><span>2450</span>₽</div>
+                                    <div class="card-price__old"><span>3450</span>₽</div>
+                                </div>
+                                <div class="card-price card-price--sm">
+                                    <div class="card-price__actual"><span>1500</span>₽</div>
+                                    <div class="card-price__old"><span>2500</span>₽</div>
+                                    <div class="card-price__title">Опт</div>
+                                </div>
+                            </div>
+                            <a class="product-card__body-link" href="#">
+                                <h4 class="product-card__header">
+                                    <span class="product-card__brand">Vilatte</span>
+                                    <span class="product-card__title">Туника 6696П с растительным узором и апельсиновыми полосками</span>
+                                </h4>
+                            </a>
+                            <div class="product-card__colors card-colors">
+                                <a class="card-color card-color--purple" href="catalog-product.html" aria-label="Фиолетовый" data-color-id="555101" data-images="555101,555101-a1,555101-a2" data-price-actual="2450" data-price-old="3450"></a>
+                                <a class="card-color card-color--red" href="catalog-product.html" aria-label="Красный" data-color-id="555102" data-images="555102,555102-a1,555102-a2" data-price-actual="3280" data-price-old="4280"></a>
+                                <a class="card-color card-color--green" href="catalog-product.html" aria-label="Зеленый" data-color-id="555103" data-images="555103,555103-a1,555103-a2,555103-a3" data-price-actual="2880" data-price-old="3880"></a>
+                                <a class="card-color card-color--magenta" href="catalog-product.html" aria-label="Розовый" data-color-id="555104" data-images="555104,555104-a1,555104-a2" data-price-actual="700" data-price-old="1700"></a>
+                            </div>
+                            <div class="product-card__sizes card-sizes">
+                                <button data-color-id="555101" class="card-size card-size--showed">42</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">44</button>
+                                <button data-color-id="555101" class="card-size card-size--showed">46</button>
+                                <button data-color-id="555102" class="card-size">52</button>
+                                <button data-color-id="555102" class="card-size">54</button>
+                                <button data-color-id="555103" class="card-size">48</button>
+                                <button data-color-id="555103" class="card-size">54</button>
+                                <button data-color-id="555104" class="card-size">52</button>
+                                <button data-color-id="555104" class="card-size">54</button>
+                                <button data-color-id="555104" class="card-size">56</button>
+                                <button data-color-id="555104" class="card-size">56-58</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </main>
