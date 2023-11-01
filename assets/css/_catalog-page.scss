@@ -35,9 +35,59 @@
 .subcategories-list {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     column-gap: 6px;
     row-gap: 6px;
     margin-top: 10px;
+    overflow-x: auto;
+    max-height: 100px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+
+    &::-webkit-scrollbar {
+        height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $line-d;
+        border-radius: $br-sm;
+        border: 2px solid #fff;
+        transition: $t;
+
+        &:hover {
+            background-color: darken($line-d, 5);
+        }
+    }
+
+    @media screen and (min-width: $bp-sm) {
+        flex-direction: row;
+        overflow-x: none;
+        max-height: none;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
+    &__wrapper {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+
+            @media screen and (min-width: $bp-sm) {
+                display: none;
+            }
+        }
+    }
 
     @media screen and (min-width: $bp-lg) {
         max-width: 90%;

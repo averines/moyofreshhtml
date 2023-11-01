@@ -226,12 +226,16 @@ window.addEventListener('click', (e) => {
         if (e.target.dataset.action.includes("scroll")) {
             e.preventDefault();
             let scrollToEl;
-            if (e.target.getAttribute('href')) {
-                scrollToEl = e.target.getAttribute('href');
-                scrollToEl = scrollToEl.replace("#", "");
-            } else {
+
+            if (e.target.dataset.scrollTarget) {
                 scrollToEl = e.target.dataset.scrollTarget;
+            } else {
+                if (e.target.getAttribute('href')) {
+                    scrollToEl = e.target.getAttribute('href').replace("#", "");
+                }
             }
+
+            console.log(scrollToEl);
             document.getElementById(scrollToEl).scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
