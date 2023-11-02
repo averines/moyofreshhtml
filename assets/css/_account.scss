@@ -17,13 +17,13 @@
         grid-template-columns: 1fr;
     }
 
-    &__aside {
+    // &__aside {
         // display: none;
 
         // @media screen and (min-width: $bp-xsm) {
         //     display: block;
         // }
-    }
+    // }
 
     &__main {
         &--sm {
@@ -167,12 +167,42 @@
 
     a.account-menu__logout {
         display: none;
+        opacity: 0.6;
 
         @media screen and (min-width: $bp-md) {
-            margin-top: 20px;
+            // margin-top: 20px;
             display: flex;
         }
+
+        &:hover {
+            opacity: 1;
+        }
     }
+
+    hr {
+        display: none;
+        margin: 10px 0;
+        margin-left: 50px;
+        width: calc(100% - 50px);
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, $line-d 60%, transparent 100%);
+
+        @media screen and (min-width: $bp-md) {
+            display: block;
+        }
+    }
+
+    // &__group {
+    //     display: flex;
+    //     row-gap: 4px;
+    //     flex-direction: column;
+    //     border: 1px solid $line;
+    //     padding: 15px;
+    //     border-radius: $br-xxl;
+    //     margin: 0 -15px;
+    //     margin-bottom: 10px;
+    // }
 }
 
 .profile-card {
