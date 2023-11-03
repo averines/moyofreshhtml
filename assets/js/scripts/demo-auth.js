@@ -46,7 +46,7 @@ if (document.cookie.split(';').filter((item) => item.includes('auth=true')).leng
 
     if (url.includes('customer')) {
         url = url.replace('customer', 'user');
-        if (url.includes("user-account")) {
+        if (url.includes("user-account") || url.includes("user-orders") || url.includes("user-info")) {
             window.location.href = "/";
         } else {
             window.location.href = url;
